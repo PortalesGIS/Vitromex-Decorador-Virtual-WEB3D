@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "eventemitter3": "^4.0.7",
     "register-service-worker": "^1.7.1",
     "three": "^0.129.0",
     "vue": "^3.0.0",
