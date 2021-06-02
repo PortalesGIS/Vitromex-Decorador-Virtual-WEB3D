@@ -1,5 +1,6 @@
 <template>
-  <div class="w-full h-full pt-14 pl-56">
+  <!-- <div class=" w-full h-full "> -->
+      <div class="absolute top-0 w-screen h-screen">
       <div 
       id="scene"
       class="bg-gray-200 w-full h-full">

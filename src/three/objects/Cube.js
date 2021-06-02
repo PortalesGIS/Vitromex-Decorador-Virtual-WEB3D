@@ -10,5 +10,7 @@ export class Cube extends Mesh {
 			flatShading: true,
 			roughness: .5
 		});
+		this.name =`cube-${size}`
+		this.renderOrder = 0;
 	}
 }

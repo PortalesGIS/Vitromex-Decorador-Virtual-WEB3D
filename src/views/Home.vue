@@ -6,7 +6,7 @@
     <div class="z-30 absolute top-0 h-full">
       <LateralMenuComponentVue/>
     </div>
-    <div class="z-30 absolute top-0 h-full w-full flex items-end">      
+    <div class="z-30 block fixed inset-x-0 bottom-0 ">      
       <BottomGlobalComponentVue/>
     </div> 
   </div>
