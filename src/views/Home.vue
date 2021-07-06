@@ -3,7 +3,10 @@
     <div class="absolute z-40">
     <HeaderGlobalComponentVue/>
     </div>
-    <div class="z-40 hidden md:block  absolute top-0 h-full">
+    <div class="w-screen hidden md:block absolute z-40">
+        <FiltersMenuWebVue/>
+    </div>    
+    <div class="z-50 hidden md:block  absolute top-0 h-full">
       <LateralMenuComponentVue/>      
     </div>
     <div class="z-30 block fixed inset-x-0 bottom-0 ">      
@@ -21,6 +24,7 @@
 import Home3DComponentVue from '../components/3D/Home3DComponent.vue'
 import BottomGlobalComponentVue from '../components/bottom/BottomGlobalComponent.vue'
 import HeaderGlobalComponentVue from '../components/header/HeaderGlobalComponent.vue'
+import FiltersMenuWebVue from '../components/menus/FiltersMenuWeb.vue'
 import LateralMenuComponentVue from '../components/menus/LateralMenuComponent.vue'
 export default {
   components: {
@@ -28,6 +32,7 @@ export default {
     LateralMenuComponentVue,
     Home3DComponentVue,
     BottomGlobalComponentVue,
+    FiltersMenuWebVue,
   },
 }
 </script>

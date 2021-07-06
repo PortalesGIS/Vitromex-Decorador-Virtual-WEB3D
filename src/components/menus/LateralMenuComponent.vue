@@ -1,14 +1,14 @@
 <template>
   <div class="h-full pt-24 ">
-    <div class="h-full w-80 bg-black ">
+    <div class="h-full w-336 bg-black ">
       <div class="px-4 pt-4 flex justify-between">
         <div class="text-white text-xl font-bold">CATÁLOGO</div>
         <div class="flex justify-center items-center">
           <img src="../../assets/web/Filtros.svg" class="w-4 h-4" alt="">
         </div>
       </div>
-      <div class="fixed h-full w-80  px-2 pb-4 pt-4 bg-black">
-        <div class='w-full h-full bg-1d '>
+      <div class="fixed h-full w-336  px-2 pb-4 pt-4 bg-black">
+        <div class='w-full h-full bg-1d pr-1'>
             <div class="w-full flex">
               <div 
               @click="changeMenuOption(0)"
@@ -51,13 +51,13 @@
                 <img class="w-6 h-6" src="../../assets/web/Buscar.svg" alt="">
               </div>
             </div>  
-            <div class='px-2 pt-4 w-full h-full overflow-y-auto pb-56'>
+            <div class='px-2 pt-4 w-full max-h-full overflow-y-auto pb-80'>
               <div class='grid grid-cols-3'>
                   <div v-for="x in 60" :key="x"
                     class="pb-2">
                     <img src="https://random.imagecdn.app/300/300" class="object-cover rounded-md" style="width:89px; height:69px" alt="">
                     <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">Coliseo Cream</p>
-                    <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">00x00</p>
+                    <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">{{x}}</p>
                   </div>
               </div>
             </div>

@@ -34,15 +34,15 @@ export class App {
 		
 		// raycaster
 		let drag = false;
-		document.onpointerdown = () => {
+		this.container.onpointerdown = () => {
 			drag=true;
 		}		
-		document.onpointermove = (e)=>{
+		this.container.onpointermove = (e)=>{
 			e.preventDefault();	
 			drag = false;
 			// TODO: accion pesada al sistema????
 		}
-		document.onpointerup = (e)=> {
+		this.container.onpointerup = (e)=> {
 			e.preventDefault();
 			if(drag){
 				this.scene.onDocumentMouseDown(e.clientX, e.clientY, this.renderer, this.camera);
