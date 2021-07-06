@@ -1,0 +1,32 @@
+<svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d)">
+<circle cx="26.5" cy="22.5" r="22.5" fill="black"/>
+</g>
+<mask id="path-2-inside-1" fill="white">
+<rect x="16" y="33" width="9.45" height="9.45" rx="1" transform="rotate(-90 16 33)"/>
+</mask>
+<rect x="16" y="33" width="9.45" height="9.45" rx="1" transform="rotate(-90 16 33)" stroke="white" stroke-width="4" mask="url(#path-2-inside-1)"/>
+<mask id="path-3-inside-2" fill="white">
+<rect x="27.55" y="33" width="9.45" height="9.45" rx="1" transform="rotate(-90 27.55 33)"/>
+</mask>
+<rect x="27.55" y="33" width="9.45" height="9.45" rx="1" transform="rotate(-90 27.55 33)" stroke="white" stroke-width="4" mask="url(#path-3-inside-2)"/>
+<mask id="path-4-inside-3" fill="white">
+<rect x="16" y="21.45" width="9.45" height="9.45" rx="1" transform="rotate(-90 16 21.45)"/>
+</mask>
+<rect x="16" y="21.45" width="9.45" height="9.45" rx="1" transform="rotate(-90 16 21.45)" stroke="white" stroke-width="4" mask="url(#path-4-inside-3)"/>
+<mask id="path-5-inside-4" fill="white">
+<rect x="27.55" y="21.45" width="9.45" height="9.45" rx="1" transform="rotate(-90 27.55 21.45)"/>
+</mask>
+<rect x="27.55" y="21.45" width="9.45" height="9.45" rx="1" transform="rotate(-90 27.55 21.45)" stroke="white" stroke-width="4" mask="url(#path-5-inside-4)"/>
+<defs>
+<filter id="filter0_d" x="0" y="0" width="53" height="53" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
+</svg>

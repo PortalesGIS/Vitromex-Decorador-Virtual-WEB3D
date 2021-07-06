@@ -3,8 +3,8 @@
     <div class="absolute z-40">
     <HeaderGlobalComponentVue/>
     </div>
-    <div class="z-30 absolute top-0 h-full">
-      <LateralMenuComponentVue/>
+    <div class="z-40 hidden md:block  absolute top-0 h-full">
+      <LateralMenuComponentVue/>      
     </div>
     <div class="z-30 block fixed inset-x-0 bottom-0 ">      
       <BottomGlobalComponentVue/>

@@ -1,6 +1,6 @@
 <template>
-  <div class="h-14 w-screen bg-gray-900 bg-opacity-20">
-      
+  <div class="h-14 w-screen bg-white">
+    <img class="w-full h-14 object-cover" src="../../assets/web/Header.png" alt="">
   </div>
 </template>
 
