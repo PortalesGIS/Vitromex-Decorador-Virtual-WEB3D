@@ -75,7 +75,7 @@ export class App {
 
 
 		this.renderer.render(this.scene, this.camera);
-		// this.control.update();
+		this.control.update();
 		// Updates here
 		this.scene.update(); 
 

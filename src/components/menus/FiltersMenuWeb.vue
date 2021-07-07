@@ -49,6 +49,11 @@
             </div>
         </div>
       </div>
+      <div class="fixed right-0 py-2  flex justify-end" style=" padding-right:212px">
+        <div class="pr-1">
+          <img class="w-12 h-12" src="../../assets/web/Info_B.svg" alt="">
+        </div>
+      </div>
   </div>
 </template>
 

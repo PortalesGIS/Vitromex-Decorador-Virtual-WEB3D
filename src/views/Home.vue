@@ -1,16 +1,24 @@
 <template>
-  <div class="w-screen h-screen">
-    <div class="absolute z-40">
+  <div class="h-screen w-screen">
+    <div class="absolute z-50">
     <HeaderGlobalComponentVue/>
+    
     </div>
-    <div class="w-screen hidden md:block absolute z-40">
+    <div class="w-screen hidden md:block absolute z-30">
         <FiltersMenuWebVue/>
+        
     </div>    
-    <div class="z-50 hidden md:block  absolute top-0 h-full">
-      <LateralMenuComponentVue/>      
+    <div class="z-50  absolute top-0">
+      <RightMenuDesktopComponentVue/> 
+      
     </div>
-    <div class="z-30 block fixed inset-x-0 bottom-0 ">      
+    <div class="z-40 hidden md:block  absolute top-0 h-full">
+      <LateralMenuComponentVue/>    
+        
+    </div>
+    <div class="z-20 block fixed inset-x-0 bottom-0 ">      
       <BottomGlobalComponentVue/>
+      
     </div> 
   </div>
   <div class="z-10 absolute top-0 h-screen w-screen">
@@ -26,6 +34,7 @@ import BottomGlobalComponentVue from '../components/bottom/BottomGlobalComponent
 import HeaderGlobalComponentVue from '../components/header/HeaderGlobalComponent.vue'
 import FiltersMenuWebVue from '../components/menus/FiltersMenuWeb.vue'
 import LateralMenuComponentVue from '../components/menus/LateralMenuComponent.vue'
+import RightMenuDesktopComponentVue from '../components/menus/RightMenuDesktopComponent.vue'
 export default {
   components: {
     HeaderGlobalComponentVue,
@@ -33,6 +42,7 @@ export default {
     Home3DComponentVue,
     BottomGlobalComponentVue,
     FiltersMenuWebVue,
+    RightMenuDesktopComponentVue
   },
 }
 </script>
