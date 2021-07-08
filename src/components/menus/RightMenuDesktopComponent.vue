@@ -18,26 +18,45 @@
                   <p class="text-sm font-bold" style="color:#CFCFCF">Muro</p>
               </div>
               <div class="pt-4 px-4">
-                  <div class='grid grid-cols-2 '>
-                      <div v-for="x in 3" :key="x"
-                        class="pb-2">
-                        <img src="https://random.imagecdn.app/300/300" class="object-cover rounded-md" style="width:81px; height:69px" alt="">
-                        <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">Coliseo Cream</p>
-                        <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">00x00</p>
+                   <div v-if="false">
+                    <div class='grid grid-cols-2 '>
+                          <div v-for="x in 3" :key="x"
+                            class="pb-2">
+                            <img src="https://random.imagecdn.app/300/300" class="object-cover rounded-md" style="width:81px; height:69px" alt="">
+                            <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">Coliseo Cream</p>
+                            <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">00x00</p>
+                            </div>
+                        </div>                      
                   </div>
+                  <div v-else class="w-44 h-36 bg-2e flex justify-center items-center">
+                      <div class="w-full">
+                         <div class="flex justify-center">
+                              <img src="../../assets/web/Piso.svg" class=" w-8 h-6 object-cover transform -rotate-90" alt="">
+                         </div>
+                          <p class="text-center text-sm font-normal pt-4 px-6" style="color:#CFCFCF">
+                              Selecciona algún producto para el Muro</p>
+                      </div>
                   </div>
               </div>
               <div class="px-5 pt-7">
                   <p class="text-sm font-bold" style="color:#CFCFCF">Piso</p>
               </div>
               <div class="pt-4 px-4">
-                  <div class='grid grid-cols-2 '>
-                      <div v-for="x in 4" :key="x"
-                        class="pb-2">
-                        <img src="https://random.imagecdn.app/300/300" class="object-cover rounded-md" style="width:81px; height:69px" alt="">
+                  <div v-if="false" class='grid grid-cols-2 '>
+                        <div>
+                            <img src="https://random.imagecdn.app/300/300" class="object-cover rounded-md" style="width:81px; height:69px" alt="">
                         <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">Coliseo Cream</p>
-                        <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">{{x}}</p>
+                        <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">00x00</p>
+                 
+                        </div>
                   </div>
+                  <div v-else class="w-44 h-36 bg-2e flex justify-center items-center">
+                      <div class="w-full">
+                         <div class="flex justify-center">
+                              <img src="../../assets/web/Piso.svg" class=" w-8 h-6 object-cover" alt="">
+                         </div>
+                          <p class="text-center text-sm font-normal pt-4 px-6" style="color:#CFCFCF">Selecciona algún producto para el piso</p>
+                      </div>
                   </div>
               </div>
           </div>

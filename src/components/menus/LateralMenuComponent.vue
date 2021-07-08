@@ -52,13 +52,23 @@
               </div>
             </div>  
             <div class='px-2 pt-4 w-full max-h-full overflow-y-auto pb-80'>
-              <div class='grid grid-cols-3'>
+              <div v-if="selected===0">
+                <div class='grid grid-cols-3'>
                   <div v-for="x in 60" :key="x"
                     class="pb-2">
                     <img src="https://random.imagecdn.app/300/300" class="object-cover rounded-md" style="width:89px; height:69px" alt="">
                     <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">Coliseo Cream</p>
-                    <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">{{x}}</p>
+                    <p class="text-white font-semibold" style="font-size:11px; color:#CFCFCF">00x00</p>
                   </div>
+              </div>
+              </div>              
+              <div v-else>
+                <div class='grid grid-cols-2'>
+                  <div v-for="x in 40" :key="x"
+                    class="pb-2">
+                    <img src="https://random.imagecdn.app/300/300" class="object-cover rounded-md" style="width:140px; height:140px" alt="">                                        
+                  </div>
+              </div>
               </div>
             </div>
         </div>

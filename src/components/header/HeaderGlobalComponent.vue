@@ -1,11 +1,11 @@
 <template>
 <!-- desktop -->
-  <div class="hidden md:block">
-    <div class="h-20 md:h-24 w-screen bg-white">
+  <div class="hidden lg:block">
+    <div class="h-20 lg:h-24 w-screen bg-white">
     <div>
-      <img class="w-full h-20 md:h-24 object-cover" src="../../assets/web/Header.png" alt="">
+      <img class="w-full h-20 lg:h-24 object-cover" src="../../assets/web/Header.png" alt="">
     </div>
-    <div class=" absolute top-0 h-20 md:h-24 w-screen ">
+    <div class=" absolute top-0 h-20 lg:h-24 w-screen ">
       <div class='grid grid-cols-12 gap-1 h-full'>
           <div class="col-span-2 flex items-center justify-center h-full">
             <img src="../../assets/web/Logo_Vitromex.svg" style="width:223px; height:52px" alt="">
@@ -36,10 +36,10 @@
   </div>
   </div>
   <!-- mobile -->
-  <div class="block md:hidden">
-    <div class="h-20 md:h-24 w-screen bg-white">
+  <div class="block lg:hidden">
+    <div class="h-20 lg:h-24 w-screen bg-white">
     <div>
-      <img class="w-full h-20 md:h-24 object-cover" src="../../assets/web/Header.png" alt="">
+      <img class="w-full h-20 lg:h-24 object-cover" src="../../assets/web/Header.png" alt="">
     </div>
   </div>
   </div>

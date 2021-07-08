@@ -4,15 +4,15 @@
     <HeaderGlobalComponentVue/>
     
     </div>
-    <div class="w-screen hidden md:block absolute z-30">
+    <div class="w-screen hidden lg:block absolute z-30">
         <FiltersMenuWebVue/>
         
     </div>    
-    <div class="z-50  absolute top-0">
+    <div class="z-40  absolute top-0 hidden lg:block ">
       <RightMenuDesktopComponentVue/> 
       
     </div>
-    <div class="z-40 hidden md:block  absolute top-0 h-full">
+    <div class="z-40 hidden lg:block  absolute top-0 h-full">
       <LateralMenuComponentVue/>    
         
     </div>

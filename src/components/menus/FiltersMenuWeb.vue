@@ -12,7 +12,7 @@
             </div>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <select name="" id="" class="bg-1d text-white w-4/6 h-9 px-2 outline-none">
+                <select name="" id="" class="bg-1d text-white w-4/6 h-9 px-2 outline-none ">
                   <option disabled selected> Serie </option>
                   <option value="1">lorem</option>
                 </select>
