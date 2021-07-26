@@ -2,3 +2,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root{
+        --base-black: #000000;
+        --base-white: #ffffff;
+        --base-black-opacity: rgba(0,0,0,0.5);
+        --text-title:#ffffff;
+        --base-1d:#1D1D1D;
+        --base-oa:#0A0A0A;
+        --text-subtitle:#ffffff;
+        --border-menu:#FFFFFF;
+        --color-select-aplication:#000000;
+        --base-6a:#6a6a6a;
+        --base-cf:#cfcfcf;
+        --base-67:#000000;
+        --base-2e:#2E2E2E;       
+        --base-bg-cf:#cfcfcf; 
+    }
+    .theme-arko{
+        --base-black: #FFFFFF;
+        --base-white: #000000;
+        --base-black-opacity: rgba(255,255,255,0.5);
+        --text-title:#373737;
+        --base-1d:#DEDEDE;
+        --base-oa:#CACACA;
+        --text-subtitle:#000000;
+        --border-menu:#000000;
+        --color-select-aplication:#373737;
+        --base-6a:#ffffff;
+        --base-cf:#595959;
+        --base-67:#676767;
+        --base-2e:#f0f0f0;
+        --base-bg-cf:#8b8b8b; 
+    }
+}

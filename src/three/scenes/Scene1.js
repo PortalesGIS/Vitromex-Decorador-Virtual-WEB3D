@@ -4,10 +4,12 @@ import {  AxesHelper, Color, DirectionalLight, HemisphereLight, PerspectiveCamer
 } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import {Cube } from '../objects/Cube'
-import { Plane } from '../objects/Plane';
+// import { Plane } from '../objects/Plane';
+import { PlaneTest } from '../objects/PlaneTest';
 import Observer, { EVENTS } from '../Observer';
 var raycaster = new Raycaster();
 var mouse = new Vector2();
+
 class Scene1 extends Scene {
 	constructor(camera = PerspectiveCamera,control= OrbitControls){
 		super();
@@ -20,6 +22,10 @@ class Scene1 extends Scene {
 		this.cube = new Cube(3,"orangered");
 		this.cube.position.y=2;
 		this.add(this.cube);
+		// 
+		// test - plane
+		this.test = new PlaneTest()
+		this.add(this.test)
 		// 
 		this.cube2 = new Cube(3,"blue");
 		this.cube2.position.x=100;
@@ -37,8 +43,8 @@ class Scene1 extends Scene {
 		this.abientLight = new HemisphereLight(0xffffffbb, 0x080820,0.5)
 		this.light =  new DirectionalLight(0xffffff,1.0);
 		this.add(this.abientLight, this.light);
-		this.piso =new Plane(155,150);
-		this.add(this.piso);
+		// this.piso =new Plane(155,150);
+		// this.add(this.piso);
 		// helpers
 		this.axesHelper = new AxesHelper(5);
 		this.add(this.axesHelper);

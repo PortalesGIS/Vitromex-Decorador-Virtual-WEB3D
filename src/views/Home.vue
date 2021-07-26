@@ -1,4 +1,8 @@
 <template>
+<div class="absolute top-0 z-100 bg-red-400" @click="onChangeStatePage(!getPageState)">
+  change
+</div>
+<div :class="getPageState?'theme-arko':''">
   <div class="h-screen w-screen">
     <div class="absolute z-50">
     <HeaderGlobalComponentVue/>
@@ -26,15 +30,18 @@
       <Home3DComponentVue/>
     </div>
     </div>    
+</div>
 </template>
 
 <script>
+import  { mapGetters,mapActions } from 'vuex'
 import Home3DComponentVue from '../components/3D/Home3DComponent.vue'
 import BottomGlobalComponentVue from '../components/bottom/BottomGlobalComponent.vue'
 import HeaderGlobalComponentVue from '../components/header/HeaderGlobalComponent.vue'
 import FiltersMenuWebVue from '../components/menus/FiltersMenuWeb.vue'
 import LateralMenuComponentVue from '../components/menus/LateralMenuComponent.vue'
 import RightMenuDesktopComponentVue from '../components/menus/RightMenuDesktopComponent.vue'
+
 export default {
   components: {
     HeaderGlobalComponentVue,
@@ -44,5 +51,14 @@ export default {
     FiltersMenuWebVue,
     RightMenuDesktopComponentVue
   },
+  data() {
+  },  
+  methods: {
+    ...mapActions(["onChangeStatePage"]),
+  },
+  computed: {
+    ...mapGetters(["getPageState"])
+  },
+    
 }
 </script>
