@@ -15,6 +15,8 @@ module.exports = {
         "6a":"var(--base-6a)",
         "2e":"var(--base-2e)",
         "67":"var(--base-67)",
+        "mobile-0a":"var(--base-menu-mobile-0a)",
+
       }),
       textColor: theme => theme('colors'),
       textColor: {
@@ -31,6 +33,7 @@ module.exports = {
       width:{
         "336":"336px",
         "212":"212px",
+        "471":"471px",
         
       },
       height:{

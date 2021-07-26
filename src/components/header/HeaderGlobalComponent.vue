@@ -38,22 +38,22 @@
   </div>
   </div>
   <!-- mobile -->
-  <div class="block lg:hidden">
-    <div class="h-20 lg:h-24 w-screen bg-white">
-    <div>
-      <img class="w-full h-20 lg:h-24 object-cover" src="../../assets/web/Header.png" alt="">
-    </div>
-  </div>
-  </div>
+  <HeaderMobileComponentVue/>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import HeaderMobileComponentVue from './HeaderMobileComponent.vue'
 export default {
-  methods: {
-    clickMenuTop() {
-        console.log("click")
+  components: {
+    HeaderMobileComponentVue,
+  },
+  data() {
+    return {
+     
     }
+  },
+  methods: {
   },
   computed: {
     ...mapGetters(["getPageState"])
