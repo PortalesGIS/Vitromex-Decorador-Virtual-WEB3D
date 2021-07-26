@@ -50,17 +50,30 @@
         </div>
       </div>
       <div class="fixed right-0 py-2  flex justify-end" style=" padding-right:212px">
-        <div class="pr-1">
+        <div class="pr-1 cursor-pointer" @click="openTutorial">
           <img v-if="getPageState" class="w-12 h-12" src="../../assets/arko/Web/Info.svg" alt="">
           <img v-else class="w-12 h-12" src="../../assets/web/Info_B.svg" alt="">
         </div>
+      </div>
+      <div class="fixed right-0 flex justify-end" style=" padding-right:212px">
+        <TutorialAlertscomponentVue
+        ref="tutorial"/>    
       </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import TutorialAlertscomponentVue from '../alerts/TutorialAlertscomponent.vue'
 export default {
+  components: {
+    TutorialAlertscomponentVue,
+  },
+  methods: {
+    openTutorial() {
+       this.$refs.tutorial.open();
+    }
+  },
 computed: {
     ...mapGetters(["getPageState"])
   },
