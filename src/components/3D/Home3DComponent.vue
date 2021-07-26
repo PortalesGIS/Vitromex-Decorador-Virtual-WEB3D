@@ -17,7 +17,6 @@ Observer.on(EVENTS.TEST,(payload)=>{
 		})
 export default {
     mounted () {
-
     const app = new App(document.querySelector('#scene'));
     window.addEventListener('resize', () => {
 	app.onResize();

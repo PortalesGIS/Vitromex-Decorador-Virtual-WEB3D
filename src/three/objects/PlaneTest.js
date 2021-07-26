@@ -1,5 +1,6 @@
-import {  Mesh, MeshBasicMaterial,  TextureLoader } from "three";
+import {  Mesh,  MeshStandardMaterial,  RepeatWrapping,  TextureLoader } from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import Observer, { EVENTS } from "../Observer";
 export class PlaneTest extends Mesh{
 
     constructor(){
@@ -13,17 +14,36 @@ export class PlaneTest extends Mesh{
             console.log(gltf.scene.children[0].children[0].children[0].children[0].children[0].children[0])   
             let lightMap =   new TextureLoader();
             lightMap.load('models3D/test/Lightmap-0_comp_light_m.png',(texture)=>{
-                const lamber = new MeshBasicMaterial({
+                const lamber = new MeshStandardMaterial({
                     color: 0x777777,
                     lightMap:texture,
                     map:this.piso.material.map,
-                    lightMapIntensity:0.1
+                    lightMapIntensity:1.5
                 })
                 this.piso.material = lamber
+                Observer.on(EVENTS.SENDPRODUCT,(payload)=>{
+                    console.log(payload.albedo)
+                    let mapDB =   new TextureLoader();
+                    mapDB.load(payload.albedo,(textureMap)=>{
+                        textureMap.wrapS = RepeatWrapping;
+                        textureMap.wrapT = RepeatWrapping;
+                        textureMap.repeat.set( payload.textureWidth, payload.textureHeight );
+                        mapDB.load(payload.normal,(textureNormal)=>{
+                            const uploadMaterial = new MeshStandardMaterial({
+                                color: 0x777777,
+                                lightMap:texture,
+                                map:textureMap,
+                                normalMap:textureNormal,
+                                lightMapIntensity:1.5
+                            })
+                            this.piso.material = uploadMaterial
+                        })
+                    })
+                    
+                })
             },undefined,( err )=> {
                 console.error( err );
             })
-            console.log(gltf.scene.children[0].children[0].children[0].children[0].children[0].children[0].material)   
             this.scale.x=20;
 			this.scale.y=20;
 			this.scale.z=20;

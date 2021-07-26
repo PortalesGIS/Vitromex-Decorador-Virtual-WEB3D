@@ -55,11 +55,13 @@
             <div class='px-2 pt-4 w-full max-h-full overflow-y-auto pb-80'>
               <div v-if="selected===0">
                 <div class='grid grid-cols-3'>
-                  <div v-for="x in 60" :key="x"
+                  <div v-for="product in getAllProducts" :key="product"
                     class="pb-2">
-                    <img src="https://random.imagecdn.app/300/300" class="object-cover rounded-md" style="width:89px; height:69px" alt="">
-                    <p class="text-white font-semibold text-cf" style="font-size:11px;">Coliseo Cream</p>
-                    <p class="text-white font-semibold text-cf" style="font-size:11px;">00x00</p>
+                    <div @click="selectProductForMap(product)" class="cursor-pointer">
+                      <img :src='product.smallPicture' class="object-cover rounded-md" style="width:89px; height:69px" alt="">
+                      <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.name}}</p>
+                      <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.sized}}</p>
+                    </div>
                   </div>
               </div>
               </div>              
@@ -84,7 +86,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
+import Observer, { EVENTS } from '../../three/Observer'
 export default {
   data() {
     return {
@@ -92,12 +95,19 @@ export default {
     }
   },
   methods: {
+    ...mapActions(["getProducts"]),
     changeMenuOption(value) {
       this.selected = value
+    },
+    selectProductForMap(product){
+      Observer.emit(EVENTS.SENDPRODUCT,product);
     }
   },
   computed: {
-    ...mapGetters(["getPageState"])
+    ...mapGetters(["getPageState","getAllProducts"])
+  },
+  created () {
+    this.getProducts()
   },
 }
 </script>
