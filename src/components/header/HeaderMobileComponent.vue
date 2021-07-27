@@ -22,14 +22,14 @@
       </div>
     </div>
   </div>
-  <div class="fixed right-0 px-2 pt-6">
-        <div class="w-11 h-11">
+  <div class="fixed right-0 px-2 pt-6 ">
+        <div class="w-11 h-11" @click="changeMenuAplicates">
             <img src="../../assets/mobile/Productos.svg" alt="">
         </div>
   </div> 
   <div 
   @click="openTutorial"
-  class="fixed left-0 px-2 pt-6">
+  class="fixed left-0 px-2 pt-6 ">
         <div class="w-9 h-9">
             <img src="../../assets/mobile/tutorial_icon.svg" alt="">
         </div>
@@ -38,7 +38,7 @@
         <TutorialAlertscomponentVue
          ref="tutorial"/>
   </div> 
-  <div v-if="menuMobile" class="bg-mobile-0a h-auto">
+  <div v-if="menuMobile" class="fixed bg-mobile-0a h-auto z-100 w-full animate__animated animate__fadeInDown animate__faster">
    <div class="w-full">
      <p 
      
@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex';
 import TutorialAlertscomponentVue from '../alerts/TutorialAlertscomponent.vue'
 export default {
     components: {
@@ -70,6 +70,7 @@ export default {
     }
   },
   methods: {
+      ...mapActions(["changeMenuAplicates"]),
       openTutorial() {
        this.$refs.tutorial.open();
     },

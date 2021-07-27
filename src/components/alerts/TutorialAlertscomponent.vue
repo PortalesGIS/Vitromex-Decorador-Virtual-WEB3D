@@ -1,6 +1,6 @@
 <template>
   <div v-if="tutorialText">
-          <div class="flex top-0 bg-black bg-opacity-90 w-80 h-auto xl:w-471 xl:h-52" >
+          <div class="flex top-0 bg-black bg-opacity-90 w-80 h-auto xl:w-471 xl:h-52 animate__animated animate__fadeIn animate__faster" >
             <div class="w-full h-full py-3 px-5">
               <div class="flex justify-between">
                 <p class="text-base text-white font-bold py-2 uppercase">{{text[tutorialTextPage].title}}</p>

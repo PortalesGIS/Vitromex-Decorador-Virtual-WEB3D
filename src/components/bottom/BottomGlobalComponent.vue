@@ -1,4 +1,10 @@
 <template>  
+<div class= "fixed right-0 -mt-16 pr-2">
+    <div class="w-11 h-11"
+        @click="changeMenuCatalogo">
+        <img src="../../assets/mobile/menu_catalogo.png" alt="">
+    </div>
+</div>
     <div class="h-16 lg:h-24 w-full bg-base-black-opacity">
         <div class="w-full h-full flex justify-center items-center">
             <div
@@ -48,12 +54,16 @@
                     </div>
             </div>
         </div>
+        
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
-
+    methods: {
+        ...mapActions(["changeMenuCatalogo"])
+    },
 }
 </script>
 

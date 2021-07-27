@@ -16,6 +16,7 @@ module.exports = {
         "2e":"var(--base-2e)",
         "67":"var(--base-67)",
         "mobile-0a":"var(--base-menu-mobile-0a)",
+        "back-catalogo":"var( --background-menu-catalogo)",
 
       }),
       textColor: theme => theme('colors'),

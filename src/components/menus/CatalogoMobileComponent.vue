@@ -1,22 +1,34 @@
 <template>
-  <div class="h-full pt-24 ">
-    <div class="h-full w-336 bg-base-black ">
-      <div class="px-4 pt-4 flex justify-between">
-        <div class="text-title text-xl font-bold">CATÁLOGO</div>
-        <div class="flex justify-center items-center">
-          <img  v-if="getPageState" src="../../assets/arko/Web/Filtros.svg" class="w-4 h-4" alt="">
-          <img v-else src="../../assets/web/Filtros.svg" class="w-4 h-4" alt="">
+  <div class="w-screen h-full bg-back-catalogo shadow-2xl rounded-xl overflow-y-hidden animate__animated animate__fadeInUp animate__faster">
+    <div class="h-9 w-full">
+        <div 
+        @click="changeMenuCatalogo"
+        class="w-full h-full flex justify-center items-center">
+            <img v-if="getPageState" src="../../assets/arko/Mobile/Cerrar_Dropdown.svg" alt="">
+            <img v-else src="../../assets/mobile/Cerrar_overlay.svg" alt="">
         </div>
-      </div>
-      <div class="fixed h-full w-336  px-2 pb-4 pt-4 bg-base-black">
-        <div class='w-full h-full bg-1d pr-1'>
-            <div class="w-full flex">
+    </div>
+    <div class="bg-base-black w-full h-full px-2 pt-5">
+        <div class="w-full flex justify-between">
+            <p class="font-bold text-2xl text-title">CATÁLOGO</p>
+            <div class="flex">
+                <div class="pr-5">
+                    <img v-if="getPageState" src="../../assets/arko/Mobile/Buscar.svg" class="w-6" alt="">
+                    <img v-else src="../../assets/web/Buscar.svg" class="w-6" alt="">
+                </div>
+                <div>
+                    <img v-if="getPageState" src="../../assets/arko/Web/Filtros.svg" class="w-6" alt="">
+                    <img v-else src="../../assets/web/Filtros.svg" class="w-6" alt="">
+                </div>
+            </div>
+        </div>  
+        <div class="w-full flex pt-5">
               <div 
               @click="changeMenuOption(0)"
               :class="(selected===0)?'bg-1d':'bg-0a'"
-              class="w-1/2 h-16 flex justify-center items-center cursor-pointer">
+              class="w-1/2 h-11 flex justify-center items-center cursor-pointer">
                <div >
-                  <p :class="(selected===0)?'text-subtitle text-xs font-bold':'text-subtitle opacity-30 text-base font-bold'">PRODUCTOS</p>
+                  <p :class="(selected===0)?'text-subtitle text-lg font-bold':'text-subtitle opacity-30 text-lg font-bold'">PRODUCTOS</p>
                   <div v-if="(selected===0)" class="pt-1  flex justify-center">
                     <div class="w-2/3 border border-menu-bar-select"></div>
                   </div>
@@ -25,16 +37,16 @@
               <div 
                @click="changeMenuOption(1)"
               :class="(selected===1)?'bg-1d':'bg-0a'"
-              class="w-1/2 h-16 flex justify-center items-center cursor-pointer">
+              class="w-1/2 h-11 flex justify-center items-center cursor-pointer">
                 <div >
-                  <p :class="(selected===1)?'text-subtitle text-xs font-bold':'text-subtitle opacity-30 text-base font-bold'">SERIES</p>
+                  <p :class="(selected===1)?'text-subtitle text-lg font-bold':'text-subtitle opacity-30 text-lg font-bold'">SERIES</p>
                   <div v-if="(selected===1)" class="pt-1  flex justify-center">
                     <div class="w-2/3 border border-menu-bar-select"></div>
                   </div>
                </div>
               </div>
-            </div>
-            <div class="pt-5">
+        </div> 
+         <div class="py-5 bg-1d">
               <div class="flex w-full justify-around items-center">
                 <div class="flex bg-menu-select-piso-muro rounded-full w-32 h-9 items-center justify-center">
                   <img src="../../assets/web/Piso.svg" class="w-5 h-4 object-cover" alt="">
@@ -45,20 +57,14 @@
                   <p class="pl-2 text-white text-sm font-semibold">Muro</p>
                 </div>
               </div>
-            </div>  
-            <div class="pt-5 px-2">
-              <div class="w-full flex items-center justify-between px-2 bg-6a rounded-full">
-                <input type="text" class="bg-transparent h-9 focus:border-none text-white outline-none pl-2" placeholder="Buscar...">
-                <img class="w-6 h-6" src="../../assets/web/Buscar.svg" alt="">
-              </div>
-            </div>  
-            <div class='px-2 pt-4 w-full max-h-full overflow-y-auto pb-80'>
+            </div> 
+            <div class='px-2 bg-1d  w-full h-5/6 overflow-y-auto pb-20'>
               <div v-if="selected===0">
-                <div class='grid grid-cols-3'>
-                  <div v-for="product in getAllProducts" :key="product"
+                <div class='grid grid-cols-3 sm:grid-cols-4'>
+                  <div v-for="(product) in getAllProducts" :key="product"
                     class="pb-2">
-                    <div @click="selectProductForMap(product)" class="cursor-pointer">
-                      <img :src='product.smallPicture' class="object-cover rounded-md" style="width:89px; height:69px" alt="">
+                    <div  @click="selectProductForMap(product)" class="cursor-pointer px-1">
+                      <img :src='product.smallPicture' class="object-cover rounded-md w-full h-full" style="max-height:80px; max-width:119px" alt="">
                       <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.name}}</p>
                       <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.sized}}</p>
                     </div>
@@ -79,8 +85,6 @@
               </div>
               </div>
             </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -89,21 +93,21 @@
 import { mapActions, mapGetters } from 'vuex'
 import Observer, { EVENTS } from '../../three/Observer'
 export default {
-  data() {
-    return {
-      selected: 0
-    }
-  },
-  methods: {
-    ...mapActions(["getProducts"]),
-    changeMenuOption(value) {
+    data() {
+        return {
+             selected: 0
+        }
+    },
+    methods: {
+    ...mapActions(["getProducts","changeMenuCatalogo"]),
+        changeMenuOption(value) {
       this.selected = value
     },
     selectProductForMap(product){
       Observer.emit(EVENTS.SENDPRODUCT,product);
     }
-  },
-  computed: {
+    },
+computed: {
     ...mapGetters(["getPageState","getAllProducts"])
   },
   created () {
@@ -112,31 +116,6 @@ export default {
 }
 </script>
 
-<style scoped>
-::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
-::-webkit-scrollbar-track {
-  background-color: #ffffff;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #585858;
-  background-clip: content-box;
-   border-radius: 20px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: #585858;
-   border-radius: 20px;
-}
-.opacity-fond{
-    background: rgba(17, 17, 17, 0.4);
-}
+<style>
+
 </style>
