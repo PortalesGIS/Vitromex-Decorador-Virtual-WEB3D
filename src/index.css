@@ -21,6 +21,7 @@
         --base-bg-cf:#cfcfcf; 
         --base-menu-mobile-0a:#0a0a0a;
         --background-menu-catalogo:#1f1f1f;
+        --btn-filter:#1f1f1f;
     }
     .theme-arko{
         --base-black: #FFFFFF;
@@ -39,5 +40,6 @@
         --base-bg-cf:#8b8b8b; 
         --base-menu-mobile-0a:#ffffff;
         --background-menu-catalogo:#dadada;
+        --btn-filter:#ffffff;
     }
 }

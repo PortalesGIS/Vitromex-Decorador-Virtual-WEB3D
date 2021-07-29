@@ -8,7 +8,7 @@
             <img v-else src="../../assets/mobile/Cerrar_overlay.svg" alt="">
         </div>
     </div>
-    <div class="bg-base-black w-full h-full px-2 pt-5">
+    <div v-if="!isFiltersOpen" class="bg-base-black w-full h-full px-2 pt-5">
         <div class="w-full flex justify-between">
             <p class="font-bold text-2xl text-title">CATÁLOGO</p>
             <div class="flex">
@@ -16,7 +16,7 @@
                     <img v-if="getPageState" src="../../assets/arko/Mobile/Buscar.svg" class="w-6" alt="">
                     <img v-else src="../../assets/web/Buscar.svg" class="w-6" alt="">
                 </div>
-                <div>
+                <div @click="openFiltersMenu">
                     <img v-if="getPageState" src="../../assets/arko/Web/Filtros.svg" class="w-6" alt="">
                     <img v-else src="../../assets/web/Filtros.svg" class="w-6" alt="">
                 </div>
@@ -86,16 +86,26 @@
               </div>
             </div>
     </div>
+    <div v-else class="bg-base-black w-full h-full px-2 pt-5 animate__animated animate__fadeInRight animate__faster">
+        <FiltersMobileComponentVue
+        :cerrarFiltro="cerrarFiltro"
+        />
+    </div>    
   </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import Observer, { EVENTS } from '../../three/Observer'
+import FiltersMobileComponentVue from './FiltersMobileComponent.vue'
 export default {
+    components: {
+        FiltersMobileComponentVue,
+    },
     data() {
         return {
-             selected: 0
+             selected: 0,
+             isFiltersOpen:false,
         }
     },
     methods: {
@@ -105,6 +115,12 @@ export default {
     },
     selectProductForMap(product){
       Observer.emit(EVENTS.SENDPRODUCT,product);
+    },
+    openFiltersMenu(){
+        this.isFiltersOpen=true;
+    },
+    cerrarFiltro(){
+        this.isFiltersOpen=false;
     }
     },
 computed: {

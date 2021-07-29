@@ -16,7 +16,7 @@
               :class="(selected===0)?'bg-1d':'bg-0a'"
               class="w-1/2 h-16 flex justify-center items-center cursor-pointer">
                <div >
-                  <p :class="(selected===0)?'text-subtitle text-xs font-bold':'text-subtitle opacity-30 text-base font-bold'">PRODUCTOS</p>
+                  <p :class="(selected===0)?'text-subtitle text-base font-bold':'text-subtitle opacity-30 text-base font-bold'">PRODUCTOS</p>
                   <div v-if="(selected===0)" class="pt-1  flex justify-center">
                     <div class="w-2/3 border border-menu-bar-select"></div>
                   </div>
@@ -27,7 +27,7 @@
               :class="(selected===1)?'bg-1d':'bg-0a'"
               class="w-1/2 h-16 flex justify-center items-center cursor-pointer">
                 <div >
-                  <p :class="(selected===1)?'text-subtitle text-xs font-bold':'text-subtitle opacity-30 text-base font-bold'">SERIES</p>
+                  <p :class="(selected===1)?'text-subtitle text-base font-bold':'text-subtitle opacity-30 text-base font-bold'">SERIES</p>
                   <div v-if="(selected===1)" class="pt-1  flex justify-center">
                     <div class="w-2/3 border border-menu-bar-select"></div>
                   </div>
