@@ -8,6 +8,7 @@
     </div>
     <div class=" absolute top-0 h-20 lg:h-24 w-screen ">
       <div class='grid grid-cols-12 gap-1 h-full'>
+         <div class="col-span-1 xl:col-span-1 flex items-center justify-center h-full"></div>
           <div class="col-span-2 xl:col-span-2 flex items-center justify-center h-full">
             <img  v-if="getPageState" src="../../assets/arko/Web/ARKO_Logo.svg" style="width:223px; height:52px" alt="">
             <img v-else src="../../assets/web/Logo_Vitromex.svg" style="width:223px; height:52px" alt="">
@@ -15,7 +16,7 @@
           <div class="col-span-2 xl:col-span-2 flex items-center justify-center h-full">
             <p class="text-title text-2xl xl:text-3xl font-bold">MI PROYECTO</p>
             </div>
-            <div class="col-span-3 xl:col-span-4">              
+            <div class="col-span-3 xl:col-span-3">              
             </div>
             <div class="col-span-5 xl:col-span-4 h-full">
               <div class="pr-28 flex items-center h-full justify-around ">

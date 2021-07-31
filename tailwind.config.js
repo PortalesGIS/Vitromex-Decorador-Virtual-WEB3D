@@ -18,6 +18,7 @@ module.exports = {
         "mobile-0a":"var(--base-menu-mobile-0a)",
         "back-catalogo":"var( --background-menu-catalogo)",
         "btn-filter":"var(--btn-filter)",
+        "filter-options":"var( --bg-filter-options)",
 
       }),
       textColor: theme => theme('colors'),
@@ -26,6 +27,7 @@ module.exports = {
         'subtitle': 'var(--text-subtitle)',        
         'cf': 'var( --base-cf)',        
         'cf2': 'var(--base-bg-cf)',        
+        'text-filter': 'var(--text-clor-filter-base)',        
       },
       borderColor: theme => ({
         ...theme('colors'),

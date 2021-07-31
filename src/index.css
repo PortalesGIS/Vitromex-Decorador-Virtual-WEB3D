@@ -22,9 +22,13 @@
         --base-menu-mobile-0a:#0a0a0a;
         --background-menu-catalogo:#1f1f1f;
         --btn-filter:#1f1f1f;
+        --bg-filter-options:#1f1f1f;
+        --text-clor-filter-base:#d1d1d1;
     }
     .theme-arko{
         --base-black: #FFFFFF;
+        --bg-filter-options:#EEEEEE;
+        --text-clor-filter-base:#676767;
         --base-white: #000000;
         --base-black-opacity: rgba(255,255,255,0.5);
         --text-title:#373737;
@@ -43,3 +47,49 @@
         --btn-filter:#ffffff;
     }
 }
+
+@font-face {
+    font-family: monserrat;
+    src: url("./assets/fonts/Montserrat_Regular.ttf");
+  }
+@font-face {
+    font-family: monserrat_bold;
+    src: url("./assets/fonts/Montserrat_Bold.otf");
+  }
+@font-face {
+    font-family: monserrat_semibold;
+    src: url("./assets/fonts/Montserrat_SemiBold.otf");
+  }
+@font-face {
+    font-family: monserrat_light;
+    src: url("./assets/fonts/Montserrat_Light.ttf");
+  }
+@font-face {
+    font-family: gotham;
+    src: url("./assets/fonts/Gotham_Bold.otf");
+  }
+@font-face {
+    font-family: gotham_light;
+    src: url("./assets/fonts/Gotham_Light.ttf");
+  }
+
+
+.gotham{
+    font-family:gotham
+}
+.gotham-light{
+    font-family:gotham_light
+}
+.monserrat-light{
+    font-family:monserrat_light
+}
+.monserrat {
+  font-family: monserrat;
+}
+.moserrat-bold{
+    font-family:monserrat_bold
+}
+.moserrat-semibold{
+    font-family:monserrat_semibold
+}
+

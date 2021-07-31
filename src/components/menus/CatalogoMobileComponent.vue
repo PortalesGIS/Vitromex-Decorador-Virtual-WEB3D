@@ -10,7 +10,7 @@
     </div>
     <div v-if="!isFiltersOpen" class="bg-base-black w-full h-full px-2 pt-5">
         <div class="w-full flex justify-between">
-            <p class="font-bold text-2xl text-title">CATÁLOGO</p>
+            <p class="font-bold moserrat-bold text-2xl text-title">CATÁLOGO</p>
             <div class="flex">
                 <div class="pr-5">
                     <img v-if="getPageState" src="../../assets/arko/Mobile/Buscar.svg" class="w-6" alt="">
@@ -28,7 +28,8 @@
               :class="(selected===0)?'bg-1d':'bg-0a'"
               class="w-1/2 h-11 flex justify-center items-center cursor-pointer">
                <div >
-                  <p :class="(selected===0)?'text-subtitle text-lg font-bold':'text-subtitle opacity-30 text-lg font-bold'">PRODUCTOS</p>
+                  <p v-if="getPageState" :class="(selected===0)?'text-subtitle text-lg monserrat-light':'text-subtitle opacity-30 text-lg monserrat-light font-bold'">PRODUCTOS</p>
+                  <p v-else :class="(selected===0)?'text-subtitle text-lg  moserrat-bold':'text-subtitle opacity-30 text-lg moserrat-bold font-bold'">PRODUCTOS</p>
                   <div v-if="(selected===0)" class="pt-1  flex justify-center">
                     <div class="w-2/3 border border-menu-bar-select"></div>
                   </div>
@@ -39,7 +40,8 @@
               :class="(selected===1)?'bg-1d':'bg-0a'"
               class="w-1/2 h-11 flex justify-center items-center cursor-pointer">
                 <div >
-                  <p :class="(selected===1)?'text-subtitle text-lg font-bold':'text-subtitle opacity-30 text-lg font-bold'">SERIES</p>
+                  <p v-if="getPageState" :class="(selected===1)?'text-subtitle text-lg monserrat-light':'text-subtitle opacity-30 text-lg monserrat-light'">SERIES</p>
+                  <p v-else :class="(selected===1)?'text-subtitle text-lg font-bold moserrat-bold':'text-subtitle opacity-30 text-lg font-bold moserrat-bold'">SERIES</p>
                   <div v-if="(selected===1)" class="pt-1  flex justify-center">
                     <div class="w-2/3 border border-menu-bar-select"></div>
                   </div>
@@ -48,11 +50,15 @@
         </div> 
          <div class="py-5 bg-1d">
               <div class="flex w-full justify-around items-center">
-                <div class="flex bg-menu-select-piso-muro rounded-full w-32 h-9 items-center justify-center">
+                <div class="flex bg-menu-select-piso-muro rounded-full w-32 h-9 items-center justify-center"
+                      @click="selectAplication(1)"
+                      :class="aplicationsSelected===1?'':'opacity-50'">
                   <img src="../../assets/web/Piso.svg" class="w-5 h-4 object-cover" alt="">
                   <p class="pl-2 text-white text-sm font-semibold">Piso</p>
                 </div>
-                <div class="flex bg-menu-select-piso-muro rounded-full w-32 h-9 items-center justify-center">
+                <div class="flex bg-menu-select-piso-muro rounded-full w-32 h-9 items-center justify-center"
+                 @click="selectAplication(0)"
+                   :class="aplicationsSelected===0?'':'opacity-50'">
                   <img src="../../assets/web/Piso.svg" class="w-5 h-4 object-cover transform -rotate-90 " alt="">
                   <p class="pl-2 text-white text-sm font-semibold">Muro</p>
                 </div>
@@ -66,7 +72,7 @@
                     <div  @click="selectProductForMap(product)" class="cursor-pointer px-1">
                       <img :src='product.smallPicture' class="object-cover rounded-md w-full h-full" style="max-height:80px; max-width:119px" alt="">
                       <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.name}}</p>
-                      <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.sized}}</p>
+                      <p class="text-white monserrat-light text-cf" style="font-size:11px;">{{product.sized}}</p>
                     </div>
                   </div>
               </div>
@@ -105,6 +111,7 @@ export default {
     data() {
         return {
              selected: 0,
+             aplicationsSelected:1,
              isFiltersOpen:false,
         }
     },
@@ -121,6 +128,9 @@ export default {
     },
     cerrarFiltro(){
         this.isFiltersOpen=false;
+    },
+    selectAplication(selected){
+      this.aplicationsSelected = selected
     }
     },
 computed: {

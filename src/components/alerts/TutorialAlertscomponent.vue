@@ -3,18 +3,18 @@
           <div class="flex top-0 bg-black bg-opacity-90 w-80 h-auto xl:w-471 xl:h-52 animate__animated animate__fadeIn animate__faster" >
             <div class="w-full h-full py-3 px-5">
               <div class="flex justify-between">
-                <p class="text-base text-white font-bold py-2 uppercase">{{text[tutorialTextPage].title}}</p>
+                <p class="text-base moserrat-bold text-white font-bold py-2 uppercase">{{text[tutorialTextPage].title}}</p>
                 <img  
                 @click="close"
                 class="h-4 w-4 cursor-pointer" src="../../assets/web/Cerrar.svg" alt="">
               </div>
               <div class="py-2">
-                <p class="text-sm text-white font-normal">{{text[tutorialTextPage].parr}}</p>
+                <p class="text-sm text-white monserrat">{{text[tutorialTextPage].parr}}</p>
               </div>
               <div class="py-2 w-full flex justify-end">
                 <button 
                 @click="nextTutorialPage"
-                class="text-base text-white font-bold py-2 focus:outline-none">{{tutorialTextPage===4?'ENTENDIDO':'SIGUIENTE'}}</button>
+                class="text-base text-white moserrat-bold py-2 focus:outline-none">{{tutorialTextPage===4?'ENTENDIDO':'SIGUIENTE'}}</button>
               </div>
             </div>
           </div>
