@@ -19,12 +19,15 @@ module.exports = {
         "back-catalogo":"var( --background-menu-catalogo)",
         "btn-filter":"var(--btn-filter)",
         "filter-options":"var( --bg-filter-options)",
+        "base-menu-aplications":"var(--base-menu-aplications)",
 
       }),
       textColor: theme => theme('colors'),
       textColor: {
+        "force-cf":"#CFCFCF",
         'title': 'var(--text-title)',        
         'subtitle': 'var(--text-subtitle)',        
+        'cf-aplicates': 'var(--text-cf)',        
         'cf': 'var( --base-cf)',        
         'cf2': 'var(--base-bg-cf)',        
         'text-filter': 'var(--text-clor-filter-base)',        

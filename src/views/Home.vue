@@ -19,11 +19,16 @@
     <div class="z-40 hidden lg:block  absolute top-0 h-full">
       <LateralMenuComponentVue/>
     </div>
+    <!-- menus mobile -->
     <div 
     v-if="getMenuCatalogo"
     class="z-75 block lg:hidden fixed top-0 pt-16 h-full bg-black bg-opacity-50 animate__animated animate__fadeIn animate__faster" >
       <CatalogoMobileComponentVue/>
     </div>
+    <div v-if="getMenuAplicates">
+       <AplicatesMobileComponentVue/>
+    </div>
+    <!--ENDs menus mobile -->
     <div class="z-20 block fixed inset-x-0 bottom-0 ">      
       <BottomGlobalComponentVue/>
     </div>  
@@ -41,13 +46,14 @@ import  { mapGetters,mapActions } from 'vuex'
 import Home3DComponentVue from '../components/3D/Home3DComponent.vue'
 import BottomGlobalComponentVue from '../components/bottom/BottomGlobalComponent.vue'
 import HeaderGlobalComponentVue from '../components/header/HeaderGlobalComponent.vue'
+import AplicatesMobileComponentVue from '../components/menus/AplicatesMobileComponent.vue'
 import CatalogoMobileComponentVue from '../components/menus/CatalogoMobileComponent.vue'
 import FiltersMenuWebVue from '../components/menus/FiltersMenuWeb.vue'
 import LateralMenuComponentVue from '../components/menus/LateralMenuComponent.vue'
 import RightMenuDesktopComponentVue from '../components/menus/RightMenuDesktopComponent.vue'
-
 export default {
   components: {
+    AplicatesMobileComponentVue,
     HeaderGlobalComponentVue,
     LateralMenuComponentVue,
     Home3DComponentVue,
@@ -62,7 +68,7 @@ export default {
     ...mapActions(["onChangeStatePage"]),
   },
   computed: {
-    ...mapGetters(["getPageState","getMenuCatalogo"])
+    ...mapGetters(["getPageState","getMenuCatalogo","getMenuAplicates"])
   },
     
 }

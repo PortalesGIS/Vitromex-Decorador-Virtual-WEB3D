@@ -10,6 +10,7 @@
         --base-black-opacity: rgba(0,0,0,0.5);
         --text-title:#ffffff;
         --base-1d:#1D1D1D;
+        --base-menu-aplications:#1D1D1D;
         --base-oa:#0A0A0A;
         --text-subtitle:#ffffff;
         --border-menu:#FFFFFF;
@@ -24,12 +25,14 @@
         --btn-filter:#1f1f1f;
         --bg-filter-options:#1f1f1f;
         --text-clor-filter-base:#d1d1d1;
+        --text-cf:#CFCFCF;
     }
     .theme-arko{
         --base-black: #FFFFFF;
         --bg-filter-options:#EEEEEE;
         --text-clor-filter-base:#676767;
         --base-white: #000000;
+        --base-menu-aplications:#FFFFFF;
         --base-black-opacity: rgba(255,255,255,0.5);
         --text-title:#373737;
         --base-1d:#DEDEDE;
@@ -45,6 +48,7 @@
         --base-menu-mobile-0a:#ffffff;
         --background-menu-catalogo:#dadada;
         --btn-filter:#ffffff;
+        --text-cf:#646464;
     }
 }
 
