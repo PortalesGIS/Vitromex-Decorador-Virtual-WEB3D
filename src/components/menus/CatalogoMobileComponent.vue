@@ -58,8 +58,10 @@
               :class="(selected===0)?'bg-1d':'bg-0a'"
               class="w-1/2 h-11 flex justify-center items-center cursor-pointer">
                <div >
-                  <p v-if="getPageState" :class="(selected===0)?'text-subtitle text-lg monserrat-light':'text-subtitle opacity-30 text-lg monserrat-light font-bold'">PRODUCTOS</p>
-                  <p v-else :class="(selected===0)?'text-subtitle text-lg  moserrat-bold':'text-subtitle opacity-30 text-lg moserrat-bold font-bold'">PRODUCTOS</p>
+                  <p v-if="getPageState" :class="(selected===0)?'text-subtitle text-lg monserrat-light':
+                  'text-subtitle opacity-30 text-lg monserrat-light font-bold'">PRODUCTOS</p>
+                  <p v-else :class="(selected===0)?'text-subtitle text-lg  moserrat-bold':
+                  'text-subtitle opacity-30 text-lg moserrat-bold font-bold'">PRODUCTOS</p>
                   <div v-if="(selected===0)" class="pt-1  flex justify-center">
                     <div class="w-2/3 border border-menu-bar-select"></div>
                   </div>
@@ -70,8 +72,10 @@
               :class="(selected===1)?'bg-1d':'bg-0a'"
               class="w-1/2 h-11 flex justify-center items-center cursor-pointer">
                 <div >
-                  <p v-if="getPageState" :class="(selected===1)?'text-subtitle text-lg monserrat-light':'text-subtitle opacity-30 text-lg monserrat-light'">SERIES</p>
-                  <p v-else :class="(selected===1)?'text-subtitle text-lg font-bold moserrat-bold':'text-subtitle opacity-30 text-lg font-bold moserrat-bold'">SERIES</p>
+                  <p v-if="getPageState" :class="(selected===1)?'text-subtitle text-lg monserrat-light':
+                  'text-subtitle opacity-30 text-lg monserrat-light'">SERIES</p>
+                  <p v-else :class="(selected===1)?'text-subtitle text-lg font-bold moserrat-bold':
+                  'text-subtitle opacity-30 text-lg font-bold moserrat-bold'">SERIES</p>
                   <div v-if="(selected===1)" class="pt-1  flex justify-center">
                     <div class="w-2/3 border border-menu-bar-select"></div>
                   </div>
@@ -109,14 +113,16 @@
               </div>              
               <div v-else>
                 <div class='grid grid-cols-2'>
-                  <div v-for="x in 40" :key="x"
+                  <div v-for="serie in getAllSeries" :key="serie"
                     class="pb-2 relative cursor-pointer">
-                   <div class="relative">
-                      <img src="https://random.imagecdn.app/300/300" class="object-cover rounded-md" style="width:140px; height:140px" alt="">   
+                   <div @click="onSelectSerie({camp:'serie',data:`${serie.name}`})">
+                     <div class="relative flex items-center justify-center">
+                      <img :src="serie.img" class="object-cover rounded-md" style="width:140px; height:140px" alt="">   
                      </div>                                                        
                      <div class="absolute top-0 w-full h-full flex justify-center items-center">
-                       <p class="text-white font-bold text-base">AIZEN</p>
+                       <p class="text-white font-bold text-base">{{serie.name}}</p>
                      </div>
+                   </div>
                   </div>
               </div>
               </div>
@@ -149,7 +155,7 @@ export default {
     },
     methods: {
     ...mapActions(["changeMenuCatalogo","filterProductsForString",
-                  "deleteFilters","deleteOneFilter","filterProducts"]),
+                  "deleteFilters","deleteOneFilter","filterProducts","addFilterAplicates"]),
         changeMenuOption(value) {
       this.selected = value
     },
@@ -157,13 +163,18 @@ export default {
       this.filterProductsForString({word:this.stringSearch})
     },
     onDeleteFilter(item){
-      if(item.camp==="typologies"){
+      if(item.camp==="typologies" || item.camp==="serie"){
         this.deleteFilters()
       }
       else{
         this.deleteOneFilter(item)
         this.filterProducts()
       }
+    },
+    onSelectSerie(payload){
+      this.addFilterAplicates(payload)            
+      this.filterProducts()
+      this.selected=0
     },
     selectProductForMap(product){
       Observer.emit(EVENTS.SENDPRODUCT,product);
@@ -182,7 +193,8 @@ export default {
     }
     },
 computed: {
-    ...mapGetters(["getPageState","getAllProducts","getFiltersAplicates"])
+    ...mapGetters(["getPageState","getAllProducts",
+    "getFiltersAplicates","getAllSeries"])
   },
 }
 </script>

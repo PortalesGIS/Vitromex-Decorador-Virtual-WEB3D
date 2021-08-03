@@ -1,14 +1,13 @@
 
 export const addFilterAplicates = ({commit,getters},payload)=>{
     let aplicates=[]
-    if(payload.camp === "typologies"){
+    if(payload.camp === "typologies" ||payload.camp === "serie" ){
         aplicates = [payload];
     }
     else{
         aplicates = [...getters.getFiltersAplicates]
         aplicates.push(payload)
     }
-    console.log(aplicates)
     commit("setFilterAplicates",aplicates)
 }
 

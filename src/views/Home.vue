@@ -65,13 +65,14 @@ export default {
   data() {
   },  
   methods: {
-    ...mapActions(["onChangeStatePage","getProducts"]),
+    ...mapActions(["onChangeStatePage","getProducts","getSeries"]),
   },
   computed: {
     ...mapGetters(["getPageState","getMenuCatalogo","getMenuAplicates"])
   },
   created () {
     this.getProducts()
+    this.getSeries()
   },
     
 }

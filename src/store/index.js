@@ -8,12 +8,17 @@ import * as mutationsMenus from './menus/mutationsMenus'
 import * as actionsFilters from './filters/actionsFilters'
 import * as gettersFilters from './filters/gettersFilters'
 import * as mutationsFilters from './filters/mutationsFilters'
+import * as actionsSeries from './series/actionsSeries'
+import * as gettersSeries from './series/gettersSeries'
+import * as mutationsSeries from './series/mutationsSeries'
 
 export default createStore({
   state: {
     pageState:false,
     listProducts:[],
     listProductsFilter:[],
+    listSeries:[],
+    listSeriesFilter:[],
     menuAplicates:false,
     menuCatalogo:false,
     filtersAplicates:[]
@@ -22,6 +27,7 @@ export default createStore({
     ...mutationsProducts,
     ...mutationsMenus,
     ...mutationsFilters,
+    ...mutationsSeries,
     setStatePage(state,payload){
       state.pageState = payload
     }
@@ -30,6 +36,7 @@ export default createStore({
     ...actionsProducts,
     ...actionsMenus,
     ...actionsFilters,
+    ...actionsSeries,
     onChangeStatePage({commit},payload){ 
       // router.push("/")     
       commit("setStatePage",payload);
@@ -39,6 +46,7 @@ export default createStore({
     ...gettersProducts,
     ...gettersMenus,
     ...gettersFilters,
+    ...gettersSeries,
     getPageState(state){
       return state.pageState;
     }
