@@ -15,6 +15,8 @@ module.exports = {
         "6a":"var(--base-6a)",
         "2e":"var(--base-2e)",
         "67":"var(--base-67)",
+        "filter-use":"var(--filter-use)",
+        "line-catalogo":"var(--bg-line)",
         "mobile-0a":"var(--base-menu-mobile-0a)",
         "back-catalogo":"var( --background-menu-catalogo)",
         "btn-filter":"var(--btn-filter)",
@@ -30,12 +32,15 @@ module.exports = {
         'cf-aplicates': 'var(--text-cf)',        
         'cf': 'var( --base-cf)',        
         'cf2': 'var(--base-bg-cf)',        
+        'filter-aplicate': 'var(--text-filter-aplicate)',        
         'text-filter': 'var(--text-clor-filter-base)',        
       },
       borderColor: theme => ({
         ...theme('colors'),
          DEFAULT: theme('colors.gray.300', 'currentColor'),
         'menu-bar-select': 'var( --border-menu)',
+        'buscar-dorado': 'var(--dorado)',
+
        }),
       width:{
         "336":"336px",

@@ -15,7 +15,8 @@
             </div>
             <div>
                 <button class="bg-btn-filter w-28 h-6 focus:outline-none shadow-btn-filter"
-                            :class="getPageState?'text-xs text-black  gotham-light':'text-xs text-white moserrat-bold'" >
+                            :class="getPageState?'text-xs text-black  gotham-light':'text-xs text-white moserrat-bold'" 
+                            @click="onDeleteFilters()">
                     Quitar filtros
                 </button>
             </div>
@@ -38,9 +39,10 @@
                     </div>          
            </div>
             <div v-if="!tipologie" class="w-full h-auto flex flex-wrap">
-                <div v-for="item in 15" :key="item" class="flex-auto">
-                    <div class="px-2 py-1">
-                        <p class="py-1 px-4 text-center bg-filter-options rounded-md text-xs text-text-filter">lorem</p>
+                <div v-for="item in getAllTypologies" :key="item" class="flex-auto">
+                    <div class="px-2 py-1"
+                    @click="onFilter({camp:'typologies',data:`${item}`})">
+                        <p class="py-1 px-4 text-center bg-filter-options rounded-md text-xs text-text-filter">{{item}}</p>
                     </div>
                 </div>
             </div>
@@ -62,9 +64,10 @@
                     </div>          
            </div>
            <div v-if="!fomat" class="w-full h-auto flex flex-wrap">
-                <div v-for="item in 15" :key="item" class="flex-auto">
-                    <div class="px-2 py-1">
-                        <p class="py-1 px-4 text-center bg-filter-options rounded-md text-xs text-text-filter">lorem</p>
+                <div v-for="item in getAllFormats" :key="item" class="flex-auto">
+                    <div class="px-2 py-1"
+                       @click="onFilter({camp:'sized',data:`${item}`})">
+                        <p class="py-1 px-4 text-center bg-filter-options rounded-md text-xs text-text-filter">{{item}}</p>
                     </div>
                 </div>
             </div>
@@ -86,9 +89,10 @@
                     </div>          
            </div>
            <div v-if="!color" class="w-full h-auto flex flex-wrap">
-                <div v-for="item in 15" :key="item" class="flex-auto">
-                    <div class="px-2 py-1">
-                        <p class="py-1 px-4 text-center bg-filter-options rounded-md text-xs text-text-filter">lorem</p>
+                <div v-for="item in getAllColors" :key="item" class="flex-auto">
+                    <div class="px-2 py-1"
+                      @click="onFilter({camp:'color',data:`${item}`})">
+                        <p class="py-1 px-4 text-center bg-filter-options rounded-md text-xs text-text-filter">{{item}}</p>
                     </div>
                 </div>
             </div>
@@ -110,9 +114,10 @@
                     </div>          
            </div>
            <div v-if="!finish" class="w-full h-auto flex flex-wrap">
-                <div v-for="item in 15" :key="item" class="flex-auto">
-                    <div class="px-2 py-1">
-                        <p class="py-1 px-4 text-center bg-filter-options rounded-md text-xs text-text-filter">lorem</p>
+                <div v-for="item in getAllFinish" :key="item" class="flex-auto">
+                    <div class="px-2 py-1"
+                      @click="onFilter({camp:'finish',data:`${item}`})">
+                        <p class="py-1 px-4 text-center bg-filter-options rounded-md text-xs text-text-filter">{{item}}</p>
                     </div>
                 </div>
             </div>
@@ -122,7 +127,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
     data() {
         return {
@@ -130,6 +135,7 @@ export default {
             fomat:true,
             color:true,
             finish:true,
+            filtersAplicates:[]
         }
     },
     props: {
@@ -139,8 +145,17 @@ export default {
         },
     },
     methods: {
+        ...mapActions(["filterProducts","deleteFilters"]),
         toggleFilterTipologie(){
             this.tipologie =!this.tipologie
+        },
+        onDeleteFilters(){
+            this.filtersAplicates=[]
+            this.deleteFilters()
+        },
+        onFilter(payload){
+            this.filtersAplicates.push(payload)
+            this.filterProducts(this.filtersAplicates)
         },
         toggleFilteformat(){
             this.fomat =!this.fomat
@@ -153,7 +168,12 @@ export default {
         },
     },
     computed: {
-        ...mapGetters(["getPageState"])
+        ...mapGetters(["getPageState",
+        "getAllTypologies",
+        "getAllFormats",
+        "getAllColors",
+        "getAllFinish",
+        ])
     },
 
 }

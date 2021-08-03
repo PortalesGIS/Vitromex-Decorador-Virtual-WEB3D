@@ -7,6 +7,7 @@
     :root{
         --base-black: #000000;
         --base-white: #ffffff;
+        --filter-use:#ffffff;
         --base-black-opacity: rgba(0,0,0,0.5);
         --text-title:#ffffff;
         --base-1d:#1D1D1D;
@@ -26,8 +27,15 @@
         --bg-filter-options:#1f1f1f;
         --text-clor-filter-base:#d1d1d1;
         --text-cf:#CFCFCF;
-    }
-    .theme-arko{
+        --text-filter-aplicate:#3E3E3E;
+        --dorado:transparent;
+        --bg-line:#858585;
+      }
+      .theme-arko{
+        --bg-line:#B7B7B7;
+        --text-filter-aplicate:#FFFFFF;
+        --dorado:#D9CEA8;
+        --filter-use:#494949;
         --base-black: #FFFFFF;
         --bg-filter-options:#EEEEEE;
         --text-clor-filter-base:#676767;

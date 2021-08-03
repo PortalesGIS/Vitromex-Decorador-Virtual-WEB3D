@@ -90,7 +90,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import {  mapGetters } from 'vuex'
 import Observer, { EVENTS } from '../../three/Observer'
 export default {
   data() {
@@ -100,7 +100,6 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["getProducts"]),
     changeMenuOption(value) {
       this.selected = value
     },
@@ -113,9 +112,6 @@ export default {
   },
   computed: {
     ...mapGetters(["getPageState","getAllProducts"])
-  },
-  created () {
-    this.getProducts()
   },
 }
 </script>

@@ -10,6 +10,7 @@ export default createStore({
   state: {
     pageState:false,
     listProducts:[],
+    listProductsFilter:[],
     menuAplicates:false,
     menuCatalogo:false
   },

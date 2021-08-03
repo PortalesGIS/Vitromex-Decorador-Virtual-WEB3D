@@ -9,10 +9,11 @@
         </div>
     </div>
     <div v-if="!isFiltersOpen" class="bg-base-black w-full h-full px-2 pt-5">
-        <div class="w-full flex justify-between">
+        <div v-if="!isActiveBuscar" class="w-full flex justify-between">
             <p class="font-bold moserrat-bold text-2xl text-title">CATÁLOGO</p>
             <div class="flex">
-                <div class="pr-5">
+                <div class="pr-5"
+                @click="toggleActiveBuscar">
                     <img v-if="getPageState" src="../../assets/arko/Mobile/Buscar.svg" class="w-6" alt="">
                     <img v-else src="../../assets/web/Buscar.svg" class="w-6" alt="">
                 </div>
@@ -22,6 +23,34 @@
                 </div>
             </div>
         </div>  
+        <div v-else class="w-full flex py-1 justify-between">
+          <div class="flex w-full mx-2 px-4 rounded-full bg-6a border border-buscar-dorado ">
+            <input type="text" class="w-full bg-6a focus:outline-none text-title" placeholder="Buscar..."
+             v-model="stringSearch"
+             @input="chngeInput">
+            <div class="flex items-center">
+                    <img v-if="getPageState" src="../../assets/arko/Mobile/Buscar.svg" class="w-6" alt="">
+                    <img v-else src="../../assets/web/Buscar.svg" class="w-6" alt="">
+                </div>
+          </div>
+            <div class="flex">
+                <div @click="openFiltersMenu">
+                    <img v-if="getPageState" src="../../assets/arko/Web/Filtros.svg" class="w-6" alt="">
+                    <img v-else src="../../assets/web/Filtros.svg" class="w-6" alt="">
+                </div>
+            </div>
+        </div> 
+        <div v-if="true" class="pt-5">
+            <div class="w-full bg-line-catalogo" style="height:1px;"></div>
+            <div class="flex flex-wrap pt-2">
+              <div v-for="item in 3" :key="item.id">
+                <div class="bg-filter-use text-xs px-1 py-1 mx-2 moserrat-semibold flex items-center rounded-sm text-filter-aplicate">
+                  <p>lorem</p>
+                  <p class="pl-3">x</p>
+                </div>
+              </div>
+            </div>
+        </div>
         <div class="w-full flex pt-5">
               <div 
               @click="changeMenuOption(0)"
@@ -113,18 +142,26 @@ export default {
              selected: 0,
              aplicationsSelected:1,
              isFiltersOpen:false,
+             isActiveBuscar:false,
+             stringSearch:""
         }
     },
     methods: {
-    ...mapActions(["getProducts","changeMenuCatalogo"]),
+    ...mapActions(["changeMenuCatalogo","filterProductsForString"]),
         changeMenuOption(value) {
       this.selected = value
+    },
+    chngeInput(){
+      this.filterProductsForString({word:this.stringSearch})
     },
     selectProductForMap(product){
       Observer.emit(EVENTS.SENDPRODUCT,product);
     },
     openFiltersMenu(){
         this.isFiltersOpen=true;
+    },
+    toggleActiveBuscar(){
+      this.isActiveBuscar = !this.isActiveBuscar;
     },
     cerrarFiltro(){
         this.isFiltersOpen=false;
@@ -135,9 +172,6 @@ export default {
     },
 computed: {
     ...mapGetters(["getPageState","getAllProducts"])
-  },
-  created () {
-    this.getProducts()
   },
 }
 </script>
