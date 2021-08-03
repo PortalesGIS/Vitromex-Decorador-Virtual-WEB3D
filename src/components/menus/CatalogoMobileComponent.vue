@@ -40,12 +40,13 @@
                 </div>
             </div>
         </div> 
-        <div v-if="true" class="pt-5">
+        <div v-if="getFiltersAplicates.length>0" class="pt-5">
             <div class="w-full bg-line-catalogo" style="height:1px;"></div>
             <div class="flex flex-wrap pt-2">
-              <div v-for="item in 3" :key="item.id">
-                <div class="bg-filter-use text-xs px-1 py-1 mx-2 moserrat-semibold flex items-center rounded-sm text-filter-aplicate">
-                  <p>lorem</p>
+              <div v-for="item in getFiltersAplicates" :key="item">
+                <div class="bg-filter-use text-xs px-1 my-1 py-1 mx-2 moserrat-semibold flex items-center rounded-sm text-filter-aplicate"
+                @click="onDeleteFilter(item)">
+                  <p>{{item.data}}</p>
                   <p class="pl-3">x</p>
                 </div>
               </div>
@@ -147,12 +148,22 @@ export default {
         }
     },
     methods: {
-    ...mapActions(["changeMenuCatalogo","filterProductsForString"]),
+    ...mapActions(["changeMenuCatalogo","filterProductsForString",
+                  "deleteFilters","deleteOneFilter","filterProducts"]),
         changeMenuOption(value) {
       this.selected = value
     },
     chngeInput(){
       this.filterProductsForString({word:this.stringSearch})
+    },
+    onDeleteFilter(item){
+      if(item.camp==="typologies"){
+        this.deleteFilters()
+      }
+      else{
+        this.deleteOneFilter(item)
+        this.filterProducts()
+      }
     },
     selectProductForMap(product){
       Observer.emit(EVENTS.SENDPRODUCT,product);
@@ -171,7 +182,7 @@ export default {
     }
     },
 computed: {
-    ...mapGetters(["getPageState","getAllProducts"])
+    ...mapGetters(["getPageState","getAllProducts","getFiltersAplicates"])
   },
 }
 </script>

@@ -42,7 +42,9 @@
                 <div v-for="item in getAllTypologies" :key="item" class="flex-auto">
                     <div class="px-2 py-1"
                     @click="onFilter({camp:'typologies',data:`${item}`})">
-                        <p class="py-1 px-4 text-center bg-filter-options rounded-md text-xs text-text-filter">{{item}}</p>
+                        <p class="py-1 px-4 text-center  rounded-md text-xs "
+                            :class="selectedTypologie===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'"
+                        >{{item}}</p>
                     </div>
                 </div>
             </div>
@@ -63,7 +65,7 @@
                 <img class="transform rotate-90 w-2 opacity-50" v-else src="../../assets/mobile/cerrar_filtro_catalogo.svg" alt="">
                     </div>          
            </div>
-           <div v-if="!fomat" class="w-full h-auto flex flex-wrap">
+           <div v-if="!fomat && selectedTypologie!=''" class="w-full h-auto flex flex-wrap">
                 <div v-for="item in getAllFormats" :key="item" class="flex-auto">
                     <div class="px-2 py-1"
                        @click="onFilter({camp:'sized',data:`${item}`})">
@@ -88,7 +90,7 @@
                 <img class="transform rotate-90 w-2 opacity-50" v-else src="../../assets/mobile/cerrar_filtro_catalogo.svg" alt="">
                     </div>          
            </div>
-           <div v-if="!color" class="w-full h-auto flex flex-wrap">
+           <div v-if="!color && selectFormat!=''" class="w-full h-auto flex flex-wrap">
                 <div v-for="item in getAllColors" :key="item" class="flex-auto">
                     <div class="px-2 py-1"
                       @click="onFilter({camp:'color',data:`${item}`})">
@@ -113,7 +115,7 @@
                 <img class="transform rotate-90 w-2 opacity-50" v-else src="../../assets/mobile/cerrar_filtro_catalogo.svg" alt="">
                     </div>          
            </div>
-           <div v-if="!finish" class="w-full h-auto flex flex-wrap">
+           <div v-if="!finish && selectColor!=''" class="w-full h-auto flex flex-wrap">
                 <div v-for="item in getAllFinish" :key="item" class="flex-auto">
                     <div class="px-2 py-1"
                       @click="onFilter({camp:'finish',data:`${item}`})">
@@ -123,6 +125,10 @@
             </div>
         </div>        
     </div>
+    <div v-if="selectedTypologie!=''" class="w-full bg-filter-options  flex items-center justify-center py-3 animate__animated animate__fadeIn animate__faster">
+       <button class="py-2 px-3 bg-filter-use text-selected-filter moserrat-bold"
+       @click="cerrarFiltro">Ver resultados</button>
+    </div>
   </div>
 </template>
 
@@ -131,11 +137,14 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
     data() {
         return {
-            tipologie: true,
+            tipologie: false,
             fomat:true,
             color:true,
             finish:true,
-            filtersAplicates:[]
+            selectedTypologie:"",
+            selectFormat:"",
+            selectColor:"",
+            selectFinish:"",
         }
     },
     props: {
@@ -145,17 +154,29 @@ export default {
         },
     },
     methods: {
-        ...mapActions(["filterProducts","deleteFilters"]),
+        ...mapActions(["filterProducts","deleteFilters","addFilterAplicates"]),
         toggleFilterTipologie(){
             this.tipologie =!this.tipologie
         },
         onDeleteFilters(){
-            this.filtersAplicates=[]
+            this.selectedTypologie=""
             this.deleteFilters()
         },
         onFilter(payload){
-            this.filtersAplicates.push(payload)
-            this.filterProducts(this.filtersAplicates)
+            this.addFilterAplicates(payload)            
+            this.filterProducts()
+            if(payload.camp === "typologies"){
+                this.selectedTypologie=payload.data
+                 this.fomat = false
+            }
+            if(payload.camp === "sized"){
+                this.selectFormat=payload.data
+                 this.color = false
+            }
+            if(payload.camp === "color"){
+                this.selectColor=payload.data
+                 this.finish = false
+            }
         },
         toggleFilteformat(){
             this.fomat =!this.fomat

@@ -21,6 +21,7 @@ module.exports = {
         "back-catalogo":"var( --background-menu-catalogo)",
         "btn-filter":"var(--btn-filter)",
         "filter-options":"var( --bg-filter-options)",
+        "filter-use":"var( --filter-use)",
         "base-menu-aplications":"var(--base-menu-aplications)",
 
       }),
@@ -31,6 +32,7 @@ module.exports = {
         'subtitle': 'var(--text-subtitle)',        
         'cf-aplicates': 'var(--text-cf)',        
         'cf': 'var( --base-cf)',        
+        'selected-filter': 'var(--text-selected-filter)',        
         'cf2': 'var(--base-bg-cf)',        
         'filter-aplicate': 'var(--text-filter-aplicate)',        
         'text-filter': 'var(--text-clor-filter-base)',        

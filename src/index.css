@@ -30,9 +30,11 @@
         --text-filter-aplicate:#3E3E3E;
         --dorado:transparent;
         --bg-line:#858585;
+        --text-selected-filter:#3E3E3E;
       }
       .theme-arko{
         --bg-line:#B7B7B7;
+        --text-selected-filter:#FFFFFF;
         --text-filter-aplicate:#FFFFFF;
         --dorado:#D9CEA8;
         --filter-use:#494949;

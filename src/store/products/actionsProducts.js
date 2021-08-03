@@ -19,9 +19,9 @@ export const getProducts = async ({commit,getters}) =>{
       .catch(error => console.log('error', error));
 }
 
-export const filterProducts = ({commit,getters},payload)=>{
+export const filterProducts = ({commit,getters})=>{
   let temp=getters.getAllProductsComplete
-  payload.forEach(element => {
+  getters.getFiltersAplicates.forEach(element => {
     let finalArray = []
     temp.forEach(product =>{
     if(product[element.camp]===element.data){
@@ -33,9 +33,6 @@ export const filterProducts = ({commit,getters},payload)=>{
 });
 }
 
-export const deleteFilters=({commit,getters}) =>{
-  commit("setProductsFilter",getters.getAllProductsComplete)  
-}
 
 export const filterProductsForString=({commit,getters},{word=""})=>{
   word= normalizeText(word)

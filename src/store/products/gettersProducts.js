@@ -7,7 +7,7 @@ export const getAllProductsComplete = (state)=>{
 }
 
 export const getAllTypologies = (state)=>{
-   return dontRepeatData(state.listProductsFilter,"typologies")
+   return dontRepeatData(state.listProducts,"typologies")
    
 }
 
