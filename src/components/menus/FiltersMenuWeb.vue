@@ -12,21 +12,13 @@
                 </select>
               </div>
             </div>
-            <!-- <div class="w-full h-full flex items-center justify-center">
-              <div class=" flex w-full justify-center">
-                <select name="" id="" class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none ">
-                  <option disabled selected> Serie </option>
-                   <option v-for="format in getAllFormats" :key="format" value="1">{{format}}</option>
-                </select>
-              </div>
-            </div> -->
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
                 <select name="" id="" class="appearance-none bg-1d  text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
                  :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
                 @change="onFilter({camp:'sized',data:`${forma}`})" v-model="forma">
                   <option disabled selected> Formatos </option>
-                  <option v-for="format in getAllFormats" :key="format" :value="format">{{format}}</option>
+                  <option v-for="format in formatsLocal" :key="format" :value="format">{{format}}</option>
                 </select>
               </div>
             </div>
@@ -36,7 +28,7 @@
                  :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
                   @change="onFilter({camp:'color',data:`${col}`})" v-model="col">
                   <option disabled selected> Colores </option>
-                 <option v-for="color in getAllColors" :key="color" :value="color">{{color}}</option>
+                 <option v-for="color in colorLocal" :key="color" :value="color">{{color}}</option>
                 </select>
               </div>
             </div>
@@ -46,7 +38,7 @@
                  :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
                   @change="onFilter({camp:'finish',data:`${fini}`})" v-model="fini">
                   <option disabled selected> Acabado </option>
-                 <option v-for="finish in getAllFinish" :key="finish" :value="finish">{{finish}}</option>                  
+                 <option v-for="finish in finishLocal" :key="finish" :value="finish">{{finish}}</option>                  
                 </select>
               </div>
             </div>
@@ -83,6 +75,9 @@ export default {
   },
   data() {
     return {
+      formatsLocal:[],
+      colorLocal:[],
+      finishLocal:[],
       typogra: "Tipología",
       forma:"Formatos",
       col:"Colores",
@@ -90,7 +85,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["deleteFilters","filterProducts","addFilterAplicates"]),
+    ...mapActions(["deleteFilters","filterProducts","addFilterAplicatesVersionDesktop"]),
     onDeleteFilters(){
             this.selectedTypologie=""
             this.deleteFilters()
@@ -100,19 +95,22 @@ export default {
             this.fini="Acabado"
         },
         onFilter(payload){
-            this.addFilterAplicates(payload)            
+            this.addFilterAplicatesVersionDesktop(payload)            
             this.filterProducts()
             if(payload.camp === "typologies"){
                 this.selectedTypologie=payload.data
                  this.fomat = false
+                 this.formatsLocal = this.getAllFormats
             }
             if(payload.camp === "sized"){
                 this.selectFormat=payload.data
                  this.color = false
+                  this.colorLocal = this.getAllColors
             }
             if(payload.camp === "color"){
                 this.selectColor=payload.data
                  this.finish = false
+                  this.finishLocal = this.getAllFinish
             }
         },
     openTutorial() {
@@ -124,6 +122,11 @@ computed: {
         "getAllFormats",
         "getAllColors",
         "getAllFinish",])
+  },
+  created () {
+  this.formatsLocal = this.getAllFormats
+  this.colorLocal = this.getAllColors
+  this.finishLocal = this.getAllFinish
   },
 }
 </script>

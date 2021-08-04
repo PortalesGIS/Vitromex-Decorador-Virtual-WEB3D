@@ -75,12 +75,14 @@
                 <div class='grid grid-cols-2'>
                   <div v-for="serie in getAllSeries" :key="serie"
                     class="pb-2 relative cursor-pointer">
+                    <div @click="onSelectSerie({camp:'serie',data:`${serie.name}`})">
                    <div class="relative">
                       <img :src="serie.img" class="object-cover rounded-md" style="width:140px; height:140px" alt="">   
                      </div>                                                        
                      <div class="absolute top-0 w-full h-full flex justify-center items-center">
                        <p class="text-white font-bold text-base moserrat-bold">{{serie.name}}</p>
                      </div>
+                    </div>
                   </div>
               </div>
               </div>
@@ -103,9 +105,14 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["filterProductsForString"]),
+    ...mapActions(["filterProductsForString","addFilterAplicates","filterProducts"]),
     changeMenuOption(value) {
       this.selected = value
+    },
+    onSelectSerie(payload){
+      this.addFilterAplicates(payload)            
+      this.filterProducts()
+      this.selected=0
     },
     chngeInput(){
       this.filterProductsForString({word:this.stringSearch})

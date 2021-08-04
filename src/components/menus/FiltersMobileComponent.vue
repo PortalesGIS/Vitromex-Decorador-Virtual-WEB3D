@@ -39,10 +39,11 @@
                     </div>          
            </div>
             <div v-if="!tipologie" class="w-full h-auto flex flex-wrap">
-                <div v-for="item in getAllTypologies" :key="item" class="flex-auto">
-                    <div class="px-2 py-1"
+                <div v-for="item in getAllTypologies" :key="item" class="flex-initial pl-1 ">
+                    <div class=" py-1"
+                    :class="item.length<=10?' w-20':' w-44'"
                     @click="onFilter({camp:'typologies',data:`${item}`})">
-                        <p class="py-1 px-4 text-center  rounded-md text-xs "
+                        <p class="py-1  text-center  rounded-md text-xs lowercase truncate "
                             :class="selectedTypologie===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'"
                         >{{item}}</p>
                     </div>
@@ -66,10 +67,12 @@
                     </div>          
            </div>
            <div v-if="!fomat && selectedTypologie!=''" class="w-full h-auto flex flex-wrap">
-                <div v-for="item in getAllFormats" :key="item" class="flex-auto">
-                    <div class="px-2 py-1"
+                <div v-for="item in formatsLocal" :key="item" class="flex-initial pl-1">
+                    <div class="py-1"
+                     :class="item.length<=10?' w-20':' w-44'"
                        @click="onFilter({camp:'sized',data:`${item}`})">
-                        <p class="py-1 px-4 text-center bg-filter-options rounded-md text-xs text-text-filter">{{item}}</p>
+                        <p class="py-1  text-center  rounded-md text-xs lowercase truncate "
+                         :class="selectFormat===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'">{{item}}</p>
                     </div>
                 </div>
             </div>
@@ -91,10 +94,12 @@
                     </div>          
            </div>
            <div v-if="!color && selectFormat!=''" class="w-full h-auto flex flex-wrap">
-                <div v-for="item in getAllColors" :key="item" class="flex-auto">
-                    <div class="px-2 py-1"
+                <div v-for="item in colorLocal" :key="item" class="flex-initial pl-1">
+                    <div class="py-1"
+                     :class="item.length<=10?' w-20':' w-44'"
                       @click="onFilter({camp:'color',data:`${item}`})">
-                        <p class="py-1 px-4 text-center bg-filter-options rounded-md text-xs text-text-filter">{{item}}</p>
+                      <p class="py-1  text-center  rounded-md text-xs lowercase truncate "
+                         :class="selectColor===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'">{{item}}</p>
                     </div>
                 </div>
             </div>
@@ -116,10 +121,12 @@
                     </div>          
            </div>
            <div v-if="!finish && selectColor!=''" class="w-full h-auto flex flex-wrap">
-                <div v-for="item in getAllFinish" :key="item" class="flex-auto">
-                    <div class="px-2 py-1"
+                <div v-for="item in finishLocal" :key="item" class="flex-initial pl-1">
+                   <div class="py-1"
+                     :class="item.length<=10?' w-20':' w-44'"
                       @click="onFilter({camp:'finish',data:`${item}`})">
-                        <p class="py-1 px-4 text-center bg-filter-options rounded-md text-xs text-text-filter">{{item}}</p>
+                       <p class="py-1  text-center  rounded-md text-xs lowercase truncate "
+                         :class="selectFinish===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'">{{item}}</p>
                     </div>
                 </div>
             </div>
@@ -138,6 +145,9 @@ export default {
     data() {
         return {
             tipologie: false,
+            formatsLocal:[],
+            colorLocal:[],
+            finishLocal:[],
             fomat:true,
             color:true,
             finish:true,
@@ -160,6 +170,9 @@ export default {
         },
         onDeleteFilters(){
             this.selectedTypologie=""
+            this.selectFormat=""
+            this.selectColor=""
+            this.selectFinish=""
             this.deleteFilters()
         },
         onFilter(payload){
@@ -168,14 +181,20 @@ export default {
             if(payload.camp === "typologies"){
                 this.selectedTypologie=payload.data
                  this.fomat = false
+                 this.formatsLocal= this.getAllFormats
             }
             if(payload.camp === "sized"){
                 this.selectFormat=payload.data
                  this.color = false
+                 this.colorLocal = this.getAllColors
             }
             if(payload.camp === "color"){
                 this.selectColor=payload.data
                  this.finish = false
+                 this.finishLocal = this.getAllFinish
+            }
+            if(payload.camp === "finish"){
+                this.selectFinish=payload.data
             }
         },
         toggleFilteformat(){
