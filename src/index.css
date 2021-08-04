@@ -107,3 +107,15 @@
     font-family:monserrat_semibold
 }
 
+.arrow-drop-down{
+  background-image:url(./assets/web/Dropdown.svg);
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  background-position-y: 15px;
+}
+.arrow-drop-down-black{
+  background-image:url(./assets/arko/Web/Dropdown.svg);
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  background-position-y: 15px;
+}

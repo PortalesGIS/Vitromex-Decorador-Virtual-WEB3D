@@ -2,7 +2,7 @@
   <div class="w-screen h-full bg-back-catalogo shadow-2xl rounded-xl overflow-y-hidden animate__animated animate__fadeInUp animate__faster">
     <div class="h-9 w-full">
         <div 
-        @click="changeMenuCatalogo"
+        @click="onChangeMenuCatalogo()"
         class="w-full h-full flex justify-center items-center">
             <img v-if="getPageState" src="../../assets/arko/Mobile/Cerrar_Dropdown.svg" alt="">
             <img v-else src="../../assets/mobile/Cerrar_overlay.svg" alt="">
@@ -52,7 +52,7 @@
               </div>
             </div>
         </div>
-        <div class="w-full flex pt-5">
+        <div v-if="stringSearch===''" class="w-full flex pt-5">
               <div 
               @click="changeMenuOption(0)"
               :class="(selected===0)?'bg-1d':'bg-0a'"
@@ -175,6 +175,11 @@ export default {
       this.addFilterAplicates(payload)            
       this.filterProducts()
       this.selected=0
+    },
+    onChangeMenuCatalogo(){
+      this.changeMenuCatalogo()
+      this.stringSearch=""
+       this.filterProductsForString({word:""})
     },
     selectProductForMap(product){
       Observer.emit(EVENTS.SENDPRODUCT,product);

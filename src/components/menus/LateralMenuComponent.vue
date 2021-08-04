@@ -52,7 +52,9 @@
             </div>  
             <div class="pt-5 pb-4 px-2">
               <div class="w-full flex items-center justify-between px-2 bg-6a rounded-full">
-                <input type="text" class="bg-transparent h-9 focus:border-none text-white outline-none pl-2" placeholder="Buscar...">
+                <input type="text" class="bg-transparent h-9 focus:border-none text-white outline-none pl-2" placeholder="Buscar..."
+                v-model="stringSearch"
+             @input="chngeInput">
                 <img class="w-6 h-6" src="../../assets/web/Buscar.svg" alt="">
               </div>
             </div>  
@@ -71,13 +73,13 @@
               </div>              
               <div v-else>
                 <div class='grid grid-cols-2'>
-                  <div v-for="x in 40" :key="x"
+                  <div v-for="serie in getAllSeries" :key="serie"
                     class="pb-2 relative cursor-pointer">
                    <div class="relative">
-                      <img src="https://random.imagecdn.app/300/300" class="object-cover rounded-md" style="width:140px; height:140px" alt="">   
+                      <img :src="serie.img" class="object-cover rounded-md" style="width:140px; height:140px" alt="">   
                      </div>                                                        
                      <div class="absolute top-0 w-full h-full flex justify-center items-center">
-                       <p class="text-white font-bold text-base moserrat-bold">AIZEN</p>
+                       <p class="text-white font-bold text-base moserrat-bold">{{serie.name}}</p>
                      </div>
                   </div>
               </div>
@@ -90,18 +92,23 @@
 </template>
 
 <script>
-import {  mapGetters } from 'vuex'
+import {  mapActions, mapGetters } from 'vuex'
 import Observer, { EVENTS } from '../../three/Observer'
 export default {
   data() {
     return {
       selected: 0,
         aplicationsSelected:1,
+          stringSearch:""
     }
   },
   methods: {
+    ...mapActions(["filterProductsForString"]),
     changeMenuOption(value) {
       this.selected = value
+    },
+    chngeInput(){
+      this.filterProductsForString({word:this.stringSearch})
     },
     selectProductForMap(product){
       Observer.emit(EVENTS.SENDPRODUCT,product);
@@ -111,7 +118,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["getPageState","getAllProducts"])
+    ...mapGetters(["getPageState","getAllProducts","getAllSeries"])
   },
 }
 </script>

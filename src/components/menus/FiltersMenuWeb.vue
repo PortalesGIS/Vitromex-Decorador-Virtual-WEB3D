@@ -4,47 +4,59 @@
         <div class='grid grid-cols-6 w-full h-full'>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <select name="" id="" class="bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none">
+                <select name="" id="" @change="onFilter({camp:'typologies',data:`${typogra}`})" v-model="typogra"
+                 class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none"
+                 :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'">
                   <option disabled selected> Tipología </option>
-                  <option value="1">lorem</option>
+                  <option v-for="typo in getAllTypologies" :key="typo" :value="typo">{{typo}}</option>
                 </select>
               </div>
             </div>
-            <div class="w-full h-full flex items-center justify-center">
+            <!-- <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <select name="" id="" class="bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none ">
+                <select name="" id="" class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none ">
                   <option disabled selected> Serie </option>
-                  <option value="1">lorem</option>
+                   <option v-for="format in getAllFormats" :key="format" value="1">{{format}}</option>
                 </select>
               </div>
-            </div>
+            </div> -->
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <select name="" id="" class="bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none">
+                <select name="" id="" class="appearance-none bg-1d  text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
+                 :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
+                @change="onFilter({camp:'sized',data:`${forma}`})" v-model="forma">
                   <option disabled selected> Formatos </option>
-                  <option value="1">lorem</option>
+                  <option v-for="format in getAllFormats" :key="format" :value="format">{{format}}</option>
                 </select>
               </div>
             </div>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <select name="" id="" class="bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none">
+                <select name="" id="" class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
+                 :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
+                  @change="onFilter({camp:'color',data:`${col}`})" v-model="col">
                   <option disabled selected> Colores </option>
-                  <option value="1">lorem</option>
+                 <option v-for="color in getAllColors" :key="color" :value="color">{{color}}</option>
                 </select>
               </div>
             </div>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <select name="" id="" class="bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none">
+                <select name="" id="" class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
+                 :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
+                  @change="onFilter({camp:'finish',data:`${fini}`})" v-model="fini">
                   <option disabled selected> Acabado </option>
-                  <option value="1">lorem</option>
+                 <option v-for="finish in getAllFinish" :key="finish" :value="finish">{{finish}}</option>                  
                 </select>
               </div>
             </div>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <button class="bg-black text-white w-11/12 xl:w-5/6 h-9 px-2">Borrar filtros</button>
+              </div>
+            </div>
+            <div class="w-full h-full flex items-center justify-center">
+              <div class=" flex w-full justify-center">
+                <button @click="onDeleteFilters" class="bg-black text-white w-11/12 xl:w-5/6 h-9 px-2">Borrar filtros</button>
               </div>
             </div>
         </div>
@@ -63,19 +75,55 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import TutorialAlertscomponentVue from '../alerts/TutorialAlertscomponent.vue'
 export default {
   components: {
     TutorialAlertscomponentVue,
   },
+  data() {
+    return {
+      typogra: "Tipología",
+      forma:"Formatos",
+      col:"Colores",
+      fini:"Acabado"
+    }
+  },
   methods: {
+    ...mapActions(["deleteFilters","filterProducts","addFilterAplicates"]),
+    onDeleteFilters(){
+            this.selectedTypologie=""
+            this.deleteFilters()
+            this.typogra= "Tipología"
+            this.forma="Formatos"
+            this.col="Colores"
+            this.fini="Acabado"
+        },
+        onFilter(payload){
+            this.addFilterAplicates(payload)            
+            this.filterProducts()
+            if(payload.camp === "typologies"){
+                this.selectedTypologie=payload.data
+                 this.fomat = false
+            }
+            if(payload.camp === "sized"){
+                this.selectFormat=payload.data
+                 this.color = false
+            }
+            if(payload.camp === "color"){
+                this.selectColor=payload.data
+                 this.finish = false
+            }
+        },
     openTutorial() {
        this.$refs.tutorial.open();
     }
   },
 computed: {
-    ...mapGetters(["getPageState"])
+    ...mapGetters(["getPageState","getAllTypologies",
+        "getAllFormats",
+        "getAllColors",
+        "getAllFinish",])
   },
 }
 </script>
