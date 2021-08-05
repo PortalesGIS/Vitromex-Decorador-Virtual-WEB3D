@@ -91,6 +91,7 @@ export default {
     onDeleteFilters(){
             this.selectedTypologie=""
             this.deleteFilters()
+            this.onInit()
             this.typogra= "Tipología"
             this.forma="Formatos"
             this.col="Colores"
