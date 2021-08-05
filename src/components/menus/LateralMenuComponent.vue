@@ -11,46 +11,8 @@
       </div>
       <div class="fixed h-full w-336  px-2 pb-4 pt-4 bg-base-black">
         <div class='w-full h-5/6 bg-1d pr-1'>
-            <div class="w-full flex">
-              <div 
-              @click="changeMenuOption(0)"
-              :class="(selected===0)?'bg-1d':'bg-0a'"
-              class="w-1/2 h-16 flex justify-center items-center cursor-pointer">
-               <div >
-                  <p :class="(selected===0)?'text-subtitle moserrat-bold text-base font-bold':'text-subtitle opacity-30 text-base moserrat-bold font-bold'">PRODUCTOS</p>
-                  <div v-if="(selected===0)" class="pt-1  flex justify-center">
-                    <div class="w-2/3 border border-menu-bar-select"></div>
-                  </div>
-               </div>
-              </div>
-              <div 
-               @click="changeMenuOption(1)"
-              :class="(selected===1)?'bg-1d':'bg-0a'"
-              class="w-1/2 h-16 flex justify-center items-center cursor-pointer">
-                <div >
-                  <p :class="(selected===1)?'text-subtitle moserrat-bold text-base font-bold':'text-subtitle opacity-30 text-base moserrat-bold font-bold'">SERIES</p>
-                  <div v-if="(selected===1)" class="pt-1  flex justify-center">
-                    <div class="w-2/3 border border-menu-bar-select"></div>
-                  </div>
-               </div>
-              </div>
-            </div>
-            <div class="pt-5 h-auto">
-              <div class="flex w-full justify-around items-center">
-                <div class="flex cursor-pointer bg-menu-select-piso-muro rounded-full w-32 h-9 items-center justify-center"
-                  @click="selectAplication(1)"
-                      :class="aplicationsSelected===1?'':'opacity-50'">
-                  <img src="../../assets/web/Piso.svg" class="w-5 h-4 object-cover" alt="">
-                  <p class="pl-2 text-white text-sm font-semibold">Piso</p>
-                </div>
-                <div class="flex cursor-pointer bg-menu-select-piso-muro rounded-full w-32 h-9 items-center justify-center"
-                  @click="selectAplication(0)"
-                      :class="aplicationsSelected===0?'':'opacity-50'">
-                  <img src="../../assets/web/Piso.svg" class="w-5 h-4 object-cover transform -rotate-90 " alt="">
-                  <p class="pl-2 text-white text-sm font-semibold">Muro</p>
-                </div>
-              </div>
-            </div>  
+              <MenuSelectedComponentVue :selected="selected" :changeMenuOption="changeMenuOption" />
+              <AplicationsSelectedComponentVue/>
             <div class="pt-5 pb-4 px-2">
               <div class="w-full flex items-center justify-between px-2 bg-6a rounded-full">
                 <input type="text" class="bg-transparent h-9 focus:border-none text-title outline-none pl-2" placeholder="Buscar..."
@@ -65,32 +27,7 @@
                     <ProductComponentVue :listProducts="getAllProducts" />
               </div>              
               <div v-else>
-                <div v-if="!serieSelected.name">
-                <div class='grid grid-cols-2'>
-                  <div v-for="serie in getAllSeries" :key="serie"
-                    class="pb-2 relative cursor-pointer">
-                    <div @click="onSelectSerie(serie)">
-                   <div class="relative">
-                      <img :src="serie.img" class="object-cover rounded-md" style="width:140px; height:140px" alt="">   
-                     </div>                                                        
-                     <div class="absolute top-0 w-full h-full flex justify-center items-center">
-                       <p class="text-white font-bold text-base moserrat-bold">{{serie.name}}</p>
-                     </div>
-                    </div>
-                  </div>
-                  </div>
-              </div>
-              <div v-else>
-                <div class="w-full relative">
-                  <div class="relative">
-                      <img :src="serieSelected.render" class="object-cover w-full rounded-md" style=" height:70px" alt="">   
-                     </div>                                                        
-                     <div class="absolute top-0 w-full h-full flex justify-center items-center">
-                       <p class="text-white font-bold text-base moserrat-bold">{{serieSelected.name}}</p>
-                     </div>
-                </div>
-                 <ProductComponentVue :listProducts="filterPerSerie(serieSelected.name)"/>
-                </div>              
+                       <SerieCardsVue :listSeries="getAllSeries" />
               </div>
               <!-- start filter per string -->
               </div>
@@ -99,21 +36,7 @@
                   <p :class="getPageState?'gotham-light':'gotham text-whadow'" 
                   class="text-title text-xl ">SERIES</p>
                   <div class="w-full h-px mx-2 my-2 bg-white"></div>
-                  <div v-if="!serieSelected.name">
-                  <div class='grid grid-cols-2'>
-                  <div v-for="serie in getAllSeries" :key="serie"
-                    class="pb-2 relative cursor-pointer">
-                    <div @click="onSelectSerie(serie.name)">
-                   <div class="relative">
-                      <img :src="serie.img" class="object-cover rounded-md" style="width:140px; height:140px" alt="">   
-                     </div>                                                        
-                     <div class="absolute top-0 w-full h-full flex justify-center items-center">
-                       <p class="text-white font-bold text-base moserrat-bold">{{serie.name}}</p>
-                     </div>
-                    </div>
-                  </div>
-                  </div>
-              </div>
+                    <SerieCardsVue :listSeries="getAllSeries" />
                 </div>
                 <div v-if="getAllProducts.length!=0" >
                   <p :class="getPageState?'gotham-light':'gotham text-whadow'" 
@@ -140,16 +63,20 @@
 <script>
 import {  mapActions, mapGetters } from 'vuex'
 import ProductComponentVue from '../cards/ProductComponent.vue'
+import SerieCardsVue from '../cards/SerieCards.vue'
+import AplicationsSelectedComponentVue from '../utils/AplicationsSelectedComponent.vue'
+import MenuSelectedComponentVue from '../utils/MenuSelectedComponent.vue'
 export default {
   components: {
     ProductComponentVue,
+    SerieCardsVue,
+    AplicationsSelectedComponentVue,
+    MenuSelectedComponentVue,
   },
   data() {
     return {
       selected: 0,
-        aplicationsSelected:1,
         stringSearch:"",
-        serieSelected:{},
     }
   },
   methods: {
@@ -157,28 +84,10 @@ export default {
     changeMenuOption(value) {
       this.selected = value
     },
-    onSelectSerie(payload){
-      // this.addFilterAplicates(payload)            
-      // this.filterProducts()
-      // this.selected=0
-  this.serieSelected=payload
-    },
-    filterPerSerie(serie){
-      let productsFilterSeries =[]
-      this.getAllProducts.forEach(product=>{
-        if(product.serie===serie){
-          productsFilterSeries.push(product)
-        }
-      })
-      return productsFilterSeries;
-    },
     chngeInput(){
       this.filterProductsForString({word:this.stringSearch})
       this.filterSeriesForString({word:this.stringSearch})
     },
-    selectAplication(selected){
-      this.aplicationsSelected = selected      
-    }
   },
   computed: {
     ...mapGetters(["getPageState","getAllProducts","getAllSeries",])
