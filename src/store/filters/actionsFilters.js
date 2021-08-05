@@ -52,6 +52,10 @@ export const deleteFilters=({commit,getters}) =>{
     commit("setFilterAplicates",[])
   }
 
+export const deleteFiltersSeries=({commit,getters}) =>{
+    commit("setSeriesFilter",getters.getAllSeriesComplete) 
+  }
+
 export const deleteOneFilter = ({commit,getters},payload)=>{
     const filtes =[]
      getters.getFiltersAplicates.forEach(element => {

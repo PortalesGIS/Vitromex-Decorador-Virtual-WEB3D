@@ -28,10 +28,15 @@
             <input type="text" class="w-full bg-6a focus:outline-none text-title" placeholder="Buscar..."
              v-model="stringSearch"
              @input="chngeInput">
-            <div class="flex items-center">
+            <div v-if="stringSearch===''" class="flex items-center">
                     <img v-if="getPageState" src="../../assets/arko/Mobile/Buscar.svg" class="w-6" alt="">
                     <img v-else src="../../assets/web/Buscar.svg" class="w-6" alt="">
-                </div>
+            </div>
+            <div v-else class="flex items-center"
+                  @click="onClearStringSearch">
+                    <img v-if="getPageState" src="../../assets/arko/Mobile/cerrar_menu.svg" class=" w-5" alt="">
+                    <img v-else src="../../assets/web/Cerrar.svg" class=" w-5" alt="">
+            </div>
           </div>
             <div class="flex">
                 <div @click="openFiltersMenu">
@@ -72,32 +77,35 @@
               </div>
             </div> 
             <div class='px-2 bg-1d  w-full h-5/6 overflow-y-auto pb-20'>
-              <div v-if="selected===0">
-                <div class='grid grid-cols-3 sm:grid-cols-4'>
-                  <div v-for="(product) in getAllProducts" :key="product"
-                    class="pb-2">
-                    <div  @click="selectProductForMap(product)" class="cursor-pointer px-1">
-                      <img :src='product.smallPicture' class="object-cover rounded-md w-full h-full" style="max-height:80px; max-width:119px" alt="">
-                      <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.name}}</p>
-                      <p class="text-white monserrat-light text-cf" style="font-size:11px;">{{product.sized}}</p>
-                    </div>
-                  </div>
-              </div>
+              <div v-if="stringSearch===''">
+                <div v-if="selected===0">
+                  <ProductComponentVue :listProducts="getAllProducts"/>
               </div>              
               <div v-else>
-                <div class='grid grid-cols-2'>
-                  <div v-for="serie in getAllSeries" :key="serie"
-                    class="pb-2 relative cursor-pointer">
-                   <div @click="onSelectSerie({camp:'serie',data:`${serie.name}`})">
-                     <div class="relative flex items-center justify-center">
-                      <img :src="serie.img" class="object-cover rounded-md" style="width:140px; height:140px" alt="">   
-                     </div>                                                        
-                     <div class="absolute top-0 w-full h-full flex justify-center items-center">
-                       <p class="text-white font-bold text-base">{{serie.name}}</p>
-                     </div>
-                   </div>
-                  </div>
+                 <SerieCardsVue :listSeries="getAllSeries" />
               </div>
+              </div>
+                <div v-else>
+                <div v-if="getAllSeries.length!=0">
+                  <p :class="getPageState?'gotham-light':'gotham text-whadow'" 
+                  class="text-title text-xl ">SERIES</p>
+                  <div class="w-full h-px  my-2 bg-white"></div>
+                    <SerieCardsVue :listSeries="getAllSeries" />
+                </div>
+                <div v-if="getAllProducts.length!=0" >
+                  <p :class="getPageState?'gotham-light':'gotham text-whadow'" 
+                  class="text-title text-xl ">PRODUCTOS</p>
+                  <div class="w-full h-px  my-2 bg-white"></div>
+                   <ProductComponentVue :listProducts="getAllProducts"/>
+                </div>
+                <div class="w-full " v-if="getAllSeries.length===0 && getAllProducts.length===0">
+                  <div class="w-full flex justify-center items-center ">
+                    <img class="object-cover w-8 h-8" v-if="getPageState" src="../../assets/arko/Web/not_found.png" alt="">
+                    <img class="object-cover w-8 h-8" v-else src="../../assets/web/not_found.png" alt="">
+                  </div>
+                  <p class="py-4 text-sm font-normal text-subtitle text-center">
+                  No se ha encontrado el producto que estás buscando, por favor intenta con algo más.</p>
+                  </div>
               </div>
             </div>
     </div>
@@ -112,12 +120,16 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import Observer, { EVENTS } from '../../three/Observer'
+import ProductComponentVue from '../cards/ProductComponent.vue'
+import SerieCardsVue from '../cards/SerieCards.vue'
 import MenuSelectedComponentVue from '../utils/MenuSelectedComponent.vue'
 import FiltersMobileComponentVue from './FiltersMobileComponent.vue'
 export default {
   components: {
     FiltersMobileComponentVue,
       MenuSelectedComponentVue,
+    ProductComponentVue,
+    SerieCardsVue
     },
     data() {
         return {
@@ -129,13 +141,14 @@ export default {
         }
     },
     methods: {
-    ...mapActions(["changeMenuCatalogo","filterProductsForString",
-                  "deleteFilters","deleteOneFilter","filterProducts","addFilterAplicates"]),
+    ...mapActions(["changeMenuCatalogo","filterProductsForString","filterSeriesForString",
+                  "deleteFilters","deleteFiltersSeries","deleteOneFilter","filterProducts","addFilterAplicates"]),
         changeMenuOption(value) {
       this.selected = value
     },
     chngeInput(){
       this.filterProductsForString({word:this.stringSearch})
+       this.filterSeriesForString({word:this.stringSearch})
     },
     onDeleteFilter(item){
       if(item.camp==="typologies" || item.camp==="serie"){
@@ -155,6 +168,11 @@ export default {
       this.changeMenuCatalogo()
       this.stringSearch=""
        this.filterProductsForString({word:""})
+    },
+    onClearStringSearch(){
+      this.stringSearch=""
+       this.deleteFilters()
+       this.deleteFiltersSeries()
     },
     selectProductForMap(product){
       Observer.emit(EVENTS.SENDPRODUCT,product);
