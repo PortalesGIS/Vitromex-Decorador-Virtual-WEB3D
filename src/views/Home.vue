@@ -8,7 +8,7 @@
     <HeaderGlobalComponentVue/>
     
     </div>
-    <div v-if="getAllFormats!=''" class="w-screen hidden lg:block absolute z-30">
+    <div v-if="getAllProductsComplete!=''" class="w-screen hidden lg:block absolute z-30">
       
         <FiltersMenuWebVue/>
         
@@ -73,7 +73,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["getPageState","getMenuCatalogo","getMenuAplicates","getAllFormats"])
+    ...mapGetters(["getPageState","getMenuCatalogo","getMenuAplicates","getAllProductsComplete"])
   },
   async created () {
     this.charge()

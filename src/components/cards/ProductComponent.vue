@@ -18,6 +18,16 @@
       </div>
     </div>
   </div>
+  <div v-if="listProducts.length=== 0" class="w-full">
+      <div class="w-full " >
+                  <div class="w-full flex justify-center items-center ">
+                    <img class="object-cover w-8 h-8" v-if="getPageState" src="../../assets/arko/Web/not_found.png" alt="">
+                    <img class="object-cover w-8 h-8" v-else src="../../assets/web/not_found.png" alt="">
+                  </div>
+                  <p class="py-4 text-sm font-normal text-subtitle text-center">
+                  No se ha encontrado el producto que estás buscando, por favor intenta con algo más.</p>
+                  </div>
+    </div>
 </div>
 <!-- mobile version -->
   <div class="block lg:hidden w-full">
@@ -35,6 +45,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import Observer, { EVENTS } from "../../three/Observer";
 export default {
   props: {
@@ -46,6 +57,9 @@ export default {
     selectProductForMap(product) {
       Observer.emit(EVENTS.SENDPRODUCT, product);
     },
+  },
+  computed: {
+    ...mapGetters(["getPageState"])
   },
 };
 </script>
