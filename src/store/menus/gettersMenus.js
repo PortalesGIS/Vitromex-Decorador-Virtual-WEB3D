@@ -7,3 +7,7 @@ export const getMenuCatalogo = (state)=>{
 export const getMenuAplicates = (state) =>{
     return state.menuAplicates
 }
+
+export const getisOpenfiltersWeb = (state) =>{
+    return state.isOpenfiltersWeb
+}

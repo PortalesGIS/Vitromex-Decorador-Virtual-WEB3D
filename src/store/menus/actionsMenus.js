@@ -8,3 +8,7 @@ export const changeMenuAplicates = ({commit,getters})=>{
 export const changeMenuCatalogo = ({commit,getters}) =>{
     commit("setMenuCatalogo",!getters.getMenuCatalogo)
 }
+export const changeViewFiltesWeb = ({commit,getters})=>{
+    commit("setFiltesWeb",!getters.getisOpenfiltersWeb)
+
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-77 mt-24 " style="padding-left:336px; padding-right:212px">
+  <div  v-if="getisOpenfiltersWeb"  class="w-full h-77 mt-24 animate__animated animate__fadeInDown animate__faster" style="padding-left:336px; padding-right:212px">
       <div class="bg-base-black-opacity w-full h-full">
         <div class='grid grid-cols-6 w-full h-full'>
             <div class="w-full h-full flex items-center justify-center">
@@ -53,17 +53,19 @@
             </div>
         </div>
       </div>
-      <div class="fixed right-0 py-2  flex justify-end" style=" padding-right:212px">
+  </div>
+  <div  class="fixed right-0  flex justify-end" style=" padding-right:212px"
+        :class="getisOpenfiltersWeb?'py-2':'py-28'">
         <div class="pr-1 cursor-pointer" @click="openTutorial">
           <img v-if="getPageState" class="w-12 h-12" src="../../assets/arko/Web/Info.svg" alt="">
           <img v-else class="w-12 h-12" src="../../assets/web/Info_B.svg" alt="">
         </div>
       </div>
-      <div class="fixed right-0 flex justify-end" style=" padding-right:212px">
+      <div class="fixed right-0 flex justify-end" style=" padding-right:212px"
+       :class="getisOpenfiltersWeb?'':'py-24'">
         <TutorialAlertscomponentVue
         ref="tutorial"/>    
       </div>
-  </div>
 </template>
 
 <script>
@@ -115,18 +117,24 @@ export default {
         },
     openTutorial() {
        this.$refs.tutorial.open();
+    },
+     async onInit(){
+        console.log("assdsdsdsdsdsdsdsdsdsdsdsdsdsd")
+      this.formatsLocal = this.getAllFormats
+      this.colorLocal = this.getAllColors
+      this.finishLocal = this.getAllFinish
     }
   },
 computed: {
     ...mapGetters(["getPageState","getAllTypologies",
         "getAllFormats",
         "getAllColors",
-        "getAllFinish",])
+        "getAllFinish",
+        "getisOpenfiltersWeb",
+        ])
   },
-  created () {
-  this.formatsLocal = this.getAllFormats
-  this.colorLocal = this.getAllColors
-  this.finishLocal = this.getAllFinish
+  mounted () {
+    this.onInit();
   },
 }
 </script>

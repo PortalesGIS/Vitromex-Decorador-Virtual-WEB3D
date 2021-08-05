@@ -1,6 +1,6 @@
 <template>
 <div class="absolute top-0 z-100 bg-red-400" @click="onChangeStatePage(!getPageState)">
-  change
+  change 
 </div>
 <div :class="getPageState?'theme-arko':''">
   <div class="h-screen w-screen">
@@ -8,7 +8,8 @@
     <HeaderGlobalComponentVue/>
     
     </div>
-    <div class="w-screen hidden lg:block absolute z-30">
+    <div v-if="getAllFormats!=''" class="w-screen hidden lg:block absolute z-30">
+      
         <FiltersMenuWebVue/>
         
     </div>    
@@ -66,13 +67,16 @@ export default {
   },  
   methods: {
     ...mapActions(["onChangeStatePage","getProducts","getSeries"]),
+    async charge (){
+      await this.getProducts()
+      await this.getSeries()
+    }
   },
   computed: {
-    ...mapGetters(["getPageState","getMenuCatalogo","getMenuAplicates"])
+    ...mapGetters(["getPageState","getMenuCatalogo","getMenuAplicates","getAllFormats"])
   },
-  created () {
-    this.getProducts()
-    this.getSeries()
+  async created () {
+    this.charge()
   },
     
 }

@@ -21,6 +21,7 @@ export default createStore({
     listSeriesFilter:[],
     menuAplicates:false,
     menuCatalogo:false,
+    isOpenfiltersWeb:false,
     filtersAplicates:[]
   },
   mutations: {

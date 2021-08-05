@@ -15,10 +15,10 @@ export class PlaneTest extends Mesh{
             let lightMap =   new TextureLoader();
             lightMap.load('models3D/test/Lightmap-0_comp_light_m.png',(texture)=>{
                 const lamber = new MeshStandardMaterial({
-                    color: 0x777777,
+                    // color: 0x777777,
                     lightMap:texture,
                     map:this.piso.material.map,
-                    lightMapIntensity:1.5
+                    lightMapIntensity:4
                 })
                 this.piso.material = lamber
                 Observer.on(EVENTS.SENDPRODUCT,(payload)=>{
@@ -34,7 +34,7 @@ export class PlaneTest extends Mesh{
                                 lightMap:texture,
                                 map:textureMap,
                                 normalMap:textureNormal,
-                                lightMapIntensity:1.5
+                                lightMapIntensity:5
                             })
                             this.piso.material = uploadMaterial
                         })

@@ -3,7 +3,8 @@
     <div class="h-full w-336 bg-base-black ">
       <div class="px-4 pt-4 flex justify-between">
         <div class="text-title text-xl font-bold moserrat-bold">CATÁLOGO</div>
-        <div class="flex justify-center items-center">
+        <div class="flex justify-center items-center cursor-pointer"
+        @click="changeViewFiltesWeb">
           <img  v-if="getPageState" src="../../assets/arko/Web/Filtros.svg" class="w-4 h-4" alt="">
           <img v-else src="../../assets/web/Filtros.svg" class="w-4 h-4" alt="">
         </div>
@@ -52,14 +53,15 @@
             </div>  
             <div class="pt-5 pb-4 px-2">
               <div class="w-full flex items-center justify-between px-2 bg-6a rounded-full">
-                <input type="text" class="bg-transparent h-9 focus:border-none text-white outline-none pl-2" placeholder="Buscar..."
+                <input type="text" class="bg-transparent h-9 focus:border-none text-title outline-none pl-2" placeholder="Buscar..."
                 v-model="stringSearch"
              @input="chngeInput">
                 <img class="w-6 h-6" src="../../assets/web/Buscar.svg" alt="">
               </div>
             </div>  
             <div class='px-2 w-full overflow-y-auto pb-80' style="height: 75%;">
-              <div v-if="selected===0">
+              <div v-if="stringSearch===''">
+                <div v-if="selected===0">
                 <div class='grid grid-cols-3'>
                   <div v-for="product in getAllProducts" :key="product"
                     class="pb-2">
@@ -86,6 +88,50 @@
                   </div>
               </div>
               </div>
+              </div>
+              <div v-else>
+                <div v-if="getAllSeries.length!=0">
+                  <p :class="getPageState?'gotham-light':'gotham text-whadow'" 
+                  class="text-title text-xl ">SERIES</p>
+                  <div class="w-full h-px mx-2 my-2 bg-white"></div>
+                  <div class='grid grid-cols-2'>
+                  <div v-for="serie in getAllSeries" :key="serie"
+                    class="pb-2 relative cursor-pointer">
+                    <div @click="onSelectSerie({camp:'serie',data:`${serie.name}`})">
+                   <div class="relative">
+                      <img :src="serie.img" class="object-cover rounded-md" style="width:140px; height:140px" alt="">   
+                     </div>                                                        
+                     <div class="absolute top-0 w-full h-full flex justify-center items-center">
+                       <p class="text-white font-bold text-base moserrat-bold">{{serie.name}}</p>
+                     </div>
+                    </div>
+                  </div>
+              </div>
+                </div>
+                <div v-if="getAllProducts.length!=0" >
+                  <p :class="getPageState?'gotham-light':'gotham text-whadow'" 
+                  class="text-title text-xl ">PRODUCTOS</p>
+                  <div class="w-full h-px mx-2 my-2 bg-white"></div>
+                  <div class='grid grid-cols-3'>
+                  <div v-for="product in getAllProducts" :key="product"
+                    class="pb-2">
+                    <div @click="selectProductForMap(product)" class="cursor-pointer">
+                      <img :src='product.smallPicture' class="object-cover rounded-md" style="width:89px; height:69px" alt="">
+                      <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.name}}</p>
+                      <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.sized}}</p>
+                    </div>
+                  </div>
+              </div>
+                </div>
+                <div class="w-full " v-if="getAllSeries.length===0 && getAllProducts.length===0">
+                  <div class="w-full flex justify-center items-center ">
+                    <img class="object-cover w-8 h-8" v-if="getPageState" src="../../assets/arko/Web/not_found.png" alt="">
+                    <img class="object-cover w-8 h-8" v-else src="../../assets/web/not_found.png" alt="">
+                  </div>
+                  <p class="py-4 text-sm font-normal text-subtitle text-center">
+                  No se ha encontrado el producto que estás buscando, por favor intenta con algo más.</p>
+                  </div>
+              </div>
             </div>
         </div>
       </div>
@@ -105,7 +151,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["filterProductsForString","addFilterAplicates","filterProducts"]),
+    ...mapActions(["filterProductsForString","filterSeriesForString","addFilterAplicates","filterProducts","changeViewFiltesWeb"]),
     changeMenuOption(value) {
       this.selected = value
     },
@@ -116,6 +162,7 @@ export default {
     },
     chngeInput(){
       this.filterProductsForString({word:this.stringSearch})
+      this.filterSeriesForString({word:this.stringSearch})
     },
     selectProductForMap(product){
       Observer.emit(EVENTS.SENDPRODUCT,product);
@@ -125,12 +172,15 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["getPageState","getAllProducts","getAllSeries"])
+    ...mapGetters(["getPageState","getAllProducts","getAllSeries",])
   },
 }
 </script>
 
 <style scoped>
+.text-whadow{
+  text-shadow: 2px 2px 5px #000000;
+}
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
