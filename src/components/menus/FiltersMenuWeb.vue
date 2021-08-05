@@ -119,7 +119,6 @@ export default {
        this.$refs.tutorial.open();
     },
      async onInit(){
-        console.log("assdsdsdsdsdsdsdsdsdsdsdsdsdsd")
       this.formatsLocal = this.getAllFormats
       this.colorLocal = this.getAllColors
       this.finishLocal = this.getAllFinish

@@ -62,22 +62,14 @@
             <div class='px-2 w-full overflow-y-auto pb-80' style="height: 75%;">
               <div v-if="stringSearch===''">
                 <div v-if="selected===0">
-                <div class='grid grid-cols-3'>
-                  <div v-for="product in getAllProducts" :key="product"
-                    class="pb-2">
-                    <div @click="selectProductForMap(product)" class="cursor-pointer">
-                      <img :src='product.smallPicture' class="object-cover rounded-md" style="width:89px; height:69px" alt="">
-                      <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.name}}</p>
-                      <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.sized}}</p>
-                    </div>
-                  </div>
-              </div>
+                    <ProductComponentVue :listProducts="getAllProducts" />
               </div>              
               <div v-else>
+                <div v-if="!serieSelected.name">
                 <div class='grid grid-cols-2'>
                   <div v-for="serie in getAllSeries" :key="serie"
                     class="pb-2 relative cursor-pointer">
-                    <div @click="onSelectSerie({camp:'serie',data:`${serie.name}`})">
+                    <div @click="onSelectSerie(serie)">
                    <div class="relative">
                       <img :src="serie.img" class="object-cover rounded-md" style="width:140px; height:140px" alt="">   
                      </div>                                                        
@@ -86,18 +78,32 @@
                      </div>
                     </div>
                   </div>
+                  </div>
               </div>
+              <div v-else>
+                <div class="w-full relative">
+                  <div class="relative">
+                      <img :src="serieSelected.render" class="object-cover w-full rounded-md" style=" height:70px" alt="">   
+                     </div>                                                        
+                     <div class="absolute top-0 w-full h-full flex justify-center items-center">
+                       <p class="text-white font-bold text-base moserrat-bold">{{serieSelected.name}}</p>
+                     </div>
+                </div>
+                 <ProductComponentVue :listProducts="filterPerSerie(serieSelected.name)"/>
+                </div>              
               </div>
+              <!-- start filter per string -->
               </div>
               <div v-else>
                 <div v-if="getAllSeries.length!=0">
                   <p :class="getPageState?'gotham-light':'gotham text-whadow'" 
                   class="text-title text-xl ">SERIES</p>
                   <div class="w-full h-px mx-2 my-2 bg-white"></div>
+                  <div v-if="!serieSelected.name">
                   <div class='grid grid-cols-2'>
                   <div v-for="serie in getAllSeries" :key="serie"
                     class="pb-2 relative cursor-pointer">
-                    <div @click="onSelectSerie({camp:'serie',data:`${serie.name}`})">
+                    <div @click="onSelectSerie(serie.name)">
                    <div class="relative">
                       <img :src="serie.img" class="object-cover rounded-md" style="width:140px; height:140px" alt="">   
                      </div>                                                        
@@ -105,6 +111,7 @@
                        <p class="text-white font-bold text-base moserrat-bold">{{serie.name}}</p>
                      </div>
                     </div>
+                  </div>
                   </div>
               </div>
                 </div>
@@ -112,16 +119,7 @@
                   <p :class="getPageState?'gotham-light':'gotham text-whadow'" 
                   class="text-title text-xl ">PRODUCTOS</p>
                   <div class="w-full h-px mx-2 my-2 bg-white"></div>
-                  <div class='grid grid-cols-3'>
-                  <div v-for="product in getAllProducts" :key="product"
-                    class="pb-2">
-                    <div @click="selectProductForMap(product)" class="cursor-pointer">
-                      <img :src='product.smallPicture' class="object-cover rounded-md" style="width:89px; height:69px" alt="">
-                      <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.name}}</p>
-                      <p class="text-white font-semibold text-cf" style="font-size:11px;">{{product.sized}}</p>
-                    </div>
-                  </div>
-              </div>
+                   <ProductComponentVue :listProducts="getAllProducts"/>
                 </div>
                 <div class="w-full " v-if="getAllSeries.length===0 && getAllProducts.length===0">
                   <div class="w-full flex justify-center items-center ">
@@ -141,13 +139,17 @@
 
 <script>
 import {  mapActions, mapGetters } from 'vuex'
-import Observer, { EVENTS } from '../../three/Observer'
+import ProductComponentVue from '../cards/ProductComponent.vue'
 export default {
+  components: {
+    ProductComponentVue,
+  },
   data() {
     return {
       selected: 0,
         aplicationsSelected:1,
-          stringSearch:""
+        stringSearch:"",
+        serieSelected:{},
     }
   },
   methods: {
@@ -156,19 +158,26 @@ export default {
       this.selected = value
     },
     onSelectSerie(payload){
-      this.addFilterAplicates(payload)            
-      this.filterProducts()
-      this.selected=0
+      // this.addFilterAplicates(payload)            
+      // this.filterProducts()
+      // this.selected=0
+  this.serieSelected=payload
+    },
+    filterPerSerie(serie){
+      let productsFilterSeries =[]
+      this.getAllProducts.forEach(product=>{
+        if(product.serie===serie){
+          productsFilterSeries.push(product)
+        }
+      })
+      return productsFilterSeries;
     },
     chngeInput(){
       this.filterProductsForString({word:this.stringSearch})
       this.filterSeriesForString({word:this.stringSearch})
     },
-    selectProductForMap(product){
-      Observer.emit(EVENTS.SENDPRODUCT,product);
-    },
     selectAplication(selected){
-      this.aplicationsSelected = selected
+      this.aplicationsSelected = selected      
     }
   },
   computed: {

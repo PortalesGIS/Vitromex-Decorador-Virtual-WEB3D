@@ -23,7 +23,7 @@ export const filterSeriesForString=({commit,getters},{word=""})=>{
   word= normalizeText(word)
   const result = getters.getAllSeriesComplete.filter(product =>
     normalizeText(product.name).includes(word) 
-    )  
+    )     
   commit("setSeriesFilter",result)
 }
 
