@@ -55,7 +55,7 @@ export default {
             // this.filterProducts()
             // this.selected=0
             this.serieSelected=payload
-        this.deleteFilters()
+        // this.deleteFilters()
         },
       filterPerSerie(serie){
       let productsFilterSeries =[]
