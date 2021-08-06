@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full">
+  <div class="w-full h-full px-2">
         <div class="flex justify-between">
             <div  @click="cerrarFiltro" class="flex items-center">
                 <div 
@@ -21,7 +21,7 @@
                 </button>
             </div>
         </div>
-        <div class="overflow-y-auto overflow-x-hidden h-5/6">
+        <div v-if="getCatalogoSerieProductoSelecte===0" class="overflow-y-auto overflow-x-hidden h-5/6 ">
         <div class="pl-1 pt-6 pr-2">
            <div class="flex justify-between"
                 @click="toggleFilterTipologie">
@@ -132,11 +132,41 @@
             </div>
         </div>        
     </div>
-    <div v-if="selectedTypologie!=''" class="w-full bg-filter-options  flex items-center justify-center py-3 animate__animated animate__fadeIn animate__faster">
+    <div v-else>
+        <div class="pl-1 pt-6 pr-2">
+           <div class="flex justify-between"
+                @click="toggleFilterTipologie">
+                <div :class="tipologie?'opacity-40':''">
+                <p  :class="getPageState?'text-xs text-black gotham-light ':'text-xs text-white moserrat-bold'"
+                    >TIPOLOGÍA</p>
+                </div>
+                <div v-if="tipologie">
+                <img class="transform rotate-270 w-2 opacity-50" v-if="getPageState" src="../../assets/arko/Mobile/cerrar_filtro_catalogo.svg" alt="">
+                <img class="transform rotate-270 w-2 opacity-50" v-else src="../../assets/mobile/cerrar_filtro_catalogo.svg" alt="">
+                </div>      
+                <div v-else>
+                <img class="transform rotate-90 w-2 opacity-50" v-if="getPageState" src="../../assets/arko/Mobile/cerrar_filtro_catalogo.svg" alt="">
+                <img class="transform rotate-90 w-2 opacity-50" v-else src="../../assets/mobile/cerrar_filtro_catalogo.svg" alt="">
+                    </div>          
+           </div>
+            <div v-if="!tipologie" class="w-full h-auto flex flex-wrap">
+                <div v-for="item in getAllTypologies" :key="item" class="flex-initial pl-1 ">
+                    <div class=" py-1"
+                    :class="item.length<=10?' w-20':' w-44'"
+                    @click="onfilterSerie({camp:'typologie',data:`${item}`})">
+                        <p class="py-1  text-center  rounded-md text-xs lowercase truncate "
+                            :class="selectedTypologie===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'"
+                        >{{item}}</p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+  </div>
+  <div v-if="selectedTypologie!=''" class="fixed bottom-0 mb-16 w-full overflow-x-hidden pr-2  bg-filter-options  flex items-center justify-center py-3 animate__animated animate__fadeIn animate__faster">
        <button class="py-2 px-3 bg-filter-use text-selected-filter moserrat-bold"
        @click="cerrarFiltro">Ver resultados</button>
     </div>
-  </div>
 </template>
 
 <script>
@@ -164,7 +194,7 @@ export default {
         },
     },
     methods: {
-        ...mapActions(["filterProducts","deleteFilters","addFilterAplicates"]),
+        ...mapActions(["filterProducts","deleteFilters","addFilterAplicates","filterSeries"]),
         toggleFilterTipologie(){
             this.tipologie =!this.tipologie
         },
@@ -197,6 +227,10 @@ export default {
                 this.selectFinish=payload.data
             }
         },
+        onfilterSerie(payload){
+          this.selectedTypologie=payload.data
+          this.filterSeries(payload)
+        },
         toggleFilteformat(){
             this.fomat =!this.fomat
         },
@@ -213,6 +247,7 @@ export default {
         "getAllFormats",
         "getAllColors",
         "getAllFinish",
+        "getCatalogoSerieProductoSelecte",
         ])
     },
 

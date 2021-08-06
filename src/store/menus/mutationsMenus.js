@@ -16,3 +16,8 @@ export const setFiltesWeb = (state,payload)=>{
     
     state.isOpenfiltersWeb = payload
 }
+
+export const setCatalogoSerieProductoSelecte = (state,payload)=>{
+    
+    state.catalogoSerieProductoSelecte = payload
+}

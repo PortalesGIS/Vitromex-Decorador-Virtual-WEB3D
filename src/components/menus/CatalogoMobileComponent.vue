@@ -58,7 +58,7 @@
             </div>
         </div>
         <div v-if="stringSearch===''" class="w-full flex pt-5">
-              <MenuSelectedComponentVue :selected="selected" :changeMenuOption="changeMenuOption"/>
+              <MenuSelectedComponentVue />
         </div> 
          <div class="py-5 bg-1d">
               <div class="flex w-full justify-around items-center">
@@ -78,7 +78,7 @@
             </div> 
             <div class='px-2 bg-1d  w-full h-5/6 overflow-y-auto pb-20'>
               <div v-if="stringSearch===''">
-                <div v-if="selected===0">
+                <div v-if="getCatalogoSerieProductoSelecte===0">
                   <ProductComponentVue :listProducts="getAllProducts"/>
               </div>              
               <div v-else>
@@ -109,7 +109,7 @@
               </div>
             </div>
     </div>
-    <div v-else class="bg-base-black w-full h-full px-2 pt-5 animate__animated animate__fadeInRight animate__faster">
+    <div v-else class="bg-base-black w-full h-full pt-5 animate__animated animate__fadeInRight animate__faster">
         <FiltersMobileComponentVue
         :cerrarFiltro="cerrarFiltro"
         />
@@ -133,7 +133,6 @@ export default {
     },
     data() {
         return {
-             selected: 0,
              aplicationsSelected:1,
              isFiltersOpen:false,
              isActiveBuscar:false,
@@ -143,9 +142,6 @@ export default {
     methods: {
     ...mapActions(["changeMenuCatalogo","filterProductsForString","filterSeriesForString",
                   "deleteFilters","deleteFiltersSeries","deleteOneFilter","filterProducts","addFilterAplicates"]),
-        changeMenuOption(value) {
-      this.selected = value
-    },
     chngeInput(){
       this.filterProductsForString({word:this.stringSearch})
        this.filterSeriesForString({word:this.stringSearch})
@@ -192,7 +188,7 @@ export default {
     },
 computed: {
     ...mapGetters(["getPageState","getAllProducts",
-    "getFiltersAplicates","getAllSeries"])
+    "getFiltersAplicates","getAllSeries","getCatalogoSerieProductoSelecte"])
   },
 }
 </script>

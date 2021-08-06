@@ -11,3 +11,7 @@ export const getMenuAplicates = (state) =>{
 export const getisOpenfiltersWeb = (state) =>{
     return state.isOpenfiltersWeb
 }
+
+export const getCatalogoSerieProductoSelecte = (state) =>{
+    return state.catalogoSerieProductoSelecte
+}

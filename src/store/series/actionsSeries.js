@@ -2,7 +2,6 @@ import { baseUrl } from "../../../types/data";
 
 
 export const getSeries= async ({commit,getters}) =>{
-  console.log("llamado a series")
     let platform=""
     if(getters.getPageState){
         platform = "arko"
@@ -25,6 +24,17 @@ export const filterSeriesForString=({commit,getters},{word=""})=>{
     normalizeText(product.name).includes(word) 
     )     
   commit("setSeriesFilter",result)
+}
+
+export const filterSeries = ({commit,getters},payload)=>{
+  let temp=getters.getAllSeriesComplete
+  let finalArray=[]
+    temp.forEach(serie =>{
+    if(serie[payload.camp]===payload.data){
+      finalArray.push(serie)
+    }
+  })
+  commit("setSeriesFilter",finalArray)
 }
 
 const normalizeText=(text)=>{

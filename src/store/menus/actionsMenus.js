@@ -10,5 +10,8 @@ export const changeMenuCatalogo = ({commit,getters}) =>{
 }
 export const changeViewFiltesWeb = ({commit,getters})=>{
     commit("setFiltesWeb",!getters.getisOpenfiltersWeb)
+}
 
+export const changeCatalogoSerieProductoSelecte = ({commit},payload)=>{
+    commit("setCatalogoSerieProductoSelecte",payload)
 }

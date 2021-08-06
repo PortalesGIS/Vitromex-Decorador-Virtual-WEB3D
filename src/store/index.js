@@ -20,6 +20,7 @@ export default createStore({
     listSeries:[],
     listSeriesFilter:[],
     menuAplicates:false,
+    catalogoSerieProductoSelecte:0,
     menuCatalogo:false,
     isOpenfiltersWeb:false,
     filtersAplicates:[]

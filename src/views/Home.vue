@@ -63,8 +63,6 @@ export default {
     RightMenuDesktopComponentVue,
     CatalogoMobileComponentVue,
   },
-  data() {
-  },  
   methods: {
     ...mapActions(["onChangeStatePage","getProducts","getSeries"]),
     async charge (){
@@ -75,7 +73,7 @@ export default {
   computed: {
     ...mapGetters(["getPageState","getMenuCatalogo","getMenuAplicates","getAllProductsComplete"])
   },
-  async created () {
+  mounted () {
     this.charge()
   },
     

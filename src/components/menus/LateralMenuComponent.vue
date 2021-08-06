@@ -11,7 +11,7 @@
       </div>
       <div class="fixed h-full w-336  px-2 pb-4 pt-4 bg-base-black">
         <div class='w-full h-5/6 bg-1d pr-1'>
-              <MenuSelectedComponentVue :selected="selected" :changeMenuOption="changeMenuOption" />
+              <MenuSelectedComponentVue  />
               <AplicationsSelectedComponentVue/>
             <div class="pt-5 pb-4 px-2">
               <div class="w-full flex items-center justify-between px-2 bg-6a rounded-full">
@@ -23,7 +23,7 @@
             </div>  
             <div class='px-2 w-full overflow-y-auto pb-80' style="height: 75%;">
               <div v-if="stringSearch===''">
-                <div v-if="selected===0">
+                <div v-if="getCatalogoSerieProductoSelecte===0">
                     <ProductComponentVue :listProducts="getAllProducts" />
               </div>              
               <div v-else>
@@ -75,22 +75,18 @@ export default {
   },
   data() {
     return {
-      selected: 0,
         stringSearch:"",
     }
   },
   methods: {
     ...mapActions(["filterProductsForString","filterSeriesForString","addFilterAplicates","filterProducts","changeViewFiltesWeb"]),
-    changeMenuOption(value) {
-      this.selected = value
-    },
     chngeInput(){
       this.filterProductsForString({word:this.stringSearch})
       this.filterSeriesForString({word:this.stringSearch})
     },
   },
   computed: {
-    ...mapGetters(["getPageState","getAllProducts","getAllSeries",])
+    ...mapGetters(["getPageState","getAllProducts","getAllSeries","getCatalogoSerieProductoSelecte"])
   },
 }
 </script>

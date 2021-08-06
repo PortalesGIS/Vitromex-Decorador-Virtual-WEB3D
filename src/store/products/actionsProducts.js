@@ -2,7 +2,6 @@ import { baseUrl } from "../../../types/data";
 
 
 export const getProducts = async ({commit,getters}) =>{
-  console.log("llamado a productos")
     let platform="vitromex"
     if(getters.getPageState){
         platform = "arko"

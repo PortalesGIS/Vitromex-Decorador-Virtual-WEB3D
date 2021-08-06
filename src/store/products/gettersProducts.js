@@ -8,7 +8,10 @@ export const getAllProductsComplete = (state)=>{
 
 export const getAllTypologies = (state)=>{
    return dontRepeatData(state.listProducts,"typologies")
-   
+}
+
+export const getAllSeriesForFilter = (state)=>{
+   return dontRepeatData(state.listProducts,"serie")
 }
 
 export const getAllFormats = (state)=>{

@@ -4,7 +4,8 @@
         <div class='grid grid-cols-6 w-full h-full'>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <select name="" id="" @change="onFilter({camp:'typologies',data:`${typogra}`})" v-model="typogra"
+                <select name="" id=""  v-model="typogra"
+                 @change="getCatalogoSerieProductoSelecte===0?onFilter({camp:'typologies',data:`${typogra}`}):onfilterSerie({camp:'typologie',data:`${typogra}`})" 
                  class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none"
                  :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'">
                   <option disabled selected> Tipología </option>
@@ -16,6 +17,17 @@
               <div class=" flex w-full justify-center">
                 <select name="" id="" class="appearance-none bg-1d  text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
                  :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
+                @change="getCatalogoSerieProductoSelecte===0?onFilter({camp:'serie',data:`${ser}`}):onfilterSerie({camp:'name',data:`${ser}`})" v-model="ser">
+                  <option disabled selected> {{ser}} </option>
+                  <option v-for="serie in serieLocal" :key="serie" :value="serie">{{serie}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-full h-full flex items-center justify-center">
+              <div class=" flex w-full justify-center">
+                <select :disabled="getCatalogoSerieProductoSelecte!=0"
+                 name="" id="" class="appearance-none bg-1d  text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
+                 :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
                 @change="onFilter({camp:'sized',data:`${forma}`})" v-model="forma">
                   <option disabled selected> Formatos </option>
                   <option v-for="format in formatsLocal" :key="format" :value="format">{{format}}</option>
@@ -24,7 +36,8 @@
             </div>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <select name="" id="" class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
+                <select :disabled="getCatalogoSerieProductoSelecte!=0"
+                 name="" id="" class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
                  :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
                   @change="onFilter({camp:'color',data:`${col}`})" v-model="col">
                   <option disabled selected> Colores </option>
@@ -34,7 +47,8 @@
             </div>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <select name="" id="" class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
+                <select :disabled="getCatalogoSerieProductoSelecte!=0"
+                name="" id="" class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
                  :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
                   @change="onFilter({camp:'finish',data:`${fini}`})" v-model="fini">
                   <option disabled selected> Acabado </option>
@@ -42,10 +56,7 @@
                 </select>
               </div>
             </div>
-            <div class="w-full h-full flex items-center justify-center">
-              <div class=" flex w-full justify-center">
-              </div>
-            </div>
+            
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
                 <button @click="onDeleteFilters" class="bg-black text-white w-11/12 xl:w-5/6 h-9 px-2">Borrar filtros</button>
@@ -80,6 +91,8 @@ export default {
       formatsLocal:[],
       colorLocal:[],
       finishLocal:[],
+      serieLocal:[],
+      ser:"Serie",
       typogra: "Tipología",
       forma:"Formatos",
       col:"Colores",
@@ -87,11 +100,13 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["deleteFilters","filterProducts","addFilterAplicatesVersionDesktop"]),
+    ...mapActions(["deleteFilters","deleteFiltersSeries","filterProducts","filterSeries","addFilterAplicatesVersionDesktop"]),
     onDeleteFilters(){
             this.selectedTypologie=""
             this.deleteFilters()
+            this.deleteFiltersSeries()
             this.onInit()
+            this.ser="Serie"
             this.typogra= "Tipología"
             this.forma="Formatos"
             this.col="Colores"
@@ -116,6 +131,9 @@ export default {
                   this.finishLocal = this.getAllFinish
             }
         },
+        onfilterSerie(payload){
+          this.filterSeries(payload)
+        },
     openTutorial() {
        this.$refs.tutorial.open();
     },
@@ -123,6 +141,7 @@ export default {
       this.formatsLocal = this.getAllFormats
       this.colorLocal = this.getAllColors
       this.finishLocal = this.getAllFinish
+      this.serieLocal = this.getAllSeriesForFilter
     }
   },
 computed: {
@@ -130,6 +149,8 @@ computed: {
         "getAllFormats",
         "getAllColors",
         "getAllFinish",
+        "getCatalogoSerieProductoSelecte",
+        "getAllSeriesForFilter",
         "getisOpenfiltersWeb",
         ])
   },
