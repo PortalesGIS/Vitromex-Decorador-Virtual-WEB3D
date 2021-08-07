@@ -11,7 +11,7 @@ export class PlaneTest extends Mesh{
             this.add(gltf.scene); 
             this.piso = gltf.scene.children[0].children[0].children[0].children[0].children[0].children[0]
             // console.log(gltf.scene)    
-            console.log(gltf.scene.children[0].children[0].children[0].children[0].children[0].children[0])   
+            // console.log(gltf.scene.children[0].children[0].children[0].children[0].children[0].children[0])   
             let lightMap =   new TextureLoader();
             lightMap.load('models3D/test/Lightmap-0_comp_light_m.png',(texture)=>{
                 const lamber = new MeshStandardMaterial({

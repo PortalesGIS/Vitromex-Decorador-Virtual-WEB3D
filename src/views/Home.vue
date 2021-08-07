@@ -1,9 +1,9 @@
 <template>
-<div class="absolute top-0 z-100 bg-red-400" @click="onChangeStatePage(!getPageState)">
+<div class="absolute top-0 ml-20 z-100 bg-red-400" @click="onChangeStatePage(!getPageState)">
   change 
 </div>
 <div :class="getPageState?'theme-arko':''">
-  <div class="h-screen w-screen">
+  <div class="hidden h-screen w-screen">
     <div class="absolute z-50">
     <HeaderGlobalComponentVue/>
     
@@ -34,7 +34,7 @@
       <BottomGlobalComponentVue/>
     </div>  
   </div>
-  <div class="z-10 absolute top-0 h-screen w-screen">
+  <div class=" absolute top-0 h-screen w-screen">
     <div class="absolute w-full h-full">
       <Home3DComponentVue/>
     </div>

@@ -1,6 +1,10 @@
-import { PerspectiveCamera,  WebGLRenderer, sRGBEncoding, Math,   } from 'three';
+import { PerspectiveCamera,  WebGLRenderer, sRGBEncoding, 
+	// Math,
+   } from 'three';
 import Scene1 from './scenes/Scene1';
+import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
+import Stats from 'three/examples/jsm/libs/stats.module'
 
 export class App {
 	constructor(container) {
@@ -8,18 +12,19 @@ export class App {
 
 		
 		// ## Camera's config
-		this.camera = new PerspectiveCamera(35, this.container.clientWidth / this.container.clientHeight, 0.1, 10000);
-		this.camera.position.set(60, 10, 0);
+		this.camera = new PerspectiveCamera(70, this.container.clientWidth / this.container.clientHeight, 0.1, 10000);
+		this.camera.position.set(123, 22, -60);
+		this.camera.rotation.set(0,1.4,0)
 		// this.camera.lookAt(0, 0, 0);
 		
 		
 		this.control = new OrbitControls(this.camera, this.container);
-		this.control.target.set(this.camera.position.x/1.1,this.camera.position.y/1.1,this.camera.position.z/1.1);
+		this.control.target.set(this.camera.position.x/1.0001,this.camera.position.y/1.0001,this.camera.position.z/1.00001);
 		this.control.enableDamping=true
 		this.control.rotateSpeed=-0.2
-		this.control.enableZoom = false
-		this.control.maxPolarAngle = 100 * Math.DEG2RAD
-		this.control.minPolarAngle = 50 * Math.DEG2RAD
+		// this.control.enableZoom = false
+		// this.control.maxPolarAngle = 100 * Math.DEG2RAD
+		// this.control.minPolarAngle = 50 * Math.DEG2RAD
 		// ## Renderer's config
 		
 		this.renderer = new WebGLRenderer({
@@ -57,6 +62,21 @@ export class App {
 		this.scene = new Scene1(this.camera,this.control,);
 		// this.cameraHelper = new CameraHelper(this.camera)
 		// this.scene.add(this.cameraHelper)
+		// Helpersss
+		var gui = new GUI();
+
+		var cam = gui.addFolder('Camera');
+		cam.add(this.camera.position, 'y', -150.0, 150.0).listen();
+		cam.add(this.camera.position, 'x', -150.0, 150.0).listen();
+		cam.add(this.camera.position, 'z', -150.0, 150.0).listen();
+		cam.add(this.camera.rotation, 'x', 0, 2).listen();
+		cam.add(this.camera.rotation, 'y', 0, 2).listen();
+		cam.add(this.camera.rotation, 'z', 0, 2).listen();
+		cam.open();
+
+		this.stats = Stats()
+		document.body.appendChild(this.stats.dom)
+		// 
 
 		this.control.update();
 		this.onResize();
@@ -73,7 +93,7 @@ export class App {
 
 	render() {
 
-
+		this.stats.update()
 		this.renderer.render(this.scene, this.camera);
 		this.control.update();
 		// Updates here

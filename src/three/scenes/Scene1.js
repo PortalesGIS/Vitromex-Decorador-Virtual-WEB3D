@@ -4,6 +4,7 @@ import {  AxesHelper, Color, DirectionalLight, HemisphereLight, PerspectiveCamer
 } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import {Cube } from '../objects/Cube'
+import { House } from '../objects/House';
 // import { Plane } from '../objects/Plane';
 import { PlaneTest } from '../objects/PlaneTest';
 import Observer, { EVENTS } from '../Observer';
@@ -25,7 +26,8 @@ class Scene1 extends Scene {
 		// 
 		// test - plane
 		this.test = new PlaneTest()
-		this.add(this.test)
+		this.house = new House()
+		this.add(this.house)
 		// 
 		this.cube2 = new Cube(3,"blue");
 		this.cube2.position.x=100;
