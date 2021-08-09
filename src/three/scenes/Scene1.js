@@ -20,14 +20,14 @@ class Scene1 extends Scene {
 		this.create();
 	}
 	create(){
-		this.cube = new Cube(3,"orangered");
+		this.cube = new Cube(1,"orangered");
 		this.cube.position.y=2;
 		this.add(this.cube);
 		// 
 		// test - plane
 		this.test = new PlaneTest()
 		this.house = new House()
-		this.add(this.house)
+		// this.add(this.house)
 		// 
 		this.cube2 = new Cube(3,"blue");
 		this.cube2.position.x=100;
@@ -86,8 +86,8 @@ class Scene1 extends Scene {
 	}
 	update(){
 		
-		this.cube.rotation.x +=0.01;
-		this.cube.rotation.y +=0.01;
+		this.cube.rotation.x +=0.001;
+		this.cube.rotation.y +=0.001;
 	}
 }
 

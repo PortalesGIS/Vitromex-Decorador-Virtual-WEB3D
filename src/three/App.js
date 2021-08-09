@@ -13,7 +13,8 @@ export class App {
 		
 		// ## Camera's config
 		this.camera = new PerspectiveCamera(70, this.container.clientWidth / this.container.clientHeight, 0.1, 10000);
-		this.camera.position.set(123, 22, -60);
+		// this.camera.position.set(123, 22, -60);
+		this.camera.position.set(0,3.5,0);
 		this.camera.rotation.set(0,1.4,0)
 		// this.camera.lookAt(0, 0, 0);
 		
@@ -66,9 +67,9 @@ export class App {
 		var gui = new GUI();
 
 		var cam = gui.addFolder('Camera');
-		cam.add(this.camera.position, 'y', -150.0, 150.0).listen();
-		cam.add(this.camera.position, 'x', -150.0, 150.0).listen();
-		cam.add(this.camera.position, 'z', -150.0, 150.0).listen();
+		cam.add(this.camera.position, 'y', -50.0, 50.0).listen();
+		cam.add(this.camera.position, 'x', -50.0, 50.0).listen();
+		cam.add(this.camera.position, 'z', -50.0, 50.0).listen();
 		cam.add(this.camera.rotation, 'x', 0, 2).listen();
 		cam.add(this.camera.rotation, 'y', 0, 2).listen();
 		cam.add(this.camera.rotation, 'z', 0, 2).listen();
