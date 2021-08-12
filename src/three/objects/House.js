@@ -15,13 +15,14 @@ export class House extends Mesh{
             this.add(gltf.scene); 
             console.log(console.log( gltf.scene.children[0].getObjectByName('Object049')))
             this.piso = gltf.scene.children[0].getObjectByName('Object049_mt_piso_base_0')
+            
             Observer.on(EVENTS.SENDPRODUCT,(payload)=>{
                 console.log(payload)
                 let mapDB =   new TextureLoader();
                 mapDB.load(payload.albedo,(textureMap)=>{
                     textureMap.wrapS = RepeatWrapping;
                     textureMap.wrapT = RepeatWrapping;
-                    textureMap.repeat.set( payload.textureWidth, payload.textureHeight );
+                    textureMap.repeat.set(0.69444 ,0.69444 );
                     mapDB.load(payload.normal,(textureNormal)=>{
                         const uploadMaterial = new MeshStandardMaterial({
                             color: 0x777777,

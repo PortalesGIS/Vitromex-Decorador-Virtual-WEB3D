@@ -13,9 +13,13 @@ export class App {
 		
 		// ## Camera's config
 		this.camera = new PerspectiveCamera(70, this.container.clientWidth / this.container.clientHeight, 0.1, 10000);
-		// this.camera.position.set(123, 22, -60);
-		this.camera.position.set(0,3.5,0);
-		this.camera.rotation.set(0,1.4,0)
+		// initial test
+		// this.camera.position.set(123, 22,-60);
+		// initial sala
+		this.camera.position.set(69, 23,-96);
+
+		// this.camera.position.set(0,3.5,0);
+		this.camera.rotation.set(-1.9,-1.19,-1.19)
 		// this.camera.lookAt(0, 0, 0);
 		
 		

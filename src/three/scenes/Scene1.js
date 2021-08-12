@@ -27,7 +27,7 @@ class Scene1 extends Scene {
 		// test - plane
 		this.test = new PlaneTest()
 		this.house = new House()
-		// this.add(this.house)
+		this.add(this.house)
 		// 
 		this.cube2 = new Cube(3,"blue");
 		this.cube2.position.x=100;
