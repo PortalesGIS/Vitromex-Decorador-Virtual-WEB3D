@@ -2,7 +2,7 @@
 <div class="absolute top-0 ml-20 z-100 bg-red-400" @click="onChangeStatePage(!getPageState)">
   change 
 </div>
-<div :class="getPageState?'theme-arko':''">
+<div :class="getPageState?'theme-arko':''" class="">
   <div class=" h-screen w-screen">
     <div class="absolute z-50">
     <HeaderGlobalComponentVue/>

@@ -9,7 +9,8 @@
     <div class=" absolute top-0 h-20 lg:h-24 w-screen ">
       <div class='grid grid-cols-12 gap-1 h-full'>
          <div class="col-span-1 xl:col-span-1 flex items-center justify-center h-full"></div>
-          <div class="col-span-2 xl:col-span-2 flex items-center justify-center h-full">
+          <div  @click="clickMenuTop('https://www.vitromex.com.mx')"
+          class="col-span-2 xl:col-span-2 flex items-center justify-center h-full cursor-pointer">
             <img  v-if="getPageState" src="../../assets/arko/Web/ARKO_Logo.svg" style="width:223px; height:52px" alt="">
             <img v-else src="../../assets/web/Logo_Vitromex.svg" style="width:223px; height:52px" alt="">
             </div>
@@ -21,17 +22,17 @@
             <div class="col-span-5 xl:col-span-4 h-full">
               <div class="pr-28 flex items-center h-full justify-around ">
                 <button 
-                @click="clickMenuTop"
-                class="focus:outline-none text-lg text-title cursor-pointer">Contacto</button>
+                @click="clickMenuTop('https://www.vitromex.com.mx/contacto')"
+                class="focus:outline-none text-lg text-title cursor-pointer moserrat-semibold ">Contacto</button>
                 <button 
-                @click="clickMenuTop"
-                class="focus:outline-none text-lg text-title cursor-pointer">Nosotros</button>
+                @click="clickMenuTop('https://www.vitromex.com.mx/aboutus')"
+                class="focus:outline-none text-lg text-title cursor-pointer moserrat-semibold ">Nosotros</button>
                 <button 
-                @click="clickMenuTop"
-                class="focus:outline-none text-lg text-title cursor-pointer">Cerca de mi</button>
+                @click="clickMenuTop('https://www.vitromex.com.mx/cercadeti')"
+                class="focus:outline-none text-lg text-title cursor-pointer moserrat-semibold ">Cerca de mí</button>
                 <button 
-                @click="clickMenuTop"
-                class="focus:outline-none text-lg text-title cursor-pointer">Blog</button>
+                @click="clickMenuTop('https://www.vitromex.com.mx/blog')"
+                class="focus:outline-none text-lg text-title cursor-pointer moserrat-semibold ">Blog</button>
               </div>
             </div>
       </div>
@@ -55,6 +56,10 @@ export default {
     }
   },
   methods: {
+    clickMenuTop(url){
+      window.open(url, '_blank').focus();
+      
+    }
   },
   computed: {
     ...mapGetters(["getPageState"])

@@ -17,8 +17,8 @@
                         <div class="h-px w-16 xl:w-24 bg-base-white"></div>
                     </div>
                     </div>
-                <div class=" h-8 xl:h-16 w-px bg-separatedBar"></div>
             </div>
+            <div class=" h-8 xl:h-16 w-px bg-separatedBar "></div>
             <div class="flex h-full items-center cursor-pointer  hover:bg-base-black-opacity hover:bg-opacity-50">
                 <div class=" w-20 xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl">
                     <div>
@@ -27,8 +27,8 @@
                         <!-- <div class="h-px w-16 xl:w-24 bg-base-white"></div> -->
                     </div>
                     </div>
-                <div class=" h-8 xl:h-16 w-px bg-separatedBar"></div>
             </div>
+                <div class=" h-8 xl:h-16 w-px bg-separatedBar"></div>
             <div class="flex h-full items-center cursor-pointer  hover:bg-base-black-opacity hover:bg-opacity-50">
                 <div class=" w-20 xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl">
                     <div>
@@ -37,8 +37,8 @@
                         <!-- <div class="h-px w-16 xl:w-24 bg-base-white"></div> -->
                     </div>
                     </div>
-                <div class=" h-8 xl:h-16 w-px bg-separatedBar"></div>
             </div>
+                <div class=" h-8 xl:h-16 w-px bg-separatedBar"></div>
             <div class="flex h-full items-center cursor-pointer  hover:bg-base-black-opacity hover:bg-opacity-50">
                 <div class=" w-20 xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl">
                     <div>
@@ -47,8 +47,8 @@
                         <!-- <div class="h-px w-16 xl:w-24 bg-base-white"></div> -->
                     </div>
                     </div>
-                <div class=" h-8 xl:h-16 w-px bg-separatedBar"></div>
             </div>
+                <div class=" h-8 xl:h-16 w-px bg-separatedBar"></div>
             <div class="flex h-full cursor-pointer items-center hover:bg-base-black-opacity hover:bg-opacity-50">
                 <div class=" w-20 xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl">
                     <div>

@@ -2,7 +2,7 @@
   <div class="h-full pt-24 ">
     <div class="h-full w-336 bg-base-black ">
       <div class="px-4 pt-4 flex justify-between">
-        <div class="text-title text-xl font-bold moserrat-bold">CATÁLOGO</div>
+        <div class="text-title text-2xl font-bold moserrat-bold">CATÁLOGO</div>
         <div class="flex justify-center items-center cursor-pointer"
         @click="changeViewFiltesWeb">
           <img  v-if="getPageState" src="../../assets/arko/Web/Filtros.svg" class="w-4 h-4" alt="">
@@ -46,8 +46,8 @@
                 </div>
                 <div class="w-full " v-if="getAllSeries.length===0 && getAllProducts.length===0">
                   <div class="w-full flex justify-center items-center ">
-                    <img class="object-cover w-8 h-8" v-if="getPageState" src="../../assets/arko/Web/not_found.png" alt="">
-                    <img class="object-cover w-8 h-8" v-else src="../../assets/web/not_found.png" alt="">
+                    <img class="object-cover w-12 h-12" v-if="getPageState" src="../../assets/arko/Web/not_found.png" alt="">
+                    <img class="object-cover w-12 h-12" v-else src="../../assets/web/not_found.png" alt="">
                   </div>
                   <p class="py-4 text-sm font-normal text-subtitle text-center">
                   No se ha encontrado el producto que estás buscando, por favor intenta con algo más.</p>

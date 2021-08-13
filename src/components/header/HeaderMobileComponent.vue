@@ -48,7 +48,7 @@
      class="text-right py-1 px-4 w-full text-title uppercase">NOSOTROS </p>
      <p 
      
-     class="text-right py-1 px-4 w-full text-title uppercase">CERCA DE MI</p>
+     class="text-right py-1 px-4 w-full text-title uppercase">CERCA DE MÍ</p>
      <p 
      
      class="text-right py-1 px-4 w-full text-title uppercase">BLOG</p>
