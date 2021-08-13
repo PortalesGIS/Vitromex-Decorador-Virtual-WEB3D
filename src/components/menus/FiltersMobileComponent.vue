@@ -43,9 +43,9 @@
                     <div class=" py-1"
                     :class="item.length<=10?' w-20':' w-44'"
                     @click="onFilter({camp:'typologies',data:`${item}`})">
-                        <p class="py-1  text-center  rounded-md text-xs lowercase truncate "
+                        <p class="py-1  text-center  rounded-md text-xs capitalize truncate"
                             :class="selectedTypologie===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'"
-                        >{{item}}</p>
+                        >{{item.toLowerCase()}}</p>
                     </div>
                 </div>
             </div>
@@ -71,8 +71,9 @@
                     <div class="py-1"
                      :class="item.length<=10?' w-20':' w-44'"
                        @click="onFilter({camp:'sized',data:`${item}`})">
-                        <p class="py-1  text-center  rounded-md text-xs lowercase truncate "
-                         :class="selectFormat===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'">{{item}}</p>
+                        <p class="py-1  text-center  rounded-md text-xs capitalize truncate "
+                         :class="selectFormat===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'">
+                         {{item.toLowerCase()}}</p>
                     </div>
                 </div>
             </div>
@@ -98,8 +99,9 @@
                     <div class="py-1"
                      :class="item.length<=10?' w-20':' w-44'"
                       @click="onFilter({camp:'color',data:`${item}`})">
-                      <p class="py-1  text-center  rounded-md text-xs lowercase truncate "
-                         :class="selectColor===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'">{{item}}</p>
+                      <p class="py-1  text-center  rounded-md text-xs capitalize truncate "
+                         :class="selectColor===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'">
+                         {{item.toLowerCase()}}</p>
                     </div>
                 </div>
             </div>
@@ -125,13 +127,15 @@
                    <div class="py-1"
                      :class="item.length<=10?' w-20':' w-44'"
                       @click="onFilter({camp:'finish',data:`${item}`})">
-                       <p class="py-1  text-center  rounded-md text-xs lowercase truncate "
-                         :class="selectFinish===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'">{{item}}</p>
+                       <p class="py-1  text-center  rounded-md text-xs capitalize truncate "
+                         :class="selectFinish===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'">
+                         {{item.toLowerCase()}}</p>
                     </div>
                 </div>
             </div>
         </div>        
     </div>
+    <!-- if secccion serie is active  -->
     <div v-else>
         <div class="pl-1 pt-6 pr-2">
            <div class="flex justify-between"
@@ -154,9 +158,9 @@
                     <div class=" py-1"
                     :class="item.length<=10?' w-20':' w-44'"
                     @click="onfilterSerie({camp:'typologie',data:`${item}`})">
-                        <p class="py-1  text-center  rounded-md text-xs lowercase truncate "
+                        <p class="py-1  text-center  rounded-md text-xs capitalize truncate "
                             :class="selectedTypologie===item?'bg-filter-use text-selected-filter':'text-text-filter bg-filter-options'"
-                        >{{item}}</p>
+                        >{{item.toLowerCase()}}</p>
                     </div>
                 </div>
             </div>

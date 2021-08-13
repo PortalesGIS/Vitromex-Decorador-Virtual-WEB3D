@@ -43,7 +43,7 @@ class Scene1 extends Scene {
 		this.add(this.cube5);
 		// 
 		this.abientLight = new HemisphereLight(0xffffffbb, 0x080820,0.5)
-		this.light =  new DirectionalLight(0xffffff,1.0);
+		this.light =  new DirectionalLight(0xffffff,1);
 		this.add(this.abientLight, this.light);
 		// this.piso =new Plane(155,150);
 		// this.add(this.piso);

@@ -4,62 +4,62 @@
         <div class='grid grid-cols-6 w-full h-full'>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <select name="" id=""  v-model="typogra"
+                <select name="" id=""  v-model="typogra" 
                  @change="getCatalogoSerieProductoSelecte===0?onFilter({camp:'typologies',data:`${typogra}`}):onfilterSerie({camp:'typologie',data:`${typogra}`})" 
-                 class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none"
+                 class="appearance-none monserrat bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none"
                  :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'">
-                  <option disabled selected> Tipología </option>
-                  <option v-for="typo in getAllTypologies" :key="typo" :value="typo">{{typo}}</option>
+                  <option disabled selected class="monserrat" > Tipología </option>
+                  <option v-for="typo in getAllTypologies" :key="typo" class="monserrat" :value="typo">{{typo}}</option>
                 </select>
               </div>
             </div>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <select name="" id="" class="appearance-none bg-1d  text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
+                <select name="" id="" class="appearance-none bg-1d monserrat  text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
                  :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
                 @change="getCatalogoSerieProductoSelecte===0?onFilter({camp:'serie',data:`${ser}`}):onfilterSerie({camp:'name',data:`${ser}`})" v-model="ser">
-                  <option disabled selected> {{ser}} </option>
-                  <option v-for="serie in serieLocal" :key="serie" :value="serie">{{serie}}</option>
+                  <option disabled selected class="monserrat" > {{ser}} </option>
+                  <option v-for="serie in serieLocal" :key="serie" class="monserrat" :value="serie">{{serie}}</option>
                 </select>
               </div>
             </div>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
                 <select :disabled="getCatalogoSerieProductoSelecte!=0"
-                 name="" id="" class="appearance-none bg-1d  text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
+                 name="" id="" class="appearance-none bg-1d monserrat  text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
                  :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
                 @change="onFilter({camp:'sized',data:`${forma}`})" v-model="forma">
-                  <option disabled selected> Formatos </option>
-                  <option v-for="format in formatsLocal" :key="format" :value="format">{{format}}</option>
+                  <option disabled selected class="monserrat" > Formatos </option>
+                  <option v-for="format in formatsLocal" :key="format" class="monserrat" :value="format">{{format}}</option>
                 </select>
               </div>
             </div>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
                 <select :disabled="getCatalogoSerieProductoSelecte!=0"
-                 name="" id="" class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
+                 name="" id="" class="appearance-none bg-1d monserrat text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
                  :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
                   @change="onFilter({camp:'color',data:`${col}`})" v-model="col">
-                  <option disabled selected> Colores </option>
-                 <option v-for="color in colorLocal" :key="color" :value="color">{{color}}</option>
+                  <option disabled selected class="monserrat" > Colores </option>
+                 <option v-for="color in colorLocal" :key="color" class="monserrat" :value="color">{{color}}</option>
                 </select>
               </div>
             </div>
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
                 <select :disabled="getCatalogoSerieProductoSelecte!=0"
-                name="" id="" class="appearance-none bg-1d text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
+                name="" id="" class="appearance-none bg-1d monserrat text-subtitle w-11/12 xl:w-5/6 h-9 px-2 outline-none "
                  :class="getPageState?'arrow-drop-down-black':'arrow-drop-down'"
                   @change="onFilter({camp:'finish',data:`${fini}`})" v-model="fini">
-                  <option disabled selected> Acabado </option>
-                 <option v-for="finish in finishLocal" :key="finish" :value="finish">{{finish}}</option>                  
+                  <option disabled selected class="monserrat" > Acabado </option>
+                 <option v-for="finish in finishLocal" :key="finish" class="monserrat" :value="finish">{{finish}}</option>                  
                 </select>
               </div>
             </div>
             
             <div class="w-full h-full flex items-center justify-center">
               <div class=" flex w-full justify-center">
-                <button @click="onDeleteFilters" class="bg-black text-white w-11/12 xl:w-5/6 h-9 px-2">Borrar filtros</button>
+                <button @click="onDeleteFilters" class="monserrat bg-black text-white w-11/12 xl:w-5/6 h-9 px-2">Borrar filtros</button>
               </div>
             </div>
         </div>

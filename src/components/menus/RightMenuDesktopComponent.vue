@@ -5,7 +5,7 @@
               <p class="uppercase moserrat-bold text-subtitle text-xl font-bold">Productos aplicados</p>
           </div>
           <div class="pt-4 px-5">
-              <p class="text-sm font-normal text-subtitle" >
+              <p class="text-sm font-normal text-subtitle monserrat" >
                   Aquí podrás ver los productos aplicados en el espacio en el que te encuentres</p>
           </div>
           <div class="pt-10">

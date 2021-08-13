@@ -1,7 +1,7 @@
 <template>
   <div class="block lg:hidden">
     <div class="h-20 lg:h-24 w-screen bg-white">
-    <div>
+    <div  @click="toggleMenuMobile">
       <img v-if="getPageState" class="w-full h-20 lg:h-24 object-cover" src="../../assets/arko/Web/Header.png" alt="">
       <img v-else class="w-full h-20 lg:h-24 object-cover" src="../../assets/web/Header.png" alt="">
     </div>
@@ -12,13 +12,13 @@
          <img  v-if="getPageState" src="../../assets/arko/Web/ARKO_Logo.svg" style="width:149px; height:34px" alt="">
          <img v-else src="../../assets/web/Logo_Vitromex.svg" style="width:149px; height:34px" alt="">
       </div>
-      <div  v-if="menuMobile">
-        <img v-if="getPageState"  src="../../assets/arko/Mobile/cerrar_menu.svg" alt="">
-        <img v-else class="h-10 w-10" src="../../assets/mobile/cerrar_dropdown.svg" alt="">
+      <div  v-if="menuMobile" class="h-10 w-10 ">
+        <img v-if="getPageState" class="object-contain" src="../../assets/arko/Mobile/cerrar_menu.svg" alt="">
+        <img v-else class="object-contain" src="../../assets/mobile/cerrar_dropdown.svg" alt="">
       </div>
-      <div v-else>
-        <img v-if="getPageState" class="h-10 w-10" src="../../assets/mobile/Menu.svg" alt="">
-        <img v-else  src="../../assets/mobile/Menu_B.svg" alt="">
+      <div v-else class="h-10 w-10 ">
+        <img v-if="getPageState" class="object-contain" src="../../assets/mobile/Menu.svg" alt="">
+        <img v-else class="object-contain" src="../../assets/mobile/Menu_B.svg" alt="">
       </div>
     </div>
   </div>

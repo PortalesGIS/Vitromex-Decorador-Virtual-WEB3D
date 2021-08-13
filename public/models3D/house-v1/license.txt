@@ -1,6 +1,6 @@
 Model Information:
-* title:	fbx_casa_prueba1
-* source:	https://sketchfab.com/3d-models/fbx-casa-prueba1-142ec0f57fef4f9398f5c98e8a034c49
+* title:	Fbx_Casa_Vitromex_ Final
+* source:	https://sketchfab.com/3d-models/fbx-casa-vitromex--final-be6032eb1c2b4f209e02c2e75d1524da
 * author:	Inmersys (https://sketchfab.com/inmersys)
 
 Model License:
@@ -8,4 +8,4 @@ Model License:
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "fbx_casa_prueba1" (https://sketchfab.com/3d-models/fbx-casa-prueba1-142ec0f57fef4f9398f5c98e8a034c49) by Inmersys (https://sketchfab.com/inmersys) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Fbx_Casa_Vitromex_ Final" (https://sketchfab.com/3d-models/fbx-casa-vitromex--final-be6032eb1c2b4f209e02c2e75d1524da) by Inmersys (https://sketchfab.com/inmersys) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

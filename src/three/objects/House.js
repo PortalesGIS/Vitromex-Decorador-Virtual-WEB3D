@@ -13,29 +13,64 @@ export class House extends Mesh{
         loader.load('models3D/house-v1/scene.gltf',(gltf)=>{
             // this.liquid = gltf.scene.children[0].getObjectByName('Liquid_Beer_Liquid_0');
             this.add(gltf.scene); 
-            console.log(console.log( gltf.scene.children[0].getObjectByName('Object049')))
-            this.piso = gltf.scene.children[0].getObjectByName('Object049_mt_piso_base_0')
-            
-            Observer.on(EVENTS.SENDPRODUCT,(payload)=>{
-                console.log(payload)
-                let mapDB =   new TextureLoader();
-                mapDB.load(payload.albedo,(textureMap)=>{
-                    textureMap.wrapS = RepeatWrapping;
-                    textureMap.wrapT = RepeatWrapping;
-                    textureMap.repeat.set(0.69444 ,0.69444 );
-                    mapDB.load(payload.normal,(textureNormal)=>{
-                        const uploadMaterial = new MeshStandardMaterial({
-                            color: 0x777777,
-                            // lightMap:texture,
-                            map:textureMap,
-                            normalMap:textureNormal,
-                            lightMapIntensity:5
-                        })
-                        this.piso.material = uploadMaterial
-                    })
+            // console.log(console.log( gltf.scene.children[0].getObjectByName('Piso_C_Int_Sala_UVb')))
+            this.piso = gltf.scene.children[0].getObjectByName('Piso_C_Int_Sala_UVb_MT_Piso_C_Int_Sala_UVb_0')
+            this.pisoCosina = gltf.scene.children[0].getObjectByName("Piso_C_Int_Cocina_UVb_MT_Piso_C_Int_Cocina_UVb_0")
+            this.pisoComedor = gltf.scene.children[0].getObjectByName("Piso_C_Int_Comedor_UVb_MT_Piso_C_Int_Comedor_UVb_0")
+            console.log(this.pisoComedor)
+            // 
+            let lightMap =   new TextureLoader();
+            lightMap.load('models3D/house-v1/light_maps/Lightmap_b.jpg',(texture)=>{
+                const lamber = new MeshStandardMaterial({
+                    color: 0x777777,
+                    lightMap:texture,
+                    map:this.piso.material.map,
+                    lightMapIntensity:3
                 })
-                
+                this.piso.material = lamber
+
+                const laberCocina = new MeshStandardMaterial({
+                    color: 0x777777,
+                    lightMap:texture,
+                    map:this.pisoCosina.material.map,
+                    lightMapIntensity:3
+                })
+                this.pisoCosina.material = laberCocina
+
+                const laberComedor = new MeshStandardMaterial({
+                    color: 0x777777,
+                    lightMap:texture,
+                    map:this.pisoComedor.material.map,
+                    lightMapIntensity:3
+                })
+                this.pisoComedor.material = laberComedor
+
+                Observer.on(EVENTS.SENDPRODUCT,(payload)=>{
+                    // console.log(payload)
+                    let mapDB =   new TextureLoader();
+                    mapDB.load(payload.albedo,(textureMap)=>{
+                        textureMap.wrapS = RepeatWrapping;
+                        textureMap.wrapT = RepeatWrapping;
+                        textureMap.repeat.set(0.69444 ,0.69444 );
+                        mapDB.load(payload.normal,(textureNormal)=>{
+                            const uploadMaterial = new MeshStandardMaterial({
+                                color: 0x777777,
+                                lightMap:texture,
+                                map:textureMap,
+                                normalMap:textureNormal,
+                                lightMapIntensity:5
+                            })
+                            this.piso.material = uploadMaterial
+                        })
+                    })
+                    
+                })
+            },undefined,( err )=> {
+                console.error( err );
             })
+            // 
+            
+            
 
             this.scale.x=10;
 			this.scale.y=10;

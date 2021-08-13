@@ -18,7 +18,15 @@
                 <input type="text" class="bg-transparent h-9 focus:border-none text-title outline-none pl-2" placeholder="Buscar..."
                 v-model="stringSearch"
              @input="chngeInput">
-                <img class="w-6 h-6" src="../../assets/web/Buscar.svg" alt="">
+               <div v-if="getStringSerch===''" class="flex items-center">
+                    <img v-if="getPageState" src="../../assets/arko/Mobile/Buscar.svg" class="w-6" alt="">
+                    <img v-else src="../../assets/web/Buscar.svg" class="w-6" alt="">
+            </div>
+            <div v-else class="flex items-center cursor-pointer"
+                  @click="onClearStringSearch">
+                    <img v-if="getPageState" src="../../assets/arko/Mobile/cerrar_menu.svg" class=" w-5" alt="">
+                    <img v-else src="../../assets/web/Cerrar.svg" class=" w-5" alt="">
+            </div>
               </div>
             </div>  
             <div class='px-2 w-full overflow-y-auto pb-80' style="height: 75%;">
@@ -79,14 +87,23 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["filterProductsForString","filterSeriesForString","addFilterAplicates","filterProducts","changeViewFiltesWeb"]),
+    ...mapActions(["filterProductsForString","filterSeriesForString","addFilterAplicates",
+    "filterProducts","changeViewFiltesWeb","deleteFilters","deleteFiltersSeries"]),
     chngeInput(){
       this.filterProductsForString({word:this.stringSearch})
       this.filterSeriesForString({word:this.stringSearch})
     },
+    onClearStringSearch(){
+      this.stringSearch=""
+       this.deleteFilters()
+       this.deleteFiltersSeries()
+    },
   },
   computed: {
-    ...mapGetters(["getPageState","getAllProducts","getAllSeries","getCatalogoSerieProductoSelecte"])
+    ...mapGetters(["getPageState","getAllProducts","getAllSeries","getCatalogoSerieProductoSelecte"]),
+    getStringSerch(){
+      return this.stringSearch
+    }
   },
 }
 </script>
