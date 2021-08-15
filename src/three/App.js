@@ -1,7 +1,8 @@
-import { PerspectiveCamera,  WebGLRenderer, sRGBEncoding, 
+import { PerspectiveCamera,  WebGLRenderer, sRGBEncoding, PMREMGenerator, UnsignedByteType, 
 	// Math,
    } from 'three';
 import Scene1 from './scenes/Scene1';
+import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
 import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import Stats from 'three/examples/jsm/libs/stats.module'
@@ -12,9 +13,10 @@ export class App {
 
 		
 		// ## Camera's config
-		this.camera = new PerspectiveCamera(70, this.container.clientWidth / this.container.clientHeight, 0.1, 10000);
+		this.camera = new PerspectiveCamera(90, this.container.clientWidth / this.container.clientHeight, 0.1, 10000);
 		// initial test
 		// this.camera.position.set(123, 22,-60);
+		// this.camera.position.set(0,4,0);
 		// initial sala
 		this.camera.position.set(69, 23,-96);
 
@@ -50,6 +52,7 @@ export class App {
 		this.container.onpointermove = (e)=>{
 			e.preventDefault();	
 			drag = false;
+			this.scene.onDocumentMouseMove(e.clientX, e.clientY, this.renderer, this.camera)
 			// TODO: accion pesada al sistema????
 		}
 		this.container.onpointerup = (e)=> {
@@ -63,10 +66,25 @@ export class App {
 			// 	console.log(e)
 			// })
 			// 
-		
+		// 
+		const pmremGenerator = new PMREMGenerator( this.renderer );
+		pmremGenerator.compileEquirectangularShader();
 		this.scene = new Scene1(this.camera,this.control,);
+		new RGBELoader()
+				.setDataType( UnsignedByteType )
+				.load( 'models3D/enviroment/hdrt4.hdr',  ( texture ) => {
+					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
+					this.scene.background = envMap;
+					this.scene.environment = envMap;
+					// if(!this.isDevice){
+					// 	this.scene.environment = envMap;
+					// }
+				})
+			
+		// 
 		// this.cameraHelper = new CameraHelper(this.camera)
 		// this.scene.add(this.cameraHelper)
+
 		// Helpersss
 		var gui = new GUI();
 
@@ -78,7 +96,6 @@ export class App {
 		cam.add(this.camera.rotation, 'y', 0, 2).listen();
 		cam.add(this.camera.rotation, 'z', 0, 2).listen();
 		cam.open();
-
 		this.stats = Stats()
 		document.body.appendChild(this.stats.dom)
 		// 

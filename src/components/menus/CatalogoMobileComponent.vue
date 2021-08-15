@@ -140,8 +140,14 @@ export default {
         }
     },
     methods: {
-    ...mapActions(["changeMenuCatalogo","filterProductsForString","filterSeriesForString",
-                  "deleteFilters","deleteFiltersSeries","deleteOneFilter","filterProducts","addFilterAplicates"]),
+    ...mapActions(["changeMenuCatalogo",
+    "filterProductsForString",
+    "filterSeriesForString",
+    "deleteFilters",
+    "deleteFiltersSeries",
+    "deleteOneFilter",
+    "filterProducts",
+    "addFilterAplicates"]),
     chngeInput(){
       this.filterProductsForString({word:this.stringSearch})
        this.filterSeriesForString({word:this.stringSearch})

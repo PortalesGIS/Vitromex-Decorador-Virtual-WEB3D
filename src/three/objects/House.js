@@ -17,7 +17,7 @@ export class House extends Mesh{
             this.piso = gltf.scene.children[0].getObjectByName('Piso_C_Int_Sala_UVb_MT_Piso_C_Int_Sala_UVb_0')
             this.pisoCosina = gltf.scene.children[0].getObjectByName("Piso_C_Int_Cocina_UVb_MT_Piso_C_Int_Cocina_UVb_0")
             this.pisoComedor = gltf.scene.children[0].getObjectByName("Piso_C_Int_Comedor_UVb_MT_Piso_C_Int_Comedor_UVb_0")
-            console.log(this.pisoComedor)
+                      
             // 
             let lightMap =   new TextureLoader();
             lightMap.load('models3D/house-v1/light_maps/Lightmap_b.jpg',(texture)=>{
@@ -25,7 +25,7 @@ export class House extends Mesh{
                     color: 0x777777,
                     lightMap:texture,
                     map:this.piso.material.map,
-                    lightMapIntensity:3
+                    // lightMapIntensity:10
                 })
                 this.piso.material = lamber
 
@@ -33,7 +33,7 @@ export class House extends Mesh{
                     color: 0x777777,
                     lightMap:texture,
                     map:this.pisoCosina.material.map,
-                    lightMapIntensity:3
+                    // lightMapIntensity:10
                 })
                 this.pisoCosina.material = laberCocina
 
@@ -41,7 +41,7 @@ export class House extends Mesh{
                     color: 0x777777,
                     lightMap:texture,
                     map:this.pisoComedor.material.map,
-                    lightMapIntensity:3
+                    // lightMapIntensity:10
                 })
                 this.pisoComedor.material = laberComedor
 

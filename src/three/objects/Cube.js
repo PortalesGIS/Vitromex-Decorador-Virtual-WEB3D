@@ -22,4 +22,3 @@ export class Cube extends Mesh {
 	}
 }
 
-// https://testimgvitro.blob.core.windows.net:443/imagenes/e1aa96be-0197-4a24-888a-949fd775818fVITROMEX_CADEREYTA_CAFE_36X36CM_BR_Albedo.jpg

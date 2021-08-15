@@ -3,7 +3,7 @@
   change 
 </div>
 <div :class="getPageState?'theme-arko':''" class="">
-  <div class=" h-screen w-screen">
+  <div class="hidden h-screen w-screen">
     <div class="absolute z-50">
     <HeaderGlobalComponentVue/>
     
