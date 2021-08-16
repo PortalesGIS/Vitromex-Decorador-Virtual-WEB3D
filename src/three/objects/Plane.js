@@ -1,20 +1,23 @@
 import { BoxBufferGeometry,  MathUtils, Mesh,  MeshStandardMaterial } from "three";
 
-export class PlaneT extends Mesh{
-    constructor(){
+export class PlaneTraking extends Mesh{
+    constructor(name,width,height,y,z,x){
         super();
-        this.geometry = new BoxBufferGeometry(100,200,0.1);
-        console.log(this)
+        this.geometry = new BoxBufferGeometry(width,height,0.01);
         this.material = new MeshStandardMaterial({
-          opacity:0.0001,
+         color: 0xff0000,
+        //  opacity:0.0001,
+         opacity:0.5,
          transparent:true,
         })
-        this.name =`plane-t`
+
+        this.name =name
         this.rotation.x = 90 *  MathUtils.DEG2RAD;
         this.renderOrder =-1;
-        this.position.y=2
-        this.position.z=-7
-        this.position.x=30
+        this.position.y=y
+        this.position.z=z
+        this.position.x=x
         this.renderOrder=1
+        console.log(this)
     }
 } 

@@ -1,12 +1,11 @@
 <template>
-<div class="absolute top-0 ml-20 z-100 bg-red-400" @click="onChangeStatePage(!getPageState)">
+<div class="fixed top-0 ml-20 z-100 bg-red-400" @click="onChangeStatePage(!getPageState)">
   change 
 </div>
 <div :class="getPageState?'theme-arko':''" class="">
   <div class="hidden h-screen w-screen">
-    <div class="absolute z-50">
+    <div class="fixed z-50">
     <HeaderGlobalComponentVue/>
-    
     </div>
     <div v-if="getAllProductsComplete!=''" class="w-screen hidden lg:block absolute z-30">
       
@@ -34,8 +33,8 @@
       <BottomGlobalComponentVue/>
     </div>  
   </div>
-  <div class=" absolute top-0 h-screen w-screen">
-    <div class="absolute w-full h-full">
+  <div class="fixed top-0">
+    <div class="fixed w-full h-full">
       <Home3DComponentVue/>
     </div>
     </div>    

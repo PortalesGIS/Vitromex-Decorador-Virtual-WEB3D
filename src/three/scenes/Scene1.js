@@ -7,7 +7,7 @@ import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
 import {Cube } from '../objects/Cube'
 import { House } from '../objects/House';
 import { TrakerMouse } from '../objects/MouseTraker';
-import { PlaneT } from '../objects/Plane';
+import { PlaneTraking } from '../objects/Plane';
 // import { PlaneTest } from '../objects/PlaneTest';
 import Observer, { EVENTS } from '../Observer';
 var raycaster = new Raycaster();
@@ -28,18 +28,23 @@ class Scene1 extends Scene {
 		// 
 		this.traker = new TrakerMouse()
 		this.add(this.traker)
-		// test - plane
-		this.planeDetectorMouseCocina = new PlaneT()
+		// planes for traking
+		// 															w	h a	z  x
+		this.planeDetectorMouseCocina = new PlaneTraking("cocina-1",55,55,2,-80,58)
 		this.add(this.planeDetectorMouseCocina)
+		this.planeDetectorCocinaB = new PlaneTraking("cocina-1",13,21,2,-119,36.5)
+		this.add(this.planeDetectorCocinaB)
+		this.planeDetectorMouseSala = new PlaneTraking("cocina-1",42,55,0.5,-80,106)
+		this.add(this.planeDetectorMouseSala)
 
 		var gui = new GUI();
-		var cam = gui.addFolder('Plane_test');
-		cam.add(this.planeDetectorMouseCocina.position, 'y', -10.0, 10.0).listen();
-		cam.add(this.planeDetectorMouseCocina.position, 'x', -10.0, 10.0).listen();
-		cam.add(this.planeDetectorMouseCocina.position, 'z', -10.0, 10.0).listen();
-		cam.add(this.planeDetectorMouseCocina.rotation, 'x', 0, 2).listen();
-		cam.add(this.planeDetectorMouseCocina.rotation, 'y', 0, 2).listen();
-		cam.add(this.planeDetectorMouseCocina.rotation, 'z', 0, 2).listen();
+		var cam = gui.addFolder('sala-1');
+		cam.add(this.planeDetectorMouseSala.scale, 'x', -2,2 ).listen();
+		cam.add(this.planeDetectorMouseSala.scale, 'y', -2,2 ).listen();
+		cam.add(this.planeDetectorMouseSala.scale, 'z', -2,2 ).listen();
+		// cam.add(this.planeDetectorMouseSala.position, 'y', -100.0, 100.0).listen();
+		cam.add(this.planeDetectorMouseSala.position, 'x', 70.0, 120.0).listen();
+		cam.add(this.planeDetectorMouseSala.position, 'z', -80.0, -70.0).listen();
 		cam.open();
 		// 
 		this.house = new House()
@@ -79,7 +84,7 @@ class Scene1 extends Scene {
 			// if(intersects[0].object.callback){
 			// 	intersects[0].object.callback();
 			// }
-			if(intersects[0].object.name === "plane-t"){
+			if(intersects[0].object.name === "cocina-1"){
 				this.control.enable = false
 				// intersects[ 0 ].object.material.color.set( 0xff00ff );
 				// console.log(this.control.target);
@@ -103,9 +108,9 @@ class Scene1 extends Scene {
 		raycaster.setFromCamera( mouse,camera );
 		var intersects = raycaster.intersectObjects( this.children ); 
 		if(intersects[0]){
-			if(intersects[0].object.name==="plane-t"){
+			if(intersects[0].object.name==="cocina-1"){
 				// console.log("Lugar: "+intersects[0].point.x +" - "+ intersects[0].point.z)
-			this.traker.position.set(intersects[0].point.x ,2,intersects[0].point.z)
+			this.traker.position.set(intersects[0].point.x ,intersects[0].point.y-0.1,intersects[0].point.z)
 			}
 		}
 	}

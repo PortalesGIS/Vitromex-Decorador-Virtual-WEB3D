@@ -58,7 +58,6 @@ export default {
   methods: {
     clickMenuTop(url){
       window.open(url, '_blank').focus();
-      
     }
   },
   computed: {

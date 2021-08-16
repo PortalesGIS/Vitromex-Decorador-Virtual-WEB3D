@@ -1,7 +1,7 @@
 <template>
   <!-- <div class=" w-full h-full "> -->
-  <div class="absolute top-0 w-screen h-screen">
-    <div id="scene" class="bg-gray-600 w-full h-full"></div>
+  <div class="fixed top-0 w-full h-full">
+    <div id="scene" class="fixed bg-purple-600 w-full h-full"></div>
   </div>
 </template>
 

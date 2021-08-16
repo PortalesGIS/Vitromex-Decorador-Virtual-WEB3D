@@ -41,16 +41,16 @@
   <div v-if="menuMobile" class="fixed bg-mobile-0a h-auto z-100 w-full animate__animated animate__fadeInDown animate__faster">
    <div class="w-full">
      <p 
-     
+      @click="clickMenuTop('https://www.vitromex.com.mx/contacto')"     
      class="text-right py-1 px-4 w-full text-title uppercase">contacto</p>
      <p 
-     
+      @click="clickMenuTop('https://www.vitromex.com.mx/aboutus')"     
      class="text-right py-1 px-4 w-full text-title uppercase">NOSOTROS </p>
      <p 
-     
+      @click="clickMenuTop('https://www.vitromex.com.mx/cercadeti')"     
      class="text-right py-1 px-4 w-full text-title uppercase">CERCA DE MÍ</p>
      <p 
-     
+      @click="clickMenuTop('https://www.vitromex.com.mx/blog')"     
      class="text-right py-1 px-4 w-full text-title uppercase">BLOG</p>
    </div>
   </div>
@@ -74,8 +74,8 @@ export default {
       openTutorial() {
        this.$refs.tutorial.open();
     },
-    clickMenuTop() {
-        console.log("click")
+    clickMenuTop(url){
+      window.open(url, '_blank').focus();
     },
     toggleMenuMobile(){
       this.menuMobile=!this.menuMobile
