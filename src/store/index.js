@@ -24,7 +24,8 @@ export default createStore({
     menuCatalogo:false,
     isOpenfiltersWeb:false,
     filtersAplicates:[],
-    areaSelected:"sala"
+    areaSelected:"sala",
+    aplicationSelected:0
   },
   mutations: {
     ...mutationsProducts,

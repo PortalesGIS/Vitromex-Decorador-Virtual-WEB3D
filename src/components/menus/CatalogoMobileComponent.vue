@@ -60,22 +60,7 @@
         <div v-if="stringSearch===''" class="w-full flex pt-5">
               <MenuSelectedComponentVue />
         </div> 
-         <div class="py-5 bg-1d">
-              <div class="flex w-full justify-around items-center">
-                <div class="flex bg-menu-select-piso-muro rounded-full w-32 h-9 items-center justify-center"
-                      @click="selectAplication(1)"
-                      :class="aplicationsSelected===1?'':'opacity-50'">
-                  <img src="../../assets/web/Piso.svg" class="w-5 h-4 object-cover" alt="">
-                  <p class="pl-2 text-white text-sm font-semibold">Piso</p>
-                </div>
-                <div class="flex bg-menu-select-piso-muro rounded-full w-32 h-9 items-center justify-center"
-                 @click="selectAplication(0)"
-                   :class="aplicationsSelected===0?'':'opacity-50'">
-                  <img src="../../assets/web/Piso.svg" class="w-5 h-4 object-cover transform -rotate-90 " alt="">
-                  <p class="pl-2 text-white text-sm font-semibold">Muro</p>
-                </div>
-              </div>
-            </div> 
+          <AplicationsSelectedComponentVue/>
             <div class='px-2 bg-1d  w-full h-5/6 overflow-y-auto pb-20'>
               <div v-if="stringSearch===''">
                 <div v-if="getCatalogoSerieProductoSelecte===0">
@@ -122,6 +107,7 @@ import { mapActions, mapGetters } from 'vuex'
 import Observer, { EVENTS } from '../../three/Observer'
 import ProductComponentVue from '../cards/ProductComponent.vue'
 import SerieCardsVue from '../cards/SerieCards.vue'
+import AplicationsSelectedComponentVue from '../utils/AplicationsSelectedComponent.vue'
 import MenuSelectedComponentVue from '../utils/MenuSelectedComponent.vue'
 import FiltersMobileComponentVue from './FiltersMobileComponent.vue'
 export default {
@@ -129,11 +115,11 @@ export default {
     FiltersMobileComponentVue,
       MenuSelectedComponentVue,
     ProductComponentVue,
-    SerieCardsVue
+    SerieCardsVue,
+    AplicationsSelectedComponentVue
     },
     data() {
         return {
-             aplicationsSelected:1,
              isFiltersOpen:false,
              isActiveBuscar:false,
              stringSearch:""
@@ -188,9 +174,6 @@ export default {
     cerrarFiltro(){
         this.isFiltersOpen=false;
     },
-    selectAplication(selected){
-      this.aplicationsSelected = selected
-    }
     },
 computed: {
     ...mapGetters(["getPageState","getAllProducts",

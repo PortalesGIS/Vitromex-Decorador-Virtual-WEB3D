@@ -55,11 +55,11 @@ export default {
   },
   methods: {
     selectProductForMap(product) {
-      Observer.emit(EVENTS.SENDPRODUCT, product);
+      Observer.emit(EVENTS.SENDPRODUCT, product,this.getAreaSelected,this.getAplicationSeletec);
     },
   },
   computed: {
-    ...mapGetters(["getPageState"])
+    ...mapGetters(["getPageState","getAreaSelected","getAplicationSeletec"])
   },
 };
 </script>

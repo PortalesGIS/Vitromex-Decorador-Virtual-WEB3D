@@ -19,3 +19,7 @@ export const getCatalogoSerieProductoSelecte = (state) =>{
 export const getAreaSelected=(state)=>{
     return state.areaSelected
 }
+
+export const getAplicationSeletec=(state)=>{
+    return state.aplicationSelected
+}

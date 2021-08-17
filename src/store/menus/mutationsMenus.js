@@ -25,3 +25,7 @@ export const setCatalogoSerieProductoSelecte = (state,payload)=>{
 export const setAreaSalected =(state,payload)=>{
     state.areaSelected = payload
 }
+
+export const setAplicationSelected=(state,payload)=>{
+    state.aplicationSelected = payload
+}

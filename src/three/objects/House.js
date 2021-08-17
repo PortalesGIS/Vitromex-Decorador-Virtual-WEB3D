@@ -14,20 +14,22 @@ export class House extends Mesh{
             // this.liquid = gltf.scene.children[0].getObjectByName('Liquid_Beer_Liquid_0');
             this.add(gltf.scene); 
             // console.log(console.log( gltf.scene.children[0].getObjectByName('Piso_C_Int_Sala_UVb')))
-            this.piso = gltf.scene.children[0].getObjectByName('Piso_C_Int_Sala_UVb_MT_Piso_C_Int_Sala_UVb_0')
+            this.pisoSala = gltf.scene.children[0].getObjectByName('Piso_C_Int_Sala_UVb_MT_Piso_C_Int_Sala_UVb_0')
             this.pisoCosina = gltf.scene.children[0].getObjectByName("Piso_C_Int_Cocina_UVb_MT_Piso_C_Int_Cocina_UVb_0")
             this.pisoComedor = gltf.scene.children[0].getObjectByName("Piso_C_Int_Comedor_UVb_MT_Piso_C_Int_Comedor_UVb_0")
-                      
+            this.pisoFachada =  gltf.scene.children[0].getObjectByName("Piso_C_Ext_Cochera_UVb_MT_Piso_C_Ext_Cochera_UVb_0")
+            this.pisoPasillo = gltf.scene.children[0].getObjectByName("Piso_C_Ext_Pasillo_UVb_MT_Piso_C_Ext_Pasillo_UVb_0")
+            this.pisoBanio = gltf.scene.children[0].getObjectByName("Piso_C_Int_Banio_UVb_MT_Piso_C_Int_Banio_UVb_0")
             // 
             let lightMap =   new TextureLoader();
             lightMap.load('models3D/house-v1/light_maps/Lightmap_b.jpg',(texture)=>{
                 const lamber = new MeshStandardMaterial({
                     color: 0x777777,
                     lightMap:texture,
-                    map:this.piso.material.map,
+                    map:this.pisoSala.material.map,
                     // lightMapIntensity:10
                 })
-                this.piso.material = lamber
+                this.pisoSala.material = lamber
 
                 const laberCocina = new MeshStandardMaterial({
                     color: 0x777777,
@@ -45,14 +47,13 @@ export class House extends Mesh{
                 })
                 this.pisoComedor.material = laberComedor
 
-                Observer.on(EVENTS.SENDPRODUCT,(payload)=>{
-                    // console.log(payload)
+                Observer.on(EVENTS.SENDPRODUCT,(productSelected,areaSelected,typeOfAplication)=>{
                     let mapDB =   new TextureLoader();
-                    mapDB.load(payload.albedo,(textureMap)=>{
+                    mapDB.load(productSelected.albedo,(textureMap)=>{
                         textureMap.wrapS = RepeatWrapping;
                         textureMap.wrapT = RepeatWrapping;
                         textureMap.repeat.set(0.69444 ,0.69444 );
-                        mapDB.load(payload.normal,(textureNormal)=>{
+                        mapDB.load(productSelected.normal,(textureNormal)=>{
                             const uploadMaterial = new MeshStandardMaterial({
                                 color: 0x777777,
                                 lightMap:texture,
@@ -60,7 +61,13 @@ export class House extends Mesh{
                                 normalMap:textureNormal,
                                 lightMapIntensity:5
                             })
-                            this.piso.material = uploadMaterial
+                            if(typeOfAplication===0){
+                                console.log("aplicado a muro")
+                                this.updatePisoMaterial(uploadMaterial,areaSelected)
+                            }
+                            else{
+                                console.log("aplicado a pared")
+                            }
                         })
                     })
                     
@@ -86,6 +93,29 @@ export class House extends Mesh{
     }
     update(){
         
+    }
+    updatePisoMaterial(materialUpdated,pisoSelected){
+        switch (pisoSelected) {
+            case "sala":
+                this.pisoSala.material = materialUpdated
+                break;
+            case "fachada":
+                this.pisoFachada.material = materialUpdated
+                // this.pisoPasillo.material = materialUpdated
+                break;
+            case "comedor":
+                this.pisoComedor.material = materialUpdated
+                break;
+            case "cocina":
+                this.pisoCosina.material = materialUpdated
+                break;
+            case "banio":
+                this.pisoBanio.material = materialUpdated
+                break;
+        
+            default:
+                break;
+        }
     }
 
 }

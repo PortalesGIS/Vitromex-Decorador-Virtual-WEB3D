@@ -16,8 +16,8 @@ export class Hovers extends Mesh{
                   child.material.opacity=0.003,
                   child.material.transparent=true,
                   child.renderOrder =-1
-                  if(child.name.includes("Hover_Muro"))
-                  console.log(child.name)
+                //   if(child.name.includes("Hover_Muro"))
+                //   console.log(child.name)
                 }
             })  
             Observer.on(EVENTS.CLEARHOVER, () => {

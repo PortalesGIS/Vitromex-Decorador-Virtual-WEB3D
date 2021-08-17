@@ -4,7 +4,6 @@ import {  AxesHelper, Color, DirectionalLight, HemisphereLight, PerspectiveCamer
 } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
-import {Cube } from '../objects/Cube'
 import { House } from '../objects/House';
 import { Hovers } from '../objects/hovers';
 import { TrakerMouse } from '../objects/MouseTraker';
@@ -12,7 +11,6 @@ import { TrakerMouse } from '../objects/MouseTraker';
 import Observer, { EVENTS } from '../Observer';
 var raycaster = new Raycaster();
 var mouse = new Vector2();
-
 class Scene1 extends Scene {
 	constructor(camera = PerspectiveCamera,control= OrbitControls){
 		super();
@@ -22,9 +20,6 @@ class Scene1 extends Scene {
 		this.create();
 	}
 	create(){
-		this.cube = new Cube(1,"orangered");
-		this.cube.position.y=2;
-		// this.add(this.cube);
 		// 
 		this.traker = new TrakerMouse()
 		this.add(this.traker)
@@ -41,25 +36,11 @@ class Scene1 extends Scene {
 		// 
 		
 		// 
-		this.cube2 = new Cube(3,"blue");
-		this.cube2.position.x=100;
-		this.add(this.cube2);
-		this.cube3 = new Cube(3,"green");
-		this.cube3.position.x=-100;
-		this.add(this.cube3);
-		this.cube4 = new Cube(3,"yellow");
-		this.cube4.position.z=100;
-		this.add(this.cube4);
-		this.cube5 = new Cube(3,"purple");
-		this.cube5.position.z=-100;
-		this.add(this.cube5);
 		// 
 		this.abientLight = new HemisphereLight(0xffffffbb, 0x080820,0.5)
 		this.light =  new DirectionalLight(0xffffff,1);
 		// this.add(	this.abientLight );
 		// this.add(this.light)
-		// this.piso =new Plane(155,150);
-		// this.add(this.piso);
 		// helpers
 		this.axesHelper = new AxesHelper(5);
 		this.add(this.axesHelper);
@@ -81,12 +62,15 @@ class Scene1 extends Scene {
 			// if(intersects[0].object.callback){
 			// 	intersects[0].object.callback();
 			// }
-			if(this.pisoIncludesForTraking(intersects)){
+			if(intersects[0].object.name.includes('Piso')){
 				this.onMoveToAreaSelected(intersects)
 				this.control.enable = false
-				this.camera.position.set(intersects[0].point.x,23,intersects[0].point.z)
-				this.camera.lookAt(intersects[0].point.x,23,intersects[0].point.z)
+				this.camera.position.set(intersects[0].point.x,17,intersects[0].point.z)
+				this.camera.lookAt(intersects[0].point.x,17,intersects[0].point.z)
 				this.control.target.set(intersects[0].point.x/1.0001,this.camera.position.y/1.0001, intersects[0].point.z/1.0001)
+			}
+			if(intersects[0].object.name.includes('Muro')){
+				console.log(intersects[0].object.name)			
 			}
 		}
 	}
@@ -97,10 +81,10 @@ class Scene1 extends Scene {
 		let intersects = raycaster.intersectObjects(this.children[2].children,true); 
 		Observer.emit(EVENTS.CLEARHOVER);
 		if(intersects[0]){
-			if(this.pisoIncludesForTraking(intersects)){
+			if(intersects[0].object.name.includes('Piso')){
 			this.traker.position.set(intersects[0].point.x ,intersects[0].point.y+0.2,intersects[0].point.z)
 			}
-			if(this.muroIncludesForTraking(intersects)){
+			if(intersects[0].object.name.includes('Muro')){
 				intersects[0].object.material.opacity=1
 			}
 		}
@@ -237,29 +221,29 @@ class Scene1 extends Scene {
 	moveCameraToPosition(camera,control,nameArea){
 		switch (nameArea) {
 			case "fachada":
-				camera.position.set(68,23,11)
-				camera.lookAt(68,23,11)
-				control.target.set(68/1.0001,23/1.0001,11/1.0001)
+				camera.position.set(68,17,11)
+				camera.lookAt(68,17,11)
+				control.target.set(68/1.0001,17/1.0001,11/1.0001)
 				break;
 			case "sala":
-				camera.position.set(123,23,-95)
-				camera.lookAt(123,23,-95)
-				control.target.set(123/1.0001,23/1.0001,-95/1.0001)
+				camera.position.set(123,17,-95)
+				camera.lookAt(123,17,-95)
+				control.target.set(123/1.0001,17/1.0001,-95/1.0001)
 				break;
 			case "cocina":
-				camera.position.set(26,26,-103)
-				camera.lookAt(26,26,-103)
-				control.target.set(26/1.0001,26/1.0001,-103/1.0001)
+				camera.position.set(21,17,-103)
+				camera.lookAt(21,17,-103)
+				control.target.set(21/1.0001,17/1.0001,-103/1.0001)
 				break;
 			case "comedor":
-				camera.position.set(82,23,-104)
-				camera.lookAt(82,23,-104)
-				control.target.set(82/1.0001,23/1.0001,-104/1.0001)
+				camera.position.set(82,17,-104)
+				camera.lookAt(82,17,-104)
+				control.target.set(82/1.0001,17/1.0001,-104/1.0001)
 				break;
 			case "banio":
-				camera.position.set(23,23,-125)
-				camera.lookAt(23,23,-125)
-				control.target.set(23/1.0001,23/1.0001,-125/1.0001)
+				camera.position.set(23,17,-125)
+				camera.lookAt(23,17,-125)
+				control.target.set(23/1.0001,17/1.0001,-125/1.0001)
 				break;
 		
 			default:
@@ -268,9 +252,6 @@ class Scene1 extends Scene {
 	}
 
 	update(){
-		
-		this.cube.rotation.x +=0.001;
-		this.cube.rotation.y +=0.001;
 	}
 }
 

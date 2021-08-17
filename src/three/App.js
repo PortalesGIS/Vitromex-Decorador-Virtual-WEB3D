@@ -13,14 +13,14 @@ export class App {
 
 		
 		// ## Camera's config
-		this.camera = new PerspectiveCamera(90, this.container.clientWidth / this.container.clientHeight, 0.1, 10000);
+		this.camera = new PerspectiveCamera(80, this.container.clientWidth / this.container.clientHeight, 0.1, 10000);
 		// initial test
 		// this.camera.position.set(123, 22,-60);
 		// this.camera.position.set(0,4,0);
 		// initial comedor
 		// this.camera.position.set(69, 23,-96);
 		// initial sala
-		this.camera.position.set(103, 23,-100);
+		this.camera.position.set(103, 17,-100);
 
 		// this.camera.position.set(0,3.5,0);
 		this.camera.rotation.set(-1.9,-1.19,-1.19)
