@@ -15,7 +15,7 @@
                     <div>
                         <p v-if="getPageState" class="gotham-light text-center">FACHADA</p>
                         <p v-else class=" gotham text-center">FACHADA</p>
-                        <div class="h-px w-16 xl:w-24 bg-base-white"></div>
+                        <div v-if="getAreaSelected==='fachada'" class="h-px w-16 xl:w-24 bg-base-white"></div>
                     </div>
                     </div>
             </div>
@@ -28,7 +28,7 @@
                     <div>
                         <p v-if="getPageState" class="gotham-light text-center">SALA</p>
                         <p v-else class="gotham text-center">SALA</p>
-                        <!-- <div class="h-px w-16 xl:w-24 bg-base-white"></div> -->
+                        <div v-if="getAreaSelected==='sala'" class="h-px w-16 xl:w-24 bg-base-white"></div>
                     </div>
                     </div>
             </div>
@@ -41,7 +41,7 @@
                     <div>
                         <p v-if="getPageState" class="gotham-light text-center">COCINA</p>
                         <p v-else class=" gotham text-center">COCINA</p>
-                        <!-- <div class="h-px w-16 xl:w-24 bg-base-white"></div> -->
+                        <div v-if="getAreaSelected==='cocina'" class="h-px w-16 xl:w-24 bg-base-white"></div>
                     </div>
                     </div>
             </div>
@@ -54,7 +54,7 @@
                     <div>
                         <p v-if="getPageState" class="gotham-light text-center">COMEDOR</p>
                         <p v-else class=" gotham text-center">COMEDOR</p>
-                        <!-- <div class="h-px w-16 xl:w-24 bg-base-white"></div> -->
+                        <div v-if="getAreaSelected==='comedor'" class="h-px w-16 xl:w-28 bg-base-white"></div>
                     </div>
                     </div>
             </div>
@@ -67,7 +67,7 @@
                     <div>
                         <p v-if="getPageState" class="gotham-light text-center">BAÑO</p>
                         <p v-else class=" gotham text-center">BAÑO</p>
-                        <!-- <div class="h-px w-16 xl:w-24 bg-base-white"></div> -->
+                        <div v-if="getAreaSelected==='banio'" class="h-px w-16 xl:w-24 bg-base-white"></div>
                     </div>
                     </div>
             </div>
