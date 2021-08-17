@@ -7,7 +7,7 @@ export class PlaneTraking extends Mesh{
         this.material = new MeshStandardMaterial({
          color: 0xff0000,
         //  opacity:0.0001,
-         opacity:0.5,
+         opacity:0.1,
          transparent:true,
         })
 

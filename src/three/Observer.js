@@ -3,7 +3,10 @@ import EventEmitter from "eventemitter3";
 export const EVENTS = {
     START: 'START',
     TEST:"test",
-    SENDPRODUCT:"sendProduct"
+    SENDPRODUCT:"sendProduct",
+    CLEARHOVER:"clearHover",
+    MOVETOAREA:"movetoare",
+    MOVETOAREASELECTMENU:"movetoareaselectmenu"
 }
 
 const Observer = new EventEmitter();

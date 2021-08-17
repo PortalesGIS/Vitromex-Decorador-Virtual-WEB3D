@@ -23,7 +23,8 @@ export default createStore({
     catalogoSerieProductoSelecte:0,
     menuCatalogo:false,
     isOpenfiltersWeb:false,
-    filtersAplicates:[]
+    filtersAplicates:[],
+    areaSelected:"sala"
   },
   mutations: {
     ...mutationsProducts,

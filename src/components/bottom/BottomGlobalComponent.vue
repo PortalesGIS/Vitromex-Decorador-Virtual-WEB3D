@@ -8,7 +8,8 @@
     <div class="h-16 lg:h-24 w-full bg-base-black-opacity">
         <div class="w-full h-full flex justify-center items-center">
             <div
-                :class="(true)?'bg-base-black-opacity':''" 
+                :class="(getAreaSelected==='fachada')?'bg-base-black-opacity':''" 
+                @click="onSelectArea('fachada')"
                 class="flex h-full items-center cursor-pointer  hover:bg-base-black-opacity hover:bg-opacity-50">
                 <div class="pl-2 lg:pl-0 w-18 xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl ">
                     <div>
@@ -19,7 +20,10 @@
                     </div>
             </div>
             <div class=" h-8 xl:h-16 w-px bg-separatedBar "></div>
-            <div class="flex h-full items-center cursor-pointer  hover:bg-base-black-opacity hover:bg-opacity-50">
+            <div 
+             :class="(getAreaSelected==='sala')?'bg-base-black-opacity':''"
+             @click="onSelectArea('sala')"
+            class="flex h-full items-center cursor-pointer  hover:bg-base-black-opacity hover:bg-opacity-50">
                 <div class="w-18 xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl">
                     <div>
                         <p v-if="getPageState" class="gotham-light text-center">SALA</p>
@@ -29,7 +33,10 @@
                     </div>
             </div>
                 <div class=" h-8 xl:h-16 w-px bg-separatedBar"></div>
-            <div class="flex h-full items-center cursor-pointer  hover:bg-base-black-opacity hover:bg-opacity-50">
+            <div 
+             :class="(getAreaSelected==='cocina')?'bg-base-black-opacity':''"
+             @click="onSelectArea('cocina')"
+            class="flex h-full items-center cursor-pointer  hover:bg-base-black-opacity hover:bg-opacity-50">
                 <div class=" w-18 xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl">
                     <div>
                         <p v-if="getPageState" class="gotham-light text-center">COCINA</p>
@@ -39,7 +46,10 @@
                     </div>
             </div>
                 <div class=" h-8 xl:h-16 w-px bg-separatedBar"></div>
-            <div class="flex h-full items-center cursor-pointer  hover:bg-base-black-opacity hover:bg-opacity-50">
+            <div 
+             :class="(getAreaSelected==='comedor')?'bg-base-black-opacity':''"
+             @click="onSelectArea('comedor')"
+            class="flex h-full items-center cursor-pointer  hover:bg-base-black-opacity hover:bg-opacity-50">
                 <div class=" w-18 xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl">
                     <div>
                         <p v-if="getPageState" class="gotham-light text-center">COMEDOR</p>
@@ -49,7 +59,10 @@
                     </div>
             </div>
                 <div class=" h-8 xl:h-16 w-px bg-separatedBar"></div>
-            <div class="flex h-full cursor-pointer items-center hover:bg-base-black-opacity hover:bg-opacity-50">
+            <div 
+             :class="(getAreaSelected==='banio')?'bg-base-black-opacity':''"
+             @click="onSelectArea('banio')"
+            class="flex h-full cursor-pointer items-center hover:bg-base-black-opacity hover:bg-opacity-50">
                 <div class=" w-18 xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl">
                     <div>
                         <p v-if="getPageState" class="gotham-light text-center">BAÑO</p>
@@ -67,10 +80,13 @@
 import { mapActions, mapGetters } from 'vuex'
 export default {
     methods: {
-        ...mapActions(["changeMenuCatalogo"])
+        ...mapActions(["changeMenuCatalogo","changeAreaSelected"]),
+        onSelectArea(nameArea){
+            this.changeAreaSelected(nameArea)
+        }
     },
     computed: {
-        ...mapGetters(["getPageState"])
+        ...mapGetters(["getPageState","getAreaSelected"])
     },
 }
 </script>

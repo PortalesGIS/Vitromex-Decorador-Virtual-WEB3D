@@ -1,4 +1,4 @@
-
+import Observer, { EVENTS } from "../../three/Observer";
 
 export const changeMenuAplicates = ({commit,getters})=>{
    
@@ -14,4 +14,9 @@ export const changeViewFiltesWeb = ({commit,getters})=>{
 
 export const changeCatalogoSerieProductoSelecte = ({commit},payload)=>{
     commit("setCatalogoSerieProductoSelecte",payload)
+}
+
+export const changeAreaSelected=({commit},payload)=>{
+    Observer.emit(EVENTS.MOVETOAREASELECTMENU,payload);
+    commit("setAreaSalected",payload)
 }

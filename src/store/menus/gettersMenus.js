@@ -15,3 +15,7 @@ export const getisOpenfiltersWeb = (state) =>{
 export const getCatalogoSerieProductoSelecte = (state) =>{
     return state.catalogoSerieProductoSelecte
 }
+
+export const getAreaSelected=(state)=>{
+    return state.areaSelected
+}
