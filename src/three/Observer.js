@@ -6,7 +6,8 @@ export const EVENTS = {
     SENDPRODUCT:"sendProduct",
     CLEARHOVER:"clearHover",
     MOVETOAREA:"movetoare",
-    MOVETOAREASELECTMENU:"movetoareaselectmenu"
+    MOVETOAREASELECTMENU:"movetoareaselectmenu",
+    SELECTMURO:"selectmuro"
 }
 
 const Observer = new EventEmitter();

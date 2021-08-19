@@ -14,15 +14,18 @@ Observer.on(EVENTS.TEST, (payload) => {
 });
 export default {
   methods: {
-    ...mapActions(["changeAreaSelected"])
+    ...mapActions(["changeAreaSelected","onChnageMuroAplication"])
   },
   mounted() {
     const app = new App(document.querySelector("#scene"));
     window.addEventListener("resize", () => {
       app.onResize();
     });
-    Observer.on(EVENTS.MOVETOAREA, (payload) => {
-      this.changeAreaSelected(payload)
+    Observer.on(EVENTS.MOVETOAREA, (nameToMoveArea) => {
+      this.changeAreaSelected(nameToMoveArea)
+    });
+    Observer.on(EVENTS.SELECTMURO, (nameOfMuroToAplicate) => {
+      this.onChnageMuroAplication(nameOfMuroToAplicate)
     });
   },
 };

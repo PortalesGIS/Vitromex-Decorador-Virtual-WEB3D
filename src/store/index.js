@@ -11,6 +11,10 @@ import * as mutationsFilters from './filters/mutationsFilters'
 import * as actionsSeries from './series/actionsSeries'
 import * as gettersSeries from './series/gettersSeries'
 import * as mutationsSeries from './series/mutationsSeries'
+import * as dactions from "./3dComunication/3dactions"
+import * as dgetters from "./3dComunication/3dgetters"
+import * as dmutations from "./3dComunication/3dmutations"
+
 
 export default createStore({
   state: {
@@ -25,12 +29,14 @@ export default createStore({
     isOpenfiltersWeb:false,
     filtersAplicates:[],
     areaSelected:"sala",
-    aplicationSelected:0
+    aplicationSelected:0,
+    muroSelected:"",
   },
   mutations: {
     ...mutationsProducts,
     ...mutationsMenus,
     ...mutationsFilters,
+    ...dmutations,
     ...mutationsSeries,
     setStatePage(state,payload){
       state.pageState = payload
@@ -41,6 +47,7 @@ export default createStore({
     ...actionsMenus,
     ...actionsFilters,
     ...actionsSeries,
+    ...dactions,
     onChangeStatePage({commit},payload){ 
       // router.push("/")     
       commit("setStatePage",payload);
@@ -51,6 +58,7 @@ export default createStore({
     ...gettersMenus,
     ...gettersFilters,
     ...gettersSeries,
+    ...dgetters,
     getPageState(state){
       return state.pageState;
     }

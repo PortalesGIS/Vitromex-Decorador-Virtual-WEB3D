@@ -10,7 +10,7 @@
 </div>
 <!-- /Active Breakpoint Indicator -->
   <p class="bg-red-400 text-sm">
-    V 0.7.0
+    V 0.7.1
   </p>
   </div>
   <router-view/>

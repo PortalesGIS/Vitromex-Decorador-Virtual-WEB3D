@@ -1,4 +1,5 @@
-import {  AxesHelper, Color, DirectionalLight, HemisphereLight, PerspectiveCamera,  Raycaster, Scene, Vector2 ,
+import {  AxesHelper, Color,  DirectionalLight, HemisphereLight, 
+	PerspectiveCamera,  Raycaster, Scene, Vector2 ,
 	// Math,
 
 } from 'three';
@@ -16,10 +17,21 @@ class Scene1 extends Scene {
 		super();
 		this.camera = camera;
 		this.control = control;
+		this.muroSelected=""
 		this.background = new Color("skyblue").convertSRGBToLinear();
 		this.create();
 	}
 	create(){
+	// this.background = new CubeTextureLoader()
+	// 	.setPath( 'models3D/enviroment/' )
+	// 	.load( [
+	// 		'px.jpg',
+	// 		'nx.jpg',
+	// 		'py.jpg',
+	// 		'ny.jpg',
+	// 		'pz.jpg',
+	// 		'nz.jpg'
+	// 	] );
 		// 
 		this.traker = new TrakerMouse()
 		this.add(this.traker)
@@ -45,24 +57,28 @@ class Scene1 extends Scene {
 		this.axesHelper = new AxesHelper(5);
 		this.add(this.axesHelper);
 		// 
-		console.log(this.children)
 		Observer.emit(EVENTS.TEST,"hola estamos dentro del 3D");
 
 		Observer.on(EVENTS.MOVETOAREASELECTMENU, (payload) => {
 			this.moveCameraToPosition(this.camera,this.control,payload)
 		});
+		Observer.on(EVENTS.SENDPRODUCT,()=>{
+			this.muroSelected=""
+			Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);
+		})
 	}
 	onDocumentMouseDown = (clientX, clientY, renderer, camera  ) =>{
 		mouse.x = ( clientX / renderer.domElement.clientWidth ) * 2 - 1;
 		mouse.y = - ( clientY / renderer.domElement.clientHeight ) * 2 + 1;
 		raycaster.setFromCamera( mouse,camera );
 		let intersects = raycaster.intersectObjects( this.children[2].children,true); 
-		console.log(intersects)
 		if ( intersects.length > 0 ) {
 			// if(intersects[0].object.callback){
 			// 	intersects[0].object.callback();
 			// }
-			if(intersects[0].object.name.includes('Piso')){
+			if(this.pisoIncludesForTraking(intersects)){
+				// this.muroSelected=""
+				// Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);
 				this.onMoveToAreaSelected(intersects)
 				this.control.enable = false
 				this.camera.position.set(intersects[0].point.x,17,intersects[0].point.z)
@@ -70,7 +86,9 @@ class Scene1 extends Scene {
 				this.control.target.set(intersects[0].point.x/1.0001,this.camera.position.y/1.0001, intersects[0].point.z/1.0001)
 			}
 			if(intersects[0].object.name.includes('Muro')){
-				console.log(intersects[0].object.name)			
+				this.muroSelected = intersects[0].object.name
+				Observer.emit(EVENTS.SELECTMURO,intersects[0].object.name);	
+				Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);	
 			}
 		}
 	}
@@ -79,9 +97,9 @@ class Scene1 extends Scene {
 		mouse.y = - ( clientY / renderer.domElement.clientHeight ) * 2 + 1;
 		raycaster.setFromCamera( mouse,camera );
 		let intersects = raycaster.intersectObjects(this.children[2].children,true); 
-		Observer.emit(EVENTS.CLEARHOVER);
+		Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);
 		if(intersects[0]){
-			if(intersects[0].object.name.includes('Piso')){
+			if(this.pisoIncludesForTraking(intersects)){
 			this.traker.position.set(intersects[0].point.x ,intersects[0].point.y+0.2,intersects[0].point.z)
 			}
 			if(intersects[0].object.name.includes('Muro')){
@@ -92,9 +110,6 @@ class Scene1 extends Scene {
 	pisoIncludesForTraking(intersects){
 		let isFind=false
 		switch (intersects[0].object.name) {
-			case "Hover_Piso_C_Int_Banio2_UVb_MT_Hover_Piso_C_Int_Banio2_UVb_0":
-				isFind=true	
-			break;
 			case "Hover_Piso_C_Ext_Pasillo_UVb_MT_Hover_Piso_C_Ext_Pasillo_UVb_0":
 				isFind=true	
 			break;
@@ -102,9 +117,6 @@ class Scene1 extends Scene {
 				isFind=true	
 			break;
 			case "Hover_Piso_C_Ext_Cochera_UVb_MT_Hover_Piso_C_Ext_Cochera_UVb_0":
-				isFind=true	
-			break;
-			case "Hover_Piso_C_Ext_Terraza_UVb_MT_Hover_Piso_C_Ext_Terraza_UVb_0":
 				isFind=true	
 			break;
 			case "Hover_Piso_C_Int_Banio_UVb_MT_Hover_Piso_C_Int_Banio_UVb_0":
@@ -221,29 +233,29 @@ class Scene1 extends Scene {
 	moveCameraToPosition(camera,control,nameArea){
 		switch (nameArea) {
 			case "fachada":
-				camera.position.set(68,17,11)
-				camera.lookAt(68,17,11)
-				control.target.set(68/1.0001,17/1.0001,11/1.0001)
+				camera.position.set(-79,17,1)
+				camera.lookAt(-79,17,1)
+				control.target.set(-79/1.0001,17/1.0001,1/1.0001)
 				break;
 			case "sala":
-				camera.position.set(123,17,-95)
-				camera.lookAt(123,17,-95)
-				control.target.set(123/1.0001,17/1.0001,-95/1.0001)
+				camera.position.set(-122,17,91)
+				camera.lookAt(-122,17,91)
+				control.target.set(-122/1.0001,17/1.0001,91/1.0001)
 				break;
 			case "cocina":
-				camera.position.set(21,17,-103)
-				camera.lookAt(21,17,-103)
-				control.target.set(21/1.0001,17/1.0001,-103/1.0001)
+				camera.position.set(-25,17,100)
+				camera.lookAt(-25,17,100)
+				control.target.set(-25/1.0001,17/1.0001,100/1.0001)
 				break;
 			case "comedor":
-				camera.position.set(82,17,-104)
-				camera.lookAt(82,17,-104)
-				control.target.set(82/1.0001,17/1.0001,-104/1.0001)
+				camera.position.set(-79,17,93)
+				camera.lookAt(-79,17,93)
+				control.target.set(-79/1.0001,17/1.0001,93/1.0001)
 				break;
 			case "banio":
-				camera.position.set(23,17,-125)
-				camera.lookAt(23,17,-125)
-				control.target.set(23/1.0001,17/1.0001,-125/1.0001)
+				camera.position.set(-23,17,127)
+				camera.lookAt(-23,17,127)
+				control.target.set(-23/1.0001,17/1.0001,127/1.0001)
 				break;
 		
 			default:

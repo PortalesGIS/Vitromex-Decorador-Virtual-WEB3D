@@ -20,7 +20,7 @@ export class App {
 		// initial comedor
 		// this.camera.position.set(69, 23,-96);
 		// initial sala
-		this.camera.position.set(103, 17,-100);
+		this.camera.position.set(-82, 17,92);
 
 		// this.camera.position.set(0,3.5,0);
 		this.camera.rotation.set(-1.9,-1.19,-1.19)
@@ -74,7 +74,7 @@ export class App {
 		this.scene = new Scene1(this.camera,this.control,);
 		new RGBELoader()
 				.setDataType( UnsignedByteType )
-				.load( 'models3D/enviroment/hdrt4.hdr',  ( texture ) => {
+				.load( 'models3D/enviroment/signal_hill_dawn_1k.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 					this.scene.background = envMap;
 					this.scene.environment = envMap;
@@ -97,7 +97,7 @@ export class App {
 		cam.add(this.camera.rotation, 'x', 0, 2).listen();
 		cam.add(this.camera.rotation, 'y', 0, 2).listen();
 		cam.add(this.camera.rotation, 'z', 0, 2).listen();
-		cam.open();
+		cam.close();
 		this.stats = Stats()
 		document.body.appendChild(this.stats.dom)
 		// 

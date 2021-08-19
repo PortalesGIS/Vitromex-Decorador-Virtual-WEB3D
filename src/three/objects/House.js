@@ -20,68 +20,77 @@ export class House extends Mesh{
             this.pisoFachada =  gltf.scene.children[0].getObjectByName("Piso_C_Ext_Cochera_UVb_MT_Piso_C_Ext_Cochera_UVb_0")
             this.pisoPasillo = gltf.scene.children[0].getObjectByName("Piso_C_Ext_Pasillo_UVb_MT_Piso_C_Ext_Pasillo_UVb_0")
             this.pisoBanio = gltf.scene.children[0].getObjectByName("Piso_C_Int_Banio_UVb_MT_Piso_C_Int_Banio_UVb_0")
+            // muros
+            this.muroComedorA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Comedor_Atras_UVa_MT_Muro_Base_General_UVa_0")
+            this.muroComedorB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Comedor_Front_UVa_MT_Losa_Base_Int_General_UVb_0")
+            this.muroSalaA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Sala_Front2_UVa_MT_Losa_Base_Int_General_UVb_0")
+            this.muroSalaB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Sala_Der_UVa_MT_Muro_C_Int_Sala_Der_UVa_0")
+            this.muroSalaC =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Sala_Front_UVa_MT_Muro_C_Int_Sala_Front_UVa_0")
+            this.muroFachadaA =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Arriba_UVa_MT_Muro_C_Ext_Patio_Arriba_UVa_0")
+            this.muroFachadaB =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Front_UVa_MT_Muro_C_Ext_Patio_Front_UVa_0")
+            this.muroFachadaC =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Izq_UVa_MT_Muro_C_Ext_Patio_Izq_UVa_0")
+            this.muroFachadaD =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Atras_UVa_MT_Muro_C_Ext_Patio_Atras_UVa_0")
+            this.muroFachadaE =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Der_UVa_MT_Muro_C_Ext_Patio_Der_UVa_0")
+            this.muroCocinaA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Cocina_Izq_UVa_MT_Muro_C_Int_Cocina_Izq_UVa_0")
+            this.muroCocinaB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Cocina_Front_UVa_MT_Muro_C_Int_Cocina_Front_UVa_0")
+            this.muroCocinaC =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Cocina_Der_UVa_MT_Muro_C_Int_Cocina_Der_UVa_0")
+            this.muroCocinaD =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Pasillo_Izq_UVa_MT_Muro_C_Int_Pasillo_Izq_UVa_0")
+            this.muroBanioA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Izq2_UVa_MT_Muro_C_Int_Banio_Izq2_UVa_0")
+            this.muroBanioB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Izq1_UVa_MT_Muro_C_Int_Banio_Izq1_UVa_0")
+            this.muroBanioC =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Izq3_UVa_MT_Muro_C_Int_Banio_Izq3_UVa_0")
+            this.muroBanioD =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Der2_UVa_MT_Muro_C_Int_Banio_Der2_UVa_0")
+            this.muroBanioE =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Der_UVa_MT_Muro_C_Int_Banio_Der_UVa_0")
+
             // 
-            let lightMap =   new TextureLoader();
-            lightMap.load('models3D/house-v1/light_maps/Lightmap_b.jpg',(texture)=>{
-                const lamber = new MeshStandardMaterial({
-                    color: 0x777777,
-                    lightMap:texture,
-                    map:this.pisoSala.material.map,
-                    // lightMapIntensity:10
+            let loader =   new TextureLoader();
+            const textures = Promise.all([
+            loader.load('models3D/house-v1/light_maps/UV_a.jpg'),
+            loader.load('models3D/house-v1/light_maps/UV_b.jpg'),
+            loader.load('models3D/house-v1/light_maps/UV_c.jpg'),
+            loader.load('models3D/house-v1/light_maps/UV_d.jpg'),
+            loader.load('models3D/house-v1/light_maps/UV_e.jpg'),
+        ],(resolve)=>{
+                resolve(textures)
+            }).then(texturesLoades=>{
+                
+                gltf.scene.traverse((child) =>{
+                    if (child.isMesh) {
+                        this.putLigthMap(child,texturesLoades)
+                    }
                 })
-                this.pisoSala.material = lamber
-
-                const laberCocina = new MeshStandardMaterial({
-                    color: 0x777777,
-                    lightMap:texture,
-                    map:this.pisoCosina.material.map,
-                    // lightMapIntensity:10
-                })
-                this.pisoCosina.material = laberCocina
-
-                const laberComedor = new MeshStandardMaterial({
-                    color: 0x777777,
-                    lightMap:texture,
-                    map:this.pisoComedor.material.map,
-                    // lightMapIntensity:10
-                })
-                this.pisoComedor.material = laberComedor
-
-                Observer.on(EVENTS.SENDPRODUCT,(productSelected,areaSelected,typeOfAplication)=>{
+                Observer.on(EVENTS.SENDPRODUCT,(productSelected,areaSelected,typeOfAplication,nameMuroAplication)=>{
                     let mapDB =   new TextureLoader();
                     mapDB.load(productSelected.albedo,(textureMap)=>{
                         textureMap.wrapS = RepeatWrapping;
                         textureMap.wrapT = RepeatWrapping;
-                        textureMap.repeat.set(0.69444 ,0.69444 );
-                        mapDB.load(productSelected.normal,(textureNormal)=>{
+                        textureMap.repeat.set(0.63,0.63 );
+                        mapDB.load(productSelected.normal,()=>{
                             const uploadMaterial = new MeshStandardMaterial({
                                 color: 0x777777,
-                                lightMap:texture,
+                                // TODO: light map dependiendo de que sea si no da error de sombras
+                                lightMap:(nameMuroAplication==="")?texturesLoades[1]:texturesLoades[1],
                                 map:textureMap,
-                                normalMap:textureNormal,
-                                lightMapIntensity:5
+                                // normalMap:textureNormal,
+                                lightMapIntensity:4
                             })
                             if(typeOfAplication===0){
-                                console.log("aplicado a muro")
+                                console.log("aplicado a piso")
                                 this.updatePisoMaterial(uploadMaterial,areaSelected)
                             }
                             else{
-                                console.log("aplicado a pared")
+                                console.log("aplicado a muro")
+                                this.updateMuroMaterial(uploadMaterial,nameMuroAplication)
                             }
                         })
                     })
                     
                 })
-            },undefined,( err )=> {
-                console.error( err );
             })
             // 
-            
-            
-
             this.scale.x=10;
 			this.scale.y=10;
 			this.scale.z=10;
+            this.rotation.y=3.14
         },
         (xhr)=>{
             console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );   
@@ -94,6 +103,75 @@ export class House extends Mesh{
     update(){
         
     }
+
+    ligthMapToUpdateMaterial(){
+
+    }
+
+    putLigthMap(child,texturesLoades){
+         let uva = texturesLoades[0]
+        let uvb = texturesLoades[1]
+        // let uvc = texturesLoades[2]
+        let uvd = texturesLoades[3]
+        let uve = texturesLoades[4]
+        if(child.name.includes("UVa")){
+            const materialWhitLigthmap = new MeshStandardMaterial({
+                color: 0x777777,
+                envMapIntensity:0,
+                lightMap:uva,
+                emissive:0x000000,                
+                map:child.material.map,
+                lightMapIntensity:4
+            })
+            child.material = materialWhitLigthmap
+                return 
+        }
+        if(child.name.includes("UVb")){
+                const materialWhitLigthmap = new MeshStandardMaterial({
+                    color: 0x777777,
+                    envMapIntensity:0,
+                    lightMap:uvb,
+                    map:child.material.map,
+                    lightMapIntensity:4
+                })
+                child.material = materialWhitLigthmap
+                return 
+        }
+        // if(child.name.includes("UVc")){
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0x777777,
+        // envMapIntensity:0,
+        //             lightMap:uvc,
+        //             map:child.material.map,
+        //             lightMapIntensity:4
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        // }
+        if(child.name.includes("UVd")){
+                const materialWhitLigthmap = new MeshStandardMaterial({
+                    color: 0x777777,
+                    envMapIntensity:0,
+                    lightMap:uvd,
+                    map:child.material.map,
+                    lightMapIntensity:4
+                })
+                child.material = materialWhitLigthmap
+                return 
+        }
+        if(child.name.includes("UVe")){
+                const materialWhitLigthmap = new MeshStandardMaterial({
+                    color: 0x777777,
+                    envMapIntensity:0,
+                    lightMap:uve,
+                    map:child.material.map,
+                    lightMapIntensity:4
+                })
+                child.material = materialWhitLigthmap
+                return 
+        }
+    }
+
     updatePisoMaterial(materialUpdated,pisoSelected){
         switch (pisoSelected) {
             case "sala":
@@ -116,6 +194,71 @@ export class House extends Mesh{
             default:
                 break;
         }
+    }
+
+    updateMuroMaterial(materialUpdated,nameMuro){
+        switch (nameMuro) {
+            case "Hover_Muro_C_Int_Comedor_Atras_UVa_MT_Hover_Muro_C_Int_Comedor_Atras_UVa_0":
+                this.muroComedorA.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Comedor_Front_UVa_MT_Hover_Muro_C_Int_Comedor_Front_UVa_0":
+                this.muroComedorB.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Sala_Der_UVa_MT_Hover_Muro_C_Int_Sala_Der_UVa_0":
+                this.muroSalaB.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Sala_Front_UVa_MT_Hover_Muro_C_Int_Sala_Front_UVa_0":
+                this.muroSalaC.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Sala_Front2_UVa_MT_Hover_Muro_C_Int_Sala_Front2_UVa_0":
+                this.muroSalaA.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Ext_Patio_Arriba_MT_Hover_Muro_C_Ext_Patio_Arriba_0":
+                this.muroFachadaA.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Ext_Patio_Front_UVa_MT_Hover_Muro_C_Ext_Patio_Front_UVa_0":
+                this.muroFachadaB.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Ext_Patio_Izq_UVa_MT_Hover_Muro_C_Ext_Patio_Izq_UVa_0":
+                this.muroFachadaC.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Ext_Patio_Atras_UVa_MT_Hover_Muro_C_Ext_Patio_Atras_UVa_0":
+                this.muroFachadaD.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Ext_Patio_Der_UVa_MT_Hover_Muro_C_Ext_Patio_Der_UVa_0":
+                this.muroFachadaE.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Cocina_Izq_UVa_MT_Hover_Muro_C_Int_Cocina_Izq_UVa_0":
+                this.muroCocinaA.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Cocina_Front_UVa_MT_Hover_Muro_C_Int_Cocina_Front_UVa_0":
+                this.muroCocinaB.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Cocina_Der_UVa_MT_Hover_Muro_C_Int_Cocina_Der_UVa_0":
+                this.muroCocinaC.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Pasillo_Izq_UVa_MT_Hover_Muro_C_Int_Pasillo_Izq_UVa_0":
+                this.muroCocinaD.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Banio_Izq2_UVa_MT_Hover_Muro_C_Int_Banio_Izq2_UVa_0":
+                this.muroBanioA.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Banio_Izq1_UVa_MT_Hover_Muro_C_Int_Banio_Izq1_UVa_0":
+                this.muroBanioB.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Banio_Izq3_UVa_MT_Hover_Muro_C_Int_Banio_Izq3_UVa_0":
+                this.muroBanioC.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Banio_Der2_UVa_MT_Hover_Muro_C_Int_Banio_Der2_UVa_0":
+                this.muroBanioD.material = materialUpdated
+                break;
+            case "Hover_Muro_C_Int_Banio_Der_UVa_MT_Hover_Muro_C_Int_Banio_Der_UVa_0":
+                this.muroBanioE.material = materialUpdated
+                break;
+            default:
+                break;
+        }
+
     }
 
 }
