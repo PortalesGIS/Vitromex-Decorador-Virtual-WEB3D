@@ -1,6 +1,7 @@
 import {  Mesh, RepeatWrapping, TextureLoader,
     // MeshStandardMaterial,  RepeatWrapping,  TextureLoader
  } from "three";
+// import { GUI } from "three/examples/jsm/libs/dat.gui.module";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import Observer, { EVENTS } from "../Observer";
 // import Observer, { EVENTS } from "../Observer";
@@ -35,8 +36,9 @@ export class Hovers extends Mesh{
                             child.material.color.setHex( 0xffffff );
                         }
                         else{
-                            child.material.color.setHex( 0xffffff );
-                            child.material.opacity=1
+                           child.material.color.setHex( 0xffffff );
+                           child.material.opacity=1
+                           
                         }
                     }
                 }) 
