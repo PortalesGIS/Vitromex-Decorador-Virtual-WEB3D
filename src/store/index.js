@@ -31,6 +31,29 @@ export default createStore({
     areaSelected:"sala",
     aplicationSelected:0,
     muroSelected:"",
+    isLoadingProductToAplicate:false,
+    productsAplicatesInAreas:{
+      sala:{
+        muros:[],
+        piso:{}
+      },
+      comedor:{
+        muros:[],
+        piso:{}
+      },
+      cocina:{
+        muros:[],
+        piso:{}
+      },
+      banio:{
+        muros:[],
+        piso:{}
+      },
+      fachada:{
+        muros:[],
+        piso:{}
+      },
+    }
   },
   mutations: {
     ...mutationsProducts,

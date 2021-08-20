@@ -11,14 +11,14 @@ export class Hovers extends Mesh{
         let loader = new GLTFLoader(); 
         loader.load('models3D/hovers/scene.gltf',(gltf)=>{
             let mapDB =   new TextureLoader();
-             mapDB.load('models3D/hovers/textures/MT_Hover_Piso_C_Int_Banio2_UVb_baseColor.png',(textureMap)=>{
+             mapDB.load('models3D/hovers/textures/Dots.png',(textureMap)=>{
                 textureMap.wrapS = RepeatWrapping;
                 textureMap.wrapT = RepeatWrapping;
-                textureMap.repeat.set(0.63,0.63 );
+                textureMap.repeat.set(1,1 );
                         gltf.scene.traverse(function(child) {
                             if (child.isMesh) {
                                 child.material.map=textureMap
-                                child.material.envMapIntensity=4
+                                child.material.envMapIntensity=4,
                                 child.material.opacity=0.003,
                                 child.material.transparent=true,
                                 child.renderOrder =-1
@@ -35,7 +35,8 @@ export class Hovers extends Mesh{
                             child.material.color.setHex( 0xffffff );
                         }
                         else{
-                            child.material.color.setHex( 0x000000 );
+                            child.material.color.setHex( 0xffffff );
+                            child.material.opacity=1
                         }
                     }
                 }) 

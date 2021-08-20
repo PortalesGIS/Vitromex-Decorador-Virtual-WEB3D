@@ -23,3 +23,11 @@ export const getAreaSelected=(state)=>{
 export const getAplicationSeletec=(state)=>{
     return state.aplicationSelected
 }
+
+export const getProductsAplicatesInAreas=(state)=>{
+    return state.productsAplicatesInAreas
+}
+
+export const getisLoadingProductToAplicate=(state)=>{
+    return state.isLoadingProductToAplicate
+}

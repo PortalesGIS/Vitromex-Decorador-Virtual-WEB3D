@@ -29,3 +29,11 @@ export const setAreaSalected =(state,payload)=>{
 export const setAplicationSelected=(state,payload)=>{
     state.aplicationSelected = payload
 }
+
+export const setProductsAplicatesInAreas=(state,payload)=>{
+    state.productsAplicatesInAreas = payload
+}
+
+export const setisLoadingProductToAplicate=(state,payload)=>{
+    state.isLoadingProductToAplicate= payload
+}

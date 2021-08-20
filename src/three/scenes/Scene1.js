@@ -4,7 +4,7 @@ import {  AxesHelper, Color,  DirectionalLight, HemisphereLight,
 
 } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
+// import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
 import { House } from '../objects/House';
 import { Hovers } from '../objects/hovers';
 import { TrakerMouse } from '../objects/MouseTraker';
@@ -42,9 +42,7 @@ class Scene1 extends Scene {
 		this.hovers = new Hovers()
 		this.add(this.hovers)
 
-		var gui = new GUI();
-		var cam = gui.addFolder('sala-1');
-		cam.open();
+		
 		// 
 		
 		// 
@@ -103,7 +101,7 @@ class Scene1 extends Scene {
 			this.traker.position.set(intersects[0].point.x ,intersects[0].point.y+0.2,intersects[0].point.z)
 			}
 			if(intersects[0].object.name.includes('Muro')){
-				intersects[0].object.material.opacity=1
+				intersects[0].object.material.opacity=0.5
 			}
 		}
 	}

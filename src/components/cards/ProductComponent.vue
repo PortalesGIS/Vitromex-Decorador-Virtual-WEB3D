@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import Observer, { EVENTS } from "../../three/Observer";
 export default {
   props: {
@@ -54,9 +54,42 @@ export default {
     },
   },
   methods: {
+    ...mapActions(["changeProductsAplicatesInAreas","changeisLoadingProductToAplicate"]),
     selectProductForMap(product) {
       Observer.emit(EVENTS.SENDPRODUCT, product,this.getAreaSelected,this.getAplicationSeletec,this.getMuroAplication);
+      this.changeisLoadingProductToAplicate(true)
+      if(this.getAplicationSeletec===1){
+        this.changeProductsAplicatesInAreas({
+          area:this.getAreaToAplicateProduct(this.getMuroAplication),
+          aplication:this.getAplicationSeletec,
+          product:product
+        })
+      }
+      else{
+        this.changeProductsAplicatesInAreas({
+          area:this.getAreaSelected,
+          aplication:this.getAplicationSeletec,
+          product:product
+        })
+      }
     },
+    getAreaToAplicateProduct(muroAplication){
+      if(muroAplication.includes("Sala")){
+        return "sala"
+      }
+      else if(muroAplication.includes("Comedor")){
+        return "comedor"
+      }
+      else if(muroAplication.includes("Cocina")){
+        return "cocina"
+      }
+      else if (muroAplication.includes("Banio")){
+        return "banio"
+      }
+      else if (muroAplication.includes("Ext_Patio")){
+        return "fachada"
+      }
+    }
   },
   computed: {
     ...mapGetters(["getPageState","getAreaSelected","getAplicationSeletec","getMuroAplication"])

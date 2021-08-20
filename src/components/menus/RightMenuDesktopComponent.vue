@@ -10,7 +10,8 @@
           </div>
           <div class="pt-10">
               <div class="bg-67 h-11 flex items-center">
-                  <p class="px-5 text-sm moserrat-bold font-bold" style="color:#CFCFCF">FACHADA</p>
+                  <p class="px-5 text-sm moserrat-bold font-bold uppercase" style="color:#CFCFCF">
+                      {{(getAreaSelected==="banio")?'baño':getAreaSelected}}</p>
               </div>
           </div>
           <div class="pt-4 pb-64 overflow-y-auto h-full">
@@ -18,13 +19,14 @@
                   <p class="text-sm moserrat-bold font-bold text-subtitle" >Muro</p>
               </div>
               <div class="pt-4 px-4">
-                   <div v-if="false">
+                   <div v-if="getProductsAplicatesInAreas[getAreaSelected].muros.length!=0">
                     <div class='grid grid-cols-2 '>
-                          <div v-for="x in 3" :key="x"
+                          <div v-for="muro in getProductsAplicatesInAreas[getAreaSelected].muros" :key="muro"
                             class="pb-2">
-                            <img src="https://random.imagecdn.app/300/300" class="object-cover rounded-md" style="width:81px; height:69px" alt="">
-                            <p class="text-white font-semibold text-cf" style="font-size:11px;">Coliseo Cream</p>
-                            <p class="text-white font-semibold text-cf" style="font-size:11px;">00x00</p>
+                            <img :src="muro.smallPicture" 
+                            class="object-cover rounded-md" style="width:81px; height:69px" alt="">
+                            <p class="text-white font-semibold text-cf" style="font-size:11px;">{{muro.name}}</p>
+                            <p class="text-white font-semibold text-cf" style="font-size:11px;">{{muro.sized}}</p>
                             </div>
                         </div>                      
                   </div>
@@ -43,11 +45,11 @@
                   <p class="text-sm moserrat-bold font-bold text-subtitle">Piso</p>
               </div>
               <div class="pt-4 px-4">
-                  <div v-if="false" class='grid grid-cols-2 '>
+                  <div v-if="getProductsAplicatesInAreas[getAreaSelected].piso.name" class='grid grid-cols-2 '>
                         <div>
-                            <img src="https://random.imagecdn.app/300/300" class="object-cover rounded-md" style="width:81px; height:69px" alt="">
-                        <p class="text-white font-semibold text-cf" style="font-size:11px;" >Coliseo Cream</p>
-                        <p class="text-white font-semibold text-cf" style="font-size:11px;" >00x00</p>
+                            <img :src="getProductsAplicatesInAreas[getAreaSelected].piso.smallPicture" class="object-cover rounded-md" style="width:81px; height:69px" alt="">
+                        <p class="text-white font-semibold text-cf" style="font-size:11px;" >{{getProductsAplicatesInAreas[getAreaSelected].piso.name}}</p>
+                        <p class="text-white font-semibold text-cf" style="font-size:11px;" >{{getProductsAplicatesInAreas[getAreaSelected].piso.sized}}</p>
                  
                         </div>
                   </div>
@@ -70,7 +72,7 @@
 import { mapGetters } from 'vuex'
 export default {
  computed: {
-     ...mapGetters(["getPageState"])
+     ...mapGetters(["getPageState","getProductsAplicatesInAreas","getAreaSelected"])
  },
 }
 </script>

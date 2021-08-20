@@ -1,6 +1,7 @@
 import {  Mesh, MeshStandardMaterial, RepeatWrapping, TextureLoader,  
     // MeshStandardMaterial,  RepeatWrapping,  TextureLoader
  } from "three";
+// import { GUI } from "three/examples/jsm/libs/dat.gui.module";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import Observer, { EVENTS } from "../Observer";
 // import Observer, { EVENTS } from "../Observer";
@@ -68,11 +69,12 @@ export class House extends Mesh{
                             const uploadMaterial = new MeshStandardMaterial({
                                 color: 0x777777,
                                 // TODO: light map dependiendo de que sea si no da error de sombras
-                                lightMap:(nameMuroAplication==="")?texturesLoades[1]:texturesLoades[1],
+                                lightMap:(typeOfAplication===1)?texturesLoades[0]:texturesLoades[1],
                                 map:textureMap,
                                 // normalMap:textureNormal,
                                 lightMapIntensity:4
                             })
+                            Observer.emit(EVENTS.ENDCHARGINPRODUCT);
                             if(typeOfAplication===0){
                                 console.log("aplicado a piso")
                                 this.updatePisoMaterial(uploadMaterial,areaSelected)
@@ -124,6 +126,7 @@ export class House extends Mesh{
                 lightMapIntensity:4
             })
             child.material = materialWhitLigthmap
+            
                 return 
         }
         if(child.name.includes("UVb")){
@@ -135,6 +138,7 @@ export class House extends Mesh{
                     lightMapIntensity:4
                 })
                 child.material = materialWhitLigthmap
+                
                 return 
         }
         // if(child.name.includes("UVc")){
