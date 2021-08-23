@@ -45,7 +45,7 @@ export class House extends Mesh{
             // 
             let loader =   new TextureLoader();
             const textures = Promise.all([
-            loader.load('models3D/house-v1/light_maps/UV_a.jpg'),
+            loader.load('models3D/house-v1/light_maps/UV_acontraste.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_b.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_c.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_d.jpg'),
@@ -113,66 +113,103 @@ export class House extends Mesh{
     putLigthMap(child,texturesLoades){
          let uva = texturesLoades[0]
         let uvb = texturesLoades[1]
-        // let uvc = texturesLoades[2]
+        let uvc = texturesLoades[2]
         let uvd = texturesLoades[3]
         let uve = texturesLoades[4]
         if(child.name.includes("UVa")){
-            const materialWhitLigthmap = new MeshStandardMaterial({
-                color: 0x777777,
-                envMapIntensity:0,
-                lightMap:uva,
-                emissive:0x000000,                
-                map:child.material.map,
-                lightMapIntensity:4
-            })
-            child.material = materialWhitLigthmap
-            
-                return 
-        }
-        if(child.name.includes("UVb")){
+            if(child.name === "Muro_C_Int_Comedor_Front_UVa_MT_Losa_Base_Int_General_UVb_0"){
+                child.material.lightMap =uva
+            }
+            else{
+                // child.material.lightMap=uva
+                // child.material.lightMapIntensity=4
+                // child.material.envMapIntensity=0
                 const materialWhitLigthmap = new MeshStandardMaterial({
                     color: 0x777777,
                     envMapIntensity:0,
-                    lightMap:uvb,
+                    lightMap:uva,                
                     map:child.material.map,
                     lightMapIntensity:4
                 })
                 child.material = materialWhitLigthmap
-                
-                return 
+                    return 
+            }
         }
-        // if(child.name.includes("UVc")){
+        if(child.name.includes("UVb")){
+            child.material.lightMap=uvb
+            child.material.lightMapIntensity=4
+            child.material.envMapIntensity=0
+                // const materialWhitLigthmap = new MeshStandardMaterial({
+                //     color: 0x777777,
+                //     envMapIntensity:1,
+                //     lightMap:uvb,
+                //     map:child.material.map,
+                //     lightMapIntensity:4
+                // })
+                // child.material = materialWhitLigthmap
+                
+                // return 
+        }
+        if(child.name.includes("UVc")){
+            if(
+                child.name==="Mob_Base_Cocina_Campana_UVd_MT_Amb_Base_Canceleria_UVc_0"||
+                child.name==="Amb_Base_vidrioopaco_UVc_MT_Amb_Base_vidrioopaco_UVc_0"
+             ){
+                // child.material.lightMap=uvd
+                // child.material.lightMapIntensity=4
+                child.material.envMapIntensity=0.5
+            }
+            else{
+                child.material.lightMap=uvc
+                child.material.lightMapIntensity=4
+                child.material.envMapIntensity=0
+            }
+            // console.log(child.name)
+            //     const materialWhitLigthmap = new MeshStandardMaterial({
+            //         color: 0x777777,
+            //         envMapIntensity:1,
+            //         lightMap:uvc,
+            //         transparent:true,
+            //         map:child.material.map,
+            //         lightMapIntensity:4
+            //     })
+            //     child.material = materialWhitLigthmap
+            //     return 
+        }
+        if(child.name.includes("UVd")){
+            if(child.name==="Mob_Base_Cocina_Campana_UVd_MT_Amb_Base_Canceleria_UVc_0"){
+                // child.material.lightMap=uvd
+                // child.material.lightMapIntensity=4
+                child.material.envMapIntensity=0.5
+            }
+            else{
+                child.material.lightMap=uvd
+                child.material.lightMapIntensity=4
+                child.material.envMapIntensity=0.5
+            }
+                // const materialWhitLigthmap = new MeshStandardMaterial({
+                //     color: 0x777777,
+                //     envMapIntensity:1,
+                //     // lightMap:uvd,
+                //     map:child.material.map,
+                //     // lightMapIntensity:4
+                // })
+                // child.material = materialWhitLigthmap
+                // return 
+        }
+        if(child.name.includes("UVe")){
+            child.material.lightMap=uve
+            child.material.lightMapIntensity=4
+            child.material.envMapIntensity=0
         //         const materialWhitLigthmap = new MeshStandardMaterial({
         //             color: 0x777777,
-        // envMapIntensity:0,
-        //             lightMap:uvc,
+        //             envMapIntensity:0,
+        //             lightMap:uve,
         //             map:child.material.map,
         //             lightMapIntensity:4
         //         })
         //         child.material = materialWhitLigthmap
         //         return 
-        // }
-        if(child.name.includes("UVd")){
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0x777777,
-                    envMapIntensity:0,
-                    lightMap:uvd,
-                    map:child.material.map,
-                    lightMapIntensity:4
-                })
-                child.material = materialWhitLigthmap
-                return 
-        }
-        if(child.name.includes("UVe")){
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0x777777,
-                    envMapIntensity:0,
-                    lightMap:uve,
-                    map:child.material.map,
-                    lightMapIntensity:4
-                })
-                child.material = materialWhitLigthmap
-                return 
         }
     }
 

@@ -6,7 +6,7 @@ import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
 import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import Stats from 'three/examples/jsm/libs/stats.module'
-
+import {isDevice} from '../../utils/isDevice'
 export class App {
 	constructor(container) {
 		this.container = container;
@@ -76,11 +76,10 @@ export class App {
 				.setDataType( UnsignedByteType )
 				.load( 'models3D/enviroment/signal_hill_dawn_1k.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
-					this.scene.background = envMap;
-					this.scene.environment = envMap;
-					// if(!this.isDevice){
-					// 	this.scene.environment = envMap;
-					// }
+					if(!isDevice()){
+						this.scene.background = envMap;
+						this.scene.environment = envMap;
+					}
 				})
 			
 		// 

@@ -10,6 +10,7 @@ import { Hovers } from '../objects/hovers';
 import { TrakerMouse } from '../objects/MouseTraker';
 // import { PlaneTest } from '../objects/PlaneTest';
 import Observer, { EVENTS } from '../Observer';
+import {isDevice} from '../../../utils/isDevice'
 var raycaster = new Raycaster();
 var mouse = new Vector2();
 class Scene1 extends Scene {
@@ -47,10 +48,12 @@ class Scene1 extends Scene {
 		
 		// 
 		// 
-		this.abientLight = new HemisphereLight(0xffffffbb, 0x080820,0.5)
+		this.abientLight = new HemisphereLight(0xffffffbb, 0x080820,1)
 		this.light =  new DirectionalLight(0xffffff,1);
-		// this.add(	this.abientLight );
-		// this.add(this.light)
+		if(isDevice()){
+			this.add(	this.abientLight );
+			this.add(this.light)
+		}
 		// helpers
 		this.axesHelper = new AxesHelper(5);
 		this.add(this.axesHelper);
@@ -70,6 +73,7 @@ class Scene1 extends Scene {
 		mouse.y = - ( clientY / renderer.domElement.clientHeight ) * 2 + 1;
 		raycaster.setFromCamera( mouse,camera );
 		let intersects = raycaster.intersectObjects( this.children[2].children,true); 
+		// console.log(intersects)
 		if ( intersects.length > 0 ) {
 			// if(intersects[0].object.callback){
 			// 	intersects[0].object.callback();
