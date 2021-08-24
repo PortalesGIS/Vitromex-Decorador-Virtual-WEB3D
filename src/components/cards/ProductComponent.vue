@@ -54,8 +54,10 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["changeProductsAplicatesInAreas","changeisLoadingProductToAplicate"]),
+    ...mapActions(["changeProductsAplicatesInAreas","changeisLoadingProductToAplicate","addPointToClickProduct"]),
     selectProductForMap(product) {
+      console.log(product._id)
+      this.addPointToClickProduct(product._id)
       Observer.emit(EVENTS.SENDPRODUCT, product,this.getAreaSelected,this.getAplicationSeletec,this.getMuroAplication);
       this.changeisLoadingProductToAplicate(true)
       if(this.getAplicationSeletec===1){

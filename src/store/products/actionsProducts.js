@@ -41,6 +41,23 @@ export const filterProductsForString=({commit,getters},{word=""})=>{
   commit("setProductsFilter",result)
 }
 
+
+export const addPointToClickProduct=({commit},id)=>{
+  console.log(commit)
+  let myHeaders = new Headers();
+  myHeaders.append("Access-Control-Allow-Origin",`*`);
+  let requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    redirect: 'follow'
+  };
+  fetch(`${baseUrl}/api/counter/add/${id}`, requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+}
+
+
 const normalizeText=(text)=>{
   return text.toUpperCase().normalize('NFD')
   .replace(/([aeio])\u0301|(u)[\u0301\u0308]/gi,"$1$2")

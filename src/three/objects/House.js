@@ -45,7 +45,7 @@ export class House extends Mesh{
             // 
             let loader =   new TextureLoader();
             const textures = Promise.all([
-            loader.load('models3D/house-v1/light_maps/UV_acontraste.jpg'),
+            loader.load('models3D/house-v1/light_maps/UV_a.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_b.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_c.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_d.jpg'),
@@ -68,6 +68,7 @@ export class House extends Mesh{
                         mapDB.load(productSelected.normal,()=>{
                             const uploadMaterial = new MeshStandardMaterial({
                                 color: 0x777777,
+                                // TODO: brillante u opcao
                                 // TODO: light map dependiendo de que sea si no da error de sombras
                                 lightMap:(typeOfAplication===1)?texturesLoades[0]:texturesLoades[1],
                                 map:textureMap,
@@ -129,7 +130,7 @@ export class House extends Mesh{
                     envMapIntensity:0,
                     lightMap:uva,                
                     map:child.material.map,
-                    lightMapIntensity:4
+                    lightMapIntensity:6
                 })
                 child.material = materialWhitLigthmap
                     return 
@@ -161,7 +162,7 @@ export class House extends Mesh{
             }
             else{
                 child.material.lightMap=uvc
-                child.material.lightMapIntensity=4
+                child.material.lightMapIntensity=6
                 child.material.envMapIntensity=0
             }
             // console.log(child.name)
@@ -184,7 +185,7 @@ export class House extends Mesh{
             }
             else{
                 child.material.lightMap=uvd
-                child.material.lightMapIntensity=4
+                child.material.lightMapIntensity=6
                 child.material.envMapIntensity=0.5
             }
                 // const materialWhitLigthmap = new MeshStandardMaterial({
@@ -199,7 +200,7 @@ export class House extends Mesh{
         }
         if(child.name.includes("UVe")){
             child.material.lightMap=uve
-            child.material.lightMapIntensity=4
+            child.material.lightMapIntensity=6
             child.material.envMapIntensity=0
         //         const materialWhitLigthmap = new MeshStandardMaterial({
         //             color: 0x777777,
