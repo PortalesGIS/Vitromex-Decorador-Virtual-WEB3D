@@ -11,11 +11,13 @@ import { TrakerMouse } from '../objects/MouseTraker';
 // import { PlaneTest } from '../objects/PlaneTest';
 import Observer, { EVENTS } from '../Observer';
 import {isDevice} from '../../../utils/isDevice'
+import gsap from 'gsap/gsap-core';
 var raycaster = new Raycaster();
 var mouse = new Vector2();
 class Scene1 extends Scene {
-	constructor(camera = PerspectiveCamera,control= OrbitControls){
+	constructor(loaderManager,camera = PerspectiveCamera,control= OrbitControls){
 		super();
+		this.loaderManager = loaderManager;
 		this.camera = camera;
 		this.control = control;
 		this.muroSelected=""
@@ -37,7 +39,7 @@ class Scene1 extends Scene {
 		this.traker = new TrakerMouse()
 		this.add(this.traker)
 
-		this.house = new House()
+		this.house = new House(this.loaderManager)
 		this.add(this.house)
 		
 		this.hovers = new Hovers()
@@ -82,10 +84,24 @@ class Scene1 extends Scene {
 				// this.muroSelected=""
 				// Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);
 				this.onMoveToAreaSelected(intersects)
+				console.log(this.camera.position)
 				this.control.enable = false
-				this.camera.position.set(intersects[0].point.x,17,intersects[0].point.z)
-				this.camera.lookAt(intersects[0].point.x,17,intersects[0].point.z)
-				this.control.target.set(intersects[0].point.x/1.0001,this.camera.position.y/1.0001, intersects[0].point.z/1.0001)
+				gsap.to(this.camera.position,{
+					duration:2,
+					x:intersects[0].point.x,
+					y:17,
+					z:intersects[0].point.z,
+					onUpdate:()=>{
+						this.control.update()
+					},
+					onComplete:()=>{
+						console.log(this.camera.position)
+						console.log(intersects[0].point.x,17,intersects[0].point.z)
+						// this.camera.position.set(intersects[0].point.x,17,intersects[0].point.z)
+						// this.camera.lookAt(intersects[0].point.x,17,intersects[0].point.z)
+						this.control.target.set(intersects[0].point.x/1.0001,this.camera.position.y/1.0001, intersects[0].point.z/1.0001)
+					}
+				})
 			}
 			if(intersects[0].object.name.includes('Muro')){
 				this.muroSelected = intersects[0].object.name

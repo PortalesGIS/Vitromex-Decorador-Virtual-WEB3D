@@ -1,4 +1,4 @@
-import { PerspectiveCamera,  WebGLRenderer, sRGBEncoding, PMREMGenerator, UnsignedByteType, 
+import { PerspectiveCamera,  WebGLRenderer, sRGBEncoding, PMREMGenerator, UnsignedByteType, LoadingManager, 
 	// Math,
    } from 'three';
 import Scene1 from './scenes/Scene1';
@@ -7,10 +7,19 @@ import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import Stats from 'three/examples/jsm/libs/stats.module'
 import {isDevice} from '../../utils/isDevice'
+import Observer, { EVENTS } from './Observer';
 export class App {
 	constructor(container) {
 		this.container = container;
-
+		// loader
+		const loaderManager = new LoadingManager();
+		loaderManager.onLoad =()=>{
+			Observer.emit(EVENTS.LOADINGFFINISH);
+		}
+		loaderManager.onProgress = (fileUrl,itemsloaded, itemsTotal) =>{
+			const percentage = itemsloaded / itemsTotal;
+			Observer.emit(EVENTS.LOADING,percentage,fileUrl);
+		}
 		
 		// ## Camera's config
 		this.camera = new PerspectiveCamera(80, this.container.clientWidth / this.container.clientHeight, 0.1, 10000);
@@ -71,8 +80,8 @@ export class App {
 		// 
 		const pmremGenerator = new PMREMGenerator( this.renderer );
 		pmremGenerator.compileEquirectangularShader();
-		this.scene = new Scene1(this.camera,this.control,);
-		new RGBELoader()
+		this.scene = new Scene1(loaderManager,this.camera,this.control,);
+		new RGBELoader(loaderManager)
 				.setDataType( UnsignedByteType )
 				.load( 'models3D/enviroment/signal_hill_dawn_1k.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;

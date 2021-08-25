@@ -1,5 +1,22 @@
 <template>  
-<div class= "fixed right-0 -mt-16 pr-2">
+
+<div
+    id="screenblack"
+    class=" fixed z-20  top-0  hidden opacity-0  bg-base-black h-screen w-screen">
+    <div class='w-full h-full flex justify-center items-center'>
+        <div class="ml-16 hidden lg:block">
+            <img  v-if="getPageState" src="../../assets/arko/Web/ARKO_Logo.svg" style="width:223px; height:52px" alt="">
+            <img v-else src="../../assets/web/Logo_Vitromex.svg" style="width:223px; height:52px" alt="">            
+        </div>        
+        <div class=" block lg:hidden ">
+            <img  v-if="getPageState" src="../../assets/arko/Web/ARKO_Logo.svg" style="width:223px; height:52px" alt="">
+            <img v-else src="../../assets/web/Logo_Vitromex.svg" style="width:223px; height:52px" alt="">            
+
+        </div>
+    </div>
+</div>
+<div class="z-25"> 
+    <div class= "fixed right-0 -mt-16 pr-2">
     <div class="w-11 h-11"
         @click="changeMenuCatalogo">
         <img src="../../assets/mobile/menu_catalogo.png" alt="">
@@ -74,15 +91,34 @@
         </div>
         
     </div>
+</div>
+
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import gsap from 'gsap';
 export default {
     methods: {
         ...mapActions(["changeMenuCatalogo","changeAreaSelected"]),
         onSelectArea(nameArea){
-            this.changeAreaSelected(nameArea)
+            gsap.to('#screenblack',{
+                onStart:()=>{
+                    document.getElementById('screenblack').classList.remove('hidden')
+                    },
+                duration:0.4,
+                opacity:1,
+                onComplete:()=>{
+                    this.changeAreaSelected(nameArea)
+                    gsap.to('#screenblack',{
+                        duration:0.4,
+                         opacity:0,
+                         onComplete:()=>{
+                             document.getElementById('screenblack').classList.add('hidden')
+                         }
+                     }) 
+                }
+            })
         }
     },
     computed: {

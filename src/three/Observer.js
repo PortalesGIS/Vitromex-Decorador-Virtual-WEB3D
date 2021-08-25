@@ -9,6 +9,8 @@ export const EVENTS = {
     MOVETOAREASELECTMENU:"movetoareaselectmenu",
     SELECTMURO:"selectmuro",
     ENDCHARGINPRODUCT:"endcharginproduct",
+    LOADING:'loading',
+    LOADINGFFINISH:'loadingfinish'
 }
 
 const Observer = new EventEmitter();

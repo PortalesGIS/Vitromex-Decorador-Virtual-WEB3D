@@ -7,10 +7,10 @@ import Observer, { EVENTS } from "../Observer";
 // import Observer, { EVENTS } from "../Observer";
 export class House extends Mesh{
 
-    constructor(){
+    constructor(loaderManager){
         super();
 
-        let loader = new GLTFLoader(); 
+        let loader = new GLTFLoader(loaderManager); 
         loader.load('models3D/house-v1/scene.gltf',(gltf)=>{
             // this.liquid = gltf.scene.children[0].getObjectByName('Liquid_Beer_Liquid_0');
             this.add(gltf.scene); 
@@ -43,7 +43,7 @@ export class House extends Mesh{
             this.muroBanioE =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Der_UVa_MT_Muro_C_Int_Banio_Der_UVa_0")
 
             // 
-            let loader =   new TextureLoader();
+            let loader =   new TextureLoader(loaderManager);
             const textures = Promise.all([
             loader.load('models3D/house-v1/light_maps/UV_a.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_b.jpg'),

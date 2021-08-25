@@ -3,6 +3,7 @@
   change 
 </div>
 <div :class="getPageState?'theme-arko':''" class="">
+  <LoadingScreenComponentVue/>  
   <div class=" h-screen w-screen">
     <div class="fixed z-50">
     <HeaderGlobalComponentVue/>
@@ -51,10 +52,12 @@ import CatalogoMobileComponentVue from '../components/menus/CatalogoMobileCompon
 import FiltersMenuWebVue from '../components/menus/FiltersMenuWeb.vue'
 import LateralMenuComponentVue from '../components/menus/LateralMenuComponent.vue'
 import RightMenuDesktopComponentVue from '../components/menus/RightMenuDesktopComponent.vue'
+import LoadingScreenComponentVue from '../components/utils/LoadingScreenComponent.vue'
 export default {
   components: {
     AplicatesMobileComponentVue,
     HeaderGlobalComponentVue,
+    LoadingScreenComponentVue,
     LateralMenuComponentVue,
     Home3DComponentVue,
     BottomGlobalComponentVue,
@@ -65,8 +68,8 @@ export default {
   methods: {
     ...mapActions(["onChangeStatePage","getProducts","getSeries"]),
     async charge (){
-      await this.getProducts()
-      await this.getSeries()
+      // await this.getProducts()
+      // await this.getSeries()
     }
   },
   computed: {
