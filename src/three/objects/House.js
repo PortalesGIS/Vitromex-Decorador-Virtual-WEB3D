@@ -68,8 +68,7 @@ export class House extends Mesh{
                         mapDB.load(productSelected.normal,()=>{
                             const uploadMaterial = new MeshStandardMaterial({
                                 color: 0x777777,
-                                // TODO: brillante u opcao
-                                // TODO: light map dependiendo de que sea si no da error de sombras
+                                // TODO: brillante u opcao3
                                 lightMap:(typeOfAplication===1)?texturesLoades[0]:texturesLoades[1],
                                 map:textureMap,
                                 // normalMap:textureNormal,

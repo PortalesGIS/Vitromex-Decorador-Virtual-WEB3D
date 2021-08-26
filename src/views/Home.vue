@@ -68,8 +68,8 @@ export default {
   methods: {
     ...mapActions(["onChangeStatePage","getProducts","getSeries"]),
     async charge (){
-      // await this.getProducts()
-      // await this.getSeries()
+      await this.getProducts()
+      await this.getSeries()
     }
   },
   computed: {

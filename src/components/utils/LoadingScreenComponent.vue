@@ -1,7 +1,7 @@
 <template>
   <div 
   id="loadingScreen"
-  class="hidden absolute h-screen w-screen bg-black z-100 img-fondo">
+  class=" absolute h-screen w-screen bg-black z-100 img-fondo">
     <div class='w-full h-full flex justify-center items-center'>
         <div class="ml-16 hidden lg:block ">
         <div class="flex justify-center">
@@ -34,18 +34,13 @@
 
 <script>
 import gsap from 'gsap/src'
-import { mapActions, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 import Observer, { EVENTS } from '../../three/Observer'
 export default {
     computed: {
         ...mapGetters(['getPageState'])
     },
     methods: {
-        ...mapActions(['getProducts','getSeries']),
-         charge (){
-            this.getProducts()
-            this.getSeries()
-            }
     },
     mounted () {
         Observer.on(EVENTS.LOADING,(progress,fileURL)=>{
@@ -56,9 +51,6 @@ export default {
         Observer.on(EVENTS.LOADINGFFINISH,()=>{
            
             gsap.to('#loadingScreen',{
-                onStart:()=>{
-                    this.charge()
-                },
                 duration:1,
                 opacity:0,
                 onComplete:()=>{
