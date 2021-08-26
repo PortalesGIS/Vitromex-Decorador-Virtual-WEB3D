@@ -3,7 +3,7 @@ import { PerspectiveCamera,  WebGLRenderer, sRGBEncoding, PMREMGenerator, Unsign
    } from 'three';
 import Scene1 from './scenes/Scene1';
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
-import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
+// import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import Stats from 'three/examples/jsm/libs/stats.module'
 import {isDevice} from '../../utils/isDevice'
@@ -96,16 +96,15 @@ export class App {
 		// this.scene.add(this.cameraHelper)
 
 		// Helpersss
-		var gui = new GUI();
-
-		var cam = gui.addFolder('Camera');
-		cam.add(this.camera.position, 'y', -50.0, 50.0).listen();
-		cam.add(this.camera.position, 'x', -50.0, 50.0).listen();
-		cam.add(this.camera.position, 'z', -50.0, 50.0).listen();
-		cam.add(this.camera.rotation, 'x', 0, 2).listen();
-		cam.add(this.camera.rotation, 'y', 0, 2).listen();
-		cam.add(this.camera.rotation, 'z', 0, 2).listen();
-		cam.close();
+		// var gui = new GUI();
+		// var cam = gui.addFolder('Camera');
+		// cam.add(this.camera.position, 'y', -50.0, 50.0).listen();
+		// cam.add(this.camera.position, 'x', -50.0, 50.0).listen();
+		// cam.add(this.camera.position, 'z', -50.0, 50.0).listen();
+		// cam.add(this.camera.rotation, 'x', 0, 2).listen();
+		// cam.add(this.camera.rotation, 'y', 0, 2).listen();
+		// cam.add(this.camera.rotation, 'z', 0, 2).listen();
+		// cam.close();
 		this.stats = Stats()
 		document.body.appendChild(this.stats.dom)
 		// 

@@ -1,7 +1,7 @@
 import {  Mesh, MeshStandardMaterial, RepeatWrapping, TextureLoader,  
     // MeshStandardMaterial,  RepeatWrapping,  TextureLoader
  } from "three";
-// import { GUI } from "three/examples/jsm/libs/dat.gui.module";
+import { GUI } from "three/examples/jsm/libs/dat.gui.module";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import Observer, { EVENTS } from "../Observer";
 // import Observer, { EVENTS } from "../Observer";
@@ -61,16 +61,27 @@ export class House extends Mesh{
                 })
                 Observer.on(EVENTS.SENDPRODUCT,(productSelected,areaSelected,typeOfAplication,nameMuroAplication)=>{
                     let mapDB =   new TextureLoader();
-                    mapDB.load(productSelected.albedo,(textureMap)=>{
-                        textureMap.wrapS = RepeatWrapping;
-                        textureMap.wrapT = RepeatWrapping;
-                        textureMap.repeat.set(0.63,0.63 );
+                    // TODO: eliminar el norma? optimizr descarga?
+                    const texturesToUpdate = Promise.all([
+                        loader.load(productSelected.albedo),
+                        loader.load(productSelected.normal),
+                    ],(resolve)=>{
+                        resolve(texturesToUpdate)
+                    }).then(textures=>{
+                        textures[0].wrapS = RepeatWrapping;
+                        textures[0].wrapT = RepeatWrapping;
+                        let dimenciones = productSelected.sized.split('X')
+                        const tailinW = parseInt(dimenciones[0])/100
+                        const tailinH = parseInt(dimenciones[1])/100
+                        textures[0].repeat.set(tailinW,tailinH);
+                        console.log(`${tailinW},${tailinH}`)
                         mapDB.load(productSelected.normal,()=>{
                             const uploadMaterial = new MeshStandardMaterial({
                                 color: 0x777777,
                                 // TODO: brillante u opcao3
                                 lightMap:(typeOfAplication===1)?texturesLoades[0]:texturesLoades[1],
-                                map:textureMap,
+                                map:textures[0],
+                                normalMap:[1],
                                 // normalMap:textureNormal,
                                 lightMapIntensity:4
                             })
@@ -110,7 +121,7 @@ export class House extends Mesh{
 
     }
 
-    putLigthMap(child,texturesLoades){
+    putLigthMap(child ,texturesLoades){
          let uva = texturesLoades[0]
         let uvb = texturesLoades[1]
         let uvc = texturesLoades[2]
@@ -139,6 +150,14 @@ export class House extends Mesh{
             child.material.lightMap=uvb
             child.material.lightMapIntensity=4
             child.material.envMapIntensity=0
+            // var ww = new GUI();
+            // var muro = ww.addFolder('pisos');
+            // muro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+            // muro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+            // muro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+            // muro.add(child.material, 'roughness', -1.0, 1.0).listen();                
+            // muro.add(child.material, 'metalness', -1.0, 1.0).listen();                
+            // muro.open();
                 // const materialWhitLigthmap = new MeshStandardMaterial({
                 //     color: 0x777777,
                 //     envMapIntensity:1,
@@ -187,6 +206,13 @@ export class House extends Mesh{
                 child.material.lightMapIntensity=6
                 child.material.envMapIntensity=0.5
             }
+            if(child.name==="Mob_Base_Cocina_Alacenas_UVd_MT_Mob_Base_Cocina_Alacenas_UVd_0"){
+                var gui = new GUI();
+                var cam = gui.addFolder('cocina');
+                cam.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                cam.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();                
+                cam.open();
+            }
                 // const materialWhitLigthmap = new MeshStandardMaterial({
                 //     color: 0x777777,
                 //     envMapIntensity:1,
@@ -210,6 +236,18 @@ export class House extends Mesh{
         //         })
         //         child.material = materialWhitLigthmap
         //         return 
+        }
+        if(child.name.includes('UVf')){
+            if(child.name==="Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
+                var wer = new GUI();
+                var objectsCocina = wer.addFolder('objetos');
+                objectsCocina.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                objectsCocina.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();                
+                objectsCocina.add(child.material, 'roughness', 0, 2).listen();                
+                objectsCocina.add(child.material, 'refractionRatio', 0, 2).listen();                
+                objectsCocina.add(child.material, 'metalness', 0, 2).listen();                
+                objectsCocina.open();
+            }
         }
     }
 
