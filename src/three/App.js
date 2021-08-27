@@ -29,7 +29,7 @@ export class App {
 		// initial comedor
 		// this.camera.position.set(69, 23,-96);
 		// initial sala
-		this.camera.position.set(-82, 17,92);
+		this.camera.position.set(38,0,10);
 
 		// this.camera.position.set(0,3.5,0);
 		this.camera.rotation.set(-1.9,-1.19,-1.19)

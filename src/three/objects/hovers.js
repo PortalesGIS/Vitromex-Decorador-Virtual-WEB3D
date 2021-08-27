@@ -47,6 +47,9 @@ export class Hovers extends Mesh{
             this.scale.x=10;
 			this.scale.y=10;
 			this.scale.z=10;
+            this.position.x=72;
+			this.position.y=-17;
+			this.position.z=-74;
             this.rotation.y=3.14
         },
         (xhr)=>{

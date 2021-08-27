@@ -102,7 +102,16 @@ export class House extends Mesh{
             this.scale.x=10;
 			this.scale.y=10;
 			this.scale.z=10;
+			this.position.x=72;
+			this.position.z=-74;
+			this.position.y=-17;
             this.rotation.y=3.14
+            // var wwq = new GUI();
+            // var qmuro = wwq.addFolder('casa');            
+            // qmuro.add(this.position, 'x', -80.0, 80.0).listen();
+            // qmuro.add(this.position, 'y', -80.0, 80.0).listen();
+            // qmuro.add(this.position, 'z', -80.0, 80.0).listen();               
+            // qmuro.open();
         },
         (xhr)=>{
             console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );   
@@ -157,15 +166,15 @@ export class House extends Mesh{
                 child.material.lightMap=uvb
                 child.material.lightMapIntensity=4
                 child.material.envMapIntensity=0
-                var ww = new GUI();
-                var muro = ww.addFolder('pisos');
-                console.log(child)
-                muro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                muro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                muro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                muro.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                muro.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                muro.open();
+                // var ww = new GUI();
+                // var muro = ww.addFolder('pisos');
+                // console.log(child)
+                // muro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                // muro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                // muro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                // muro.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                // muro.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                // muro.open();
                     // const materialWhitLigthmap = new MeshStandardMaterial({
                     //     color: 0x777777,
                     //     envMapIntensity:1,
@@ -247,14 +256,14 @@ export class House extends Mesh{
         }
         if(child.name.includes('UVf')){
             if(child.name==="Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
-                var wer = new GUI();
-                var objectsCocina = wer.addFolder('objetos');
-                objectsCocina.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                objectsCocina.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();                
-                objectsCocina.add(child.material, 'roughness', 0, 2).listen();                
-                objectsCocina.add(child.material, 'refractionRatio', 0, 2).listen();                
-                objectsCocina.add(child.material, 'metalness', 0, 2).listen();                
-                objectsCocina.open();
+                // var wer = new GUI();
+                // var objectsCocina = wer.addFolder('objetos');
+                // objectsCocina.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                // objectsCocina.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();                
+                // objectsCocina.add(child.material, 'roughness', 0, 2).listen();                
+                // objectsCocina.add(child.material, 'refractionRatio', 0, 2).listen();                
+                // objectsCocina.add(child.material, 'metalness', 0, 2).listen();                
+                // objectsCocina.open();
             }
         }
     }

@@ -57,7 +57,7 @@ class Scene1 extends Scene {
 			this.add(this.light)
 		}
 		// helpers
-		this.axesHelper = new AxesHelper(5);
+		this.axesHelper = new AxesHelper(3);
 		this.add(this.axesHelper);
 		// 
 		Observer.emit(EVENTS.TEST,"hola estamos dentro del 3D");
@@ -89,16 +89,16 @@ class Scene1 extends Scene {
 				gsap.to(this.camera.position,{
 					duration:2,
 					x:intersects[0].point.x,
-					y:17,
+					y:0,
 					z:intersects[0].point.z,
 					onUpdate:()=>{
 						this.control.update()
 					},
 					onComplete:()=>{
 						console.log(this.camera.position)
-						console.log(intersects[0].point.x,17,intersects[0].point.z)
-						// this.camera.position.set(intersects[0].point.x,17,intersects[0].point.z)
-						// this.camera.lookAt(intersects[0].point.x,17,intersects[0].point.z)
+						console.log(intersects[0].point.x,0,intersects[0].point.z)
+						// this.camera.position.set(intersects[0].point.x,0,intersects[0].point.z)
+						// this.camera.lookAt(intersects[0].point.x,0,intersects[0].point.z)
 						this.control.target.set(intersects[0].point.x/1.0001,this.camera.position.y/1.0001, intersects[0].point.z/1.0001)
 					}
 				})
@@ -252,29 +252,29 @@ class Scene1 extends Scene {
 	moveCameraToPosition(camera,control,nameArea){
 		switch (nameArea) {
 			case "fachada":
-				camera.position.set(-79,17,1)
-				camera.lookAt(-79,17,1)
-				control.target.set(-79/1.0001,17/1.0001,1/1.0001)
+				camera.position.set(58,0,-100)
+				camera.lookAt(58,0,-100)
+				control.target.set(58/1.0001,0/1.0001,-100/1.0001)
 				break;
 			case "sala":
-				camera.position.set(-122,17,91)
-				camera.lookAt(-122,17,91)
-				control.target.set(-122/1.0001,17/1.0001,91/1.0001)
+				camera.position.set(-37,0,4)
+				camera.lookAt(-37,0,4)
+				control.target.set(-37/1.0001,0/1.0001,4/1.0001)
 				break;
 			case "cocina":
-				camera.position.set(-25,17,100)
-				camera.lookAt(-25,17,100)
-				control.target.set(-25/1.0001,17/1.0001,100/1.0001)
+				camera.position.set(63,0,3)
+				camera.lookAt(63,0,3)
+				control.target.set(63/1.0001,0/1.0001,3/1.0001)
 				break;
 			case "comedor":
-				camera.position.set(-79,17,93)
-				camera.lookAt(-79,17,93)
-				control.target.set(-79/1.0001,17/1.0001,93/1.0001)
+				camera.position.set(38,0,24)
+				camera.lookAt(38,0,24)
+				control.target.set(38/1.0001,0/1.0001,24/1.0001)
 				break;
 			case "banio":
-				camera.position.set(-23,17,127)
-				camera.lookAt(-23,17,127)
-				control.target.set(-23/1.0001,17/1.0001,127/1.0001)
+				camera.position.set(57,0,53)
+				camera.lookAt(57,0,53)
+				control.target.set(57/1.0001,0/1.0001,53/1.0001)
 				break;
 		
 			default:
