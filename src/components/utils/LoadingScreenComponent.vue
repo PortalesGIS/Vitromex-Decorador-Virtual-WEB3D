@@ -49,10 +49,9 @@ export default {
             document.getElementById('nameFile').innerText = fileURL;
         })
         Observer.on(EVENTS.LOADINGFFINISH,()=>{
-           
             gsap.to('#loadingScreen',{
                 duration:1,
-                opacity:0,
+                opacity:1,
                 onComplete:()=>{
                     document.getElementById('loadingScreen').classList.add('hidden')
                 }

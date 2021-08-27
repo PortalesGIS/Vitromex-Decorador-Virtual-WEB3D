@@ -10,7 +10,8 @@ export const EVENTS = {
     SELECTMURO:"selectmuro",
     ENDCHARGINPRODUCT:"endcharginproduct",
     LOADING:'loading',
-    LOADINGFFINISH:'loadingfinish'
+    LOADINGFFINISH:'loadingfinish',
+    CHANGEAREATOAPLICATEPRODUCT:'CHANGEAREATOAPLICATEPRODUCT',
 }
 
 const Observer = new EventEmitter();

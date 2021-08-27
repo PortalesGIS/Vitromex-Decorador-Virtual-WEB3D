@@ -17,7 +17,7 @@ import { App } from "../../three/App";
 import Observer, { EVENTS } from "../../three/Observer";
 export default {
   methods: {
-    ...mapActions(["changeAreaSelected","onChnageMuroAplication","changeisLoadingProductToAplicate"])
+    ...mapActions(["changeAreaSelected","onChnageMuroAplication","changeisLoadingProductToAplicate",'onChangeAplicationSelected'])
   },
   computed: {
     ...mapGetters(["getisLoadingProductToAplicate"])
@@ -29,6 +29,9 @@ export default {
     });
     Observer.on(EVENTS.MOVETOAREA, (nameToMoveArea) => {
       this.changeAreaSelected(nameToMoveArea)
+    });
+    Observer.on(EVENTS.CHANGEAREATOAPLICATEPRODUCT, (aplicationType) => {
+      this.onChangeAplicationSelected(aplicationType)
     });
     Observer.on(EVENTS.SELECTMURO, (nameOfMuroToAplicate) => {
       this.onChnageMuroAplication(nameOfMuroToAplicate)

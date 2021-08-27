@@ -56,10 +56,10 @@ export default {
   methods: {
     ...mapActions(["changeProductsAplicatesInAreas","changeisLoadingProductToAplicate","addPointToClickProduct"]),
     selectProductForMap(product) {
-      console.log(product._id)
       this.addPointToClickProduct(product._id)
       Observer.emit(EVENTS.SENDPRODUCT, product,this.getAreaSelected,this.getAplicationSeletec,this.getMuroAplication);
       this.changeisLoadingProductToAplicate(true)
+      // funcion de abajo para mandar al producto para mostrar en el menu izquierdo :solo desk
       if(this.getAplicationSeletec===1){
         this.changeProductsAplicatesInAreas({
           area:this.getAreaToAplicateProduct(this.getMuroAplication),

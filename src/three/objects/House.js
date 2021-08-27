@@ -78,7 +78,6 @@ export class House extends Mesh{
                         mapDB.load(productSelected.normal,()=>{
                             const uploadMaterial = new MeshStandardMaterial({
                                 color: 0x777777,
-                                // TODO: brillante u opcao3
                                 lightMap:(typeOfAplication===1)?texturesLoades[0]:texturesLoades[1],
                                 map:textures[0],
                                 normalMap:[1],
@@ -127,11 +126,19 @@ export class House extends Mesh{
         let uvc = texturesLoades[2]
         let uvd = texturesLoades[3]
         let uve = texturesLoades[4]
+        if(child.name === "Muro_C_Int_Comedor_Front_UVa_MT_Losa_Base_Int_General_UVb_0"){
+            const materialWhitLigthmap = new MeshStandardMaterial({
+                color: 0x777777,
+                envMapIntensity:0,
+                lightMap:uvb,                
+                map:child.material.map,
+                lightMapIntensity:6
+            })
+            child.material = materialWhitLigthmap
+                return     
+        }
         if(child.name.includes("UVa")){
-            if(child.name === "Muro_C_Int_Comedor_Front_UVa_MT_Losa_Base_Int_General_UVb_0"){
-                child.material.lightMap =uva
-            }
-            else{
+            
                 // child.material.lightMap=uva
                 // child.material.lightMapIntensity=4
                 // child.material.envMapIntensity=0
@@ -144,30 +151,31 @@ export class House extends Mesh{
                 })
                 child.material = materialWhitLigthmap
                     return 
-            }
         }
         if(child.name.includes("UVb")){
-            child.material.lightMap=uvb
-            child.material.lightMapIntensity=4
-            child.material.envMapIntensity=0
-            // var ww = new GUI();
-            // var muro = ww.addFolder('pisos');
-            // muro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-            // muro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-            // muro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-            // muro.add(child.material, 'roughness', -1.0, 1.0).listen();                
-            // muro.add(child.material, 'metalness', -1.0, 1.0).listen();                
-            // muro.open();
-                // const materialWhitLigthmap = new MeshStandardMaterial({
-                //     color: 0x777777,
-                //     envMapIntensity:1,
-                //     lightMap:uvb,
-                //     map:child.material.map,
-                //     lightMapIntensity:4
-                // })
-                // child.material = materialWhitLigthmap
-                
-                // return 
+           
+                child.material.lightMap=uvb
+                child.material.lightMapIntensity=4
+                child.material.envMapIntensity=0
+                var ww = new GUI();
+                var muro = ww.addFolder('pisos');
+                console.log(child)
+                muro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                muro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                muro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                muro.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                muro.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                muro.open();
+                    // const materialWhitLigthmap = new MeshStandardMaterial({
+                    //     color: 0x777777,
+                    //     envMapIntensity:1,
+                    //     lightMap:uvb,
+                    //     map:child.material.map,
+                    //     lightMapIntensity:4
+                    // })
+                    // child.material = materialWhitLigthmap
+                    
+                    // return 
         }
         if(child.name.includes("UVc")){
             if(
@@ -262,6 +270,14 @@ export class House extends Mesh{
                 break;
             case "comedor":
                 this.pisoComedor.material = materialUpdated
+                var qww = new GUI();
+                var asads = qww.addFolder('select');
+                asads.add(this.pisoComedor.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                asads.add(this.pisoComedor.material, 'envMapIntensity', -2.0, 5.0).listen();
+                asads.add(this.pisoComedor.material, 'refractionRatio', -1.0, 1.0).listen();
+                asads.add(this.pisoComedor.material, 'roughness', -1.0, 1.0).listen();                
+                asads.add(this.pisoComedor.material, 'metalness', -1.0, 1.0).listen();                
+                asads.open();
                 break;
             case "cocina":
                 this.pisoCosina.material = materialUpdated

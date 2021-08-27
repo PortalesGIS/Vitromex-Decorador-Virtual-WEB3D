@@ -81,10 +81,10 @@ class Scene1 extends Scene {
 			// 	intersects[0].object.callback();
 			// }
 			if(this.pisoIncludesForTraking(intersects)){
+				Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,0)
 				// this.muroSelected=""
 				// Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);
 				this.onMoveToAreaSelected(intersects)
-				console.log(this.camera.position)
 				this.control.enable = false
 				gsap.to(this.camera.position,{
 					duration:2,
@@ -104,6 +104,7 @@ class Scene1 extends Scene {
 				})
 			}
 			if(intersects[0].object.name.includes('Muro')){
+				Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,1)
 				this.muroSelected = intersects[0].object.name
 				Observer.emit(EVENTS.SELECTMURO,intersects[0].object.name);	
 				Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);	
