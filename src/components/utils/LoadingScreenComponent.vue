@@ -1,7 +1,9 @@
 <template>
   <div 
   id="loadingScreen"
-  class=" absolute h-screen w-screen bg-black z-100 img-fondo">
+  class=" absolute h-screen w-screen bg-black z-100"
+  :class="getPageState?'img-fondo-arko':'img-fondo-vitromex'"
+  >
     <div class='w-full h-full flex justify-center items-center'>
         <div class="ml-16 hidden lg:block ">
         <div class="flex justify-center">
@@ -15,10 +17,10 @@
             <div class="w-80 h-2 bg-white rounded-xl mt-4">
                 <div 
                 id="bar"
-                class=" h-full bg-gray-700 rounded-xl"
+                class=" h-full bg-gray-900 rounded-xl"
                 ></div>
             </div>
-            <div class="w-80 text-center pt-2 text-white text-monserrat text-xl">
+            <div class="text-title w-80 text-center pt-2 text-white text-monserrat text-xl">
                 <p
                 id="percentageText"
                 >Cargando...</p>
@@ -53,7 +55,7 @@ export default {
                 duration:1,
                 opacity:1,
                 onComplete:()=>{
-                    document.getElementById('loadingScreen').classList.add('hidden')
+                     document.getElementById('loadingScreen').classList.add('hidden')
                 }
             })
         })
@@ -62,11 +64,18 @@ export default {
 </script>
 
 <style>
-.img-fondo{    
+.img-fondo-vitromex{    
     background-size: cover;
     width: 100%;
     height: 100%;
     background-position: center;
     background-image: url('../../assets/web/Fondo.png');
+}
+.img-fondo-arko{    
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-image: url('../../assets/arko/Web/Splashfondo.png');
 }
 </style>

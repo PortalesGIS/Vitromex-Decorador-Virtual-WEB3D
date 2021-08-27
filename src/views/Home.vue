@@ -1,8 +1,7 @@
 <template>
-<div class="fixed top-0 ml-20 z-100 bg-red-400" @click="onChangeStatePage(!getPageState)">
-  change 
-</div>
-<div :class="getPageState?'theme-arko':''" class="">
+
+<!-- <div :class="getPageState?'theme-arko':''" class=""> -->
+  <div>
   <LoadingScreenComponentVue/>  
   <div class=" h-screen w-screen">
     <div class="fixed z-50">
@@ -66,7 +65,7 @@ export default {
     CatalogoMobileComponentVue,
   },
   methods: {
-    ...mapActions(["onChangeStatePage","getProducts","getSeries"]),
+    ...mapActions(["getProducts","getSeries"]),
     async charge (){
       await this.getProducts()
       await this.getSeries()

@@ -1,12 +1,27 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-
+import Vitromex from '../views/Vitromex.vue'
+import Arko from '../views/Arko.vue'
+import PageNotFound from '../views/PageNotFound.vue'
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Vitromex
   },
+  {
+    path:'/vitromex',
+    name: 'Vitromex',
+    component: Vitromex
+  },
+  {
+    path: '/arko',
+    name: 'Arko',
+    component: Arko
+  },
+  {
+    path:'/:catchAll(.*)',
+    component:PageNotFound
+  }
   // {
     // path: '/about',
     // name: 'About',
