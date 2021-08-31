@@ -29,7 +29,6 @@ export const onChangeAplicationSelected=({commit},payload)=>{
 //     area:"sala",
 //     aplication:{},
 //     product:{},
-
 // }
 export const changeProductsAplicatesInAreas=({commit,getters},payload)=>{
     const updateObject = getters.getProductsAplicatesInAreas
@@ -45,3 +44,4 @@ export const changeProductsAplicatesInAreas=({commit,getters},payload)=>{
 export const changeisLoadingProductToAplicate=({commit},payload)=>{
     commit("setisLoadingProductToAplicate",payload)
 }
+

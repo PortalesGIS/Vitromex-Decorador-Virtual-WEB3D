@@ -3,7 +3,7 @@
 <!-- <div :class="getPageState?'theme-arko':''" class=""> -->
   <div>
   <LoadingScreenComponentVue/>  
-  <div class=" h-screen w-screen">
+  <div class="hiden h-screen w-screen">
     <div class="fixed z-50">
     <HeaderGlobalComponentVue/>
     </div>

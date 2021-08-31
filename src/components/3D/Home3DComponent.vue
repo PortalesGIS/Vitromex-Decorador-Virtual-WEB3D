@@ -29,6 +29,8 @@ export default {
     });
     Observer.on(EVENTS.MOVETOAREA, (nameToMoveArea) => {
       this.changeAreaSelected(nameToMoveArea)
+      // TODO: si se mueve con el mause aumenta nalytics?
+      // this.addPointToSpaceSlectedAnalytics(nameArea)     
     });
     Observer.on(EVENTS.CHANGEAREATOAPLICATEPRODUCT, (aplicationType) => {
       this.onChangeAplicationSelected(aplicationType)

@@ -94,14 +94,15 @@
 </div>
 
 </template>
-
+ 
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import gsap from 'gsap';
 export default {
     methods: {
-        ...mapActions(["changeMenuCatalogo","changeAreaSelected"]),
+        ...mapActions(["changeMenuCatalogo","changeAreaSelected",'addPointToSpaceSlectedAnalytics']),
         onSelectArea(nameArea){
+            this.addPointToSpaceSlectedAnalytics(nameArea)
             gsap.to('#screenblack',{
                 onStart:()=>{
                     document.getElementById('screenblack').classList.remove('hidden')

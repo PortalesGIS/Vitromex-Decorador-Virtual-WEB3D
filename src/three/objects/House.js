@@ -166,15 +166,15 @@ export class House extends Mesh{
                 child.material.lightMap=uvb
                 child.material.lightMapIntensity=4
                 child.material.envMapIntensity=0
-                // var ww = new GUI();
-                // var muro = ww.addFolder('pisos');
-                // console.log(child)
-                // muro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                // muro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                // muro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                // muro.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                // muro.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                // muro.open();
+                var ww = new GUI();
+                var muro = ww.addFolder('pisos');
+                console.log(child)
+                muro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                muro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                muro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                muro.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                muro.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                muro.open();
                     // const materialWhitLigthmap = new MeshStandardMaterial({
                     //     color: 0x777777,
                     //     envMapIntensity:1,

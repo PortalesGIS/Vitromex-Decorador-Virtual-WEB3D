@@ -57,6 +57,31 @@ export const addPointToClickProduct=({commit},id)=>{
   .catch(error => console.log('error', error));
 }
 
+export const addPointToSpaceSlectedAnalytics = ({commit,getters},payload)=>{
+  let platform="vitromex";
+if(!getters.getPageState){
+   platform ="vitromex"
+}  
+else{
+   platform = "arko"
+}
+console.log(commit)
+let myHeaders = new Headers();
+myHeaders.append("Access-Control-Allow-Origin",`*`);
+myHeaders.append( 'Content-Type', 'application/json')
+let requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body:  JSON.stringify({
+    space: payload
+  }),
+  redirect: 'follow'
+};
+fetch(`${baseUrl}/api/analytics/visitspace/${platform}`, requestOptions)
+.then(response => response.text())
+.then(result => console.log(result))
+.catch(error => console.log('error', error));
+}
 
 const normalizeText=(text)=>{
   return text.toUpperCase().normalize('NFD')
