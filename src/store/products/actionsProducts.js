@@ -83,6 +83,32 @@ fetch(`${baseUrl}/api/analytics/visitspace/${platform}`, requestOptions)
 .catch(error => console.log('error', error));
 }
 
+export const entryWebAnalytics = ({commit,getters})=>{
+  let platform="vitromex";
+  if(!getters.getPageState){
+     platform ="vitromex"
+  }  
+  else{
+     platform = "arko"
+  }
+  console.log(commit)
+  let myHeaders = new Headers();
+  myHeaders.append("Access-Control-Allow-Origin",`*`);
+  myHeaders.append( 'Content-Type', 'application/json')
+  let requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body:  JSON.stringify({
+      platform: 'web'
+    }),
+    redirect: 'follow'
+  };
+  fetch(`${baseUrl}/api/analytics/newdevice/${platform}`, requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+}
+
 const normalizeText=(text)=>{
   return text.toUpperCase().normalize('NFD')
   .replace(/([aeio])\u0301|(u)[\u0301\u0308]/gi,"$1$2")

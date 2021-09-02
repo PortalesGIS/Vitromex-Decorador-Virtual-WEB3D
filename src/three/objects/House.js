@@ -50,6 +50,7 @@ export class House extends Mesh{
             loader.load('models3D/house-v1/light_maps/UV_c.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_d.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_e.jpg'),
+            loader.load('models3D/house-v1/light_maps/UV_f.jpg'),
         ],(resolve)=>{
                 resolve(textures)
             }).then(texturesLoades=>{
@@ -135,7 +136,9 @@ export class House extends Mesh{
         let uvc = texturesLoades[2]
         let uvd = texturesLoades[3]
         let uve = texturesLoades[4]
-        if(child.name === "Muro_C_Int_Comedor_Front_UVa_MT_Losa_Base_Int_General_UVb_0"){
+        let uvf = texturesLoades[5]
+        // especiales
+        if(child.name === "Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0"){
             const materialWhitLigthmap = new MeshStandardMaterial({
                 color: 0x777777,
                 envMapIntensity:0,
@@ -146,6 +149,70 @@ export class House extends Mesh{
             child.material = materialWhitLigthmap
                 return     
         }
+        if(child.name === "Amb_Base_Canceleria_UVc_MT_Amb_Base_Cocina_Campana_UVd_0"){
+            const materialWhitLigthmap = new MeshStandardMaterial({
+                color: 0x777777,
+                envMapIntensity:0.1,       
+                map:child.material.map,
+            })
+            child.material = materialWhitLigthmap
+                return     
+        }
+        if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
+            const materialWhitLigthmap = new MeshStandardMaterial({
+                color: 0x777777,
+                envMapIntensity:1,       
+                map:child.material.map,
+            })
+            child.material = materialWhitLigthmap
+                return     
+        }
+        if(child.name === "Amb_Base_General_Jarrones_UVf_MT_Amb_Base_General_Jarrones_UVf_0"){
+            const materialWhitLigthmap = new MeshStandardMaterial({
+                color: 0x777777,
+                envMapIntensity:1,       
+                map:child.material.map,
+            })
+            child.material = materialWhitLigthmap
+                return     
+        }
+        if(child.name === "Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
+            const materialWhitLigthmap = new MeshStandardMaterial({
+                color: 0x777777,
+                envMapIntensity:1,       
+                map:child.material.map,
+            })
+            child.material = materialWhitLigthmap
+                return     
+        }
+        if(child.name === "Mob_Base_Cocina_Refrigerador_UVd_MT_Mob_Base_Cocina_Refrigerador_UVd_0"){
+            const materialWhitLigthmap = new MeshStandardMaterial({
+                color: 0x777777,
+                envMapIntensity:2,       
+                map:child.material.map,
+            })
+            child.material = materialWhitLigthmap
+                return     
+        }
+        if(child.name === "Mob_Base_Cocina_Fregaderoyestufa_UVd_Mob_Base_Cocina_Fregaderoyestufa_UVd_0"){
+            const materialWhitLigthmap = new MeshStandardMaterial({
+                color: 0x777777,
+                envMapIntensity:2,       
+                map:child.material.map,
+            })
+            child.material = materialWhitLigthmap
+                return     
+        }
+        if(child.name === "Piso_Base_Ext_Grava_UVb_MT_Piso_Base_Ext_Grava_UVb_0"){
+            const materialWhitLigthmap = new MeshStandardMaterial({
+                color: 0x777777,
+                envMapIntensity:2,       
+                map:child.material.map,
+            })
+            child.material = materialWhitLigthmap
+                     
+        }
+        // end especiales
         if(child.name.includes("UVa")){
             
                 // child.material.lightMap=uva
@@ -166,15 +233,15 @@ export class House extends Mesh{
                 child.material.lightMap=uvb
                 child.material.lightMapIntensity=4
                 child.material.envMapIntensity=0
-                var ww = new GUI();
-                var muro = ww.addFolder('pisos');
-                console.log(child)
-                muro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                muro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                muro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                muro.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                muro.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                muro.open();
+                // var ww = new GUI();
+                // var muro = ww.addFolder('pisos');
+                // console.log(child)
+                // muro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                // muro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                // muro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                // muro.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                // muro.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                // muro.open();
                     // const materialWhitLigthmap = new MeshStandardMaterial({
                     //     color: 0x777777,
                     //     envMapIntensity:1,
@@ -213,23 +280,21 @@ export class House extends Mesh{
             //     return 
         }
         if(child.name.includes("UVd")){
-            if(child.name==="Mob_Base_Cocina_Campana_UVd_MT_Amb_Base_Canceleria_UVc_0"){
-                // child.material.lightMap=uvd
-                // child.material.lightMapIntensity=4
-                child.material.envMapIntensity=0.5
-            }
-            else{
-                child.material.lightMap=uvd
-                child.material.lightMapIntensity=6
-                child.material.envMapIntensity=0.5
-            }
+            
             if(child.name==="Mob_Base_Cocina_Alacenas_UVd_MT_Mob_Base_Cocina_Alacenas_UVd_0"){
                 var gui = new GUI();
                 var cam = gui.addFolder('cocina');
                 cam.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
                 cam.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();                
                 cam.open();
+                child.material.lightMap=uvd
+            child.material.lightMapIntensity=3.9
+            child.material.envMapIntensity=0.5
+            return 
             }
+            child.material.lightMap=uvd
+            child.material.lightMapIntensity=6
+            child.material.envMapIntensity=0
                 // const materialWhitLigthmap = new MeshStandardMaterial({
                 //     color: 0x777777,
                 //     envMapIntensity:1,
@@ -255,17 +320,21 @@ export class House extends Mesh{
         //         return 
         }
         if(child.name.includes('UVf')){
-            if(child.name==="Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
-                // var wer = new GUI();
-                // var objectsCocina = wer.addFolder('objetos');
-                // objectsCocina.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                // objectsCocina.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();                
-                // objectsCocina.add(child.material, 'roughness', 0, 2).listen();                
-                // objectsCocina.add(child.material, 'refractionRatio', 0, 2).listen();                
-                // objectsCocina.add(child.material, 'metalness', 0, 2).listen();                
-                // objectsCocina.open();
+            child.material.lightMap=uvf
+            // console.log(uvf)            
+            child.material.lightMapIntensity=6
+            child.material.envMapIntensity=0
+            if(child.name==="Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
+                var wer = new GUI();
+                var objectsCocina = wer.addFolder('objetos');
+                objectsCocina.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                objectsCocina.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();                
+                objectsCocina.add(child.material, 'roughness', 0, 2).listen();                
+                objectsCocina.add(child.material, 'refractionRatio', 0, 2).listen();                
+                objectsCocina.add(child.material, 'metalness', 0, 2).listen();                
+                objectsCocina.open();
             }
-        }
+        }        
     }
 
     updatePisoMaterial(materialUpdated,pisoSelected){

@@ -4104,7 +4104,7 @@
       "bufferView": 2,
       "byteOffset": 2321712,
       "componentType": 5126,
-      "count": 5490,
+      "count": 1909,
       "max": [
         -2394.783203125,
         -3722.588134765625,
@@ -4119,18 +4119,18 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2387592,
+      "byteOffset": 2344620,
       "componentType": 5126,
-      "count": 5490,
+      "count": 1909,
       "max": [
-        0.9987186193466187,
-        0.9998737573623657,
-        0.9961817264556885
+        0.9996191263198853,
+        0.999873697757721,
+        0.9998940229415894
       ],
       "min": [
-        -0.9999038577079773,
-        -0.9999836087226868,
-        -0.876413881778717
+        -0.9997358918190002,
+        -0.9986729025840759,
+        -0.8669276237487793
       ],
       "type": "VEC3"
     },
@@ -4138,7 +4138,7 @@
       "bufferView": 1,
       "byteOffset": 1547424,
       "componentType": 5126,
-      "count": 5490,
+      "count": 1909,
       "max": [
         2.8459129333496094,
         2.774780035018921
@@ -4151,9 +4151,9 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1591344,
+      "byteOffset": 1562696,
       "componentType": 5126,
-      "count": 5490,
+      "count": 1909,
       "max": [
         0.8288365006446838,
         0.9222089648246765
@@ -4173,7 +4173,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2453472,
+      "byteOffset": 2367528,
       "componentType": 5126,
       "count": 6416,
       "max": [
@@ -4190,7 +4190,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2530464,
+      "byteOffset": 2444520,
       "componentType": 5126,
       "count": 6416,
       "max": [
@@ -4207,7 +4207,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1635264,
+      "byteOffset": 1577968,
       "componentType": 5126,
       "count": 6416,
       "max": [
@@ -4222,7 +4222,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1686592,
+      "byteOffset": 1629296,
       "componentType": 5126,
       "count": 6416,
       "max": [
@@ -4244,7 +4244,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2607456,
+      "byteOffset": 2521512,
       "componentType": 5126,
       "count": 1778,
       "max": [
@@ -4261,7 +4261,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2628792,
+      "byteOffset": 2542848,
       "componentType": 5126,
       "count": 1778,
       "max": [
@@ -4278,7 +4278,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1737920,
+      "byteOffset": 1680624,
       "componentType": 5126,
       "count": 1778,
       "max": [
@@ -4293,7 +4293,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1752144,
+      "byteOffset": 1694848,
       "componentType": 5126,
       "count": 1778,
       "max": [
@@ -4315,7 +4315,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2650128,
+      "byteOffset": 2564184,
       "componentType": 5126,
       "count": 453,
       "max": [
@@ -4332,7 +4332,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2655564,
+      "byteOffset": 2569620,
       "componentType": 5126,
       "count": 453,
       "max": [
@@ -4349,7 +4349,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1766368,
+      "byteOffset": 1709072,
       "componentType": 5126,
       "count": 453,
       "max": [
@@ -4364,7 +4364,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1769992,
+      "byteOffset": 1712696,
       "componentType": 5126,
       "count": 453,
       "max": [
@@ -4386,7 +4386,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2661000,
+      "byteOffset": 2575056,
       "componentType": 5126,
       "count": 3538,
       "max": [
@@ -4403,7 +4403,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2703456,
+      "byteOffset": 2617512,
       "componentType": 5126,
       "count": 3538,
       "max": [
@@ -4420,7 +4420,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1773616,
+      "byteOffset": 1716320,
       "componentType": 5126,
       "count": 3538,
       "max": [
@@ -4435,7 +4435,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1801920,
+      "byteOffset": 1744624,
       "componentType": 5126,
       "count": 3538,
       "max": [
@@ -4457,7 +4457,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2745912,
+      "byteOffset": 2659968,
       "componentType": 5126,
       "count": 4590,
       "max": [
@@ -4474,7 +4474,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2800992,
+      "byteOffset": 2715048,
       "componentType": 5126,
       "count": 4590,
       "max": [
@@ -4491,7 +4491,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1830224,
+      "byteOffset": 1772928,
       "componentType": 5126,
       "count": 4590,
       "max": [
@@ -4506,7 +4506,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1866944,
+      "byteOffset": 1809648,
       "componentType": 5126,
       "count": 4590,
       "max": [
@@ -4528,7 +4528,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2856072,
+      "byteOffset": 2770128,
       "componentType": 5126,
       "count": 3703,
       "max": [
@@ -4545,7 +4545,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2900508,
+      "byteOffset": 2814564,
       "componentType": 5126,
       "count": 3703,
       "max": [
@@ -4562,7 +4562,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1903664,
+      "byteOffset": 1846368,
       "componentType": 5126,
       "count": 3703,
       "max": [
@@ -4577,7 +4577,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1933288,
+      "byteOffset": 1875992,
       "componentType": 5126,
       "count": 3703,
       "max": [
@@ -4599,7 +4599,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 2944944,
+      "byteOffset": 2859000,
       "componentType": 5126,
       "count": 4648,
       "max": [
@@ -4616,7 +4616,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3000720,
+      "byteOffset": 2914776,
       "componentType": 5126,
       "count": 4648,
       "max": [
@@ -4633,7 +4633,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 1962912,
+      "byteOffset": 1905616,
       "componentType": 5126,
       "count": 4648,
       "max": [
@@ -4648,7 +4648,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2000096,
+      "byteOffset": 1942800,
       "componentType": 5126,
       "count": 4648,
       "max": [
@@ -4670,7 +4670,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3056496,
+      "byteOffset": 2970552,
       "componentType": 5126,
       "count": 1614,
       "max": [
@@ -4687,7 +4687,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3075864,
+      "byteOffset": 2989920,
       "componentType": 5126,
       "count": 1614,
       "max": [
@@ -4704,7 +4704,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2037280,
+      "byteOffset": 1979984,
       "componentType": 5126,
       "count": 1614,
       "max": [
@@ -4719,7 +4719,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2050192,
+      "byteOffset": 1992896,
       "componentType": 5126,
       "count": 1614,
       "max": [
@@ -4741,7 +4741,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3095232,
+      "byteOffset": 3009288,
       "componentType": 5126,
       "count": 5480,
       "max": [
@@ -4758,7 +4758,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3160992,
+      "byteOffset": 3075048,
       "componentType": 5126,
       "count": 5480,
       "max": [
@@ -4775,7 +4775,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2063104,
+      "byteOffset": 2005808,
       "componentType": 5126,
       "count": 5480,
       "max": [
@@ -4790,7 +4790,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2106944,
+      "byteOffset": 2049648,
       "componentType": 5126,
       "count": 5480,
       "max": [
@@ -4812,7 +4812,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3226752,
+      "byteOffset": 3140808,
       "componentType": 5126,
       "count": 11820,
       "max": [
@@ -4829,7 +4829,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3368592,
+      "byteOffset": 3282648,
       "componentType": 5126,
       "count": 11820,
       "max": [
@@ -4846,7 +4846,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2150784,
+      "byteOffset": 2093488,
       "componentType": 5126,
       "count": 11820,
       "max": [
@@ -4861,7 +4861,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2245344,
+      "byteOffset": 2188048,
       "componentType": 5126,
       "count": 11820,
       "max": [
@@ -4883,7 +4883,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3510432,
+      "byteOffset": 3424488,
       "componentType": 5126,
       "count": 7943,
       "max": [
@@ -4900,7 +4900,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3605748,
+      "byteOffset": 3519804,
       "componentType": 5126,
       "count": 7943,
       "max": [
@@ -4917,7 +4917,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2339904,
+      "byteOffset": 2282608,
       "componentType": 5126,
       "count": 7943,
       "max": [
@@ -4932,7 +4932,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2403448,
+      "byteOffset": 2346152,
       "componentType": 5126,
       "count": 7943,
       "max": [
@@ -4954,7 +4954,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3701064,
+      "byteOffset": 3615120,
       "componentType": 5126,
       "count": 884,
       "max": [
@@ -4971,7 +4971,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3711672,
+      "byteOffset": 3625728,
       "componentType": 5126,
       "count": 884,
       "max": [
@@ -4988,7 +4988,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2466992,
+      "byteOffset": 2409696,
       "componentType": 5126,
       "count": 884,
       "max": [
@@ -5003,7 +5003,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2474064,
+      "byteOffset": 2416768,
       "componentType": 5126,
       "count": 884,
       "max": [
@@ -5025,7 +5025,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3722280,
+      "byteOffset": 3636336,
       "componentType": 5126,
       "count": 204,
       "max": [
@@ -5042,7 +5042,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3724728,
+      "byteOffset": 3638784,
       "componentType": 5126,
       "count": 204,
       "max": [
@@ -5059,7 +5059,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2481136,
+      "byteOffset": 2423840,
       "componentType": 5126,
       "count": 204,
       "max": [
@@ -5074,7 +5074,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2482768,
+      "byteOffset": 2425472,
       "componentType": 5126,
       "count": 204,
       "max": [
@@ -5096,7 +5096,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3727176,
+      "byteOffset": 3641232,
       "componentType": 5126,
       "count": 1056,
       "max": [
@@ -5113,7 +5113,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3739848,
+      "byteOffset": 3653904,
       "componentType": 5126,
       "count": 1056,
       "max": [
@@ -5130,7 +5130,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2484400,
+      "byteOffset": 2427104,
       "componentType": 5126,
       "count": 1056,
       "max": [
@@ -5145,7 +5145,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2492848,
+      "byteOffset": 2435552,
       "componentType": 5126,
       "count": 1056,
       "max": [
@@ -5167,7 +5167,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3752520,
+      "byteOffset": 3666576,
       "componentType": 5126,
       "count": 2440,
       "max": [
@@ -5184,7 +5184,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3781800,
+      "byteOffset": 3695856,
       "componentType": 5126,
       "count": 2440,
       "max": [
@@ -5201,7 +5201,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2501296,
+      "byteOffset": 2444000,
       "componentType": 5126,
       "count": 2440,
       "max": [
@@ -5216,7 +5216,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2520816,
+      "byteOffset": 2463520,
       "componentType": 5126,
       "count": 2440,
       "max": [
@@ -5238,7 +5238,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3811080,
+      "byteOffset": 3725136,
       "componentType": 5126,
       "count": 4334,
       "max": [
@@ -5255,7 +5255,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3863088,
+      "byteOffset": 3777144,
       "componentType": 5126,
       "count": 4334,
       "max": [
@@ -5272,7 +5272,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2540336,
+      "byteOffset": 2483040,
       "componentType": 5126,
       "count": 4334,
       "max": [
@@ -5287,7 +5287,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2575008,
+      "byteOffset": 2517712,
       "componentType": 5126,
       "count": 4334,
       "max": [
@@ -5309,7 +5309,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3915096,
+      "byteOffset": 3829152,
       "componentType": 5126,
       "count": 418,
       "max": [
@@ -5326,7 +5326,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3920112,
+      "byteOffset": 3834168,
       "componentType": 5126,
       "count": 418,
       "max": [
@@ -5362,7 +5362,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2609680,
+      "byteOffset": 2552384,
       "componentType": 5126,
       "count": 418,
       "max": [
@@ -5377,7 +5377,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2613024,
+      "byteOffset": 2555728,
       "componentType": 5126,
       "count": 418,
       "max": [
@@ -5399,7 +5399,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3925128,
+      "byteOffset": 3839184,
       "componentType": 5126,
       "count": 12632,
       "max": [
@@ -5416,7 +5416,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 4076712,
+      "byteOffset": 3990768,
       "componentType": 5126,
       "count": 12632,
       "max": [
@@ -5433,7 +5433,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2616368,
+      "byteOffset": 2559072,
       "componentType": 5126,
       "count": 12632,
       "max": [
@@ -5448,7 +5448,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2717424,
+      "byteOffset": 2660128,
       "componentType": 5126,
       "count": 12632,
       "max": [
@@ -5470,7 +5470,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 4228296,
+      "byteOffset": 4142352,
       "componentType": 5126,
       "count": 120,
       "max": [
@@ -5487,7 +5487,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 4229736,
+      "byteOffset": 4143792,
       "componentType": 5126,
       "count": 120,
       "max": [
@@ -5504,7 +5504,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2818480,
+      "byteOffset": 2761184,
       "componentType": 5126,
       "count": 120,
       "max": [
@@ -5519,7 +5519,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2819440,
+      "byteOffset": 2762144,
       "componentType": 5126,
       "count": 120,
       "max": [
@@ -5541,7 +5541,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 4231176,
+      "byteOffset": 4145232,
       "componentType": 5126,
       "count": 126,
       "max": [
@@ -5558,7 +5558,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 4232688,
+      "byteOffset": 4146744,
       "componentType": 5126,
       "count": 126,
       "max": [
@@ -5575,7 +5575,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2820400,
+      "byteOffset": 2763104,
       "componentType": 5126,
       "count": 126,
       "max": [
@@ -5590,7 +5590,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2821408,
+      "byteOffset": 2764112,
       "componentType": 5126,
       "count": 126,
       "max": [
@@ -5612,7 +5612,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 4234200,
+      "byteOffset": 4148256,
       "componentType": 5126,
       "count": 3524,
       "max": [
@@ -5629,7 +5629,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 4276488,
+      "byteOffset": 4190544,
       "componentType": 5126,
       "count": 3524,
       "max": [
@@ -5646,7 +5646,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2822416,
+      "byteOffset": 2765120,
       "componentType": 5126,
       "count": 3524,
       "max": [
@@ -5661,7 +5661,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2850608,
+      "byteOffset": 2793312,
       "componentType": 5126,
       "count": 3524,
       "max": [
@@ -5680,6 +5680,62 @@
       "componentType": 5125,
       "count": 16716,
       "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 4232832,
+      "componentType": 5126,
+      "count": 44,
+      "max": [
+        6.651540279388428,
+        8.070210456848145,
+        15.0
+      ],
+      "min": [
+        -6.6515421867370605,
+        4.585256099700928,
+        -15.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 4233360,
+      "componentType": 5126,
+      "count": 44,
+      "max": [
+        0.7959882020950317,
+        -0.6053122878074646,
+        5.96118931994738e-09
+      ],
+      "min": [
+        -0.7959878444671631,
+        -0.9989482760429382,
+        -6.0240017418777825e-09
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 2821504,
+      "componentType": 5126,
+      "count": 44,
+      "max": [
+        0.9226986169815063,
+        0.9905096888542175
+      ],
+      "min": [
+        0.4137299656867981,
+        0.013194499537348747
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 2457324,
+      "componentType": 5125,
+      "count": 126,
+      "type": "SCALAR"
     }
   ],
   "asset": {
@@ -5689,28 +5745,28 @@
       "source": "https://sketchfab.com/3d-models/fbx-casa-vitromex--final-be6032eb1c2b4f209e02c2e75d1524da",
       "title": "Fbx_Casa_Vitromex_ Final"
     },
-    "generator": "Sketchfab-11.57.0",
+    "generator": "Sketchfab-11.58.0",
     "version": "2.0"
   },
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 2457324,
+      "byteLength": 2457828,
       "name": "floatBufferViews",
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteLength": 2878800,
-      "byteOffset": 2457324,
+      "byteLength": 2821856,
+      "byteOffset": 2457828,
       "byteStride": 8,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 4318776,
-      "byteOffset": 5336124,
+      "byteLength": 4233888,
+      "byteOffset": 5279684,
       "byteStride": 12,
       "name": "floatBufferViews",
       "target": 34962
@@ -5718,7 +5774,7 @@
     {
       "buffer": 0,
       "byteLength": 215600,
-      "byteOffset": 9654900,
+      "byteOffset": 9513572,
       "byteStride": 16,
       "name": "floatBufferViews",
       "target": 34962
@@ -5726,7 +5782,7 @@
   ],
   "buffers": [
     {
-      "byteLength": 9870500,
+      "byteLength": 9729172,
       "uri": "scene.bin"
     }
   ],
@@ -5739,6 +5795,9 @@
     },
     {
       "uri": "textures/MT_Mob_Base_Cocina_Alacenas_UVd_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/MT_Mob_Base_Cocina_Alacenas_UVd_metallicRoughness.png"
     },
     {
       "uri": "textures/MT_Muro_C_Int_Sala_Front_UVa_baseColor.jpeg"
@@ -5840,7 +5899,10 @@
       "uri": "textures/Amb_Base_Cocina_tabla_UVf_baseColor.jpeg"
     },
     {
-      "uri": "textures/MT_Amb_Base_Banio_Lavabo_UVf_baseColor.png"
+      "uri": "textures/Amb_Base_Cocina_tabla_UVf_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/MT_Amb_Base_Banio_Lavabo_UVf_baseColor.jpeg"
     },
     {
       "uri": "textures/MT_Amb_Base_Banio_Lavabo_UVf_metallicRoughness.png"
@@ -5877,6 +5939,12 @@
     },
     {
       "uri": "textures/MT_Amb_Base_Banio_WC_UVf_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/MT_Mod_Base_Skybox_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/MT_Mod_Base_Skybox_emissive.jpeg"
     }
   ],
   "materials": [
@@ -5922,13 +5990,15 @@
         "baseColorTexture": {
           "index": 2
         },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.1050729925
+        "metallicRoughnessTexture": {
+          "index": 3
+        },
+        "roughnessFactor": 0.0
       }
     },
     {
       "doubleSided": true,
-      "name": "MT_Amb_Base_Canceleria_UVc",
+      "name": "MT_Amb_Base_Cocina_Campana_UVd",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.0117647,
@@ -5937,7 +6007,7 @@
           1.0
         ],
         "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596
+        "roughnessFactor": 0.8929713596497552
       }
     },
     {
@@ -5945,7 +6015,7 @@
       "name": "MT_Muro_C_Int_Sala_Front_UVa",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 3
+          "index": 4
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -5956,7 +6026,7 @@
       "name": "MT_Muro_Base_General_UVa",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 3
+          "index": 4
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -5966,11 +6036,11 @@
       "doubleSided": true,
       "name": "MT_Muro_C_Int_Banio_Izq2_UVa",
       "normalTexture": {
-        "index": 5
+        "index": 6
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 4
+          "index": 5
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.026
@@ -5980,7 +6050,7 @@
       "doubleSided": true,
       "name": "MT_Muro_C_Ext_Patio_Der_UVa",
       "normalTexture": {
-        "index": 7
+        "index": 8
       },
       "pbrMetallicRoughness": {
         "baseColorFactor": [
@@ -5990,7 +6060,7 @@
           1.0
         ],
         "baseColorTexture": {
-          "index": 6
+          "index": 7
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.2
@@ -6001,7 +6071,7 @@
       "name": "MT_Muro_C_Ext_Patio_Front_UVa",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 3
+          "index": 4
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6012,7 +6082,7 @@
       "name": "MT_Muro_C_Ext_Patio_Izq_UVa",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 3
+          "index": 4
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6022,11 +6092,11 @@
       "doubleSided": true,
       "name": "MT_Muro_C_Int_Banio_Izq1_UVa",
       "normalTexture": {
-        "index": 5
+        "index": 6
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 4
+          "index": 5
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.026
@@ -6036,11 +6106,11 @@
       "doubleSided": true,
       "name": "MT_Muro_C_Int_Cocina_Front_UVa",
       "normalTexture": {
-        "index": 9
+        "index": 10
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 8
+          "index": 9
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.0
@@ -6050,11 +6120,11 @@
       "doubleSided": true,
       "name": "MT_Muro_C_Int_Banio_Der_UVa",
       "normalTexture": {
-        "index": 5
+        "index": 6
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 4
+          "index": 5
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.026
@@ -6064,11 +6134,11 @@
       "doubleSided": true,
       "name": "MT_Muro_C_Int_Banio_Der2_UVa",
       "normalTexture": {
-        "index": 5
+        "index": 6
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 4
+          "index": 5
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.026
@@ -6079,7 +6149,7 @@
       "name": "MT_Muro_C_Int_Banio_Izq3_UVa",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 4
+          "index": 5
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6089,11 +6159,11 @@
       "doubleSided": true,
       "name": "MT_Muro_C_Int_Cocina_Izq_UVa",
       "normalTexture": {
-        "index": 9
+        "index": 10
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 8
+          "index": 9
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.0
@@ -6103,7 +6173,7 @@
       "doubleSided": true,
       "name": "MT_Muro_C_Int_Sala_Der_UVa",
       "normalTexture": {
-        "index": 10
+        "index": 11
       },
       "pbrMetallicRoughness": {
         "baseColorFactor": [
@@ -6113,7 +6183,7 @@
           1.0
         ],
         "baseColorTexture": {
-          "index": 6
+          "index": 7
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.2
@@ -6124,7 +6194,7 @@
       "name": "MT_Muro_C_Int_Pasillo_Izq_UVa",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 3
+          "index": 4
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6135,7 +6205,7 @@
       "name": "MT_Muro_C_Ext_Patio_Atras_UVa",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 3
+          "index": 4
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6145,11 +6215,11 @@
       "doubleSided": true,
       "name": "MT_Muro_C_Int_Cocina_Der_UVa",
       "normalTexture": {
-        "index": 9
+        "index": 10
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 8
+          "index": 9
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.0
@@ -6160,68 +6230,26 @@
       "name": "MT_Losa_Base_Int_General_UVb",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 3
+          "index": 4
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "MT_Muro_C_Int_Comedor_Front_UVa",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 4
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8929713596497552
       }
     },
     {
       "doubleSided": true,
       "name": "MT_Muro_C_Ext_Patio_Arriba_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 11
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596
-      }
-    },
-    {
-      "doubleSided": true,
-      "name": "MT_Piso_C_Int_Cocina_UVb",
-      "normalTexture": {
-        "index": 5
-      },
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 4
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.0260307414
-      }
-    },
-    {
-      "doubleSided": true,
-      "name": "MT_Piso_C_Int_Banio2_UVb",
-      "normalTexture": {
-        "index": 9
-      },
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 8
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596
-      }
-    },
-    {
-      "doubleSided": true,
-      "name": "MT_Piso_C_Int_Sala_UVb",
-      "normalTexture": {
-        "index": 5
-      },
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 4
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.026
-      }
-    },
-    {
-      "doubleSided": true,
-      "name": "MT_Losa_Base_Int_Cocina_UVb",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
           "index": 12
@@ -6232,7 +6260,49 @@
     },
     {
       "doubleSided": true,
-      "name": "MT_Piso_C_Ext_Pasillo_UVb",
+      "name": "MT_Piso_C_Int_Cocina_UVb",
+      "normalTexture": {
+        "index": 6
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 5
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.2084359363
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "MT_Piso_C_Int_Banio2_UVb",
+      "normalTexture": {
+        "index": 10
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 9
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8929713596
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "MT_Piso_C_Int_Sala_UVb",
+      "normalTexture": {
+        "index": 6
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 5
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.026
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "MT_Losa_Base_Int_Cocina_UVb",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
           "index": 13
@@ -6243,17 +6313,28 @@
     },
     {
       "doubleSided": true,
-      "name": "MT_Piso_Base_Ext_Grava_UVb",
-      "occlusionTexture": {
-        "index": 15
-      },
+      "name": "MT_Piso_C_Ext_Pasillo_UVb",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
           "index": 14
         },
         "metallicFactor": 0.0,
-        "metallicRoughnessTexture": {
+        "roughnessFactor": 0.8929713596
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "MT_Piso_Base_Ext_Grava_UVb",
+      "occlusionTexture": {
+        "index": 16
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
           "index": 15
+        },
+        "metallicFactor": 0.0,
+        "metallicRoughnessTexture": {
+          "index": 16
         },
         "roughnessFactor": 0.8929713596
       }
@@ -6263,7 +6344,7 @@
       "name": "MT_Piso_C_Ext_Cochera_UVb",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 11
+          "index": 12
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6274,7 +6355,7 @@
       "name": "MT_Piso_C_Int_Banio_UVb",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 4
+          "index": 5
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6299,7 +6380,7 @@
       "name": "MT_Piso_C_Ext_Terraza_UVb",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 13
+          "index": 14
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6309,11 +6390,11 @@
       "doubleSided": true,
       "name": "MT_Piso_C_Int_Comedor_UVb",
       "normalTexture": {
-        "index": 5
+        "index": 6
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 4
+          "index": 5
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.026
@@ -6324,7 +6405,7 @@
       "name": "MT_Mob_Base_Cocina_Lamparas_UVe",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 16
+          "index": 17
         },
         "metallicFactor": 0.1962755899,
         "roughnessFactor": 0.0989928193
@@ -6335,7 +6416,7 @@
       "name": "MT_Mob_Base_Sala_Lampara_UVe",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 17
+          "index": 18
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6345,11 +6426,11 @@
       "doubleSided": true,
       "name": "MT_Mob_Base_Macetas_UVe",
       "normalTexture": {
-        "index": 19
+        "index": 20
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 18
+          "index": 19
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.7009299625
@@ -6360,7 +6441,7 @@
       "name": "MT_Mob_Base_Cocina_Microondas_UVe",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 20
+          "index": 21
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.6
@@ -6371,7 +6452,7 @@
       "name": "Mob_Base_Comedor_Mesa_UVe",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 21
+          "index": 22
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.1050729925
@@ -6382,7 +6463,7 @@
       "name": "Material_81",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 22
+          "index": 23
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6392,15 +6473,15 @@
       "doubleSided": true,
       "name": "MT_Mob_Base_Sala_Sillon_UVe",
       "occlusionTexture": {
-        "index": 24
+        "index": 25
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 23
+          "index": 24
         },
         "metallicFactor": 0.0,
         "metallicRoughnessTexture": {
-          "index": 24
+          "index": 25
         },
         "roughnessFactor": 0.8706063149000001
       }
@@ -6409,12 +6490,12 @@
       "doubleSided": true,
       "name": "Mob_Base_Sala_2Sillones_UVe",
       "normalTexture": {
-        "index": 26,
+        "index": 27,
         "scale": 0.6218877114
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 25
+          "index": 26
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6425,7 +6506,7 @@
       "name": "Mob_Base_Comedor_Sillas_UVe",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 27
+          "index": 28
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6436,7 +6517,7 @@
       "name": "Amb_Base_Banio_Jabon_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 28
+          "index": 29
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6461,7 +6542,7 @@
       "name": "Amb_Base_Patio_AgavePina_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 29
+          "index": 30
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6472,7 +6553,7 @@
       "name": "MT_Amb_Base_General_PlantaGrande_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 30
+          "index": 31
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.2570773216
@@ -6496,7 +6577,7 @@
       "name": "MT_Amb_Base_General_Libros_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 31
+          "index": 32
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6507,7 +6588,7 @@
       "name": "MT_Amb_Base_Comedor_Lampara_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 32
+          "index": 33
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.1719548973
@@ -6518,7 +6599,7 @@
       "name": "MT_Amb_Base_Comedor_Centromesa_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 33
+          "index": 34
         },
         "roughnessFactor": 0.1070286404
       }
@@ -6528,7 +6609,7 @@
       "name": "MT_Amb_Base_General_PlantaChica_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 34
+          "index": 35
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6565,10 +6646,13 @@
       "name": "Amb_Base_Cocina_tabla_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 35
+          "index": 36
         },
-        "metallicFactor": 0.7009299625,
-        "roughnessFactor": 0.0929126462
+        "metallicFactor": 0.950217062181931,
+        "metallicRoughnessTexture": {
+          "index": 37
+        },
+        "roughnessFactor": 0.28139801421544486
       }
     },
     {
@@ -6600,12 +6684,12 @@
       "name": "MT_Amb_Base_Banio_Lavabo_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 36
+          "index": 38
         },
-        "metallicFactor": 0.9258963695,
         "metallicRoughnessTexture": {
-          "index": 37
-        }
+          "index": 39
+        },
+        "roughnessFactor": 0.0
       }
     },
     {
@@ -6613,7 +6697,7 @@
       "name": "MT_Amb_Base_General_PlantaPalmera_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 38
+          "index": 40
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.946817041
@@ -6639,7 +6723,7 @@
       "name": "MT_Amb_Base_Cocina_Limas_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 39
+          "index": 41
         },
         "metallicFactor": 0.0
       }
@@ -6647,28 +6731,6 @@
     {
       "doubleSided": true,
       "name": "MT_Amb_Base_Patio_Agave_UVf",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 40
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596
-      }
-    },
-    {
-      "doubleSided": true,
-      "name": "Amb_Base_Cocina_Olla_UVf",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 41
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.6
-      }
-    },
-    {
-      "doubleSided": true,
-      "name": "MT_Amb_Base_Sala_Pinturas_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
           "index": 42
@@ -6679,10 +6741,32 @@
     },
     {
       "doubleSided": true,
-      "name": "MT_Amb_Base_Comedor_Mantel_UVf",
+      "name": "Amb_Base_Cocina_Olla_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
           "index": 43
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.6
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "MT_Amb_Base_Sala_Pinturas_UVf",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 44
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8929713596
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "MT_Amb_Base_Comedor_Mantel_UVf",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 45
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6693,7 +6777,7 @@
       "name": "MT_Amb_Base_Banio_Toallas_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 44
+          "index": 46
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.8929713596
@@ -6717,11 +6801,11 @@
       "doubleSided": true,
       "name": "MT_Amb_Base_Carpinterias_UVc",
       "normalTexture": {
-        "index": 46
+        "index": 48
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 45
+          "index": 47
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.1841152436
@@ -6761,12 +6845,31 @@
       "name": "MT_Amb_Base_Banio_WC_UVf",
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 47
+          "index": 49
         },
         "metallicRoughnessTexture": {
-          "index": 48
+          "index": 50
         },
         "roughnessFactor": 0.0
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissiveTexture": {
+        "index": 52
+      },
+      "name": "MT_Mod_Base_Skybox",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 51
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8929713596497552
       }
     }
   ],
@@ -6835,7 +6938,7 @@
       ]
     },
     {
-      "name": "Mob_Base_Cocina_Campana_UVd_MT_Amb_Base_Canceleria_UVc_0",
+      "name": "Mob_Base_Cocina_Campana_UVd_MT_Amb_Base_Cocina_Campana_UVd_0",
       "primitives": [
         {
           "attributes": {
@@ -7148,7 +7251,7 @@
       ]
     },
     {
-      "name": "Muro_C_Int_Comedor_Front_UVa_MT_Losa_Base_Int_General_UVb_0",
+      "name": "Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0",
       "primitives": [
         {
           "attributes": {
@@ -7158,7 +7261,7 @@
             "TEXCOORD_1": 126
           },
           "indices": 127,
-          "material": 21,
+          "material": 22,
           "mode": 4
         }
       ]
@@ -7174,7 +7277,7 @@
             "TEXCOORD_1": 131
           },
           "indices": 132,
-          "material": 22,
+          "material": 23,
           "mode": 4
         }
       ]
@@ -7191,7 +7294,7 @@
             "TEXCOORD_1": 137
           },
           "indices": 138,
-          "material": 23,
+          "material": 24,
           "mode": 4
         }
       ]
@@ -7208,7 +7311,7 @@
             "TEXCOORD_1": 143
           },
           "indices": 144,
-          "material": 24,
+          "material": 25,
           "mode": 4
         }
       ]
@@ -7225,7 +7328,7 @@
             "TEXCOORD_1": 149
           },
           "indices": 150,
-          "material": 25,
+          "material": 26,
           "mode": 4
         }
       ]
@@ -7257,7 +7360,7 @@
             "TEXCOORD_1": 159
           },
           "indices": 160,
-          "material": 26,
+          "material": 27,
           "mode": 4
         }
       ]
@@ -7273,7 +7376,7 @@
             "TEXCOORD_1": 164
           },
           "indices": 165,
-          "material": 27,
+          "material": 28,
           "mode": 4
         }
       ]
@@ -7289,7 +7392,7 @@
             "TEXCOORD_1": 169
           },
           "indices": 170,
-          "material": 28,
+          "material": 29,
           "mode": 4
         }
       ]
@@ -7305,7 +7408,7 @@
             "TEXCOORD_1": 174
           },
           "indices": 175,
-          "material": 29,
+          "material": 30,
           "mode": 4
         }
       ]
@@ -7321,7 +7424,7 @@
             "TEXCOORD_1": 179
           },
           "indices": 180,
-          "material": 30,
+          "material": 31,
           "mode": 4
         }
       ]
@@ -7337,7 +7440,7 @@
             "TEXCOORD_1": 184
           },
           "indices": 185,
-          "material": 31,
+          "material": 32,
           "mode": 4
         }
       ]
@@ -7353,7 +7456,7 @@
             "TEXCOORD_1": 189
           },
           "indices": 190,
-          "material": 32,
+          "material": 33,
           "mode": 4
         }
       ]
@@ -7370,7 +7473,7 @@
             "TEXCOORD_1": 195
           },
           "indices": 196,
-          "material": 33,
+          "material": 34,
           "mode": 4
         }
       ]
@@ -7386,7 +7489,7 @@
             "TEXCOORD_1": 200
           },
           "indices": 201,
-          "material": 34,
+          "material": 35,
           "mode": 4
         }
       ]
@@ -7402,7 +7505,7 @@
             "TEXCOORD_1": 205
           },
           "indices": 206,
-          "material": 35,
+          "material": 36,
           "mode": 4
         }
       ]
@@ -7419,7 +7522,7 @@
             "TEXCOORD_1": 211
           },
           "indices": 212,
-          "material": 36,
+          "material": 37,
           "mode": 4
         }
       ]
@@ -7435,7 +7538,7 @@
             "TEXCOORD_1": 216
           },
           "indices": 217,
-          "material": 37,
+          "material": 38,
           "mode": 4
         }
       ]
@@ -7451,7 +7554,7 @@
             "TEXCOORD_1": 221
           },
           "indices": 222,
-          "material": 38,
+          "material": 39,
           "mode": 4
         }
       ]
@@ -7467,7 +7570,7 @@
             "TEXCOORD_1": 226
           },
           "indices": 227,
-          "material": 39,
+          "material": 40,
           "mode": 4
         }
       ]
@@ -7483,7 +7586,7 @@
             "TEXCOORD_1": 231
           },
           "indices": 232,
-          "material": 40,
+          "material": 41,
           "mode": 4
         }
       ]
@@ -7500,7 +7603,7 @@
             "TEXCOORD_1": 237
           },
           "indices": 238,
-          "material": 41,
+          "material": 42,
           "mode": 4
         }
       ]
@@ -7516,7 +7619,7 @@
             "TEXCOORD_1": 242
           },
           "indices": 243,
-          "material": 42,
+          "material": 43,
           "mode": 4
         }
       ]
@@ -7532,7 +7635,7 @@
             "TEXCOORD_1": 247
           },
           "indices": 248,
-          "material": 43,
+          "material": 44,
           "mode": 4
         }
       ]
@@ -7548,7 +7651,7 @@
             "TEXCOORD_1": 252
           },
           "indices": 253,
-          "material": 44,
+          "material": 45,
           "mode": 4
         }
       ]
@@ -7564,7 +7667,7 @@
             "TEXCOORD_1": 257
           },
           "indices": 258,
-          "material": 45,
+          "material": 46,
           "mode": 4
         }
       ]
@@ -7580,7 +7683,7 @@
             "TEXCOORD_1": 262
           },
           "indices": 263,
-          "material": 46,
+          "material": 47,
           "mode": 4
         }
       ]
@@ -7596,7 +7699,7 @@
             "TEXCOORD_1": 267
           },
           "indices": 268,
-          "material": 47,
+          "material": 48,
           "mode": 4
         }
       ]
@@ -7612,7 +7715,7 @@
             "TEXCOORD_1": 272
           },
           "indices": 273,
-          "material": 48,
+          "material": 49,
           "mode": 4
         }
       ]
@@ -7628,7 +7731,7 @@
             "TEXCOORD_1": 277
           },
           "indices": 278,
-          "material": 49,
+          "material": 50,
           "mode": 4
         }
       ]
@@ -7644,7 +7747,7 @@
             "TEXCOORD_1": 282
           },
           "indices": 283,
-          "material": 50,
+          "material": 51,
           "mode": 4
         }
       ]
@@ -7660,7 +7763,7 @@
             "TEXCOORD_1": 287
           },
           "indices": 288,
-          "material": 51,
+          "material": 52,
           "mode": 4
         }
       ]
@@ -7676,7 +7779,7 @@
             "TEXCOORD_1": 292
           },
           "indices": 293,
-          "material": 52,
+          "material": 53,
           "mode": 4
         }
       ]
@@ -7692,7 +7795,7 @@
             "TEXCOORD_1": 297
           },
           "indices": 298,
-          "material": 53,
+          "material": 54,
           "mode": 4
         }
       ]
@@ -7708,7 +7811,7 @@
             "TEXCOORD_1": 302
           },
           "indices": 303,
-          "material": 54,
+          "material": 55,
           "mode": 4
         }
       ]
@@ -7724,7 +7827,7 @@
             "TEXCOORD_1": 307
           },
           "indices": 308,
-          "material": 55,
+          "material": 56,
           "mode": 4
         }
       ]
@@ -7740,7 +7843,7 @@
             "TEXCOORD_1": 312
           },
           "indices": 313,
-          "material": 56,
+          "material": 57,
           "mode": 4
         }
       ]
@@ -7756,7 +7859,7 @@
             "TEXCOORD_1": 317
           },
           "indices": 318,
-          "material": 57,
+          "material": 58,
           "mode": 4
         }
       ]
@@ -7772,7 +7875,7 @@
             "TEXCOORD_1": 322
           },
           "indices": 323,
-          "material": 58,
+          "material": 59,
           "mode": 4
         }
       ]
@@ -7788,7 +7891,7 @@
             "TEXCOORD_1": 327
           },
           "indices": 328,
-          "material": 59,
+          "material": 60,
           "mode": 4
         }
       ]
@@ -7804,7 +7907,7 @@
             "TEXCOORD_1": 332
           },
           "indices": 333,
-          "material": 60,
+          "material": 61,
           "mode": 4
         }
       ]
@@ -7820,7 +7923,7 @@
             "TEXCOORD_1": 337
           },
           "indices": 338,
-          "material": 61,
+          "material": 62,
           "mode": 4
         }
       ]
@@ -7836,7 +7939,7 @@
             "TEXCOORD_1": 342
           },
           "indices": 343,
-          "material": 54,
+          "material": 55,
           "mode": 4
         }
       ]
@@ -7852,7 +7955,7 @@
             "TEXCOORD_1": 347
           },
           "indices": 348,
-          "material": 62,
+          "material": 63,
           "mode": 4
         }
       ]
@@ -7868,7 +7971,7 @@
             "TEXCOORD_1": 352
           },
           "indices": 353,
-          "material": 63,
+          "material": 64,
           "mode": 4
         }
       ]
@@ -7884,7 +7987,7 @@
             "TEXCOORD_1": 357
           },
           "indices": 358,
-          "material": 64,
+          "material": 65,
           "mode": 4
         }
       ]
@@ -7900,7 +8003,7 @@
             "TEXCOORD_1": 362
           },
           "indices": 363,
-          "material": 65,
+          "material": 66,
           "mode": 4
         }
       ]
@@ -7916,7 +8019,7 @@
             "TEXCOORD_1": 367
           },
           "indices": 368,
-          "material": 66,
+          "material": 67,
           "mode": 4
         }
       ]
@@ -7933,13 +8036,13 @@
             "TEXCOORD_1": 373
           },
           "indices": 374,
-          "material": 67,
+          "material": 68,
           "mode": 4
         }
       ]
     },
     {
-      "name": "Amb_Base_Canceleria_UVc_MT_Amb_Base_Canceleria_UVc_0",
+      "name": "Amb_Base_Canceleria_UVc_MT_Amb_Base_Cocina_Campana_UVd_0",
       "primitives": [
         {
           "attributes": {
@@ -7965,7 +8068,7 @@
             "TEXCOORD_1": 383
           },
           "indices": 384,
-          "material": 68,
+          "material": 69,
           "mode": 4
         }
       ]
@@ -7981,7 +8084,7 @@
             "TEXCOORD_1": 388
           },
           "indices": 389,
-          "material": 69,
+          "material": 70,
           "mode": 4
         }
       ]
@@ -7997,7 +8100,22 @@
             "TEXCOORD_1": 393
           },
           "indices": 394,
-          "material": 70,
+          "material": 71,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Mod_Base_Skybox_MT_Mod_Base_Skybox_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 396,
+            "POSITION": 395,
+            "TEXCOORD_0": 397
+          },
+          "indices": 398,
+          "material": 72,
           "mode": 4
         }
       ]
@@ -8050,7 +8168,7 @@
         0.0,
         1.0
       ],
-      "name": "5b34e67bf7ae4b2d80cd3a4c001e0699.fbx"
+      "name": "cbb3a362c0f042fcb90d7c7081634a31.fbx"
     },
     {
       "children": [
@@ -8129,7 +8247,8 @@
         219,
         222,
         225,
-        228
+        228,
+        231
       ],
       "name": "RootNode"
     },
@@ -8391,7 +8510,7 @@
     },
     {
       "mesh": 4,
-      "name": "Mob_Base_Cocina_Campana_UVd_MT_Amb_Base_Canceleria_UVc_0"
+      "name": "Mob_Base_Cocina_Campana_UVd_MT_Amb_Base_Cocina_Campana_UVd_0"
     },
     {
       "children": [
@@ -9379,7 +9498,7 @@
     },
     {
       "mesh": 23,
-      "name": "Muro_C_Int_Comedor_Front_UVa_MT_Losa_Base_Int_General_UVb_0"
+      "name": "Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0"
     },
     {
       "children": [
@@ -11927,7 +12046,7 @@
     },
     {
       "mesh": 72,
-      "name": "Amb_Base_Canceleria_UVc_MT_Amb_Base_Canceleria_UVc_0"
+      "name": "Amb_Base_Canceleria_UVc_MT_Amb_Base_Cocina_Campana_UVd_0"
     },
     {
       "children": [
@@ -12084,6 +12203,34 @@
     {
       "mesh": 75,
       "name": "Amb_Base_Banio_WC_UVf_MT_Amb_Base_Banio_WC_UVf_0"
+    },
+    {
+      "children": [
+        232
+      ],
+      "matrix": [
+        0.9848077572506879,
+        -1.3877787807814457e-17,
+        0.17364815362931457,
+        0.0,
+        0.17364815362931457,
+        1.1102230246251565e-16,
+        -0.9848077572506879,
+        0.0,
+        -1.3877787807814457e-17,
+        1.0,
+        1.1102230246251565e-16,
+        0.0,
+        5.826216697692871,
+        0.0,
+        -12.052953720092773,
+        1.0
+      ],
+      "name": "Mod_Base_Skybox"
+    },
+    {
+      "mesh": 76,
+      "name": "Mod_Base_Skybox_MT_Mod_Base_Skybox_0"
     }
   ],
   "samplers": [
@@ -12299,6 +12446,22 @@
     {
       "sampler": 0,
       "source": 48
+    },
+    {
+      "sampler": 0,
+      "source": 49
+    },
+    {
+      "sampler": 0,
+      "source": 50
+    },
+    {
+      "sampler": 0,
+      "source": 51
+    },
+    {
+      "sampler": 0,
+      "source": 52
     }
   ]
 }

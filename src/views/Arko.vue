@@ -12,10 +12,11 @@ export default {
         HomeVue
     },
     methods: {
-        ...mapActions(['onChangeStatePage'])
+        ...mapActions(['onChangeStatePage','entryWebAnalytics'])
     },
     created () {
         this.onChangeStatePage(true)
+        this.entryWebAnalytics()
     },
 }
 </script>
