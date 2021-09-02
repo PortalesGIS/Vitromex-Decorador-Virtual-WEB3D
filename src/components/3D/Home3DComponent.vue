@@ -17,7 +17,7 @@ import { App } from "../../three/App";
 import Observer, { EVENTS } from "../../three/Observer";
 export default {
   methods: {
-    ...mapActions(["changeAreaSelected","onChnageMuroAplication","changeisLoadingProductToAplicate",'onChangeAplicationSelected'])
+    ...mapActions(["changeNameAreaSelected","onChnageMuroAplication","changeisLoadingProductToAplicate",'onChangeAplicationSelected'])
   },
   computed: {
     ...mapGetters(["getisLoadingProductToAplicate"])
@@ -28,7 +28,7 @@ export default {
       app.onResize();
     });
     Observer.on(EVENTS.MOVETOAREA, (nameToMoveArea) => {
-      this.changeAreaSelected(nameToMoveArea)
+      this.changeNameAreaSelected(nameToMoveArea)
       // TODO: si se mueve con el mause aumenta nalytics?
       // this.addPointToSpaceSlectedAnalytics(nameArea)     
     });

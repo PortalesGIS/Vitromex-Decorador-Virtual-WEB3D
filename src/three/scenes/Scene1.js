@@ -85,7 +85,7 @@ class Scene1 extends Scene {
 				// this.muroSelected=""
 				// Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);
 				this.onMoveToAreaSelected(intersects)
-				this.control.enable = false
+				this.control.target.set(intersects[0].point.x/1.0001,0, intersects[0].point.z/1.0001)
 				gsap.to(this.camera.position,{
 					duration:2,
 					x:intersects[0].point.x,
@@ -95,11 +95,10 @@ class Scene1 extends Scene {
 						this.control.update()
 					},
 					onComplete:()=>{
-						console.log(this.camera.position)
-						console.log(intersects[0].point.x,0,intersects[0].point.z)
+						// console.log(this.camera.position)
+						// console.log(intersects[0].point.x,0,intersects[0].point.z)
 						// this.camera.position.set(intersects[0].point.x,0,intersects[0].point.z)
 						// this.camera.lookAt(intersects[0].point.x,0,intersects[0].point.z)
-						this.control.target.set(intersects[0].point.x/1.0001,this.camera.position.y/1.0001, intersects[0].point.z/1.0001)
 					}
 				})
 			}

@@ -20,6 +20,9 @@ export const changeAreaSelected=({commit},payload)=>{
     Observer.emit(EVENTS.MOVETOAREASELECTMENU,payload);
     commit("setAreaSalected",payload)
 }
+export const changeNameAreaSelected=({commit},payload)=>{
+    commit("setAreaSalected",payload)
+}
 
 export const onChangeAplicationSelected=({commit},payload)=>{
     commit("setAplicationSelected",payload)
