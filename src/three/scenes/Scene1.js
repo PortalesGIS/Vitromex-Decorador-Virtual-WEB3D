@@ -85,9 +85,43 @@ class Scene1 extends Scene {
 				// this.muroSelected=""
 				// Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);
 				this.onMoveToAreaSelected(intersects)
-				this.control.target.set(intersects[0].point.x/1.0001,0, intersects[0].point.z/1.0001)
+				console.log(intersects[0].point)
+				let pointx=intersects[0].point.x
+				let pointz=intersects[0].point.z
+				if(intersects[0].point.x>0){
+					if(intersects[0].point.x>this.camera.position.x){
+						pointx+=0.1
+					}else{
+						pointx-=0.1
+					}
+				}
+				else{
+					if(intersects[0].point.x>this.camera.position.x){
+						pointx+=0.1
+					}else{
+						pointx-=0.1
+					}
+				}
+				if(intersects[0].point.z<0){
+					if(intersects[0].point.z>this.camera.position.z){
+						pointz+=0.1
+					}else{
+						pointz-=0.1
+					}
+				}
+				else{
+					if(intersects[0].point.z>this.camera.position.z){
+						pointz+=0.1
+					}else{
+						pointz-=0.1
+					}
+				}
+				console.log(''+pointx +'---'+ pointz)
+				// this.control.dispose()
+				this.control.target.set((pointx/1.00000000001),0, (pointz/1.00000000001))
+				// this.camera.position.set(intersects[0].point.x,0,intersects[0].point.z)
 				gsap.to(this.camera.position,{
-					duration:2,
+					duration:1,
 					x:intersects[0].point.x,
 					y:0,
 					z:intersects[0].point.z,
@@ -97,7 +131,6 @@ class Scene1 extends Scene {
 					onComplete:()=>{
 						// console.log(this.camera.position)
 						// console.log(intersects[0].point.x,0,intersects[0].point.z)
-						// this.camera.position.set(intersects[0].point.x,0,intersects[0].point.z)
 						// this.camera.lookAt(intersects[0].point.x,0,intersects[0].point.z)
 					}
 				})

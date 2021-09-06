@@ -150,58 +150,53 @@ export class House extends Mesh{
                 return     
         }
         if(child.name === "Amb_Base_Canceleria_UVc_MT_Amb_Base_Cocina_Campana_UVd_0"){
-            const materialWhitLigthmap = new MeshStandardMaterial({
-                color: 0x777777,
-                envMapIntensity:0.1,       
-                map:child.material.map,
-            })
-            child.material = materialWhitLigthmap
-                return     
+            child.material.lightMapIntensity=0
+            child.material.envMapIntensity=1
+            return      
+        }
+        if(child.name === "Mod_Base_Skybox_MT_Mod_Base_Skybox_0"){
+             var ww = new GUI();
+                var muro = ww.addFolder('pisos');
+                console.log(child)
+                muro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                muro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                muro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                muro.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                muro.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                muro.open();
+            // child.material.lightMapIntensity=0
+            // child.material.envMapIntensity=0
+            return      
         }
         if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
-            const materialWhitLigthmap = new MeshStandardMaterial({
-                color: 0x777777,
-                envMapIntensity:1,       
-                map:child.material.map,
-            })
-            child.material = materialWhitLigthmap
-                return     
+            child.material.lightMapIntensity=0
+            child.material.envMapIntensity=1
+                return    
         }
         if(child.name === "Amb_Base_General_Jarrones_UVf_MT_Amb_Base_General_Jarrones_UVf_0"){
-            const materialWhitLigthmap = new MeshStandardMaterial({
-                color: 0x777777,
-                envMapIntensity:1,       
-                map:child.material.map,
-            })
-            child.material = materialWhitLigthmap
+            // const materialWhitLigthmap = new MeshStandardMaterial({
+            //     color: 0x777777,
+            //     envMapIntensity:1,       
+            //     map:child.material.map,
+            // })
+            child.material.lightMapIntensity=0
+            child.material.envMapIntensity=1
                 return     
         }
         if(child.name === "Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
-            const materialWhitLigthmap = new MeshStandardMaterial({
-                color: 0x777777,
-                envMapIntensity:1,       
-                map:child.material.map,
-            })
-            child.material = materialWhitLigthmap
-                return     
+            child.material.lightMapIntensity=0
+            child.material.envMapIntensity=1
+            return    
         }
         if(child.name === "Mob_Base_Cocina_Refrigerador_UVd_MT_Mob_Base_Cocina_Refrigerador_UVd_0"){
-            const materialWhitLigthmap = new MeshStandardMaterial({
-                color: 0x777777,
-                envMapIntensity:2,       
-                map:child.material.map,
-            })
-            child.material = materialWhitLigthmap
-                return     
+            child.material.lightMapIntensity=0
+            child.material.envMapIntensity=1
+            return      
         }
         if(child.name === "Mob_Base_Cocina_Fregaderoyestufa_UVd_Mob_Base_Cocina_Fregaderoyestufa_UVd_0"){
-            const materialWhitLigthmap = new MeshStandardMaterial({
-                color: 0x777777,
-                envMapIntensity:2,       
-                map:child.material.map,
-            })
-            child.material = materialWhitLigthmap
-                return     
+            child.material.lightMapIntensity=0
+            child.material.envMapIntensity=1
+            return     
         }
         if(child.name === "Piso_Base_Ext_Grava_UVb_MT_Piso_Base_Ext_Grava_UVb_0"){
             const materialWhitLigthmap = new MeshStandardMaterial({
