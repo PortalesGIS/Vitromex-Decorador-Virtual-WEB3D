@@ -142,7 +142,7 @@ export class House extends Mesh{
             const materialWhitLigthmap = new MeshStandardMaterial({
                 color: 0x777777,
                 envMapIntensity:0,
-                lightMap:uvb,                
+                lightMap:uvb,
                 map:child.material.map,
                 lightMapIntensity:6
             })
@@ -156,7 +156,7 @@ export class House extends Mesh{
         }
         if(child.name === "Mod_Base_Skybox_MT_Mod_Base_Skybox_0"){
              var ww = new GUI();
-                var muro = ww.addFolder('pisos');
+                var muro = ww.addFolder('vista');
                 console.log(child)
                 muro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
                 muro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
@@ -168,10 +168,129 @@ export class House extends Mesh{
             // child.material.envMapIntensity=0
             return      
         }
+        if(child.name === "Mob_Base_Macetas_UVe_MT_Mob_Base_Macetas_UVe_0"){
+             var mw = new GUI();
+                var macetas = mw.addFolder('macetas');
+                console.log(child)
+                macetas.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                macetas.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                macetas.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                macetas.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                macetas.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                macetas.open();
+            // child.material.lightMapIntensity=0
+            // child.material.envMapIntensity=0
+        }
+        if(child.name === "Mob_Base_Cocina_Refrigerador_UVd_MT_Mob_Base_Cocina_Refrigerador_UVd_0"){
+             var aa = new GUI();
+                var refrigerador = aa.addFolder('refrigerador');
+                console.log(child)
+                refrigerador.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                refrigerador.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                refrigerador.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                refrigerador.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                refrigerador.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                refrigerador.open();
+        }
+        if(child.name === "Mob_Base_Cocina_Campana_UVd_MT_Amb_Base_Cocina_Campana_UVd_0"){
+             var qq = new GUI();
+                var campana = qq.addFolder('campana');
+                console.log(child)
+                campana.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                campana.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                campana.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                campana.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                campana.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                campana.open();
+        }
+        if(child.name === "Amb_Base_Cocina_Ollas2_UVf_Amb_Base_Cocina_tabla_UVf_0"){
+             var rr = new GUI();
+                var sartenes = rr.addFolder('sartenes');
+                console.log(child)
+                sartenes.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                sartenes.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                sartenes.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                sartenes.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                sartenes.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                sartenes.open();
+        }
+        if(child.name === "Mob_Base_Cocina_Microondas_UVe_MT_Mob_Base_Cocina_Microondas_UVe_0"){
+             var ee = new GUI();
+                var micro = ee.addFolder('micro');
+                console.log(child)
+                micro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                micro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                micro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                micro.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                micro.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                micro.open();
+        }
+        if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
+             var gg = new GUI();
+                var lavabo = gg.addFolder('lavabo');
+                console.log(child)
+                lavabo.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                lavabo.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                lavabo.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                lavabo.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                lavabo.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                lavabo.open();
+        }
+        if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
+             var poi = new GUI();
+                var vasos = poi.addFolder('vasos');
+                console.log(child)
+                vasos.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                vasos.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                vasos.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                vasos.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                vasos.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                vasos.open();
+        }
+        if(child.name === "Amb_Base_vidrioopaco_UVc_MT_Amb_Base_vidrioopaco_UVc_0"){
+             var Derer = new GUI();
+                var vidrio = Derer.addFolder('vidrio');
+                console.log(child)
+                vidrio.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                vidrio.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                vidrio.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                vidrio.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                vidrio.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                vidrio.open();
+        }
+        if(child.name === "Amb_Base_Banio_Jabon_UVf_Amb_Base_Banio_Jabon_UVf_0"){
+             var ssss = new GUI();
+                var jabon = ssss.addFolder('jabon');
+                console.log(child)
+                jabon.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+                jabon.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                jabon.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                jabon.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                jabon.add(child.material, 'metalness', -1.0, 1.0).listen();                
+                jabon.open();
+        }
+        // 
+        // 
+        // 
         if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
             child.material.lightMapIntensity=0
             child.material.envMapIntensity=1
                 return    
+        }
+        if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
+            child.material.lightMapIntensity=0
+            child.material.envMapIntensity=1
+            return      
+        }
+        if(child.name === "Amb_Base_Banio_Jabon_UVf_Amb_Base_Banio_Jabon_UVf_0"){
+            child.material.lightMapIntensity=0
+            child.material.envMapIntensity=1
+            return      
+        }
+        if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
+            child.material.lightMapIntensity=0
+            child.material.envMapIntensity=1
+            return      
         }
         if(child.name === "Amb_Base_General_Jarrones_UVf_MT_Amb_Base_General_Jarrones_UVf_0"){
             // const materialWhitLigthmap = new MeshStandardMaterial({
