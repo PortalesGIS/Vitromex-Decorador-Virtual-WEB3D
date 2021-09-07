@@ -5,9 +5,9 @@
         <div class="text-force-cf text-base lg:text-4xl">Cargando...</div>
       </div>
     </div>
-  <div class="fixed top-0 w-full h-full">
+  <div class="fixed top-0 w-full h-full bg-black">
     <div
-     id="scene" class="fixed bg-purple-600 w-full h-full"></div>
+     id="scene" class="fixed bg-black w-full h-full"></div>
   </div>
 </template>
 

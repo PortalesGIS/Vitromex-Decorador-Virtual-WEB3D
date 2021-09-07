@@ -120,7 +120,9 @@ class Scene1 extends Scene {
 				// this.control.dispose()
 				this.control.target.set((pointx/1.00000000001),0, (pointz/1.00000000001))
 				// this.camera.position.set(intersects[0].point.x,0,intersects[0].point.z)
-				gsap.to(this.camera.position,{
+				let animations = gsap.timeline()
+				animations.to(this.camera.position,{
+					// duration:0,
 					duration:1,
 					x:intersects[0].point.x,
 					y:0,
@@ -128,12 +130,16 @@ class Scene1 extends Scene {
 					onUpdate:()=>{
 						this.control.update()
 					},
-					onComplete:()=>{
-						// console.log(this.camera.position)
-						// console.log(intersects[0].point.x,0,intersects[0].point.z)
-						// this.camera.lookAt(intersects[0].point.x,0,intersects[0].point.z)
-					}
+				},)
+				.to("#scene",{
+					duration:0.45,
+					opacity:0,
+				},"-=0.5")
+				.to("#scene",{
+					duration:0.5,
+					opacity:1,
 				})
+				
 			}
 			if(intersects[0].object.name.includes('Muro')){
 				Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,1)
