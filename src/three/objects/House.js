@@ -160,8 +160,7 @@ export class House extends Mesh{
             child.material.map=cilindro
             child.material.emissiveIntensity=0.7
             child.material.envMapIntensity=0
-                return 
-           
+            return 
         }
 
         if(child.name === "Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0"){
@@ -187,6 +186,15 @@ export class House extends Mesh{
             child.material.refractionRatio=0.98            
             child.material.roughness=0.7
             child.material.metalness=0
+            return 
+        }
+        if(child.name === "Amb_Base_Banio_WC_UVf_MT_Amb_Base_Banio_WC_UVf_0"){
+            child.material.lightMap=uvf
+            child.material.lightMapIntensity=2.1
+            child.material.envMapIntensity=0.3
+            child.material.refractionRatio=1         
+            child.material.roughness=0.2
+            child.material.metalness=0.35
             return 
         }
         if(child.name === "Mob_Base_Cocina_Refrigerador_UVd_MT_Mob_Base_Cocina_Refrigerador_UVd_0"){
@@ -228,7 +236,7 @@ export class House extends Mesh{
         if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
             child.material.lightMap=uvf
             child.material.lightMapIntensity=1
-            child.material.envMapIntensity=1
+            child.material.envMapIntensity=0.6
             child.material.refractionRatio=0.98         
             child.material.roughness=0
             child.material.metalness=1
@@ -391,7 +399,7 @@ export class House extends Mesh{
             if(child.name==="Mob_Base_Cocina_Alacenas_UVd_MT_Mob_Base_Cocina_Alacenas_UVd_0"){
                 child.material.lightMap=uvd
                 child.material.lightMapIntensity=2.9
-                child.material.envMapIntensity=0.2
+                child.material.envMapIntensity=0.01
                 return 
             }
             child.material.lightMap=uvd
