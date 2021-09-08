@@ -12,6 +12,7 @@ import { TrakerMouse } from '../objects/MouseTraker';
 import Observer, { EVENTS } from '../Observer';
 import {isDevice} from '../../../utils/isDevice'
 import gsap from 'gsap/gsap-core';
+import { FalseLights } from '../objects/FalseLigth';
 var raycaster = new Raycaster();
 var mouse = new Vector2();
 class Scene1 extends Scene {
@@ -45,7 +46,8 @@ class Scene1 extends Scene {
 		this.hovers = new Hovers()
 		this.add(this.hovers)
 
-		
+		this.falseLights = new FalseLights()
+		this.add(this.falseLights)
 		// 
 		
 		// 
@@ -135,7 +137,7 @@ class Scene1 extends Scene {
 				.to("#scene",{
 					duration:0.45,
 					opacity:0,
-				},"-=0.5")
+				},"-=0.6")
 				.to("#scene",{
 					duration:0.5,
 					opacity:1,
