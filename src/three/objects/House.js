@@ -64,42 +64,31 @@ export class House extends Mesh{
                     }
                 })
                 Observer.on(EVENTS.SENDPRODUCT,(productSelected,areaSelected,typeOfAplication,nameMuroAplication)=>{
-                    let mapDB =   new TextureLoader();
-                    // TODO: eliminar el norma? optimizr descarga?
-                    const texturesToUpdate = Promise.all([
-                        loader.load(productSelected.albedo),
-                        loader.load(productSelected.normal),
-                    ],(resolve)=>{
-                        resolve(texturesToUpdate)
-                    }).then(textures=>{
-                        textures[0].wrapS = RepeatWrapping;
-                        textures[0].wrapT = RepeatWrapping;
-                        let stringSized = (productSelected.sized).toLowerCase() 
-                        let dimenciones = stringSized.split('x')
-                        const tailinW = parseInt(dimenciones[0])/100
-                        const tailinH = parseInt(dimenciones[1])/100
-                        textures[0].repeat.set(tailinW,tailinH);
-                        console.log(`${tailinW},${tailinH}`)
-                        mapDB.load(productSelected.normal,()=>{
-                            const uploadMaterial = new MeshStandardMaterial({
-                                color: 0x777777,
-                                lightMap:(typeOfAplication===1)?texturesLoades[0]:texturesLoades[1],
-                                map:textures[0],
-                                normalMap:textures[1],
-                                lightMapIntensity:4
-                            })
-                            Observer.emit(EVENTS.ENDCHARGINPRODUCT);
-                            if(typeOfAplication===0){
-                                console.log("aplicado a piso")
-                                this.updatePisoMaterial(uploadMaterial,areaSelected)
-                            }
-                            else{
-                                console.log("aplicado a muro")
-                                this.updateMuroMaterial(uploadMaterial,nameMuroAplication)
-                            }
-                        })
-                    })
                     
+                    // TODO: eliminar el norma? optimizr descarga? version 1 optimizado
+                    const textures=[]
+                    loader.load(productSelected.albedo,(texture)=>{
+                        textures.push(texture)
+                    loader.load(productSelected.normal,(text)=>{
+                       textures.push(text)
+                       textures[0].wrapS = RepeatWrapping;
+                       textures[0].wrapT = RepeatWrapping;
+                       let stringSized = (productSelected.sized).toLowerCase() 
+                       let dimenciones = stringSized.split('x')
+                       const tailinW = parseInt(dimenciones[0])/100
+                       const tailinH = parseInt(dimenciones[1])/100
+                       textures[0].repeat.set(tailinW,tailinH);
+                       Observer.emit(EVENTS.ENDCHARGINPRODUCT);
+                       if(typeOfAplication===0){
+                            console.log("aplicado a piso")
+                            this.updatePisoMaterial(textures,areaSelected)
+                        }
+                        else{
+                            console.log("aplicado a muro")
+                            this.updateMuroMaterial(textures,nameMuroAplication)
+                        }
+                    })
+                })
                 })
             })
             // 
@@ -434,20 +423,24 @@ export class House extends Mesh{
     updatePisoMaterial(materialUpdated,pisoSelected){
         switch (pisoSelected) {
             case "sala":
-                this.pisoSala.material = materialUpdated
+                this.pisoSala.material.map = materialUpdated[0]
+                this.pisoSala.material.normalMap = materialUpdated[1]
                 break;
             case "fachada":
-                this.pisoFachada.material = materialUpdated
-                // this.pisoPasillo.material = materialUpdated
+                this.pisoFachada.material.map = materialUpdated[0]
+                this.pisoFachada.material.normalMap = materialUpdated[1]
                 break;
             case "comedor":
-                this.pisoComedor.material = materialUpdated
+                this.pisoComedor.material.map = materialUpdated[0]
+                this.pisoComedor.material.normalMap = materialUpdated[1]
                 break;
             case "cocina":
-                this.pisoCosina.material = materialUpdated
+                this.pisoCosina.material.map = materialUpdated[0]
+                this.pisoCosina.material.normalMap = materialUpdated[1]
                 break;
             case "banio":
-                this.pisoBanio.material = materialUpdated
+                this.pisoBanio.material.map = materialUpdated[0]
+                this.pisoBanio.material.normalMap = materialUpdated[1]
                 break;
         
             default:
@@ -458,61 +451,80 @@ export class House extends Mesh{
     updateMuroMaterial(materialUpdated,nameMuro){
         switch (nameMuro) {
             case "Hover_Muro_C_Int_Comedor_Atras_UVa_MT_Hover_Muro_C_Int_Comedor_Atras_UVa_0":
-                this.muroComedorA.material = materialUpdated
+                this.muroComedorA.material.map = materialUpdated[0]
+                this.muroComedorA.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Comedor_Front_UVa_MT_Hover_Muro_C_Int_Comedor_Front_UVa_0":
-                this.muroComedorB.material = materialUpdated
+                this.muroComedorB.material.map = materialUpdated[0]
+                this.muroComedorB.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Sala_Der_UVa_MT_Hover_Muro_C_Int_Sala_Der_UVa_0":
-                this.muroSalaB.material = materialUpdated
+                this.muroSalaB.material.map = materialUpdated[0]
+                this.muroSalaB.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Sala_Front_UVa_MT_Hover_Muro_C_Int_Sala_Front_UVa_0":
-                this.muroSalaC.material = materialUpdated
+                this.muroSalaC.material.map = materialUpdated[0]
+                this.muroSalaC.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Sala_Front2_UVa_MT_Hover_Muro_C_Int_Sala_Front2_UVa_0":
-                this.muroSalaA.material = materialUpdated
+                this.muroSalaA.material.map = materialUpdated[0]
+                this.muroSalaA.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Ext_Patio_Arriba_MT_Hover_Muro_C_Ext_Patio_Arriba_0":
-                this.muroFachadaA.material = materialUpdated
+                this.muroFachadaA.material.map = materialUpdated[0]
+                this.muroFachadaA.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Ext_Patio_Front_UVa_MT_Hover_Muro_C_Ext_Patio_Front_UVa_0":
-                this.muroFachadaB.material = materialUpdated
+                this.muroFachadaB.material.map = materialUpdated[0]
+                this.muroFachadaB.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Ext_Patio_Izq_UVa_MT_Hover_Muro_C_Ext_Patio_Izq_UVa_0":
-                this.muroFachadaC.material = materialUpdated
+                this.muroFachadaC.material.map = materialUpdated[0]
+                this.muroFachadaC.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Ext_Patio_Atras_UVa_MT_Hover_Muro_C_Ext_Patio_Atras_UVa_0":
-                this.muroFachadaD.material = materialUpdated
+                this.muroFachadaD.material.map = materialUpdated[0]
+                this.muroFachadaD.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Ext_Patio_Der_UVa_MT_Hover_Muro_C_Ext_Patio_Der_UVa_0":
-                this.muroFachadaE.material = materialUpdated
+                this.muroFachadaE.material.map = materialUpdated[0]
+                this.muroFachadaE.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Cocina_Izq_UVa_MT_Hover_Muro_C_Int_Cocina_Izq_UVa_0":
-                this.muroCocinaA.material = materialUpdated
+                this.muroCocinaA.material.map = materialUpdated[0]
+                this.muroCocinaA.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Cocina_Front_UVa_MT_Hover_Muro_C_Int_Cocina_Front_UVa_0":
-                this.muroCocinaB.material = materialUpdated
+                this.muroCocinaB.material.map = materialUpdated[0]
+                this.muroCocinaB.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Cocina_Der_UVa_MT_Hover_Muro_C_Int_Cocina_Der_UVa_0":
-                this.muroCocinaC.material = materialUpdated
+                this.muroCocinaC.material.map = materialUpdated[0]
+                this.muroCocinaC.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Pasillo_Izq_UVa_MT_Hover_Muro_C_Int_Pasillo_Izq_UVa_0":
-                this.muroCocinaD.material = materialUpdated
+                this.muroCocinaD.material.map = materialUpdated[0]
+                this.muroCocinaD.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Banio_Izq2_UVa_MT_Hover_Muro_C_Int_Banio_Izq2_UVa_0":
-                this.muroBanioA.material = materialUpdated
+                this.muroBanioA.material.map = materialUpdated[0]
+                this.muroBanioA.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Banio_Izq1_UVa_MT_Hover_Muro_C_Int_Banio_Izq1_UVa_0":
-                this.muroBanioB.material = materialUpdated
+                this.muroBanioB.material.map = materialUpdated[0]
+                this.muroBanioB.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Banio_Izq3_UVa_MT_Hover_Muro_C_Int_Banio_Izq3_UVa_0":
-                this.muroBanioC.material = materialUpdated
+                this.muroBanioC.material.map = materialUpdated[0]
+                this.muroBanioC.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Banio_Der2_UVa_MT_Hover_Muro_C_Int_Banio_Der2_UVa_0":
-                this.muroBanioD.material = materialUpdated
+                this.muroBanioD.material.map = materialUpdated[0]
+                this.muroBanioD.material.normalMap = materialUpdated[1]
                 break;
             case "Hover_Muro_C_Int_Banio_Der_UVa_MT_Hover_Muro_C_Int_Banio_Der_UVa_0":
-                this.muroBanioE.material = materialUpdated
+                this.muroBanioE.material.map = materialUpdated[0]
+                this.muroBanioE.material.normalMap = materialUpdated[1]
                 break;
             default:
                 break;
