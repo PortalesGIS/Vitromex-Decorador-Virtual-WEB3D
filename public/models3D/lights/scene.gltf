@@ -3,40 +3,58 @@
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 112,
+      "count": 204,
       "max": [
-        8.856032371520996,
-        0.125,
-        9.497255325317383
+        8.98949909210205,
+        0.13346564769744873,
+        6.637749195098877
       ],
       "min": [
-        -3.041759490966797,
-        -2.5327155590057373,
-        -5.375441074371338
+        -3.175224781036377,
+        -2.625920057296753,
+        -5.383906364440918
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "byteOffset": 1344,
+      "byteOffset": 2448,
       "componentType": 5126,
-      "count": 112,
+      "count": 204,
       "max": [
         1.0,
-        2.3841863594498136e-07,
+        3.725641022356285e-07,
         1.0
       ],
       "min": [
         -1.0,
-        -9.094947017729282e-13,
+        -2.9805110557390435e-07,
         -1.0
       ],
       "type": "VEC3"
     },
     {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 204,
+      "max": [
+        1.0,
+        5.961024385214841e-07,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -4.4659125819634937e-07,
+        -1.0,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 112,
+      "count": 204,
       "max": [
         1.0,
         1.0
@@ -50,7 +68,7 @@
     {
       "bufferView": 0,
       "componentType": 5125,
-      "count": 168,
+      "count": 312,
       "type": "SCALAR"
     }
   ],
@@ -67,39 +85,50 @@
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 672,
+      "byteLength": 1248,
       "name": "floatBufferViews",
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteLength": 896,
-      "byteOffset": 672,
+      "byteLength": 1632,
+      "byteOffset": 1248,
       "byteStride": 8,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 2688,
-      "byteOffset": 1568,
+      "byteLength": 4896,
+      "byteOffset": 2880,
       "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 3264,
+      "byteOffset": 7776,
+      "byteStride": 16,
       "name": "floatBufferViews",
       "target": 34962
     }
   ],
   "buffers": [
     {
-      "byteLength": 4256,
+      "byteLength": 11040,
       "uri": "scene.bin"
     }
   ],
   "images": [
     {
-      "uri": "textures/mt_halo_baseColor.png"
+      "uri": "textures/Material_3232_baseColor.png"
     },
     {
-      "uri": "textures/mt_halo_emissive.png"
+      "uri": "textures/Material_3232_emissive.png"
+    },
+    {
+      "uri": "textures/Material_3232_normal.png"
     }
   ],
   "materials": [
@@ -114,33 +143,36 @@
       "emissiveTexture": {
         "index": 1
       },
-      "name": "mt_halo",
+      "name": "Material_3232",
+      "normalTexture": {
+        "index": 2
+      },
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
           1.0,
           1.0,
-          0.4030014775
+          0.09899281931549411
         ],
         "baseColorTexture": {
           "index": 0
         },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596
+        "roughnessFactor": 0.8929713596497552
       }
     }
   ],
   "meshes": [
     {
-      "name": "Luces_Base_Int_Ext_General_mt_halo_0",
+      "name": "Luces_Base_Int_Ext_General_Material #3232_0",
       "primitives": [
         {
           "attributes": {
             "NORMAL": 1,
             "POSITION": 0,
-            "TEXCOORD_0": 2
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
           },
-          "indices": 3,
+          "indices": 4,
           "material": 0,
           "mode": 4
         }
@@ -194,7 +226,7 @@
         0.0,
         1.0
       ],
-      "name": "cb91f384bf704cba9022802c7bd38679.fbx"
+      "name": "d05868ca19cf43628f4b403c4ec81b29.fbx"
     },
     {
       "children": [
@@ -252,7 +284,7 @@
     },
     {
       "mesh": 0,
-      "name": "Luces_Base_Int_Ext_General_mt_halo_0"
+      "name": "Luces_Base_Int_Ext_General_Material #3232_0"
     }
   ],
   "samplers": [
@@ -280,6 +312,10 @@
     {
       "sampler": 0,
       "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
     }
   ]
 }
