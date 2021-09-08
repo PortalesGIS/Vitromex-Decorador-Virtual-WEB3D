@@ -40,7 +40,7 @@ export class App {
 		this.control.target.set(this.camera.position.x/1.0001,this.camera.position.y/1.0001,this.camera.position.z/1.00001);
 		this.control.enableDamping=true
 		this.control.rotateSpeed=-0.2
-		// this.control.enableZoom = false
+		this.control.enableZoom = false
 		// this.control.maxPolarAngle = 100 * Math.DEG2RAD
 		// this.control.minPolarAngle = 50 * Math.DEG2RAD
 		// ## Renderer's config

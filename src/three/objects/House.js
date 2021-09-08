@@ -21,9 +21,9 @@ export class House extends Mesh{
             this.pisoFachada =  gltf.scene.children[0].getObjectByName("Piso_C_Ext_Cochera_UVb_MT_Piso_C_Ext_Cochera_UVb_0")
             this.pisoPasillo = gltf.scene.children[0].getObjectByName("Piso_C_Ext_Pasillo_UVb_MT_Piso_C_Ext_Pasillo_UVb_0")
             this.pisoBanio = gltf.scene.children[0].getObjectByName("Piso_C_Int_Banio_UVb_MT_Piso_C_Int_Banio_UVb_0")
-            // muros
+            // muros "Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0"
             this.muroComedorA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Comedor_Atras_UVa_MT_Muro_Base_General_UVa_0")
-            this.muroComedorB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Comedor_Front_UVa_MT_Losa_Base_Int_General_UVb_0")
+            this.muroComedorB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0")
             this.muroSalaA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Sala_Front2_UVa_MT_Losa_Base_Int_General_UVb_0")
             this.muroSalaB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Sala_Der_UVa_MT_Muro_C_Int_Sala_Der_UVa_0")
             this.muroSalaC =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Sala_Front_UVa_MT_Muro_C_Int_Sala_Front_UVa_0")
@@ -169,7 +169,7 @@ export class House extends Mesh{
                 envMapIntensity:0,
                 lightMap:uvb,
                 map:child.material.map,
-                lightMapIntensity:6
+                lightMapIntensity:4.2
             })
             child.material = materialWhitLigthmap
                 return     
@@ -181,11 +181,18 @@ export class House extends Mesh{
         }
         if(child.name === "Mob_Base_Macetas_UVe_MT_Mob_Base_Macetas_UVe_0"){
             child.material.lightMap=uve
-            child.material.lightMapIntensity=6
+            child.material.lightMapIntensity=2.5
             child.material.envMapIntensity=0
+            child.material.emissiveIntensity=0
             child.material.refractionRatio=0.98            
             child.material.roughness=0.7
             child.material.metalness=0
+            return 
+        }
+        if(child.name === "Amb_Base_Banio_Toallas_UVf_MT_Amb_Base_Banio_Toallas_UVf_0"){
+            child.material.lightMap=uve
+            child.material.lightMapIntensity=0
+            child.material.envMapIntensity=1
             return 
         }
         if(child.name === "Amb_Base_Banio_WC_UVf_MT_Amb_Base_Banio_WC_UVf_0"){
@@ -242,10 +249,16 @@ export class House extends Mesh{
             child.material.metalness=1
             return 
         }
+        if(child.name === "Amb_Base_Cocina_Limas_UVf_MT_Amb_Base_Cocina_Limas_UVf_0"){
+            child.material.lightMap=uvf
+            child.material.lightMapIntensity=6
+            child.material.envMapIntensity=0.6
+            return 
+        }
         if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
             child.material.lightMap=uvf
-            child.material.lightMapIntensity=0
-            child.material.envMapIntensity=1
+            child.material.lightMapIntensity=1
+            child.material.envMapIntensity=5
             child.material.refractionRatio=0.98         
             child.material.roughness=0.96
             child.material.metalness=0
@@ -287,11 +300,6 @@ export class House extends Mesh{
             child.material.envMapIntensity=1
             return      
         }
-        if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
-            child.material.lightMapIntensity=0
-            child.material.envMapIntensity=1
-            return      
-        }
         if(child.name === "Amb_Base_General_Jarrones_UVf_MT_Amb_Base_General_Jarrones_UVf_0"){
             // const materialWhitLigthmap = new MeshStandardMaterial({
             //     color: 0x777777,
@@ -327,6 +335,18 @@ export class House extends Mesh{
             child.material = materialWhitLigthmap
                      
         }
+        if(child.name === "Mob_Base_Sala_Sillon_UVe_MT_Mob_Base_Sala_Sillon_UVe_0"){
+            const materialWhitLigthmap = new MeshStandardMaterial({
+                color: 0x777777,
+                envMapIntensity:0,  
+                lightMap:uve,   
+                lightMapIntensity:15,
+                map:child.material.map,
+            })
+            child.material = materialWhitLigthmap
+               return      
+        }
+        
         // end especiales
         if(child.name.includes("UVa")){
             
