@@ -5,29 +5,34 @@
   :class="getPageState?'img-fondo-arko':'img-fondo-vitromex'"
   >
     <div class='w-full h-full flex justify-center items-center'>
-        <div class="ml-16 hidden lg:block ">
-        <div class="flex justify-center">
-            <img  v-if="getPageState" src="../../assets/arko/Web/ARKO_Logo.svg" style="width:223px; height:52px" alt="">
-            <img v-else src="../../assets/web/Logo_Vitromex.svg" style="width:223px; height:52px" alt="">            
-        </div>        
-        <div class=" block lg:hidden ">
+        <!-- version desktop -->
+        <div class="">
+        <div class="flex justify-center  ">
             <img  v-if="getPageState" src="../../assets/arko/Web/ARKO_Logo.svg" style="width:223px; height:52px" alt="">
             <img v-else src="../../assets/web/Logo_Vitromex.svg" style="width:223px; height:52px" alt=""> 
         </div>
-            <div class="w-80 h-2 bg-white rounded-xl mt-4">
+            <div class='flex justify-center items-center'>
+            <div>
+                <div class='flex justify-center items-center'>
+                    <div>
+                        <div class="w-60 h-2 bg-white rounded-xl mt-4">
                 <div 
                 id="bar"
-                class=" h-full bg-gray-900 rounded-xl"
+                :style="`width:${progress}%`"
+                class="h-full bg-gray-900 rounded-xl"
                 ></div>
             </div>
+                    </div>
+                </div>
             <div class="text-title w-80 text-center pt-2 text-white text-monserrat text-xl">
                 <p
-                id="percentageText"
-                >Cargando...</p>
+                >Cargando...{{progress}}</p>
                 <p 
                 class="text-sm"
-                id="nameFile"
-                >nombre de archivo</p>
+                >{{nameFile}}</p>
+            </div>
+            </div>
+            
             </div>
         </div>
     </div>
@@ -39,6 +44,12 @@ import gsap from 'gsap/src'
 import { mapGetters } from 'vuex'
 import Observer, { EVENTS } from '../../three/Observer'
 export default {
+    data() {
+        return {
+            nameFile: "nombre de archivo",
+            progress:"0"
+        }
+    },
     computed: {
         ...mapGetters(['getPageState'])
     },
@@ -46,9 +57,9 @@ export default {
     },
     mounted () {
         Observer.on(EVENTS.LOADING,(progress,fileURL)=>{
+            this.progress = `${progress*100}`
             document.getElementById('bar').style.width=`${Math.round(progress*100)}%`;
-            document.getElementById('percentageText').innerText = `Cargando... ${Math.round(progress*100)}%`;
-            document.getElementById('nameFile').innerText = fileURL;
+            this.nameFile = fileURL;
         })
         Observer.on(EVENTS.LOADINGFFINISH,()=>{
             gsap.to('#loadingScreen',{
