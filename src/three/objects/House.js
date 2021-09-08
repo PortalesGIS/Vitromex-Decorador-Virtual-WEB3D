@@ -85,7 +85,7 @@ export class House extends Mesh{
                                 lightMap:(typeOfAplication===1)?texturesLoades[0]:texturesLoades[1],
                                 map:textures[0],
                                 normalMap:[1],
-                                // normalMap:textureNormal,
+                                envMapIntensity:1,
                                 lightMapIntensity:4
                             })
                             Observer.emit(EVENTS.ENDCHARGINPRODUCT);
