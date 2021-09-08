@@ -21,7 +21,7 @@ class Scene1 extends Scene {
 		this.camera = camera;
 		this.control = control;
 		this.muroSelected=""
-		this.background = new Color("skyblue").convertSRGBToLinear();
+		this.background = new Color("#00aae4").convertSRGBToLinear();
 		this.create();
 	}
 	create(){
@@ -52,6 +52,7 @@ class Scene1 extends Scene {
 		// 
 		this.abientLight = new HemisphereLight(0xffffffbb, 0x080820,0.5)
 		this.light =  new DirectionalLight(0xffffff,0.5);
+		// this.add(	this.abientLight );
 		if(isDevice()){
 			this.add(	this.abientLight );
 			this.add(this.light)

@@ -83,11 +83,20 @@ export class App {
 		this.scene = new Scene1(loaderManager,this.camera,this.control,);
 		new RGBELoader(loaderManager)
 				.setDataType( UnsignedByteType )
-				.load( 'models3D/enviroment/Enviroment_Interior.hdr',  ( texture ) => {
+				.load( 'models3D/enviroment/surgery_1k.hdr',  ( texture ) => {
+					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
+					if(!isDevice()){
+						// this.scene.background = envMap;
+						this.scene.environment = envMap;
+					}
+				})
+		new RGBELoader(loaderManager)
+		.setDataType( UnsignedByteType )
+				.load( 'models3D/enviroment/small_harbor_02_1k.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 					if(!isDevice()){
 						this.scene.background = envMap;
-						this.scene.environment = envMap;
+						// this.scene.environment = envMap;
 					}
 				})
 			

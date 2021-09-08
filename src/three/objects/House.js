@@ -51,6 +51,9 @@ export class House extends Mesh{
             loader.load('models3D/house-v1/light_maps/UV_d.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_e.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_f.jpg'),
+            loader.load('models3D/house-v1/texturesseparates/MT_Amb_Base_General_PlantaGrande_UVf_baseColor.png'),
+            loader.load('models3D/house-v1/texturesseparates/MT_Amb_Base_General_PlantaPalmera_UVf_baseColor.jpeg'),
+            loader.load('models3D/house-v1/texturesseparates/signal_hill_dawn_2k.jpg'),
         ],(resolve)=>{
                 resolve(textures)
             }).then(texturesLoades=>{
@@ -137,7 +140,32 @@ export class House extends Mesh{
         let uvd = texturesLoades[3]
         let uve = texturesLoades[4]
         let uvf = texturesLoades[5]
+        let plata = texturesLoades[6]
+        let palmera = texturesLoades[7]
+        // let cilindro = texturesLoades[8]
         // especiales
+        if(child.name === "Amb_Base_General_PlantaGrande_UVf_MT_Amb_Base_General_PlantaGrande_UVf_0"){
+            child.material.map =  plata
+            child.material.lightMapIntensity=2
+            child.material.envMapIntensity=0
+            child.material.lightMap=uvf
+            return
+            // return
+        }
+        if(child.name === "Amb_Base_General_PlantaPalmera_UVf_MT_Amb_Base_General_PlantaPalmera_UVf_0"){
+            child.material.map =  palmera
+            child.material.lightMapIntensity=2
+            child.material.envMapIntensity=0
+            child.material.lightMap=uvf
+            return
+        }
+        if(child.name === "Mod_Base_Skybox_MT_Mod_Base_Skybox_0"){
+            child.material.emissiveIntensity=0.7
+            child.material.envMapIntensity=0
+                return 
+           
+        }
+
         if(child.name === "Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0"){
             const materialWhitLigthmap = new MeshStandardMaterial({
                 color: 0x777777,
@@ -154,120 +182,86 @@ export class House extends Mesh{
             child.material.envMapIntensity=1
             return      
         }
-        if(child.name === "Mod_Base_Skybox_MT_Mod_Base_Skybox_0"){
-             var ww = new GUI();
-                var muro = ww.addFolder('vista');
-                console.log(child)
-                muro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                muro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                muro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                muro.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                muro.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                muro.open();
-            // child.material.lightMapIntensity=0
-            // child.material.envMapIntensity=0
-            return      
-        }
         if(child.name === "Mob_Base_Macetas_UVe_MT_Mob_Base_Macetas_UVe_0"){
-             var mw = new GUI();
-                var macetas = mw.addFolder('macetas');
-                console.log(child)
-                macetas.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                macetas.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                macetas.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                macetas.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                macetas.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                macetas.open();
-            // child.material.lightMapIntensity=0
-            // child.material.envMapIntensity=0
+            child.material.lightMap=uve
+            child.material.lightMapIntensity=6
+            child.material.envMapIntensity=0
+            child.material.refractionRatio=0.98            
+            child.material.roughness=0.7
+            child.material.metalness=0
+            return 
         }
         if(child.name === "Mob_Base_Cocina_Refrigerador_UVd_MT_Mob_Base_Cocina_Refrigerador_UVd_0"){
-             var aa = new GUI();
-                var refrigerador = aa.addFolder('refrigerador');
-                console.log(child)
-                refrigerador.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                refrigerador.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                refrigerador.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                refrigerador.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                refrigerador.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                refrigerador.open();
+            child.material.lightMap=uvd
+            child.material.lightMapIntensity=2.1
+            child.material.envMapIntensity=0.3
+            child.material.refractionRatio=1         
+            child.material.roughness=0.2
+            child.material.metalness=0.35
+            return 
         }
         if(child.name === "Mob_Base_Cocina_Campana_UVd_MT_Amb_Base_Cocina_Campana_UVd_0"){
-             var qq = new GUI();
-                var campana = qq.addFolder('campana');
-                console.log(child)
-                campana.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                campana.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                campana.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                campana.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                campana.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                campana.open();
+            child.material.lightMap=uvd
+            child.material.lightMapIntensity=2
+            child.material.envMapIntensity=1
+            child.material.refractionRatio=0.98         
+            child.material.roughness=0.49
+            child.material.metalness=0
+            return 
         }
         if(child.name === "Amb_Base_Cocina_Ollas2_UVf_Amb_Base_Cocina_tabla_UVf_0"){
-             var rr = new GUI();
-                var sartenes = rr.addFolder('sartenes');
-                console.log(child)
-                sartenes.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                sartenes.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                sartenes.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                sartenes.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                sartenes.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                sartenes.open();
+            child.material.lightMap=uvf
+            child.material.lightMapIntensity=3.5
+            child.material.envMapIntensity=1
+            child.material.refractionRatio=0.98         
+            child.material.roughness=0.24
+            child.material.metalness=1
+            return 
         }
         if(child.name === "Mob_Base_Cocina_Microondas_UVe_MT_Mob_Base_Cocina_Microondas_UVe_0"){
-             var ee = new GUI();
-                var micro = ee.addFolder('micro');
-                console.log(child)
-                micro.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                micro.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                micro.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                micro.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                micro.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                micro.open();
+            child.material.lightMap=uve
+            child.material.lightMapIntensity=6
+            child.material.envMapIntensity=0.6
+            child.material.refractionRatio=0.84         
+            child.material.roughness=0.09
+            child.material.metalness=1
+            return 
         }
         if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
-             var gg = new GUI();
-                var lavabo = gg.addFolder('lavabo');
-                console.log(child)
-                lavabo.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                lavabo.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                lavabo.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                lavabo.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                lavabo.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                lavabo.open();
+            child.material.lightMap=uvf
+            child.material.lightMapIntensity=1
+            child.material.envMapIntensity=1
+            child.material.refractionRatio=0.98         
+            child.material.roughness=0
+            child.material.metalness=1
+            return 
         }
         if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
-             var poi = new GUI();
-                var vasos = poi.addFolder('vasos');
-                console.log(child)
-                vasos.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                vasos.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                vasos.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                vasos.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                vasos.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                vasos.open();
+            child.material.lightMap=uvf
+            child.material.lightMapIntensity=0
+            child.material.envMapIntensity=1
+            child.material.refractionRatio=0.98         
+            child.material.roughness=0.96
+            child.material.metalness=0
+            return 
         }
         if(child.name === "Amb_Base_vidrioopaco_UVc_MT_Amb_Base_vidrioopaco_UVc_0"){
-             var Derer = new GUI();
-                var vidrio = Derer.addFolder('vidrio');
-                console.log(child)
-                vidrio.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                vidrio.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                vidrio.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                vidrio.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                vidrio.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                vidrio.open();
+            child.material.lightMap=uvc
+            child.material.lightMapIntensity=1
+            child.material.envMapIntensity=0.5
+            child.material.refractionRatio=0.98         
+            child.material.roughness=0.087
+            child.material.metalness=0.35
+            return 
         }
         if(child.name === "Amb_Base_Banio_Jabon_UVf_Amb_Base_Banio_Jabon_UVf_0"){
-             var ssss = new GUI();
-                var jabon = ssss.addFolder('jabon');
-                console.log(child)
-                jabon.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                jabon.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                jabon.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                jabon.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                jabon.add(child.material, 'metalness', -1.0, 1.0).listen();                
-                jabon.open();
+            child.material.lightMap=uvf
+            child.material.lightMapIntensity=0
+            child.material.envMapIntensity=1
+            child.material.refractionRatio=0.98         
+            child.material.roughness=0.96
+            child.material.metalness=0
+            return 
         }
         // 
         // 
@@ -303,6 +297,7 @@ export class House extends Mesh{
                 return     
         }
         if(child.name === "Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
+            child.position.z+=2
             child.material.lightMapIntensity=0
             child.material.envMapIntensity=1
             return    
@@ -396,15 +391,10 @@ export class House extends Mesh{
         if(child.name.includes("UVd")){
             
             if(child.name==="Mob_Base_Cocina_Alacenas_UVd_MT_Mob_Base_Cocina_Alacenas_UVd_0"){
-                var gui = new GUI();
-                var cam = gui.addFolder('cocina');
-                cam.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                cam.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();                
-                cam.open();
                 child.material.lightMap=uvd
-            child.material.lightMapIntensity=3.9
-            child.material.envMapIntensity=0.5
-            return 
+                child.material.lightMapIntensity=2.9
+                child.material.envMapIntensity=0.2
+                return 
             }
             child.material.lightMap=uvd
             child.material.lightMapIntensity=6
@@ -438,16 +428,6 @@ export class House extends Mesh{
             // console.log(uvf)            
             child.material.lightMapIntensity=6
             child.material.envMapIntensity=0
-            if(child.name==="Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
-                var wer = new GUI();
-                var objectsCocina = wer.addFolder('objetos');
-                objectsCocina.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                objectsCocina.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();                
-                objectsCocina.add(child.material, 'roughness', 0, 2).listen();                
-                objectsCocina.add(child.material, 'refractionRatio', 0, 2).listen();                
-                objectsCocina.add(child.material, 'metalness', 0, 2).listen();                
-                objectsCocina.open();
-            }
         }        
     }
 
