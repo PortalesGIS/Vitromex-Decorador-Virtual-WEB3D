@@ -1,7 +1,7 @@
 import {  Mesh, MeshStandardMaterial, RepeatWrapping, TextureLoader,  
     // MeshStandardMaterial,  RepeatWrapping,  TextureLoader
  } from "three";
-import { GUI } from "three/examples/jsm/libs/dat.gui.module";
+// import { GUI } from "three/examples/jsm/libs/dat.gui.module";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import Observer, { EVENTS } from "../Observer";
 // import Observer, { EVENTS } from "../Observer";
@@ -74,7 +74,8 @@ export class House extends Mesh{
                     }).then(textures=>{
                         textures[0].wrapS = RepeatWrapping;
                         textures[0].wrapT = RepeatWrapping;
-                        let dimenciones = productSelected.sized.split('X')
+                        let stringSized = (productSelected.sized).toLowerCase() 
+                        let dimenciones = stringSized.split('x')
                         const tailinW = parseInt(dimenciones[0])/100
                         const tailinH = parseInt(dimenciones[1])/100
                         textures[0].repeat.set(tailinW,tailinH);
@@ -84,8 +85,7 @@ export class House extends Mesh{
                                 color: 0x777777,
                                 lightMap:(typeOfAplication===1)?texturesLoades[0]:texturesLoades[1],
                                 map:textures[0],
-                                normalMap:[1],
-                                envMapIntensity:1,
+                                normalMap:textures[1],
                                 lightMapIntensity:4
                             })
                             Observer.emit(EVENTS.ENDCHARGINPRODUCT);
@@ -442,14 +442,6 @@ export class House extends Mesh{
                 break;
             case "comedor":
                 this.pisoComedor.material = materialUpdated
-                var qww = new GUI();
-                var asads = qww.addFolder('select');
-                asads.add(this.pisoComedor.material, 'lightMapIntensity', -2.0, 5.0).listen();
-                asads.add(this.pisoComedor.material, 'envMapIntensity', -2.0, 5.0).listen();
-                asads.add(this.pisoComedor.material, 'refractionRatio', -1.0, 1.0).listen();
-                asads.add(this.pisoComedor.material, 'roughness', -1.0, 1.0).listen();                
-                asads.add(this.pisoComedor.material, 'metalness', -1.0, 1.0).listen();                
-                asads.open();
                 break;
             case "cocina":
                 this.pisoCosina.material = materialUpdated
