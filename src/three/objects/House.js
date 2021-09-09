@@ -76,9 +76,11 @@ export class House extends Mesh{
                        textures[0].wrapT = RepeatWrapping;
                        let stringSized = (productSelected.sized).toLowerCase() 
                        let dimenciones = stringSized.split('x')
-                       const tailinW = parseInt(dimenciones[0])/100
-                       const tailinH = parseInt(dimenciones[1])/100
+                       const tailinW = (parseInt(dimenciones[0])*parseInt(productSelected.textureWidth))/100
+                       const tailinH = (parseInt(dimenciones[1])*parseInt(productSelected.textureHeight))/100
+                       console.log(`${dimenciones[0]} * ${productSelected.textureWidth} /100`)
                        textures[0].repeat.set(tailinW,tailinH);
+                       console.log(tailinW,tailinH)
                        Observer.emit(EVENTS.ENDCHARGINPRODUCT);
                        if(typeOfAplication===0){
                             console.log("aplicado a piso")
