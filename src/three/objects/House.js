@@ -51,10 +51,6 @@ export class House extends Mesh{
             loader.load('models3D/house-v1/light_maps/UV_d.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_e.jpg'),
             loader.load('models3D/house-v1/light_maps/UV_f.jpg'),
-            // loader.load('models3D/house-v1/texturesseparates/ad.png'),
-            // loader.load('models3D/house-v1/texturesseparates/MT_Amb_Base_General_PlantaPalmera_UVf_baseColor.jpeg'),
-            // loader.load('models3D/house-v1/texturesseparates/signal_hill_dawn_2k.jpg'),
-            // loader.load('models3D/house-v1/texturesseparates/MT_Amb_Base_General_PlantaChica_UVf_baseColor.png'),
         ],(resolve)=>{
                 resolve(textures)
             }).then(texturesLoades=>{
@@ -132,50 +128,7 @@ export class House extends Mesh{
         let uvd = texturesLoades[3]
         let uve = texturesLoades[4]
         let uvf = texturesLoades[5]
-        // let planta = texturesLoades[6]
-        // let palmera = texturesLoades[7]
-        // let cilindro = texturesLoades[8]
-        // let platnaChica = texturesLoades[9]
         // especiales
-        
-        // if(child.name === "Amb_Base_General_PlantaGrande_UVf_MT_Amb_Base_General_PlantaGrande_UVf_0"){
-        //     child.material.map = planta
-        //     child.material.lightMapIntensity=2
-        //     child.material.envMapIntensity=0
-        //     child.material.lightMap=uvf
-        //     return
-        // }
-        // if(child.name === "Amb_Base_General_PlantaChica_UVf_MT_Amb_Base_General_PlantaChica_UVf_0"){
-        //     child.material.map = platnaChica
-        //     child.material.lightMapIntensity=2
-        //     child.material.envMapIntensity=0
-        //     child.material.lightMap=uvf
-        //     return
-        // }
-        // if(child.name === "Amb_Base_General_PlantaPalmera_UVf_MT_Amb_Base_General_PlantaPalmera_UVf_0"){
-        //     child.material.map =  palmera
-        //     child.material.lightMapIntensity=2
-        //     child.material.envMapIntensity=0
-        //     child.material.lightMap=uvf
-        //     return
-        // }
-        // if(child.name === "Mod_Base_Skybox_MT_Mod_Base_Skybox_0"){
-        //     child.material.map=cilindro
-        //     child.material.emissiveIntensity=0.7
-        //     child.material.envMapIntensity=0
-        //     // var qweqweq = new GUI();
-        //     // var cilind = qweqweq.addFolder('cilind');
-        //     // cilind.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-        //     // cilind.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-        //     // cilind.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-        //     // cilind.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-        //     // cilind.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-        //     // cilind.add(child.material, 'roughness', -1.0, 1.0).listen();                
-        //     // cilind.add(child.material, 'metalness', -1.0, 1.0).listen();                
-        //     // cilind.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();               
-        //     // cilind.open();
-        //     return 
-        // }
 
         if(child.name === "Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0"){
             const materialWhitLigthmap = new MeshStandardMaterial({
