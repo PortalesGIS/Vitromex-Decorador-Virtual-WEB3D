@@ -92,7 +92,7 @@ export class App {
 				})
 		new RGBELoader(loaderManager)
 		.setDataType( UnsignedByteType )
-				.load( 'models3D/enviroment/small_harbor_02_1k.hdr',  ( texture ) => {
+				.load( 'models3D/enviroment/skyEnv.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 					if(!isDevice()){
 						this.scene.background = envMap;
@@ -101,19 +101,6 @@ export class App {
 				})
 			
 		// 
-		// this.cameraHelper = new CameraHelper(this.camera)
-		// this.scene.add(this.cameraHelper)
-
-		// Helpersss
-		// var gui = new GUI();
-		// var cam = gui.addFolder('Camera');
-		// cam.add(this.camera.position, 'y', -50.0, 50.0).listen();
-		// cam.add(this.camera.position, 'x', -50.0, 50.0).listen();
-		// cam.add(this.camera.position, 'z', -50.0, 50.0).listen();
-		// cam.add(this.camera.rotation, 'x', 0, 2).listen();
-		// cam.add(this.camera.rotation, 'y', 0, 2).listen();
-		// cam.add(this.camera.rotation, 'z', 0, 2).listen();
-		// cam.close();
 		this.stats = Stats()
 		document.body.appendChild(this.stats.dom)
 		// 
