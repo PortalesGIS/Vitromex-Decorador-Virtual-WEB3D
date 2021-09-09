@@ -1,7 +1,7 @@
 import {  Mesh, MeshStandardMaterial, RepeatWrapping, TextureLoader,  
     // MeshStandardMaterial,  RepeatWrapping,  TextureLoader
  } from "three";
-import { GUI } from "three/examples/jsm/libs/dat.gui.module";
+// import { GUI } from "three/examples/jsm/libs/dat.gui.module";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import Observer, { EVENTS } from "../Observer";
 // import Observer, { EVENTS } from "../Observer";
@@ -163,17 +163,17 @@ export class House extends Mesh{
             child.material.map=cilindro
             child.material.emissiveIntensity=0.7
             child.material.envMapIntensity=0
-            var qweqweq = new GUI();
-            var cilind = qweqweq.addFolder('cilind');
-            cilind.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-            cilind.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-            cilind.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-            cilind.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-            cilind.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-            cilind.add(child.material, 'roughness', -1.0, 1.0).listen();                
-            cilind.add(child.material, 'metalness', -1.0, 1.0).listen();                
-            cilind.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();               
-            cilind.open();
+            // var qweqweq = new GUI();
+            // var cilind = qweqweq.addFolder('cilind');
+            // cilind.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+            // cilind.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+            // cilind.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+            // cilind.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+            // cilind.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+            // cilind.add(child.material, 'roughness', -1.0, 1.0).listen();                
+            // cilind.add(child.material, 'metalness', -1.0, 1.0).listen();                
+            // cilind.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();               
+            // cilind.open();
             return 
         }
 
@@ -201,19 +201,19 @@ export class House extends Mesh{
             child.material.refractionRatio=0.98            
             child.material.roughness=0.7
             child.material.metalness=0
-            var ww = new GUI();
-            var macetas = ww.addFolder('macetas');
-            console.log(child)
-            macetas.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-            macetas.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-            macetas.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-            macetas.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-            macetas.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-            macetas.add(child.material, 'roughness', -1.0, 1.0).listen();                
-            macetas.add(child.material, 'metalness', -1.0, 1.0).listen();                
-            macetas.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-            macetas.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-            macetas.open();
+            // var ww = new GUI();
+            // var macetas = ww.addFolder('macetas');
+            // console.log(child)
+            // macetas.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+            // macetas.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+            // macetas.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+            // macetas.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+            // macetas.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+            // macetas.add(child.material, 'roughness', -1.0, 1.0).listen();                
+            // macetas.add(child.material, 'metalness', -1.0, 1.0).listen();                
+            // macetas.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+            // macetas.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+            // macetas.open();
             return 
         }
         if(child.name === "Amb_Base_Banio_Toallas_UVf_MT_Amb_Base_Banio_Toallas_UVf_0"){
@@ -385,14 +385,25 @@ export class House extends Mesh{
                     lightMapIntensity:6
                 })
                 child.material = materialWhitLigthmap
-                var asa = new GUI();
-                var paredCocicna = asa.addFolder('paredCocicna');
-                paredCocicna.add(child.material, 'lightMapIntensity', -2.0, 7.0).listen();
-                paredCocicna.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                paredCocicna.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                paredCocicna.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                paredCocicna.add(child.material, 'metalness', -1.0, 1.0).listen();            
-                paredCocicna.open();
+                // var asa = new GUI();
+                // var paredCocicna = asa.addFolder('paredCocicna');
+                // paredCocicna.add(child.material, 'lightMapIntensity', -2.0, 7.0).listen();
+                // paredCocicna.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+                // paredCocicna.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+                // paredCocicna.add(child.material, 'roughness', -1.0, 1.0).listen();                
+                // paredCocicna.add(child.material, 'metalness', -1.0, 1.0).listen();            
+                // paredCocicna.open();
+                return
+            }
+            if(child.name === "Muro_C_Ext_Patio_Atras_UVa_MT_Muro_C_Ext_Patio_Atras_UVa_0"){
+                const materialWhitLigthmap = new MeshStandardMaterial({
+                    color: 0x777777,
+                    envMapIntensity:0,
+                    lightMap:uva,                
+                    map:child.material.map,
+                    lightMapIntensity:6
+                })
+                child.material = materialWhitLigthmap
                 return
             }
                 const materialWhitLigthmap = new MeshStandardMaterial({
