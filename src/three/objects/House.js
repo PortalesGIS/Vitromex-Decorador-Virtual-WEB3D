@@ -72,19 +72,17 @@ export class House extends Mesh{
                        textures[0].wrapT = RepeatWrapping;
                        let stringSized = (productSelected.sized).toLowerCase() 
                        let dimenciones = stringSized.split('x')
-                       const tailinW = (parseInt(dimenciones[0])*parseInt(productSelected.textureWidth))/100
-                       const tailinH = (parseInt(dimenciones[1])*parseInt(productSelected.textureHeight))/100
-                       console.log(`${dimenciones[0]} * ${productSelected.textureWidth} /100`)
+                       const tailinW = 100/(parseInt(dimenciones[0])*parseInt(productSelected.textureWidth))
+                       const tailinH = 100/(parseInt(dimenciones[1])*parseInt(productSelected.textureHeight))
                        textures[0].repeat.set(tailinW,tailinH);
-                       console.log(tailinW,tailinH)
                        Observer.emit(EVENTS.ENDCHARGINPRODUCT);
                        if(typeOfAplication===0){
                             console.log("aplicado a piso")
-                            this.updatePisoMaterial(textures,areaSelected)
+                            this.updatePisoMaterial(textures,areaSelected,productSelected.roughness)
                         }
                         else{
                             console.log("aplicado a muro")
-                            this.updateMuroMaterial(textures,nameMuroAplication)
+                            this.updateMuroMaterial(textures,nameMuroAplication,productSelected.roughness)
                         }
                     })
                 })
@@ -268,6 +266,9 @@ export class House extends Mesh{
         if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
             child.material.lightMapIntensity=0
             child.material.envMapIntensity=1
+            console.log(child)
+            // child.layers.set(5)
+            // this.add(child)
                 return    
         }
         if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
@@ -338,14 +339,7 @@ export class House extends Mesh{
                     lightMapIntensity:6
                 })
                 child.material = materialWhitLigthmap
-                // var asa = new GUI();
-                // var paredCocicna = asa.addFolder('paredCocicna');
-                // paredCocicna.add(child.material, 'lightMapIntensity', -2.0, 7.0).listen();
-                // paredCocicna.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-                // paredCocicna.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-                // paredCocicna.add(child.material, 'roughness', -1.0, 1.0).listen();                
-                // paredCocicna.add(child.material, 'metalness', -1.0, 1.0).listen();            
-                // paredCocicna.open();
+                
                 return
             }
             if(child.name === "Muro_C_Ext_Patio_Atras_UVa_MT_Muro_C_Ext_Patio_Atras_UVa_0"){
@@ -463,7 +457,8 @@ export class House extends Mesh{
         }        
     }
 
-    updatePisoMaterial(materialUpdated,pisoSelected){
+    updatePisoMaterial(materialUpdated,pisoSelected,rougness){
+        console.log(rougness)
         switch (pisoSelected) {
             case "sala":
                 this.pisoSala.material.map = materialUpdated[0]

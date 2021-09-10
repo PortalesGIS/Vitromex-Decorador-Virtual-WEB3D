@@ -23,6 +23,8 @@ export class App {
 		
 		// ## Camera's config
 		this.camera = new PerspectiveCamera(80, this.container.clientWidth / this.container.clientHeight, 0.1, 10000);
+		this.camera.layers.enable(0)
+		// this.camera.layers.enable(5)
 		// initial test
 		// this.camera.position.set(123, 22,-60);
 		// this.camera.position.set(0,4,0);
@@ -85,6 +87,7 @@ export class App {
 				.setDataType( UnsignedByteType )
 				.load( 'models3D/enviroment/Enviroment_Interior.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
+					// this.scene.environment = envMap;
 					if(!isDevice()){
 						// this.scene.background = envMap;
 						this.scene.environment = envMap;
@@ -94,6 +97,7 @@ export class App {
 		.setDataType( UnsignedByteType )
 				.load( 'models3D/enviroment/skyEnv.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
+					// this.scene.background = envMap;
 					if(!isDevice()){
 						this.scene.background = envMap;
 						// this.scene.environment = envMap;
