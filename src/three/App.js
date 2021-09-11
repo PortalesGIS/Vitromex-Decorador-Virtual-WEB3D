@@ -95,7 +95,7 @@ export class App {
 				})
 		new RGBELoader(loaderManager)
 		.setDataType( UnsignedByteType )
-				.load( 'models3D/enviroment/skyEnv.hdr',  ( texture ) => {
+				.load( 'models3D/enviroment/envFinal.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 					// this.scene.background = envMap;
 					if(!isDevice()){

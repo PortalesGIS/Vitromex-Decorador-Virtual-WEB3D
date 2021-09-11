@@ -54,8 +54,6 @@ class Scene1 extends Scene {
 		// 
 		this.abientLight = new HemisphereLight(0xffffffbb, 0x080820,5)
 		this.light =  new DirectionalLight(0xffffff,5);
-		this.abientLight.layers.set(5)
-		this.light.layers.set(5)
 		// this.light.channel 
 		// this.add(	this.abientLight );
 		if(isDevice()){
