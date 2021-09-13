@@ -18,6 +18,7 @@ var mouse = new Vector2();
 class Scene1 extends Scene {
 	constructor(loaderManager,camera = PerspectiveCamera,control= OrbitControls){
 		super();
+		this.muroSelectedTemporal=''
 		this.loaderManager = loaderManager;
 		this.camera = camera;
 		this.control = control;
@@ -138,6 +139,7 @@ class Scene1 extends Scene {
 				
 			}
 			if(intersects[0].object.name.includes('Muro')){
+				this.muroSelectedTemporal=intersects[0].object.name
 				Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,1)
 				this.muroSelected = intersects[0].object.name
 				Observer.emit(EVENTS.SELECTMURO,intersects[0].object.name);	
@@ -164,7 +166,9 @@ class Scene1 extends Scene {
 				Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);
 				}
 				else{
-					intersects[0].object.material.opacity=0.5
+					if(this.muroSelectedTemporal !== intersects[0].object.name){
+						intersects[0].object.material.opacity=0.5
+					}
 				}
 			}
 		}

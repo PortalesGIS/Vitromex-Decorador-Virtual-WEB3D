@@ -57,7 +57,7 @@ export class House extends Mesh{
             }).then(texturesLoades=>{
                 
                 gltf.scene.traverse((child) =>{
-                    if (child.isMesh) {
+                    if (child.isMesh) {                        
                         this.putLigthMap(child,texturesLoades)
                     }
                 })

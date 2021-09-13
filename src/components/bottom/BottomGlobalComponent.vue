@@ -129,5 +129,7 @@ export default {
 </script>
 
 <style>
-
+.text-12{
+    font-size:10px
+}
 </style>

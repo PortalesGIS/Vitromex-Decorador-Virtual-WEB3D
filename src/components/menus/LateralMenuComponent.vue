@@ -15,7 +15,7 @@
               <AplicationsSelectedComponentVue/>
             <div class="pt-5 pb-4 px-2">
               <div class="w-full flex items-center justify-between px-2 bg-6a rounded-full">
-                <input type="text" class="bg-transparent h-9 focus:border-none text-title outline-none pl-2" placeholder="Buscar..."
+                <input type="text" class="bg-transparent h-9 w-full focus:border-none text-title outline-none pl-2" placeholder="Buscar..."
                 v-model="stringSearch"
              @input="chngeInput">
                <div v-if="getStringSerch===''" class="flex items-center">
@@ -92,6 +92,7 @@ export default {
     chngeInput(){
       this.filterProductsForString({word:this.stringSearch})
       this.filterSeriesForString({word:this.stringSearch})
+      this.deleteFilters()
     },
     onClearStringSearch(){
       this.stringSearch=""

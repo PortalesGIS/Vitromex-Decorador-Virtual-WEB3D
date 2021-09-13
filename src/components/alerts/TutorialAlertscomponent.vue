@@ -9,12 +9,12 @@
                 class="h-4 w-4 cursor-pointer" src="../../assets/web/Cerrar.svg" alt="">
               </div>
               <div class="py-2">
-                <p class="text-sm text-white monserrat">{{text[tutorialTextPage].parr}}</p>
+                <p class="text-sm text-white monserrat">{{text[tutorialTextPage].parr}} <br><br>{{text[tutorialTextPage].parrTW}} </p>
               </div>
               <div class="py-2 w-full flex justify-end">
                 <button 
                 @click="nextTutorialPage"
-                class="text-base text-white moserrat-bold py-2 focus:outline-none">{{tutorialTextPage===4?'ENTENDIDO':'SIGUIENTE'}}</button>
+                class="text-base noselect text-white moserrat-bold py-2 focus:outline-none">{{tutorialTextPage===4?'ENTENDIDO':'SIGUIENTE'}}</button>
               </div>
             </div>
           </div>
@@ -31,7 +31,8 @@ data() {
       text:[
           {
               title: "¿CÓMO ME DESPLAZO?",
-              parr:"Para desplazarte, posiciona el cursor sobre el piso y da clic en la dirección a la que deseas avanzar. Para girar haz clic sostenido sobre la pantalla y arrastra el cursor hacia la izquierda o derecha. ",
+              parr:"Para desplazarte, posiciona el cursor sobre el piso y da clic en la dirección a la que deseas avanzar. ",
+              parrTW:"Para girar haz clic sostenido sobre la pantalla y arrastra el cursor hacia la izquierda o derecha. ",
           },
           {
               title: "¿CÓMO DECORO EL PISO?",
@@ -72,5 +73,13 @@ data() {
 </script>
 
 <style>
-
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
 </style>
