@@ -6,7 +6,7 @@ import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import Stats from 'three/examples/jsm/libs/stats.module'
-import {isDevice} from '../../utils/isDevice'
+// import {isDevice} from '../../utils/isDevice'
 import Observer, { EVENTS } from './Observer';
 export class App {
 	constructor(container) {
@@ -84,15 +84,12 @@ export class App {
 		const pmremGenerator = new PMREMGenerator( this.renderer );
 		pmremGenerator.compileEquirectangularShader();
 		this.scene = new Scene1(loaderManager,this.camera,this.control,);
-		if(!isDevice()){
 		new RGBELoader(loaderManager)
 				.setDataType( UnsignedByteType )
 				.load( 'models3D/enviroment/Enviroment_Interior.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 						this.scene.environment = envMap;
 				})
-		}
-		// TODO: posible? subir el bloque de abajo para optimizar para dispositivos mobiles pero pierdes env
 		new RGBELoader(loaderManager)
 		.setDataType( UnsignedByteType )
 				.load( 'models3D/enviroment/envFinal.hdr',  ( texture ) => {

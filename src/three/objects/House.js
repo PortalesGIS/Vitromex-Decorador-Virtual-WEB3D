@@ -128,128 +128,128 @@ export class House extends Mesh{
         let uve = texturesLoades[4]
         let uvf = texturesLoades[5]
         // solo movil
-        if(this.ismobileDevice){
-            if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0x777777,
-                    lightMap:uvf,
-                    envMapIntensity:2,       
-                    map:child.material.map,
-                })
-                child.material = materialWhitLigthmap
-                return 
-            }
-            if(child.name === "Amb_Base_General_Jarrones_UVf_MT_Amb_Base_General_Jarrones_UVf_0"){
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0x777777,
-                    lightMap:uvf,       
-                    map:child.material.map,
-                })
-                child.material = materialWhitLigthmap
-                return 
-            }
-            if(child.name === "Amb_Base_Canceleria_UVc_MT_Amb_Base_Cocina_Campana_UVd_0"){
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0x777777,
-                    lightMap:uvc,      
-                    map:child.material.map,
-                })
-                child.material = materialWhitLigthmap
-                return 
-            }
-            if(child.name === "Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
-                child.position.z+=2
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0x777777,
-                    lightMap:uvf,      
-                    map:child.material.map,
-                })
-                child.material = materialWhitLigthmap
-                return 
-            }
-            if(child.name === "Mob_Base_Cocina_Refrigerador_UVd_MT_Mob_Base_Cocina_Refrigerador_UVd_0"){                
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0xffffff,
-                    lightMap:uvd,
-                    lightMapIntensity:20,      
-                    map:child.material.map,
-                })
-                child.material = materialWhitLigthmap
-                return 
-            }
-            if(child.name === "Mob_Base_Cocina_Fregaderoyestufa_UVd_Mob_Base_Cocina_Fregaderoyestufa_UVd_0"){                
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0xffffff,
-                    lightMap:uvd,
-                    lightMapIntensity:1,      
-                    map:child.material.map,
-                })
-                child.material = materialWhitLigthmap
-                return 
-            }
-            if(child.name === "Mob_Base_Cocina_Microondas_UVe_MT_Mob_Base_Cocina_Microondas_UVe_0"){                
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0xffffff,
-                    lightMap:uve,
-                    lightMapIntensity:1,      
-                    map:child.material.map,
-                })
-                child.material = materialWhitLigthmap
-                return 
-            }
-            if(child.name === "Amb_Base_Banio_Toallas_UVf_MT_Amb_Base_Banio_Toallas_UVf_0"){                
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0xffffff,
-                    lightMap:uvf,
-                    lightMapIntensity:2,      
-                    map:child.material.map,
-                })
-                child.material = materialWhitLigthmap
-                return 
-            }
-            if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){                
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0xffffff,
-                    lightMap:uvf,
-                    lightMapIntensity:2,      
-                    map:child.material.map,
-                })
-                child.material = materialWhitLigthmap
-                return 
-            }
-            if(child.name ==="Amb_Base_vidrioopaco_UVc_MT_Amb_Base_vidrioopaco_UVc_0"){                
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0xffffff,
-                    lightMap:uvc,
-                    lightMapIntensity:2,      
-                    map:child.material.map,
-                })
-                child.material = materialWhitLigthmap
-                return 
-            }
-            if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){                
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0xffffff,
-                    lightMap:uvf,
-                    lightMapIntensity:1,      
-                    map:child.material.map,
-                })
-                child.material = materialWhitLigthmap
-                return 
-            }
-            if(child.name === "Amb_Base_Banio_Jabon_UVf_Amb_Base_Banio_Jabon_UVf_0"){                
-                const materialWhitLigthmap = new MeshStandardMaterial({
-                    color: 0xffffff,
-                    lightMap:uvf,
-                    lightMapIntensity:1,      
-                    map:child.material.map,
-                })
-                child.material = materialWhitLigthmap
-                return 
-            }
+        // if(this.ismobileDevice){
+        //     if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0x777777,
+        //             lightMap:uvf,
+        //             envMapIntensity:2,       
+        //             map:child.material.map,
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        //     }
+        //     if(child.name === "Amb_Base_General_Jarrones_UVf_MT_Amb_Base_General_Jarrones_UVf_0"){
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0x777777,
+        //             lightMap:uvf,       
+        //             map:child.material.map,
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        //     }
+        //     if(child.name === "Amb_Base_Canceleria_UVc_MT_Amb_Base_Cocina_Campana_UVd_0"){
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0x777777,
+        //             lightMap:uvc,      
+        //             map:child.material.map,
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        //     }
+        //     if(child.name === "Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
+        //         child.position.z+=2
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0x777777,
+        //             lightMap:uvf,      
+        //             map:child.material.map,
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        //     }
+        //     if(child.name === "Mob_Base_Cocina_Refrigerador_UVd_MT_Mob_Base_Cocina_Refrigerador_UVd_0"){                
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0xffffff,
+        //             lightMap:uvd,
+        //             lightMapIntensity:20,      
+        //             map:child.material.map,
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        //     }
+        //     if(child.name === "Mob_Base_Cocina_Fregaderoyestufa_UVd_Mob_Base_Cocina_Fregaderoyestufa_UVd_0"){                
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0xffffff,
+        //             lightMap:uvd,
+        //             lightMapIntensity:1,      
+        //             map:child.material.map,
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        //     }
+        //     if(child.name === "Mob_Base_Cocina_Microondas_UVe_MT_Mob_Base_Cocina_Microondas_UVe_0"){                
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0xffffff,
+        //             lightMap:uve,
+        //             lightMapIntensity:1,      
+        //             map:child.material.map,
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        //     }
+        //     if(child.name === "Amb_Base_Banio_Toallas_UVf_MT_Amb_Base_Banio_Toallas_UVf_0"){                
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0xffffff,
+        //             lightMap:uvf,
+        //             lightMapIntensity:2,      
+        //             map:child.material.map,
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        //     }
+        //     if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){                
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0xffffff,
+        //             lightMap:uvf,
+        //             lightMapIntensity:2,      
+        //             map:child.material.map,
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        //     }
+        //     if(child.name ==="Amb_Base_vidrioopaco_UVc_MT_Amb_Base_vidrioopaco_UVc_0"){                
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0xffffff,
+        //             lightMap:uvc,
+        //             lightMapIntensity:2,      
+        //             map:child.material.map,
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        //     }
+        //     if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){                
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0xffffff,
+        //             lightMap:uvf,
+        //             lightMapIntensity:1,      
+        //             map:child.material.map,
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        //     }
+        //     if(child.name === "Amb_Base_Banio_Jabon_UVf_Amb_Base_Banio_Jabon_UVf_0"){                
+        //         const materialWhitLigthmap = new MeshStandardMaterial({
+        //             color: 0xffffff,
+        //             lightMap:uvf,
+        //             lightMapIntensity:1,      
+        //             map:child.material.map,
+        //         })
+        //         child.material = materialWhitLigthmap
+        //         return 
+        //     }
 
             
-        }
+        // }
         // 
         // especiales
         if(child.name === "Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0"){
