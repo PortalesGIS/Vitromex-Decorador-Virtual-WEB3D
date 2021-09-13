@@ -6,7 +6,7 @@ import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import Stats from 'three/examples/jsm/libs/stats.module'
-// import {isDevice} from '../../utils/isDevice'
+import {isDevice} from '../../utils/isDevice'
 import Observer, { EVENTS } from './Observer';
 export class App {
 	constructor(container) {
@@ -41,7 +41,12 @@ export class App {
 		this.control = new OrbitControls(this.camera, this.container);
 		this.control.target.set(this.camera.position.x/1.0001,this.camera.position.y/1.0001,this.camera.position.z/1.00001);
 		this.control.enableDamping=true
-		this.control.rotateSpeed=-0.2
+		if(isDevice()){
+			this.control.rotateSpeed=-0.4
+		}
+		else{
+			this.control.rotateSpeed=-0.2
+		}
 		this.control.enableZoom = false
 		// this.control.maxPolarAngle = 100 * Math.DEG2RAD
 		// this.control.minPolarAngle = 50 * Math.DEG2RAD

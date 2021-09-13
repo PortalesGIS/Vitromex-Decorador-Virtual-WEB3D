@@ -35,8 +35,11 @@ export const onChangeAplicationSelected=({commit},payload)=>{
 // }
 export const changeProductsAplicatesInAreas=({commit,getters},payload)=>{
     const updateObject = getters.getProductsAplicatesInAreas
+    const isFind = updateObject[payload.area].muros.find(product=>product.name === payload.product.name)
     if(payload.aplication===1){
-        updateObject[payload.area].muros=[...updateObject[payload.area].muros,payload.product]
+        if(!isFind){
+            updateObject[payload.area].muros=[...updateObject[payload.area].muros,payload.product]
+        }
     }
     else{
         updateObject[payload.area].piso = payload.product

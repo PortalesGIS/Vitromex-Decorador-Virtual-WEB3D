@@ -38,12 +38,12 @@
       "componentType": 5126,
       "count": 40,
       "max": [
-        1.5500003099441528,
-        2.1600000858306885
+        8.1078462600708,
+        8.1078462600708
       ],
       "min": [
-        -0.5500000715255737,
-        -1.159999966621399
+        -5.782761573791504,
+        -0.9933167695999146
       ],
       "type": "VEC2"
     },
@@ -321,12 +321,12 @@
       "componentType": 5126,
       "count": 43,
       "max": [
-        6.80207633972168,
-        1.6950011253356934
+        6.865096569061279,
+        0.0027947425842285156
       ],
       "min": [
-        -5.80207633972168,
-        -0.6950011253356934
+        -5.8650970458984375,
+        -2.4111075401306152
       ],
       "type": "VEC2"
     },
@@ -356,32 +356,32 @@
       "bufferView": 2,
       "byteOffset": 2832,
       "componentType": 5126,
-      "count": 25,
+      "count": 19,
       "max": [
         -0.09999847412109375,
-        5.84999942779541,
-        0.09505683183670044
+        1.9509663581848145,
+        0.09505614638328552
       ],
       "min": [
-        -8.39999771118164,
+        -5.603152751922607,
         -6.267001152038574,
-        0.09505540132522583
+        0.09505569934844971
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "byteOffset": 3132,
+      "byteOffset": 3060,
       "componentType": 5126,
-      "count": 25,
+      "count": 19,
       "max": [
-        6.705695341224782e-07,
-        7.419050263024474e-08,
+        6.705683404106821e-07,
+        7.336881679975704e-08,
         1.0
       ],
       "min": [
-        -1.310937420839764e-07,
-        -2.9747815233349684e-07,
+        -1.310937562948311e-07,
+        -2.1276418848970025e-08,
         1.0
       ],
       "type": "VEC3"
@@ -390,29 +390,29 @@
       "bufferView": 1,
       "byteOffset": 1888,
       "componentType": 5126,
-      "count": 25,
+      "count": 19,
       "max": [
-        2.504150867462158,
-        6.558501720428467
+        2.5124549865722656,
+        8.208812713623047
       ],
       "min": [
-        -5.795847415924072,
-        -5.55850076675415
+        -2.9907007217407227,
+        -0.009156227111816406
       ],
       "type": "VEC2"
     },
     {
       "bufferView": 1,
-      "byteOffset": 2088,
+      "byteOffset": 2040,
       "componentType": 5126,
-      "count": 25,
+      "count": 19,
       "max": [
-        0.7637894153594971,
+        0.7089351415634155,
         0.45267340540885925
       ],
       "min": [
         0.6012338399887085,
-        0.21594861149787903
+        0.2940726578235626
       ],
       "type": "VEC2"
     },
@@ -420,12 +420,12 @@
       "bufferView": 0,
       "byteOffset": 876,
       "componentType": 5125,
-      "count": 78,
+      "count": 60,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 3432,
+      "byteOffset": 3288,
       "componentType": 5126,
       "count": 28,
       "max": [
@@ -442,7 +442,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 3768,
+      "byteOffset": 3624,
       "componentType": 5126,
       "count": 28,
       "max": [
@@ -459,7 +459,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2288,
+      "byteOffset": 2192,
       "componentType": 5126,
       "count": 28,
       "max": [
@@ -474,7 +474,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2512,
+      "byteOffset": 2416,
       "componentType": 5126,
       "count": 28,
       "max": [
@@ -489,14 +489,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 1188,
+      "byteOffset": 1116,
       "componentType": 5125,
       "count": 48,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 4104,
+      "byteOffset": 3960,
       "componentType": 5126,
       "count": 15,
       "max": [
@@ -513,7 +513,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 4284,
+      "byteOffset": 4140,
       "componentType": 5126,
       "count": 15,
       "max": [
@@ -530,7 +530,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2736,
+      "byteOffset": 2640,
       "componentType": 5126,
       "count": 15,
       "max": [
@@ -545,7 +545,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2856,
+      "byteOffset": 2760,
       "componentType": 5126,
       "count": 15,
       "max": [
@@ -560,14 +560,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 1380,
+      "byteOffset": 1308,
       "componentType": 5125,
       "count": 48,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 4464,
+      "byteOffset": 4320,
       "componentType": 5126,
       "count": 26,
       "max": [
@@ -584,7 +584,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 4776,
+      "byteOffset": 4632,
       "componentType": 5126,
       "count": 26,
       "max": [
@@ -601,7 +601,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 2976,
+      "byteOffset": 2880,
       "componentType": 5126,
       "count": 26,
       "max": [
@@ -616,7 +616,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 3184,
+      "byteOffset": 3088,
       "componentType": 5126,
       "count": 26,
       "max": [
@@ -631,14 +631,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 1572,
+      "byteOffset": 1500,
       "componentType": 5125,
       "count": 48,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 5088,
+      "byteOffset": 4944,
       "componentType": 5126,
       "count": 24,
       "max": [
@@ -655,7 +655,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 5376,
+      "byteOffset": 5232,
       "componentType": 5126,
       "count": 24,
       "max": [
@@ -672,22 +672,22 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 3392,
+      "byteOffset": 3296,
       "componentType": 5126,
       "count": 24,
       "max": [
-        4.648500442504883,
-        3.241227149963379
+        8.909019470214844,
+        -1.1605700254440308
       ],
       "min": [
-        -3.648500919342041,
-        -2.241227149963379
+        -7.90902042388916,
+        -7.90902042388916
       ],
       "type": "VEC2"
     },
     {
       "bufferView": 1,
-      "byteOffset": 3584,
+      "byteOffset": 3488,
       "componentType": 5126,
       "count": 24,
       "max": [
@@ -702,14 +702,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 1764,
+      "byteOffset": 1692,
       "componentType": 5125,
       "count": 42,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 5664,
+      "byteOffset": 5520,
       "componentType": 5126,
       "count": 28,
       "max": [
@@ -726,7 +726,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 6000,
+      "byteOffset": 5856,
       "componentType": 5126,
       "count": 28,
       "max": [
@@ -743,7 +743,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 3776,
+      "byteOffset": 3680,
       "componentType": 5126,
       "count": 28,
       "max": [
@@ -758,7 +758,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 4000,
+      "byteOffset": 3904,
       "componentType": 5126,
       "count": 28,
       "max": [
@@ -773,14 +773,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 1932,
+      "byteOffset": 1860,
       "componentType": 5125,
       "count": 54,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 6336,
+      "byteOffset": 6192,
       "componentType": 5126,
       "count": 8,
       "max": [
@@ -797,7 +797,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 6432,
+      "byteOffset": 6288,
       "componentType": 5126,
       "count": 8,
       "max": [
@@ -814,7 +814,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 4224,
+      "byteOffset": 4128,
       "componentType": 5126,
       "count": 8,
       "max": [
@@ -829,7 +829,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 4288,
+      "byteOffset": 4192,
       "componentType": 5126,
       "count": 8,
       "max": [
@@ -844,14 +844,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 2148,
+      "byteOffset": 2076,
       "componentType": 5125,
       "count": 18,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 6528,
+      "byteOffset": 6384,
       "componentType": 5126,
       "count": 4,
       "max": [
@@ -868,7 +868,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 6576,
+      "byteOffset": 6432,
       "componentType": 5126,
       "count": 4,
       "max": [
@@ -885,22 +885,22 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 4352,
+      "byteOffset": 4256,
       "componentType": 5126,
       "count": 4,
       "max": [
-        2.253899097442627,
-        4.156693935394287
+        2.512455940246582,
+        8.207845687866211
       ],
       "min": [
-        0.40162599086761475,
-        3.061239242553711
+        -1.5625452995300293,
+        5.797844886779785
       ],
       "type": "VEC2"
     },
     {
       "bufferView": 1,
-      "byteOffset": 4384,
+      "byteOffset": 4288,
       "componentType": 5126,
       "count": 4,
       "max": [
@@ -915,14 +915,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 2220,
+      "byteOffset": 2148,
       "componentType": 5125,
       "count": 6,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 6624,
+      "byteOffset": 6480,
       "componentType": 5126,
       "count": 41,
       "max": [
@@ -939,7 +939,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 7116,
+      "byteOffset": 6972,
       "componentType": 5126,
       "count": 41,
       "max": [
@@ -956,7 +956,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 4416,
+      "byteOffset": 4320,
       "componentType": 5126,
       "count": 41,
       "max": [
@@ -971,7 +971,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 4744,
+      "byteOffset": 4648,
       "componentType": 5126,
       "count": 41,
       "max": [
@@ -986,14 +986,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 2244,
+      "byteOffset": 2172,
       "componentType": 5125,
       "count": 84,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 7608,
+      "byteOffset": 7464,
       "componentType": 5126,
       "count": 20,
       "max": [
@@ -1010,7 +1010,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 7848,
+      "byteOffset": 7704,
       "componentType": 5126,
       "count": 20,
       "max": [
@@ -1027,7 +1027,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 5072,
+      "byteOffset": 4976,
       "componentType": 5126,
       "count": 20,
       "max": [
@@ -1042,7 +1042,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 5232,
+      "byteOffset": 5136,
       "componentType": 5126,
       "count": 20,
       "max": [
@@ -1057,14 +1057,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 2580,
+      "byteOffset": 2508,
       "componentType": 5125,
       "count": 54,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 8088,
+      "byteOffset": 7944,
       "componentType": 5126,
       "count": 61,
       "max": [
@@ -1081,7 +1081,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 8820,
+      "byteOffset": 8676,
       "componentType": 5126,
       "count": 61,
       "max": [
@@ -1098,7 +1098,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 5392,
+      "byteOffset": 5296,
       "componentType": 5126,
       "count": 61,
       "max": [
@@ -1113,7 +1113,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 5880,
+      "byteOffset": 5784,
       "componentType": 5126,
       "count": 61,
       "max": [
@@ -1128,14 +1128,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 2796,
+      "byteOffset": 2724,
       "componentType": 5125,
       "count": 126,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 9552,
+      "byteOffset": 9408,
       "componentType": 5126,
       "count": 14,
       "max": [
@@ -1152,7 +1152,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 9720,
+      "byteOffset": 9576,
       "componentType": 5126,
       "count": 14,
       "max": [
@@ -1169,22 +1169,22 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 6368,
+      "byteOffset": 6272,
       "componentType": 5126,
       "count": 14,
       "max": [
-        0.875706672668457,
-        1.450588345527649
+        -2.9875435829162598,
+        8.909022331237793
       ],
       "min": [
-        -0.8757071495056152,
-        -1.450588345527649
+        -4.738957405090332,
+        6.007845401763916
       ],
       "type": "VEC2"
     },
     {
       "bufferView": 1,
-      "byteOffset": 6480,
+      "byteOffset": 6384,
       "componentType": 5126,
       "count": 14,
       "max": [
@@ -1199,14 +1199,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 3300,
+      "byteOffset": 3228,
       "componentType": 5125,
       "count": 24,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 9888,
+      "byteOffset": 9744,
       "componentType": 5126,
       "count": 36,
       "max": [
@@ -1223,7 +1223,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 10320,
+      "byteOffset": 10176,
       "componentType": 5126,
       "count": 36,
       "max": [
@@ -1240,7 +1240,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 6592,
+      "byteOffset": 6496,
       "componentType": 5126,
       "count": 36,
       "max": [
@@ -1255,7 +1255,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 6880,
+      "byteOffset": 6784,
       "componentType": 5126,
       "count": 36,
       "max": [
@@ -1270,14 +1270,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 3396,
+      "byteOffset": 3324,
       "componentType": 5125,
       "count": 60,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 10752,
+      "byteOffset": 10608,
       "componentType": 5126,
       "count": 44,
       "max": [
@@ -1294,7 +1294,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 11280,
+      "byteOffset": 11136,
       "componentType": 5126,
       "count": 44,
       "max": [
@@ -1311,7 +1311,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 7168,
+      "byteOffset": 7072,
       "componentType": 5126,
       "count": 44,
       "max": [
@@ -1326,7 +1326,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 7520,
+      "byteOffset": 7424,
       "componentType": 5126,
       "count": 44,
       "max": [
@@ -1341,19 +1341,19 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 3636,
+      "byteOffset": 3564,
       "componentType": 5125,
       "count": 84,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 11808,
+      "byteOffset": 11664,
       "componentType": 5126,
       "count": 10,
       "max": [
         4.195852279663086,
-        0.18836593627929688,
+        -0.02163219451904297,
         -0.08494383096694946
       ],
       "min": [
@@ -1365,39 +1365,39 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 11928,
+      "byteOffset": 11784,
       "componentType": 5126,
       "count": 10,
       "max": [
-        -1.3992687009078963e-08,
+        -1.3992688785435803e-08,
         0.0,
         1.0
       ],
       "min": [
         -6.874804370227139e-08,
-        -2.4245988328175372e-08,
+        -2.510379637499227e-08,
         1.0
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 1,
-      "byteOffset": 7872,
+      "byteOffset": 7776,
       "componentType": 5126,
       "count": 10,
       "max": [
-        6.800001621246338,
-        0.8968657851219177
+        6.808306694030762,
+        6.236212253570557
       ],
       "min": [
-        2.5011439323425293,
-        -5.558501720428467
+        2.509449005126953,
+        -0.009157180786132813
       ],
       "type": "VEC2"
     },
     {
       "bufferView": 1,
-      "byteOffset": 7952,
+      "byteOffset": 7856,
       "componentType": 5126,
       "count": 10,
       "max": [
@@ -1412,14 +1412,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 3972,
+      "byteOffset": 3900,
       "componentType": 5125,
       "count": 18,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 12048,
+      "byteOffset": 11904,
       "componentType": 5126,
       "count": 13,
       "max": [
@@ -1436,7 +1436,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 12204,
+      "byteOffset": 12060,
       "componentType": 5126,
       "count": 13,
       "max": [
@@ -1453,7 +1453,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 8032,
+      "byteOffset": 7936,
       "componentType": 5126,
       "count": 13,
       "max": [
@@ -1468,7 +1468,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 8136,
+      "byteOffset": 8040,
       "componentType": 5126,
       "count": 13,
       "max": [
@@ -1483,14 +1483,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 4044,
+      "byteOffset": 3972,
       "componentType": 5125,
       "count": 21,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 12360,
+      "byteOffset": 12216,
       "componentType": 5126,
       "count": 14,
       "max": [
@@ -1507,7 +1507,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 12528,
+      "byteOffset": 12384,
       "componentType": 5126,
       "count": 14,
       "max": [
@@ -1524,7 +1524,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 8240,
+      "byteOffset": 8144,
       "componentType": 5126,
       "count": 14,
       "max": [
@@ -1539,7 +1539,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 8352,
+      "byteOffset": 8256,
       "componentType": 5126,
       "count": 14,
       "max": [
@@ -1554,14 +1554,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 4128,
+      "byteOffset": 4056,
       "componentType": 5125,
       "count": 36,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 12696,
+      "byteOffset": 12552,
       "componentType": 5126,
       "count": 12,
       "max": [
@@ -1578,7 +1578,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 12840,
+      "byteOffset": 12696,
       "componentType": 5126,
       "count": 12,
       "max": [
@@ -1595,22 +1595,22 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 8464,
+      "byteOffset": 8368,
       "componentType": 5126,
       "count": 12,
       "max": [
-        6.799999713897705,
-        0.6399154663085938
+        6.791695594787598,
+        5.797845840454102
       ],
       "min": [
-        -5.800001621246338,
-        -5.558499813079834
+        -5.7916975021362305,
+        -0.9959259033203125
       ],
       "type": "VEC2"
     },
     {
       "bufferView": 1,
-      "byteOffset": 8560,
+      "byteOffset": 8464,
       "componentType": 5126,
       "count": 12,
       "max": [
@@ -1625,14 +1625,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 4272,
+      "byteOffset": 4200,
       "componentType": 5125,
       "count": 18,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 12984,
+      "byteOffset": 12840,
       "componentType": 5126,
       "count": 12,
       "max": [
@@ -1649,7 +1649,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 13128,
+      "byteOffset": 12984,
       "componentType": 5126,
       "count": 12,
       "max": [
@@ -1666,7 +1666,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 8656,
+      "byteOffset": 8560,
       "componentType": 5126,
       "count": 12,
       "max": [
@@ -1681,7 +1681,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 8752,
+      "byteOffset": 8656,
       "componentType": 5126,
       "count": 12,
       "max": [
@@ -1696,14 +1696,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 4344,
+      "byteOffset": 4272,
       "componentType": 5125,
       "count": 18,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 13272,
+      "byteOffset": 13128,
       "componentType": 5126,
       "count": 10,
       "max": [
@@ -1720,7 +1720,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 13392,
+      "byteOffset": 13248,
       "componentType": 5126,
       "count": 10,
       "max": [
@@ -1737,7 +1737,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 8848,
+      "byteOffset": 8752,
       "componentType": 5126,
       "count": 10,
       "max": [
@@ -1752,7 +1752,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 8928,
+      "byteOffset": 8832,
       "componentType": 5126,
       "count": 10,
       "max": [
@@ -1767,14 +1767,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 4416,
+      "byteOffset": 4344,
       "componentType": 5125,
       "count": 18,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 13512,
+      "byteOffset": 13368,
       "componentType": 5126,
       "count": 110,
       "max": [
@@ -1791,7 +1791,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 14832,
+      "byteOffset": 14688,
       "componentType": 5126,
       "count": 110,
       "max": [
@@ -1808,7 +1808,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 9008,
+      "byteOffset": 8912,
       "componentType": 5126,
       "count": 110,
       "max": [
@@ -1823,7 +1823,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 9888,
+      "byteOffset": 9792,
       "componentType": 5126,
       "count": 110,
       "max": [
@@ -1838,14 +1838,14 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 4488,
+      "byteOffset": 4416,
       "componentType": 5125,
       "count": 198,
       "type": "SCALAR"
     },
     {
       "bufferView": 2,
-      "byteOffset": 16152,
+      "byteOffset": 16008,
       "componentType": 5126,
       "count": 23,
       "max": [
@@ -1862,7 +1862,7 @@
     },
     {
       "bufferView": 2,
-      "byteOffset": 16428,
+      "byteOffset": 16284,
       "componentType": 5126,
       "count": 23,
       "max": [
@@ -1879,7 +1879,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 10768,
+      "byteOffset": 10672,
       "componentType": 5126,
       "count": 23,
       "max": [
@@ -1894,7 +1894,7 @@
     },
     {
       "bufferView": 1,
-      "byteOffset": 10952,
+      "byteOffset": 10856,
       "componentType": 5126,
       "count": 23,
       "max": [
@@ -1909,7 +1909,7 @@
     },
     {
       "bufferView": 0,
-      "byteOffset": 5280,
+      "byteOffset": 5208,
       "componentType": 5125,
       "count": 54,
       "type": "SCALAR"
@@ -1919,31 +1919,31 @@
     "extras": {
       "author": "Inmersys (https://sketchfab.com/inmersys)",
       "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
-      "source": "https://sketchfab.com/3d-models/fbx-hovers-d590072adb62485e82fd85ed1f411425",
-      "title": "Fbx Hovers"
+      "source": "https://sketchfab.com/3d-models/fbx-hovers-142ec0f57fef4f9398f5c98e8a034c49",
+      "title": "fbx_hovers"
     },
-    "generator": "Sketchfab-11.53.2",
+    "generator": "Sketchfab-11.65.0",
     "version": "2.0"
   },
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 5496,
+      "byteLength": 5424,
       "name": "floatBufferViews",
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteLength": 11136,
-      "byteOffset": 5496,
+      "byteLength": 11040,
+      "byteOffset": 5424,
       "byteStride": 8,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 16704,
-      "byteOffset": 16632,
+      "byteLength": 16560,
+      "byteOffset": 16464,
       "byteStride": 12,
       "name": "floatBufferViews",
       "target": 34962
@@ -1951,312 +1951,642 @@
   ],
   "buffers": [
     {
-      "byteLength": 33336,
+      "byteLength": 33024,
       "uri": "scene.bin"
     }
   ],
+  "extensionsRequired": [
+    "KHR_materials_pbrSpecularGlossiness"
+  ],
+  "extensionsUsed": [
+    "KHR_materials_pbrSpecularGlossiness"
+  ],
   "images": [
     {
-      "uri": "textures/Dots.png"
+      "uri": "textures/MT_Hover_Piso_C_Int_Banio2_UVb_diffuse.jpeg"
     }
   ],
   "materials": [
     {
       "doubleSided": true,
-      "name": "MT_Hover_Piso_C_Int_Banio2_UVb",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Piso_C_Int_Banio2_UVb"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Comedor_Front_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Comedor_Front_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Pasillo_Izq_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Pasillo_Izq_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Sala_Front_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Sala_Front_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Piso_C_Ext_Pasillo_UVb",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Piso_C_Ext_Pasillo_UVb"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Piso_C_Int_Comedor_UVb",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Piso_C_Int_Comedor_UVb"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Ext_Patio_Der_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Ext_Patio_Der_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Ext_Patio_Front_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Ext_Patio_Front_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Banio_Der_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Banio_Der_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Piso_C_Ext_Cochera_UVb",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Piso_C_Ext_Cochera_UVb"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Banio_Der2_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Banio_Der2_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Banio_Izq3_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Banio_Izq3_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Piso_C_Ext_Terraza_UVb",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Piso_C_Ext_Terraza_UVb"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Comedor_Atras_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Comedor_Atras_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Cocina_Izq_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Cocina_Izq_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Ext_Patio_Atras_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Ext_Patio_Atras_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Piso_C_Int_Banio_UVb",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Piso_C_Int_Banio_UVb"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Sala_Der_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Sala_Der_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Sala_Front2_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Sala_Front2_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Piso_C_Int_Sala_UVb",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Piso_C_Int_Sala_UVb"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Banio_Izq1_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Banio_Izq1_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Ext_Patio_Izq_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Ext_Patio_Izq_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Piso_C_Int_Cocina_UVb",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Piso_C_Int_Cocina_UVb"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Banio_Izq2_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Banio_Izq2_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Cocina_Der_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Cocina_Der_UVa"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Ext_Patio_Arriba",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Ext_Patio_Arriba"
     },
     {
       "doubleSided": true,
-      "name": "MT_Hover_Muro_C_Int_Cocina_Front_UVa",
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 0
-        },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.8929713596497552
-      }
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 0.1070286404,
+          "specularFactor": [
+            0.05,
+            0.05,
+            0.05
+          ]
+        }
+      },
+      "name": "MT_Hover_Muro_C_Int_Cocina_Front_UVa"
     }
   ],
   "meshes": [
@@ -2740,7 +3070,7 @@
         0.0,
         1.0
       ],
-      "name": "1df60fc6983042f18cccb635b2f0190e.fbx"
+      "name": "fe06fcbd176a4497b4347ad3b9d5761b.fbx"
     },
     {
       "children": [

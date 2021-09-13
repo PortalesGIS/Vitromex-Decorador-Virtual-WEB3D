@@ -28,7 +28,7 @@ export default createStore({
     menuCatalogo:false,
     isOpenfiltersWeb:false,
     filtersAplicates:[],
-    areaSelected:"sala",
+    areaSelected:"comedor",
     aplicationSelected:0,
     muroSelected:"",
     isLoadingProductToAplicate:false,
