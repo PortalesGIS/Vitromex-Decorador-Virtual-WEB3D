@@ -89,20 +89,16 @@ export class App {
 				.setDataType( UnsignedByteType )
 				.load( 'models3D/enviroment/Enviroment_Interior.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
-					// this.scene.environment = envMap;
-					
-						// this.scene.background = envMap;
 						this.scene.environment = envMap;
 				})
+		}
+		// TODO: posible? subir el bloque de abajo para optimizar para dispositivos mobiles pero pierdes env
 		new RGBELoader(loaderManager)
 		.setDataType( UnsignedByteType )
 				.load( 'models3D/enviroment/envFinal.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
-					// this.scene.background = envMap;
 						this.scene.background = envMap;
-						// this.scene.environment = envMap;
 			})
-		}
 		// 
 		this.stats = Stats()
 		document.body.appendChild(this.stats.dom)
