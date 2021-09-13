@@ -20,7 +20,7 @@ export class Hovers extends Mesh{
                         gltf.scene.traverse(function(child) {
                             if (child.isMesh) {
                                 const uploadMaterial = new MeshStandardMaterial({
-                                    map:textureMap,
+                                map:textureMap,
                                 envMapIntensity:4,
                                 lightMap:white,
                                 lightMapIntensity:20,
