@@ -1,4 +1,4 @@
-import {  AxesHelper, Color,  
+import {   Color,  
 	PerspectiveCamera,  Raycaster, Scene, Vector2 ,
 	// Math,
 
@@ -53,8 +53,6 @@ class Scene1 extends Scene {
 		// 
 		
 		// helpers
-		this.axesHelper = new AxesHelper(3);
-		this.add(this.axesHelper);
 		// 
 		Observer.emit(EVENTS.TEST,"hola estamos dentro del 3D");
 
