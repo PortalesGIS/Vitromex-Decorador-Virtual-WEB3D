@@ -12,6 +12,7 @@ import { TrakerMouse } from '../objects/MouseTraker';
 import Observer, { EVENTS } from '../Observer';
 import gsap from 'gsap/gsap-core';
 import { FalseLights } from '../objects/FalseLigth';
+import { isDevice } from '../../../utils/isDevice';
 var raycaster = new Raycaster();
 var mouse = new Vector2();
 class Scene1 extends Scene {
@@ -20,6 +21,7 @@ class Scene1 extends Scene {
 		this.loaderManager = loaderManager;
 		this.camera = camera;
 		this.control = control;
+		this.ismobileDevice = isDevice();
 		this.muroSelected=""
 		this.background = new Color("#00aae4").convertSRGBToLinear();
 		this.create();
@@ -154,7 +156,16 @@ class Scene1 extends Scene {
 			this.traker.position.set(intersects[0].point.x ,intersects[0].point.y+0.2,intersects[0].point.z)
 			}
 			if(intersects[0].object.name.includes('Muro')){
-				intersects[0].object.material.opacity=0.5
+				if(this.ismobileDevice){
+					intersects[0].object.material.opacity=1
+					Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,1)
+				this.muroSelected = intersects[0].object.name
+				Observer.emit(EVENTS.SELECTMURO,intersects[0].object.name);	
+				Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);
+				}
+				else{
+					intersects[0].object.material.opacity=0.5
+				}
 			}
 		}
 	}
