@@ -64,27 +64,41 @@ export class App {
 		
 		// raycaster
 		let drag = false;
-		this.container.onpointerdown = () => {
-			drag=true;
-		}		
-		this.container.onpointermove = (e)=>{
-			e.preventDefault();	
-			drag = false;
-			this.scene.onDocumentMouseMove(e.clientX, e.clientY, this.renderer, this.camera)
-			// TODO: accion pesada al sistema????
+
+		if(isDevice()){
+			this.container.addEventListener("touchstart",()=>{
+				drag=true;
+			})	
+			this.container.addEventListener("touchmove", (e)=>{
+				e.preventDefault();	
+				drag = false;
+				this.scene.onDocumentMouseMove(e.touches[0].clientX, e.touches[0].clientY, this.renderer, this.camera)
+				// TODO: accion pesada al sistema????
+			})
+			this.container.addEventListener("touchend", (e)=> {
+				e.preventDefault();
+				if(drag){
+					this.scene.onDocumentMouseDown(e.changedTouches[0].clientX, e.changedTouches[0].clientY, this.renderer, this.camera);
+				}				
+			})
 		}
-		this.container.onpointerup = (e)=> {
-			e.preventDefault();
-			if(drag){
-				this.scene.onDocumentMouseDown(e.clientX, e.clientY, this.renderer, this.camera);
-			}				
+		else { 
+			this.container.onpointerdown = () => {
+				drag=true;
+			}		
+			this.container.onpointermove = (e)=>{
+				e.preventDefault();	
+				drag = false;
+				this.scene.onDocumentMouseMove(e.clientX, e.clientY, this.renderer, this.camera)
+				// TODO: accion pesada al sistema????
+			}
+			this.container.onpointerup = (e)=> {
+				e.preventDefault();
+				if(drag){
+					this.scene.onDocumentMouseDown(e.clientX, e.clientY, this.renderer, this.camera);
+				}				
+			}
 		}
-		// document.querySelector("#scene").addEventListener("click",(e)=>{
-			// 	console.log("click dentro????????")
-			// 	console.log(e)
-			// })
-			// 
-		// 
 		
 		const pmremGenerator = new PMREMGenerator( this.renderer );
 		pmremGenerator.compileEquirectangularShader();
