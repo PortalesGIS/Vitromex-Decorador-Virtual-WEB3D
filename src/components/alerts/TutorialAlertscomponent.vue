@@ -47,7 +47,7 @@ data() {
           },
           {
               title: "¿En dónde consulto qué producto apliqué?",
-              parr:"En el menú derecho podrás ver los productos que están siendo aplicados en el muro o piso de la habitación en la que te encuentras",
+              parr:"En el menú derecho podrás ver los productos que están siendo aplicados en el muro o piso de la habitación en la que te encuentras.",
           }
       ]    
     }
@@ -58,6 +58,7 @@ data() {
       },
       close(){
           this.tutorialText=false;
+           this.tutorialTextPage=0
       },
     nextTutorialPage(){
        this.tutorialTextPage +=1 

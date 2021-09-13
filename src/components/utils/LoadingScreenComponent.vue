@@ -26,10 +26,8 @@
                 </div>
             <div class="text-title w-80 text-center pt-2 text-white text-monserrat text-xl">
                 <p
-                >Cargando...{{progress}}</p>
-                <p 
-                class="text-sm"
-                >{{nameFile}}</p>
+                >{{Math.round(progress)}}%</p>
+                
             </div>
             </div>
             
