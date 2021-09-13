@@ -80,30 +80,29 @@ export class App {
 			// })
 			// 
 		// 
+		
 		const pmremGenerator = new PMREMGenerator( this.renderer );
 		pmremGenerator.compileEquirectangularShader();
 		this.scene = new Scene1(loaderManager,this.camera,this.control,);
+		if(!isDevice()){
 		new RGBELoader(loaderManager)
 				.setDataType( UnsignedByteType )
 				.load( 'models3D/enviroment/Enviroment_Interior.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 					// this.scene.environment = envMap;
-					if(!isDevice()){
+					
 						// this.scene.background = envMap;
 						this.scene.environment = envMap;
-					}
 				})
 		new RGBELoader(loaderManager)
 		.setDataType( UnsignedByteType )
 				.load( 'models3D/enviroment/envFinal.hdr',  ( texture ) => {
 					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 					// this.scene.background = envMap;
-					if(!isDevice()){
 						this.scene.background = envMap;
 						// this.scene.environment = envMap;
-					}
-				})
-			
+			})
+		}
 		// 
 		this.stats = Stats()
 		document.body.appendChild(this.stats.dom)

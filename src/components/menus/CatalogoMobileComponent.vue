@@ -113,7 +113,7 @@ import FiltersMobileComponentVue from './FiltersMobileComponent.vue'
 export default {
   components: {
     FiltersMobileComponentVue,
-      MenuSelectedComponentVue,
+    MenuSelectedComponentVue,
     ProductComponentVue,
     SerieCardsVue,
     AplicationsSelectedComponentVue

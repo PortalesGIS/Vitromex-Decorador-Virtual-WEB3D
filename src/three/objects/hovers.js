@@ -1,4 +1,4 @@
-import {  Mesh, RepeatWrapping, TextureLoader,
+import {  Mesh, MeshStandardMaterial, RepeatWrapping, TextureLoader,
     // MeshStandardMaterial,  RepeatWrapping,  TextureLoader
  } from "three";
 // import { GUI } from "three/examples/jsm/libs/dat.gui.module";
@@ -13,20 +13,27 @@ export class Hovers extends Mesh{
         loader.load('models3D/hovers/scene.gltf',(gltf)=>{
             let mapDB =   new TextureLoader();
              mapDB.load('models3D/hovers/textures/Dots.png',(textureMap)=>{
-                textureMap.wrapS = RepeatWrapping;
+                mapDB.load("models3D/house-v1/light_maps/UV_a.jpg",(white)=>{
+                    textureMap.wrapS = RepeatWrapping;
                 textureMap.wrapT = RepeatWrapping;
                 textureMap.repeat.set(1,1 );
                         gltf.scene.traverse(function(child) {
                             if (child.isMesh) {
-                                child.material.map=textureMap
-                                child.material.envMapIntensity=4,
-                                child.material.opacity=0.003,
-                                child.material.transparent=true,
+                                const uploadMaterial = new MeshStandardMaterial({
+                                    map:textureMap,
+                                envMapIntensity:4,
+                                lightMap:white,
+                                lightMapIntensity:20,
+                                opacity:0.003,
+                                transparent:true,
+                                })
+                                child.material= uploadMaterial  
                                 child.renderOrder =-1
                 //   if(child.name.includes("Hover_Muro"))
                 //   console.log(child.name)
             }
         })  
+                })
     })
             Observer.on(EVENTS.CLEARHOVER, (nameSelected) => {
                 gltf.scene.traverse(function(child) {

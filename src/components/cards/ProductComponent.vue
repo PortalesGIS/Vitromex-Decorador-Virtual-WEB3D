@@ -54,8 +54,9 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["changeProductsAplicatesInAreas","changeisLoadingProductToAplicate","addPointToClickProduct"]),
+    ...mapActions(["changeMenuCatalogo","changeProductsAplicatesInAreas","changeisLoadingProductToAplicate","addPointToClickProduct"]),
     selectProductForMap(product) {
+      this.changeMenuCatalogo();
       this.addPointToClickProduct(product._id)
       Observer.emit(EVENTS.SENDPRODUCT, product,this.getAreaSelected,this.getAplicationSeletec,this.getMuroAplication);
       this.changeisLoadingProductToAplicate(true)

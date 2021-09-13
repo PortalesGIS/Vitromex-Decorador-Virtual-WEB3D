@@ -1,4 +1,4 @@
-import {  AxesHelper, Color,  DirectionalLight, HemisphereLight, 
+import {  AxesHelper, Color,  
 	PerspectiveCamera,  Raycaster, Scene, Vector2 ,
 	// Math,
 
@@ -10,7 +10,6 @@ import { Hovers } from '../objects/hovers';
 import { TrakerMouse } from '../objects/MouseTraker';
 // import { PlaneTest } from '../objects/PlaneTest';
 import Observer, { EVENTS } from '../Observer';
-import {isDevice} from '../../../utils/isDevice'
 import gsap from 'gsap/gsap-core';
 import { FalseLights } from '../objects/FalseLigth';
 var raycaster = new Raycaster();
@@ -52,14 +51,7 @@ class Scene1 extends Scene {
 		
 		// 
 		// 
-		this.abientLight = new HemisphereLight(0xffffffbb, 0x080820,5)
-		this.light =  new DirectionalLight(0xffffff,5);
-		// this.light.channel 
-		// this.add(	this.abientLight );
-		if(isDevice()){
-			this.add(	this.abientLight );
-			this.add(this.light)
-		}
+		
 		// helpers
 		this.axesHelper = new AxesHelper(3);
 		this.add(this.axesHelper);
@@ -78,7 +70,7 @@ class Scene1 extends Scene {
 		mouse.x = ( clientX / renderer.domElement.clientWidth ) * 2 - 1;
 		mouse.y = - ( clientY / renderer.domElement.clientHeight ) * 2 + 1;
 		raycaster.setFromCamera( mouse,camera );
-		let intersects = raycaster.intersectObjects( this.children[2].children,true); 
+		let intersects = raycaster.intersectObjects(this.children[2].children,true); 
 		// console.log(intersects)
 		if ( intersects.length > 0 ) {
 			// if(intersects[0].object.callback){
