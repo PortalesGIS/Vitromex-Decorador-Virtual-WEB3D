@@ -92,7 +92,6 @@ export default {
     chngeInput(){
       this.filterProductsForString({word:this.stringSearch})
       this.filterSeriesForString({word:this.stringSearch})
-      this.deleteFilters()
     },
     onClearStringSearch(){
       this.stringSearch=""

@@ -63,6 +63,7 @@ export default {
       // funcion de abajo para mandar al producto para mostrar en el menu izquierdo :solo desk
       if(this.getAplicationSeletec===1){
         this.changeProductsAplicatesInAreas({
+          nameMuro: this.getMuroAplication,
           area:this.getAreaToAplicateProduct(this.getMuroAplication),
           aplication:this.getAplicationSeletec,
           product:product

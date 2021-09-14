@@ -9,7 +9,7 @@
                 class="h-4 w-4 cursor-pointer" src="../../assets/web/Cerrar.svg" alt="">
               </div>
               <div class="py-2">
-                <p class="text-sm text-white monserrat">{{text[tutorialTextPage].parr}} <br><br>{{text[tutorialTextPage].parrTW}} </p>
+                <p class="text-sm text-white monserrat">{{text[tutorialTextPage].parr}} <br>{{text[tutorialTextPage].parrTW}} </p>
               </div>
               <div class="py-2 w-full flex justify-end">
                 <button 

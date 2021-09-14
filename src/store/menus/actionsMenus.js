@@ -35,10 +35,23 @@ export const onChangeAplicationSelected=({commit},payload)=>{
 // }
 export const changeProductsAplicatesInAreas=({commit,getters},payload)=>{
     const updateObject = getters.getProductsAplicatesInAreas
-    const isFind = updateObject[payload.area].muros.find(product=>product.name === payload.product.name)
+    const isFind = updateObject[payload.area].muros.find(product=>product.nameMuro === payload.nameMuro)
     if(payload.aplication===1){
         if(!isFind){
-            updateObject[payload.area].muros=[...updateObject[payload.area].muros,payload.product]
+            updateObject[payload.area].muros=[...updateObject[payload.area].muros,{...payload.product,nameMuro:payload.nameMuro}]
+        }
+        else{
+            let arrayUpdated =[]
+            updateObject[payload.area].muros.forEach(product=>{
+                if(product.nameMuro === payload.nameMuro){
+                    
+                    arrayUpdated.push({...payload.product,nameMuro:payload.nameMuro})
+                }
+                else{
+                    arrayUpdated.push(product)
+                }
+            })
+            updateObject[payload.area].muros=arrayUpdated
         }
     }
     else{

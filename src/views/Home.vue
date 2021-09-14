@@ -1,7 +1,7 @@
 <template>
 
-<!-- <div :class="getPageState?'theme-arko':''" class=""> -->
-  <div>
+<!-- < div :class="getPageState?'theme-arko':''" class=""> -->
+  <div class="noselect">
   <LoadingScreenComponentVue/>  
   <div class="h-screen w-screen">
     <div class="fixed z-50">
@@ -80,3 +80,14 @@ export default {
     
 }
 </script>
+<style >
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+</style>
