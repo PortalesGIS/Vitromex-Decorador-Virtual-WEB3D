@@ -222,6 +222,16 @@ export class House extends Mesh{
         // 
         // solo movil
         // if(this.ismobileDevice){
+            if(child.name === "Amb_Base_vidriotransparente_UVc_MT_Amb_Base_vidriotransparente_UVc_0"){
+                // child.material.envMap =  this.envMap
+                child.material.opacity = 0.2
+                child.material.rougness = 1
+                child.material.metalness=1
+                child.material.envMapIntensity=1
+                child.material.side=0
+                console.log(child.material)
+                return 
+            }
             if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
                 child.material.envMap =  this.envMap
                 return 
