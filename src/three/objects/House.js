@@ -2,7 +2,7 @@ import {  Mesh, MeshStandardMaterial, PMREMGenerator,UnsignedByteType, RepeatWra
     // MeshStandardMaterial,  RepeatWrapping,  TextureLoader
  } from "three";
  import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
-import { GUI } from "three/examples/jsm/libs/dat.gui.module";
+// import { GUI } from "three/examples/jsm/libs/dat.gui.module";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { isDevice } from "../../../utils/isDevice";
 import Observer, { EVENTS } from "../Observer";
@@ -143,81 +143,81 @@ export class House extends Mesh{
         let uvf = texturesLoades[5]
 
         // helpers
-        if(child.name === "Amb_Base_Cocina_frascos_UVf_Amb_Base_Cocina_frascos_UVf_0"){
-            child.material.envMap =  this.envMap
-            var ww = new GUI();
-            var macetas = ww.addFolder('vidrio limon');
-            console.log(child)
-            macetas.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-            macetas.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-            macetas.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-            macetas.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-            macetas.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-            macetas.add(child.material, 'roughness', -1.0, 1.0).listen();                
-            macetas.add(child.material, 'metalness', -1.0, 1.0).listen();                
-            macetas.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-            macetas.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-            macetas.open();
-        }
-        if(child.name === "Amb_Base_Cocina_Olla_UVf_Amb_Base_Cocina_Olla_UVf_0"){
-            var ss = new GUI();
-            var asdadsasdasd = ss.addFolder('Olla');
-            asdadsasdasd.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-            asdadsasdasd.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-            asdadsasdasd.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-            asdadsasdasd.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-            asdadsasdasd.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-            asdadsasdasd.add(child.material, 'roughness', -1.0, 1.0).listen();                
-            asdadsasdasd.add(child.material, 'metalness', -1.0, 1.0).listen();                
-            asdadsasdasd.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-            asdadsasdasd.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-            asdadsasdasd.open();
-        }
-        if(child.name === "Mob_Base_Cocina_Lamparas_UVe_MT_Mob_Base_Cocina_Lamparas_UVe_0"){
-            var ass = new GUI();
-            var yuiop = ass.addFolder('vidrio limon');
-            console.log(child)
-            yuiop.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-            yuiop.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-            yuiop.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-            yuiop.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-            yuiop.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-            yuiop.add(child.material, 'roughness', -1.0, 1.0).listen();                
-            yuiop.add(child.material, 'metalness', -1.0, 1.0).listen();                
-            yuiop.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-            yuiop.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-            yuiop.open();
-        }
-        if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
-            var fffff = new GUI();
-            var tyuiog = fffff.addFolder('vidrio limon');
-            console.log(child)
-            tyuiog.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-            tyuiog.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-            tyuiog.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-            tyuiog.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-            tyuiog.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-            tyuiog.add(child.material, 'roughness', -1.0, 1.0).listen();                
-            tyuiog.add(child.material, 'metalness', -1.0, 1.0).listen();                
-            tyuiog.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-            tyuiog.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-            tyuiog.open();
-        }
-        if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
-            var ghghgh = new GUI();
-            var werfgvj = ghghgh.addFolder('vidrio limon');
-            console.log(child)
-            werfgvj.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-            werfgvj.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-            werfgvj.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-            werfgvj.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-            werfgvj.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-            werfgvj.add(child.material, 'roughness', -1.0, 1.0).listen();                
-            werfgvj.add(child.material, 'metalness', -1.0, 1.0).listen();                
-            werfgvj.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-            werfgvj.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-            werfgvj.open();
-        }
+        // if(child.name === "Amb_Base_Cocina_frascos_UVf_Amb_Base_Cocina_frascos_UVf_0"){
+        //     child.material.envMap =  this.envMap
+        //     var ww = new GUI();
+        //     var macetas = ww.addFolder('vidrio limon');
+        //     console.log(child)
+        //     macetas.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+        //     macetas.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+        //     macetas.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+        //     macetas.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+        //     macetas.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+        //     macetas.add(child.material, 'roughness', -1.0, 1.0).listen();                
+        //     macetas.add(child.material, 'metalness', -1.0, 1.0).listen();                
+        //     macetas.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+        //     macetas.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+        //     macetas.open();
+        // }
+        // if(child.name === "Amb_Base_Cocina_Olla_UVf_Amb_Base_Cocina_Olla_UVf_0"){
+        //     var ss = new GUI();
+        //     var asdadsasdasd = ss.addFolder('Olla');
+        //     asdadsasdasd.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+        //     asdadsasdasd.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+        //     asdadsasdasd.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+        //     asdadsasdasd.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+        //     asdadsasdasd.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+        //     asdadsasdasd.add(child.material, 'roughness', -1.0, 1.0).listen();                
+        //     asdadsasdasd.add(child.material, 'metalness', -1.0, 1.0).listen();                
+        //     asdadsasdasd.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+        //     asdadsasdasd.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+        //     asdadsasdasd.open();
+        // }
+        // if(child.name === "Mob_Base_Cocina_Lamparas_UVe_MT_Mob_Base_Cocina_Lamparas_UVe_0"){
+        //     var ass = new GUI();
+        //     var yuiop = ass.addFolder('vidrio limon');
+        //     console.log(child)
+        //     yuiop.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+        //     yuiop.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+        //     yuiop.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+        //     yuiop.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+        //     yuiop.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+        //     yuiop.add(child.material, 'roughness', -1.0, 1.0).listen();                
+        //     yuiop.add(child.material, 'metalness', -1.0, 1.0).listen();                
+        //     yuiop.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+        //     yuiop.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+        //     yuiop.open();
+        // }
+        // if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
+        //     var fffff = new GUI();
+        //     var tyuiog = fffff.addFolder('vidrio limon');
+        //     console.log(child)
+        //     tyuiog.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+        //     tyuiog.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+        //     tyuiog.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+        //     tyuiog.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+        //     tyuiog.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+        //     tyuiog.add(child.material, 'roughness', -1.0, 1.0).listen();                
+        //     tyuiog.add(child.material, 'metalness', -1.0, 1.0).listen();                
+        //     tyuiog.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+        //     tyuiog.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+        //     tyuiog.open();
+        // }
+        // if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
+        //     var ghghgh = new GUI();
+        //     var werfgvj = ghghgh.addFolder('vidrio limon');
+        //     console.log(child)
+        //     werfgvj.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+        //     werfgvj.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+        //     werfgvj.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+        //     werfgvj.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+        //     werfgvj.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+        //     werfgvj.add(child.material, 'roughness', -1.0, 1.0).listen();                
+        //     werfgvj.add(child.material, 'metalness', -1.0, 1.0).listen();                
+        //     werfgvj.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+        //     werfgvj.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+        //     werfgvj.open();
+        // }
 
         // 
         // solo movil

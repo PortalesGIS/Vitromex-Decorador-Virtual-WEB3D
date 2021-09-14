@@ -33,12 +33,12 @@ class Scene1 extends Scene {
 	this.background = new CubeTextureLoader(this.loaderManager)
 		.setPath( 'models3D/enviroment/' )
 		.load( [
-			'px.jpg',
-			'nx.jpg',
-			'py.jpg',
-			'ny.jpg',
-			'pz.jpg',
-			'nx.jpg',
+			'+X.jpg',
+			'-X.jpg',
+			'+Y.jpg',
+			'-Y.jpg',
+			'+Z.jpg',
+			'-Z.jpg',
 		] );
 		// 
 		this.traker = new TrakerMouse()
