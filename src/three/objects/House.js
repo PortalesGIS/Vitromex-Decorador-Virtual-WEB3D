@@ -229,14 +229,22 @@ export class House extends Mesh{
                 child.material.metalness=1
                 child.material.envMapIntensity=1
                 child.material.side=0
-                console.log(child.material)
                 return 
             }
             if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
                 child.material.envMap =  this.envMap
                 return 
             }
-            if(child.name === "Amb_Base_General_Jarrones_UVf_MT_Amb_Base_General_Jarrones_UVf_0"){
+            if(child.name === "Amb_Base_Cocina_frascos_UVf_Amb_Base_Cocina_frascos_UVf_0"){
+                child.material.envMap =  this.envMap
+                child.material.metalness=-0.24
+                child.material.rougness = 1
+                child.material.refractionRatio = 1
+                child.material.opacity = 0.3
+                child.material.envMapIntensity=0.4
+                return 
+            }
+            if(child.name === "Amb_Base_General_Jarrones_UVf_MT_Amb_Base_General_Jarrones_UVf_0"){                
                 child.material.envMap =  this.envMap
                 return 
             }
