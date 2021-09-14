@@ -1,118 +1,130 @@
-import {  Mesh, MeshStandardMaterial, RepeatWrapping, TextureLoader,  
+import {  Mesh, MeshStandardMaterial, PMREMGenerator,UnsignedByteType, RepeatWrapping, TextureLoader,  
     // MeshStandardMaterial,  RepeatWrapping,  TextureLoader
  } from "three";
-// import { GUI } from "three/examples/jsm/libs/dat.gui.module";
+ import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
+import { GUI } from "three/examples/jsm/libs/dat.gui.module";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { isDevice } from "../../../utils/isDevice";
 import Observer, { EVENTS } from "../Observer";
 // import Observer, { EVENTS } from "../Observer";
 export class House extends Mesh{
 
-    constructor(loaderManager,envMap){
+    constructor(loaderManager,renderer){
         super();
-        this.envMap =envMap
+        this.renderer =renderer
         this.ismobileDevice= isDevice();
         let loader = new GLTFLoader(loaderManager); 
-        loader.load('models3D/house-v1/scene.gltf',(gltf)=>{
-            // this.liquid = gltf.scene.children[0].getObjectByName('Liquid_Beer_Liquid_0');
-            this.add(gltf.scene); 
-            // console.log(console.log( gltf.scene.children[0].getObjectByName('Piso_C_Int_Sala_UVb')))
-            this.pisoSala = gltf.scene.children[0].getObjectByName('Piso_C_Int_Sala_UVb_MT_Piso_C_Int_Sala_UVb_0')
-            this.pisoCosina = gltf.scene.children[0].getObjectByName("Piso_C_Int_Cocina_UVb_MT_Piso_C_Int_Cocina_UVb_0")
-            this.pisoComedor = gltf.scene.children[0].getObjectByName("Piso_C_Int_Comedor_UVb_MT_Piso_C_Int_Comedor_UVb_0")
-            this.pisoFachada =  gltf.scene.children[0].getObjectByName("Piso_C_Ext_Cochera_UVb_MT_Piso_C_Ext_Cochera_UVb_0")
-            this.pisoPasillo = gltf.scene.children[0].getObjectByName("Piso_C_Ext_Pasillo_UVb_MT_Piso_C_Ext_Pasillo_UVb_0")
-            this.pisoBanio = gltf.scene.children[0].getObjectByName("Piso_C_Int_Banio_UVb_MT_Piso_C_Int_Banio_UVb_0")
-            // muros "Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0"
-            this.muroComedorA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Comedor_Atras_UVa_MT_Muro_Base_General_UVa_0")
-            this.muroComedorB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0")
-            this.muroSalaA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Sala_Front2_UVa_MT_Losa_Base_Int_General_UVb_0")
-            this.muroSalaB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Sala_Der_UVa_MT_Muro_C_Int_Sala_Der_UVa_0")
-            this.muroSalaC =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Sala_Front_UVa_MT_Muro_C_Int_Sala_Front_UVa_0")
-            this.muroFachadaA =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Arriba_UVa_MT_Muro_C_Ext_Patio_Arriba_UVa_0")
-            this.muroFachadaB =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Front_UVa_MT_Muro_C_Ext_Patio_Front_UVa_0")
-            this.muroFachadaC =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Izq_UVa_MT_Muro_C_Ext_Patio_Izq_UVa_0")
-            this.muroFachadaD =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Atras_UVa_MT_Muro_C_Ext_Patio_Atras_UVa_0")
-            this.muroFachadaE =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Der_UVa_MT_Muro_C_Ext_Patio_Der_UVa_0")
-            this.muroCocinaA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Cocina_Izq_UVa_MT_Muro_C_Int_Cocina_Izq_UVa_0")
-            this.muroCocinaB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Cocina_Front_UVa_MT_Muro_C_Int_Cocina_Front_UVa_0")
-            this.muroCocinaC =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Cocina_Der_UVa_MT_Muro_C_Int_Cocina_Der_UVa_0")
-            this.muroCocinaD =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Pasillo_Izq_UVa_MT_Muro_C_Int_Pasillo_Izq_UVa_0")
-            this.muroBanioA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Izq2_UVa_MT_Muro_C_Int_Banio_Izq2_UVa_0")
-            this.muroBanioB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Izq1_UVa_MT_Muro_C_Int_Banio_Izq1_UVa_0")
-            this.muroBanioC =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Izq3_UVa_MT_Muro_C_Int_Banio_Izq3_UVa_0")
-            this.muroBanioD =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Der2_UVa_MT_Muro_C_Int_Banio_Der2_UVa_0")
-            this.muroBanioE =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Der_UVa_MT_Muro_C_Int_Banio_Der_UVa_0")
 
-            // 
-            // 
-            let loader =   new TextureLoader(loaderManager);
-            const textures = Promise.all([
-            loader.load('models3D/house-v1/light_maps/UV_a.jpg'),
-            loader.load('models3D/house-v1/light_maps/UV_b.jpg'),
-            loader.load('models3D/house-v1/light_maps/UV_c.jpg'),
-            loader.load('models3D/house-v1/light_maps/UV_d.jpg'),
-            loader.load('models3D/house-v1/light_maps/UV_e.jpg'),
-            loader.load('models3D/house-v1/light_maps/UV_f.jpg'),
-        ],(resolve)=>{
-                resolve(textures)
-            }).then(texturesLoades=>{
-                
-                gltf.scene.traverse((child) =>{
-                    if (child.isMesh) {                        
-                        this.putLigthMap(child,texturesLoades)
-                    }
-                })
-                Observer.on(EVENTS.SENDPRODUCT,(productSelected,areaSelected,typeOfAplication,nameMuroAplication)=>{
-                    
-                    // TODO: eliminar el norma? optimizr descarga? version 1 optimizado
-                    const textures=[]
-                    loader.load(productSelected.albedo,(texture)=>{
-                        textures.push(texture)
-                    loader.load(productSelected.normal,(text)=>{
-                       textures.push(text)
-                       textures[0].wrapS = RepeatWrapping;
-                       textures[0].wrapT = RepeatWrapping;
-                       let stringSized = (productSelected.sized).toLowerCase() 
-                       let dimenciones = stringSized.split('x')
-                       const tailinW = 100/(parseInt(dimenciones[0])*parseInt(productSelected.textureWidth))
-                       const tailinH = 100/(parseInt(dimenciones[1])*parseInt(productSelected.textureHeight))
-                       textures[0].repeat.set(tailinW,tailinH);
-                       Observer.emit(EVENTS.ENDCHARGINPRODUCT);
-                       if(typeOfAplication===0){
-                            console.log("aplicado a piso")
-                            this.updatePisoMaterial(textures,areaSelected,productSelected.roughness)
-                        }
-                        else{
-                            console.log("aplicado a muro")
-                            this.updateMuroMaterial(textures,nameMuroAplication,productSelected.roughness)
-                        }
+        const pmremGenerator = new PMREMGenerator( this.renderer );
+		pmremGenerator.compileEquirectangularShader();
+			new RGBELoader(loaderManager)
+			.setDataType( UnsignedByteType )
+			.load( 'models3D/enviroment/Enviroment_Interior.hdr',  ( texture ) => {
+				
+				this.envMap = pmremGenerator.fromEquirectangular( texture ).texture;		
+				loader.load('models3D/house-v1/scene.gltf',(gltf)=>{
+                    // this.liquid = gltf.scene.children[0].getObjectByName('Liquid_Beer_Liquid_0');
+                    this.add(gltf.scene); 
+                    // console.log(console.log( gltf.scene.children[0].getObjectByName('Piso_C_Int_Sala_UVb')))
+                    this.pisoSala = gltf.scene.children[0].getObjectByName('Piso_C_Int_Sala_UVb_MT_Piso_C_Int_Sala_UVb_0')
+                    this.pisoCosina = gltf.scene.children[0].getObjectByName("Piso_C_Int_Cocina_UVb_MT_Piso_C_Int_Cocina_UVb_0")
+                    this.pisoComedor = gltf.scene.children[0].getObjectByName("Piso_C_Int_Comedor_UVb_MT_Piso_C_Int_Comedor_UVb_0")
+                    this.pisoFachada =  gltf.scene.children[0].getObjectByName("Piso_C_Ext_Cochera_UVb_MT_Piso_C_Ext_Cochera_UVb_0")
+                    this.pisoPasillo = gltf.scene.children[0].getObjectByName("Piso_C_Ext_Pasillo_UVb_MT_Piso_C_Ext_Pasillo_UVb_0")
+                    this.pisoBanio = gltf.scene.children[0].getObjectByName("Piso_C_Int_Banio_UVb_MT_Piso_C_Int_Banio_UVb_0")
+                    // muros "Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0"
+                    this.muroComedorA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Comedor_Atras_UVa_MT_Muro_Base_General_UVa_0")
+                    this.muroComedorB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0")
+                    this.muroSalaA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Sala_Front2_UVa_MT_Losa_Base_Int_General_UVb_0")
+                    this.muroSalaB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Sala_Der_UVa_MT_Muro_C_Int_Sala_Der_UVa_0")
+                    this.muroSalaC =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Sala_Front_UVa_MT_Muro_C_Int_Sala_Front_UVa_0")
+                    this.muroFachadaA =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Arriba_UVa_MT_Muro_C_Ext_Patio_Arriba_UVa_0")
+                    this.muroFachadaB =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Front_UVa_MT_Muro_C_Ext_Patio_Front_UVa_0")
+                    this.muroFachadaC =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Izq_UVa_MT_Muro_C_Ext_Patio_Izq_UVa_0")
+                    this.muroFachadaD =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Atras_UVa_MT_Muro_C_Ext_Patio_Atras_UVa_0")
+                    this.muroFachadaE =  gltf.scene.children[0].getObjectByName("Muro_C_Ext_Patio_Der_UVa_MT_Muro_C_Ext_Patio_Der_UVa_0")
+                    this.muroCocinaA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Cocina_Izq_UVa_MT_Muro_C_Int_Cocina_Izq_UVa_0")
+                    this.muroCocinaB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Cocina_Front_UVa_MT_Muro_C_Int_Cocina_Front_UVa_0")
+                    this.muroCocinaC =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Cocina_Der_UVa_MT_Muro_C_Int_Cocina_Der_UVa_0")
+                    this.muroCocinaD =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Pasillo_Izq_UVa_MT_Muro_C_Int_Pasillo_Izq_UVa_0")
+                    this.muroBanioA =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Izq2_UVa_MT_Muro_C_Int_Banio_Izq2_UVa_0")
+                    this.muroBanioB =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Izq1_UVa_MT_Muro_C_Int_Banio_Izq1_UVa_0")
+                    this.muroBanioC =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Izq3_UVa_MT_Muro_C_Int_Banio_Izq3_UVa_0")
+                    this.muroBanioD =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Der2_UVa_MT_Muro_C_Int_Banio_Der2_UVa_0")
+                    this.muroBanioE =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Der_UVa_MT_Muro_C_Int_Banio_Der_UVa_0")
+        
+                    // 
+                    // 
+                    let loader =   new TextureLoader(loaderManager);
+                    const textures = Promise.all([
+                    loader.load('models3D/house-v1/light_maps/UV_a.jpg'),
+                    loader.load('models3D/house-v1/light_maps/UV_b.jpg'),
+                    loader.load('models3D/house-v1/light_maps/UV_c.jpg'),
+                    loader.load('models3D/house-v1/light_maps/UV_d.jpg'),
+                    loader.load('models3D/house-v1/light_maps/UV_e.jpg'),
+                    loader.load('models3D/house-v1/light_maps/UV_f.jpg'),
+                ],(resolve)=>{
+                        resolve(textures)
+                    }).then(texturesLoades=>{
+                        
+                        gltf.scene.traverse((child) =>{
+                            if (child.isMesh) {                        
+                                this.putLigthMap(child,texturesLoades)
+                            }
+                        })
+                        Observer.on(EVENTS.SENDPRODUCT,(productSelected,areaSelected,typeOfAplication,nameMuroAplication)=>{
+                            
+                            // TODO: eliminar el norma? optimizr descarga? version 1 optimizado
+                            const textures=[]
+                            loader.load(productSelected.albedo,(texture)=>{
+                                textures.push(texture)
+                            loader.load(productSelected.normal,(text)=>{
+                               textures.push(text)
+                               textures[0].wrapS = RepeatWrapping;
+                               textures[0].wrapT = RepeatWrapping;
+                               let stringSized = (productSelected.sized).toLowerCase() 
+                               let dimenciones = stringSized.split('x')
+                               const tailinW = 100/(parseInt(dimenciones[0])*parseInt(productSelected.textureWidth))
+                               const tailinH = 100/(parseInt(dimenciones[1])*parseInt(productSelected.textureHeight))
+                               textures[0].repeat.set(tailinW,tailinH);
+                               Observer.emit(EVENTS.ENDCHARGINPRODUCT);
+                               if(typeOfAplication===0){
+                                    console.log("aplicado a piso")
+                                    this.updatePisoMaterial(textures,areaSelected,productSelected.roughness)
+                                }
+                                else{
+                                    console.log("aplicado a muro")
+                                    this.updateMuroMaterial(textures,nameMuroAplication,productSelected.roughness)
+                                }
+                            })
+                        })
+                        })
                     })
-                })
-                })
-            })
-            // 
-            this.scale.x=10;
-			this.scale.y=10;
-			this.scale.z=10;
-			this.position.x=72;
-			this.position.z=-74;
-			this.position.y=-17;
-            this.rotation.y=3.14
-            // var wwq = new GUI();
-            // var qmuro = wwq.addFolder('casa');            
-            // qmuro.add(this.position, 'x', -80.0, 80.0).listen();
-            // qmuro.add(this.position, 'y', -80.0, 80.0).listen();
-            // qmuro.add(this.position, 'z', -80.0, 80.0).listen();               
-            // qmuro.open();
-        },
-        (xhr)=>{
-            console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );   
-        },
-        function ( error ) {
-            console.log( error );
-        }
-        )
+                    // 
+                    this.scale.x=10;
+                    this.scale.y=10;
+                    this.scale.z=10;
+                    this.position.x=72;
+                    this.position.z=-74;
+                    this.position.y=-17;
+                    this.rotation.y=3.14
+                    // var wwq = new GUI();
+                    // var qmuro = wwq.addFolder('casa');            
+                    // qmuro.add(this.position, 'x', -80.0, 80.0).listen();
+                    // qmuro.add(this.position, 'y', -80.0, 80.0).listen();
+                    // qmuro.add(this.position, 'z', -80.0, 80.0).listen();               
+                    // qmuro.open();
+                },
+                (xhr)=>{
+                    console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );   
+                },
+                function ( error ) {
+                    console.log( error );
+                }
+                )	
+			})
+            
+        
     }
     update(){
         
@@ -129,6 +141,85 @@ export class House extends Mesh{
         let uvd = texturesLoades[3]
         let uve = texturesLoades[4]
         let uvf = texturesLoades[5]
+
+        // helpers
+        if(child.name === "Amb_Base_Cocina_frascos_UVf_Amb_Base_Cocina_frascos_UVf_0"){
+            child.material.envMap =  this.envMap
+            var ww = new GUI();
+            var macetas = ww.addFolder('vidrio limon');
+            console.log(child)
+            macetas.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+            macetas.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+            macetas.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+            macetas.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+            macetas.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+            macetas.add(child.material, 'roughness', -1.0, 1.0).listen();                
+            macetas.add(child.material, 'metalness', -1.0, 1.0).listen();                
+            macetas.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+            macetas.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+            macetas.open();
+        }
+        if(child.name === "Amb_Base_Cocina_Olla_UVf_Amb_Base_Cocina_Olla_UVf_0"){
+            var ss = new GUI();
+            var asdadsasdasd = ss.addFolder('Olla');
+            asdadsasdasd.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+            asdadsasdasd.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+            asdadsasdasd.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+            asdadsasdasd.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+            asdadsasdasd.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+            asdadsasdasd.add(child.material, 'roughness', -1.0, 1.0).listen();                
+            asdadsasdasd.add(child.material, 'metalness', -1.0, 1.0).listen();                
+            asdadsasdasd.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+            asdadsasdasd.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+            asdadsasdasd.open();
+        }
+        if(child.name === "Mob_Base_Cocina_Lamparas_UVe_MT_Mob_Base_Cocina_Lamparas_UVe_0"){
+            var ass = new GUI();
+            var yuiop = ass.addFolder('vidrio limon');
+            console.log(child)
+            yuiop.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+            yuiop.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+            yuiop.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+            yuiop.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+            yuiop.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+            yuiop.add(child.material, 'roughness', -1.0, 1.0).listen();                
+            yuiop.add(child.material, 'metalness', -1.0, 1.0).listen();                
+            yuiop.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+            yuiop.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+            yuiop.open();
+        }
+        if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
+            var fffff = new GUI();
+            var tyuiog = fffff.addFolder('vidrio limon');
+            console.log(child)
+            tyuiog.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+            tyuiog.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+            tyuiog.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+            tyuiog.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+            tyuiog.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+            tyuiog.add(child.material, 'roughness', -1.0, 1.0).listen();                
+            tyuiog.add(child.material, 'metalness', -1.0, 1.0).listen();                
+            tyuiog.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+            tyuiog.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+            tyuiog.open();
+        }
+        if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
+            var ghghgh = new GUI();
+            var werfgvj = ghghgh.addFolder('vidrio limon');
+            console.log(child)
+            werfgvj.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+            werfgvj.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+            werfgvj.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+            werfgvj.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+            werfgvj.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+            werfgvj.add(child.material, 'roughness', -1.0, 1.0).listen();                
+            werfgvj.add(child.material, 'metalness', -1.0, 1.0).listen();                
+            werfgvj.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+            werfgvj.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+            werfgvj.open();
+        }
+
+        // 
         // solo movil
         // if(this.ismobileDevice){
             if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
@@ -173,6 +264,10 @@ export class House extends Mesh{
                 return 
             }
             if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
+                child.material.envMap =  this.envMap
+                return 
+            }
+            if(child.name === "Amb_Base_Banio_Jabon_UVf_Amb_Base_Banio_Jabon_UVf_0"){
                 child.material.envMap =  this.envMap
                 return 
             }

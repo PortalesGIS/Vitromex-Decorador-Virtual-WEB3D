@@ -1,8 +1,7 @@
-import { PerspectiveCamera,  WebGLRenderer, sRGBEncoding, PMREMGenerator, UnsignedByteType, LoadingManager, 
+import { PerspectiveCamera,  WebGLRenderer, sRGBEncoding,  LoadingManager, 
 	// Math,
    } from 'three';
 import Scene1 from './scenes/Scene1';
-import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import Stats from 'three/examples/jsm/libs/stats.module'
@@ -99,25 +98,8 @@ export class App {
 				}				
 			}
 		}
-		const pmremGenerator = new PMREMGenerator( this.renderer );
-		pmremGenerator.compileEquirectangularShader();
-		new Promise((resolve,) => {
-			new RGBELoader(loaderManager)
-			.setDataType( UnsignedByteType )
-			.load( 'models3D/enviroment/Enviroment_Interior.hdr',  ( texture ) => {
-				let envMap
-				envMap = pmremGenerator.fromEquirectangular( texture ).texture;		
-				resolve(envMap)			
-			})
-		}).then(env => {
-			this.scene = new Scene1(loaderManager,this.camera,this.control,env);
-		// 	new RGBELoader(loaderManager)
-		// .setDataType( UnsignedByteType )
-		// 		.load( 'models3D/enviroment/envFinal.hdr',  ( texture ) => {
-		// 			const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
-		// 				this.scene.background = envMap;
-		// 	})
-		// 
+		
+		this.scene = new Scene1(loaderManager,this.camera,this.control,this.renderer);
 		this.stats = Stats()
 		document.body.appendChild(this.stats.dom)
 		// 
@@ -125,7 +107,6 @@ export class App {
 		this.control.update();
 		this.onResize();
 		this.render();
-		})
 
 		
 	}

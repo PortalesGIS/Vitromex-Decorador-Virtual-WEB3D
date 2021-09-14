@@ -1,4 +1,5 @@
 import {   Color,  
+	CubeTextureLoader,  
 	PerspectiveCamera,  Raycaster, Scene, Vector2 ,
 	// Math,
 
@@ -16,9 +17,9 @@ import { isDevice } from '../../../utils/isDevice';
 var raycaster = new Raycaster();
 var mouse = new Vector2();
 class Scene1 extends Scene {
-	constructor(loaderManager,camera = PerspectiveCamera,control= OrbitControls,envMap){
+	constructor(loaderManager,camera = PerspectiveCamera,control= OrbitControls,renderer){
 		super();
-		this.envMap = envMap
+		this.renderer = renderer
 		this.muroSelectedTemporal=''
 		this.loaderManager = loaderManager;
 		this.camera = camera;
@@ -29,21 +30,21 @@ class Scene1 extends Scene {
 		this.create();
 	}
 	create(){
-	// this.background = new CubeTextureLoader()
-	// 	.setPath( 'models3D/enviroment/' )
-	// 	.load( [
-	// 		'px.jpg',
-	// 		'nx.jpg',
-	// 		'py.jpg',
-	// 		'ny.jpg',
-	// 		'pz.jpg',
-	// 		'nz.jpg'
-	// 	] );
+	this.background = new CubeTextureLoader(this.loaderManager)
+		.setPath( 'models3D/enviroment/' )
+		.load( [
+			'px.jpg',
+			'nx.jpg',
+			'py.jpg',
+			'ny.jpg',
+			'pz.jpg',
+			'nx.jpg',
+		] );
 		// 
 		this.traker = new TrakerMouse()
 		this.add(this.traker)
 
-		this.house = new House(this.loaderManager,this.envMap)
+		this.house = new House(this.loaderManager,this.renderer)
 		this.add(this.house)
 		
 		this.hovers = new Hovers()
