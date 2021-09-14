@@ -9,7 +9,7 @@ import Stats from 'three/examples/jsm/libs/stats.module'
 import {isDevice} from '../../utils/isDevice'
 import Observer, { EVENTS } from './Observer';
 export class App {
-	constructor(container) {
+	constructor (container) {
 		this.container = container;
 		// loader
 		const loaderManager = new LoadingManager();
@@ -99,22 +99,24 @@ export class App {
 				}				
 			}
 		}
-		
 		const pmremGenerator = new PMREMGenerator( this.renderer );
 		pmremGenerator.compileEquirectangularShader();
-		this.scene = new Scene1(loaderManager,this.camera,this.control,);
-		new RGBELoader(loaderManager)
-				.setDataType( UnsignedByteType )
-				.load( 'models3D/enviroment/Enviroment_Interior.hdr',  ( texture ) => {
-					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
-						this.scene.environment = envMap;
-				})
-		new RGBELoader(loaderManager)
-		.setDataType( UnsignedByteType )
-				.load( 'models3D/enviroment/envFinal.hdr',  ( texture ) => {
-					const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
-						this.scene.background = envMap;
+		new Promise((resolve,) => {
+			new RGBELoader(loaderManager)
+			.setDataType( UnsignedByteType )
+			.load( 'models3D/enviroment/Enviroment_Interior.hdr',  ( texture ) => {
+				let envMap
+				envMap = pmremGenerator.fromEquirectangular( texture ).texture;		
+				resolve(envMap)			
 			})
+		}).then(env => {
+			this.scene = new Scene1(loaderManager,this.camera,this.control,env);
+		// 	new RGBELoader(loaderManager)
+		// .setDataType( UnsignedByteType )
+		// 		.load( 'models3D/enviroment/envFinal.hdr',  ( texture ) => {
+		// 			const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
+		// 				this.scene.background = envMap;
+		// 	})
 		// 
 		this.stats = Stats()
 		document.body.appendChild(this.stats.dom)
@@ -123,6 +125,9 @@ export class App {
 		this.control.update();
 		this.onResize();
 		this.render();
+		})
+
+		
 	}
 	
 	

@@ -16,8 +16,9 @@ import { isDevice } from '../../../utils/isDevice';
 var raycaster = new Raycaster();
 var mouse = new Vector2();
 class Scene1 extends Scene {
-	constructor(loaderManager,camera = PerspectiveCamera,control= OrbitControls){
+	constructor(loaderManager,camera = PerspectiveCamera,control= OrbitControls,envMap){
 		super();
+		this.envMap = envMap
 		this.muroSelectedTemporal=''
 		this.loaderManager = loaderManager;
 		this.camera = camera;
@@ -42,7 +43,7 @@ class Scene1 extends Scene {
 		this.traker = new TrakerMouse()
 		this.add(this.traker)
 
-		this.house = new House(this.loaderManager)
+		this.house = new House(this.loaderManager,this.envMap)
 		this.add(this.house)
 		
 		this.hovers = new Hovers()

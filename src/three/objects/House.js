@@ -8,8 +8,9 @@ import Observer, { EVENTS } from "../Observer";
 // import Observer, { EVENTS } from "../Observer";
 export class House extends Mesh{
 
-    constructor(loaderManager){
+    constructor(loaderManager,envMap){
         super();
+        this.envMap =envMap
         this.ismobileDevice= isDevice();
         let loader = new GLTFLoader(loaderManager); 
         loader.load('models3D/house-v1/scene.gltf',(gltf)=>{
@@ -43,6 +44,7 @@ export class House extends Mesh{
             this.muroBanioD =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Der2_UVa_MT_Muro_C_Int_Banio_Der2_UVa_0")
             this.muroBanioE =  gltf.scene.children[0].getObjectByName("Muro_C_Int_Banio_Der_UVa_MT_Muro_C_Int_Banio_Der_UVa_0")
 
+            // 
             // 
             let loader =   new TextureLoader(loaderManager);
             const textures = Promise.all([
@@ -129,16 +131,51 @@ export class House extends Mesh{
         let uvf = texturesLoades[5]
         // solo movil
         // if(this.ismobileDevice){
-        //     if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
-        //         const materialWhitLigthmap = new MeshStandardMaterial({
-        //             color: 0x777777,
-        //             lightMap:uvf,
-        //             envMapIntensity:2,       
-        //             map:child.material.map,
-        //         })
-        //         child.material = materialWhitLigthmap
-        //         return 
-        //     }
+            if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
+                child.material.envMap =  this.envMap
+                return 
+            }
+            if(child.name === "Amb_Base_General_Jarrones_UVf_MT_Amb_Base_General_Jarrones_UVf_0"){
+                child.material.envMap =  this.envMap
+                return 
+            }
+            if(child.name === "Mob_Base_Cocina_Refrigerador_UVd_MT_Mob_Base_Cocina_Refrigerador_UVd_0"){
+                child.material.envMap =  this.envMap
+                child.material.envMapIntensity=0.2
+                return 
+            }
+            if(child.name === "Amb_Base_Canceleria_UVc_MT_Amb_Base_Cocina_Campana_UVd_0"){
+                child.material.envMap =  this.envMap
+                return 
+            }
+            if(child.name === "Mob_Base_Cocina_Fregaderoyestufa_UVd_Mob_Base_Cocina_Fregaderoyestufa_UVd_0"){
+                child.material.envMap =  this.envMap
+                return 
+            }
+            if(child.name === "Mob_Base_Cocina_Microondas_UVe_MT_Mob_Base_Cocina_Microondas_UVe_0"){
+                child.material.envMap =  this.envMap
+                return 
+            }
+            if(child.name === "Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
+                child.material.envMap =  this.envMap
+                return 
+            }
+            if(child.name === "Amb_Base_Banio_Toallas_UVf_MT_Amb_Base_Banio_Toallas_UVf_0"){
+                child.material.envMap =  this.envMap
+                return 
+            }
+            if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
+                child.material.envMap =  this.envMap
+                return 
+            }
+            if(child.name === "Amb_Base_vidrioopaco_UVc_MT_Amb_Base_vidrioopaco_UVc_0"){
+                child.material.envMap =  this.envMap
+                return 
+            }
+            if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
+                child.material.envMap =  this.envMap
+                return 
+            }
         //     if(child.name === "Amb_Base_General_Jarrones_UVf_MT_Amb_Base_General_Jarrones_UVf_0"){
         //         const materialWhitLigthmap = new MeshStandardMaterial({
         //             color: 0x777777,
