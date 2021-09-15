@@ -88,10 +88,12 @@ export class App {
 			this.container.onpointermove = (e)=>{
 				e.preventDefault();	
 				drag = false;
+				console.log("-----te estas moviendo")
 				this.scene.onDocumentMouseMove(e.clientX, e.clientY, this.renderer, this.camera)
 				// TODO: accion pesada al sistema????
 			}
 			this.container.onpointerup = (e)=> {
+				console.log("Click generico Dectado")
 				e.preventDefault();
 				if(drag){
 					this.scene.onDocumentMouseDown(e.clientX, e.clientY, this.renderer, this.camera);

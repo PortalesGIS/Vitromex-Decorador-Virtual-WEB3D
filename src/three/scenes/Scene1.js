@@ -84,7 +84,8 @@ class Scene1 extends Scene {
 				// this.muroSelected=""
 				// Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);
 				this.onMoveToAreaSelected(intersects)
-				console.log(intersects[0].point)
+				console.log("click para movimiento Detectado ok")
+				// console.log(intersects[0].point)
 				let pointx=intersects[0].point.x
 				let pointz=intersects[0].point.z
 				if(intersects[0].point.x>0){
@@ -141,6 +142,7 @@ class Scene1 extends Scene {
 				
 			}
 			if(intersects[0].object.name.includes('Muro')){
+				console.log("click para MURO detectado ok ")
 				this.muroSelectedTemporal=intersects[0].object.name
 				Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,1)
 				this.muroSelected = intersects[0].object.name

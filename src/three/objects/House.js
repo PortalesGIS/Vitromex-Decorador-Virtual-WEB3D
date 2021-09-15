@@ -252,11 +252,11 @@ export class House extends Mesh{
             }
             if(child.name === "Amb_Base_Cocina_frascos_UVf_Amb_Base_Cocina_frascos_UVf_0"){
                 child.material.envMap =  this.envMap
-                child.material.metalness=-0.24
-                child.material.rougness = 1
+                child.material.metalness=-1
+                child.material.rougness = 0
                 child.material.refractionRatio = 1
                 child.material.opacity = 0.3
-                child.material.envMapIntensity=0.4
+                child.material.envMapIntensity=0.1
                 return 
             }
             if(child.name === "Amb_Base_General_Jarrones_UVf_MT_Amb_Base_General_Jarrones_UVf_0"){                
@@ -281,6 +281,7 @@ export class House extends Mesh{
                 return 
             }
             if(child.name === "Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
+                child.position.z+=1
                 child.material.envMap =  this.envMap
                 return 
             }
@@ -289,6 +290,7 @@ export class House extends Mesh{
                 return 
             }
             if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
+                child.material.envMapIntensity = 0.7
                 child.material.envMap =  this.envMap
                 return 
             }
@@ -297,6 +299,8 @@ export class House extends Mesh{
                 return 
             }
             if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
+                child.material.roughness = 0.24
+                child.material.metalness = 1
                 child.material.envMap =  this.envMap
                 return 
             }
@@ -581,7 +585,7 @@ export class House extends Mesh{
                 return     
         }
         if(child.name === "Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
-            child.position.z+=2
+            child.position.z+=40
             child.material.lightMapIntensity=0
             child.material.envMapIntensity=1
             return    
