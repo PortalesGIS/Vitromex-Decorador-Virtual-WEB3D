@@ -149,7 +149,14 @@ class Scene1 extends Scene {
 				Observer.emit(EVENTS.SELECTMURO,intersects[0].object.name);	
 				Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);	
 			}
+			else{
+				console.log("el clikc fue en un lugar sin interaccion")
+			}
 		}
+		else{
+			console.log("el clikc fue en un lugar sin interaccion")
+		}
+		
 	}
 	onDocumentMouseMove=(clientX, clientY, renderer, camera)=>{
 		mouse.x = ( clientX / renderer.domElement.clientWidth ) * 2 - 1;
