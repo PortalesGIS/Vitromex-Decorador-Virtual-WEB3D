@@ -175,7 +175,7 @@ export class House extends Mesh{
         // }
         // if(child.name === "Mob_Base_Cocina_Lamparas_UVe_MT_Mob_Base_Cocina_Lamparas_UVe_0"){
         //     var ass = new GUI();
-        //     var yuiop = ass.addFolder('vidrio limon');
+        //     var yuiop = ass.addFolder('lamparas');
         //     console.log(child)
         //     yuiop.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
         //     yuiop.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
@@ -190,7 +190,7 @@ export class House extends Mesh{
         // }
         // if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
         //     var fffff = new GUI();
-        //     var tyuiog = fffff.addFolder('vidrio limon');
+        //     var tyuiog = fffff.addFolder('vasos banio/cocina');
         //     console.log(child)
         //     tyuiog.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
         //     tyuiog.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
@@ -205,7 +205,7 @@ export class House extends Mesh{
         // }
         // if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
         //     var ghghgh = new GUI();
-        //     var werfgvj = ghghgh.addFolder('vidrio limon');
+        //     var werfgvj = ghghgh.addFolder('lvabo');
         //     console.log(child)
         //     werfgvj.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
         //     werfgvj.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
@@ -217,6 +217,21 @@ export class House extends Mesh{
         //     werfgvj.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
         //     werfgvj.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
         //     werfgvj.open();
+        // }
+        // if(child.name === "Muro_C_Int_Banio_Izq2_UVa_MT_Muro_C_Int_Banio_Izq2_UVa_0"){
+        //     var dfsdfsdfsfd = new GUI();
+        //     var popijk = dfsdfsdfsfd.addFolder('luz bano');
+        //     console.log(child)
+        //     popijk.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
+        //     popijk.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
+        //     popijk.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
+        //     popijk.add(child.material, 'depthFunc', -2.0, 5.0).listen();
+        //     popijk.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
+        //     popijk.add(child.material, 'roughness', -1.0, 1.0).listen();                
+        //     popijk.add(child.material, 'metalness', -1.0, 1.0).listen();                
+        //     popijk.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+        //     popijk.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
+        //     popijk.open();
         // }
 
         // 
