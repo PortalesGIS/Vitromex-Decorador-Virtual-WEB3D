@@ -79,7 +79,7 @@ export class App {
 			})
 			this.container.addEventListener("touchend", (e)=> {
 				e.preventDefault();
-				if(drag && antirebote<7){
+				if(drag && antirebote<10){
 					this.scene.onDocumentMouseDown(e.changedTouches[0].clientX, e.changedTouches[0].clientY, this.renderer, this.camera);
 				}				
 			})
@@ -98,7 +98,7 @@ export class App {
 			}
 			this.container.onpointerup = (e)=> {
 				e.preventDefault();
-				if(drag && antirebote<7){
+				if(drag && antirebote<10){
 					this.scene.onDocumentMouseDown(e.clientX, e.clientY, this.renderer, this.camera);
 				}				
 			}

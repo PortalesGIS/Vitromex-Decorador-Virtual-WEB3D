@@ -251,6 +251,16 @@ export class House extends Mesh{
                 child.material.envMap =  this.envMap
                 return 
             }
+            if(child.name === "Amb_Base_Cocina_Olla_UVf_Amb_Base_Cocina_Olla_UVf_0"){
+                child.material.envMap = this.envMap
+            child.material.lightMap=uvf
+            child.material.lightMapIntensity=1
+            child.material.envMapIntensity=0.7
+            child.material.refractionRatio=0.98         
+            child.material.roughness=0.25
+            child.material.metalness=0.3
+            return
+            }
             if(child.name === "Amb_Base_Cocina_frascos_UVf_Amb_Base_Cocina_frascos_UVf_0"){
                 child.material.envMap =  this.envMap
                 child.material.metalness=-1
@@ -275,6 +285,12 @@ export class House extends Mesh{
             }
             if(child.name === "Mob_Base_Cocina_Fregaderoyestufa_UVd_Mob_Base_Cocina_Fregaderoyestufa_UVd_0"){
                 child.material.envMap =  this.envMap
+                child.material.lightMap=uvd
+            child.material.lightMapIntensity=1
+            child.material.envMapIntensity=0.7
+            child.material.refractionRatio=0.98         
+            child.material.roughness=0
+            child.material.metalness=0.4
                 return 
             }
             if(child.name === "Mob_Base_Cocina_Microondas_UVe_MT_Mob_Base_Cocina_Microondas_UVe_0"){
@@ -284,6 +300,7 @@ export class House extends Mesh{
             if(child.name === "Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
                 child.position.z+=1
                 child.material.envMap =  this.envMap
+                child.material.metalness=1
                 return 
             }
             if(child.name === "Amb_Base_Banio_Toallas_UVf_MT_Amb_Base_Banio_Toallas_UVf_0"){
@@ -291,9 +308,14 @@ export class House extends Mesh{
                 return 
             }
             if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
-                child.material.envMapIntensity = 0.7
                 child.material.envMap =  this.envMap
-                return 
+            child.material.lightMap=uvf
+            child.material.lightMapIntensity=1
+            child.material.envMapIntensity=0.7
+            child.material.refractionRatio=0.98         
+            child.material.roughness=0
+            child.material.metalness=1
+            return  
             }
             if(child.name === "Amb_Base_vidrioopaco_UVc_MT_Amb_Base_vidrioopaco_UVc_0"){
                 child.material.envMap =  this.envMap
@@ -475,7 +497,7 @@ export class House extends Mesh{
             child.material.envMapIntensity=0.3
             child.material.refractionRatio=1         
             child.material.roughness=0.2
-            child.material.metalness=0.35
+            child.material.metalness=0.45
             return 
         }
         if(child.name === "Mob_Base_Cocina_Refrigerador_UVd_MT_Mob_Base_Cocina_Refrigerador_UVd_0"){
@@ -497,14 +519,13 @@ export class House extends Mesh{
             return 
         }
         if(child.name === "Amb_Base_Cocina_Ollas2_UVf_Amb_Base_Cocina_tabla_UVf_0"){
-            console.log("Ollas de la pared")
-            console.log(child.material)
+            child.material.envMap = this.envMap
             child.material.lightMap=uvf
-            child.material.lightMapIntensity=3.5
-            child.material.envMapIntensity=1
+            child.material.lightMapIntensity=1
+            child.material.envMapIntensity=0.7
             child.material.refractionRatio=0.98         
-            child.material.roughness=0.24
-            child.material.metalness=1
+            child.material.roughness=0.25
+            child.material.metalness=0.3
             return 
         }
         if(child.name === "Mob_Base_Cocina_Microondas_UVe_MT_Mob_Base_Cocina_Microondas_UVe_0"){
@@ -513,15 +534,6 @@ export class House extends Mesh{
             child.material.envMapIntensity=0.6
             child.material.refractionRatio=0.84         
             child.material.roughness=0.09
-            child.material.metalness=1
-            return 
-        }
-        if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
-            child.material.lightMap=uvf
-            child.material.lightMapIntensity=1
-            child.material.envMapIntensity=0.6
-            child.material.refractionRatio=0.98         
-            child.material.roughness=0
             child.material.metalness=1
             return 
         }
@@ -569,11 +581,6 @@ export class House extends Mesh{
             // this.add(child)
                 return    
         }
-        if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
-            child.material.lightMapIntensity=0
-            child.material.envMapIntensity=1
-            return      
-        }
         if(child.name === "Amb_Base_Banio_Jabon_UVf_Amb_Base_Banio_Jabon_UVf_0"){
             child.material.lightMapIntensity=0
             child.material.envMapIntensity=1
@@ -594,11 +601,6 @@ export class House extends Mesh{
             child.material.lightMapIntensity=0
             child.material.envMapIntensity=1
             return    
-        }
-        if(child.name === "Mob_Base_Cocina_Fregaderoyestufa_UVd_Mob_Base_Cocina_Fregaderoyestufa_UVd_0"){
-            child.material.lightMapIntensity=0
-            child.material.envMapIntensity=1
-            return     
         }
         if(child.name === "Piso_Base_Ext_Grava_UVb_MT_Piso_Base_Ext_Grava_UVb_0"){
             const materialWhitLigthmap = new MeshStandardMaterial({
