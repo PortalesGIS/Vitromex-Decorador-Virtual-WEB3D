@@ -93,12 +93,10 @@ export class App {
 				e.preventDefault();
 				antirebote++	
 				drag = false;
-				console.log("-----te estas moviendo")
 				this.scene.onDocumentMouseMove(e.clientX, e.clientY, this.renderer, this.camera)
 				// TODO: accion pesada al sistema????
 			}
 			this.container.onpointerup = (e)=> {
-				console.log("Click generico Dectado")
 				e.preventDefault();
 				if(drag && antirebote<7){
 					this.scene.onDocumentMouseDown(e.clientX, e.clientY, this.renderer, this.camera);

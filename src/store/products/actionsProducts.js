@@ -105,7 +105,7 @@ export const entryWebAnalytics = ({commit,getters})=>{
   };
   fetch(`${baseUrl}/api/analytics/newdevice/${platform}`, requestOptions)
   .then(response => response.text())
-  .then(result => console.log(result))
+  .then(() => console.log("bienvenido"))
   .catch(error => console.log('error', error));
 }
 

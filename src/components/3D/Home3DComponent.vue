@@ -38,8 +38,8 @@ export default {
     Observer.on(EVENTS.SELECTMURO, (nameOfMuroToAplicate) => {
       this.onChnageMuroAplication(nameOfMuroToAplicate)
     });
-    Observer.on(EVENTS.TEST, (payload) => {
-      console.log(payload);
+    Observer.on(EVENTS.TEST, () => {
+      // console.log(payload);
     });
     Observer.on(EVENTS.ENDCHARGINPRODUCT, () => {
       this.changeisLoadingProductToAplicate(false)

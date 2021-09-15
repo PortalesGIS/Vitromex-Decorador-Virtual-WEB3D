@@ -68,7 +68,8 @@ export class House extends Mesh{
                     }).then(texturesLoades=>{
                         
                         gltf.scene.traverse((child) =>{
-                            if (child.isMesh) {                        
+                            if (child.isMesh) {     
+                                child.renderOrder = -5                   
                                 this.putLigthMap(child,texturesLoades)
                             }
                         })
@@ -115,8 +116,8 @@ export class House extends Mesh{
                     // qmuro.add(this.position, 'z', -80.0, 80.0).listen();               
                     // qmuro.open();
                 },
-                (xhr)=>{
-                    console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );   
+                ()=>{
+                    // console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );   
                 },
                 function ( error ) {
                     console.log( error );
@@ -467,6 +468,8 @@ export class House extends Mesh{
             return 
         }
         if(child.name === "Amb_Base_Banio_WC_UVf_MT_Amb_Base_Banio_WC_UVf_0"){
+            console.log("Banio")
+            console.log(child.material)
             child.material.lightMap=uvf
             child.material.lightMapIntensity=2.1
             child.material.envMapIntensity=0.3
@@ -494,6 +497,8 @@ export class House extends Mesh{
             return 
         }
         if(child.name === "Amb_Base_Cocina_Ollas2_UVf_Amb_Base_Cocina_tabla_UVf_0"){
+            console.log("Ollas de la pared")
+            console.log(child.material)
             child.material.lightMap=uvf
             child.material.lightMapIntensity=3.5
             child.material.envMapIntensity=1
