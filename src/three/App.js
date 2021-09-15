@@ -10,6 +10,7 @@ import Observer, { EVENTS } from './Observer';
 export class App {
 	constructor (container) {
 		this.container = container;
+		let antirebote =0 		
 		// loader
 		const loaderManager = new LoadingManager();
 		loaderManager.onLoad =()=>{
@@ -66,9 +67,11 @@ export class App {
 
 		if(isDevice()){
 			this.container.addEventListener("touchstart",()=>{
+				antirebote=0
 				drag=true;
 			})	
 			this.container.addEventListener("touchmove", (e)=>{
+				antirebote++
 				e.preventDefault();	
 				drag = false;
 				this.scene.onDocumentMouseMove(e.touches[0].clientX, e.touches[0].clientY, this.renderer, this.camera)
@@ -76,17 +79,19 @@ export class App {
 			})
 			this.container.addEventListener("touchend", (e)=> {
 				e.preventDefault();
-				if(drag){
+				if(drag && antirebote<7){
 					this.scene.onDocumentMouseDown(e.changedTouches[0].clientX, e.changedTouches[0].clientY, this.renderer, this.camera);
 				}				
 			})
 		}
 		else { 
 			this.container.onpointerdown = () => {
+				antirebote=0
 				drag=true;
 			}		
 			this.container.onpointermove = (e)=>{
-				e.preventDefault();	
+				e.preventDefault();
+				antirebote++	
 				drag = false;
 				console.log("-----te estas moviendo")
 				this.scene.onDocumentMouseMove(e.clientX, e.clientY, this.renderer, this.camera)
@@ -95,7 +100,7 @@ export class App {
 			this.container.onpointerup = (e)=> {
 				console.log("Click generico Dectado")
 				e.preventDefault();
-				if(drag){
+				if(drag && antirebote<7){
 					this.scene.onDocumentMouseDown(e.clientX, e.clientY, this.renderer, this.camera);
 				}				
 			}
