@@ -171,6 +171,8 @@ class Scene1 extends Scene {
 					if(this.muroSelectedTemporal !== intersects[0].object.name){
 						intersects[0].object.material.opacity=0.5
 					}
+					else
+					intersects[0].object.material.opacity=1
 				}
 			}
 		}

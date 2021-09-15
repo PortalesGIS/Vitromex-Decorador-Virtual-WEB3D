@@ -18,7 +18,7 @@ export class Hovers extends Mesh {
       (gltf) => {
         let mapDB = new TextureLoader();
         mapDB.load("models3D/hovers/textures/Dots.png", (textureMap) => {
-          mapDB.load("models3D/house-v1/light_maps/UV_a.jpg", (white) => {
+          mapDB.load("models3D/house-v1/light_maps/white.jpg", (white) => {
             textureMap.wrapS = RepeatWrapping;
             textureMap.wrapT = RepeatWrapping;
             textureMap.repeat.set(1, 1);
