@@ -85,6 +85,6 @@ export default {
     width: 100%;
     height: 100%;
     background-position: center;
-    background-image: url('../../assets/arko/Web/splashfondo.png');
+    background-image: url('../../assets/arko/Web/fondoarko.png');
 }
 </style>
