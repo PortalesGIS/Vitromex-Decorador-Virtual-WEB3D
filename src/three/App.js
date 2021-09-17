@@ -22,7 +22,7 @@ export class App {
 		}
 		
 		// ## Camera's config
-		this.camera = new PerspectiveCamera(80, this.container.clientWidth / this.container.clientHeight, 0.1, 10000);
+		this.camera = new PerspectiveCamera(60, this.container.clientWidth / this.container.clientHeight, 0.1, 10000);
 		this.camera.layers.enable(0)
 		// this.camera.layers.enable(5)
 		// initial test
