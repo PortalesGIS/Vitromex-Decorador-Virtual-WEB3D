@@ -26,7 +26,7 @@ export default {
     
 data() {
     return {
-      tutorialText: false,
+      tutorialText: true,
       tutorialTextPage:0,
       text:[
           {

@@ -21,6 +21,9 @@ class Scene1 extends Scene {
 		super();
 		this.renderer = renderer
 		this.muroSelectedTemporal=''
+		this.nameFromWhereIAm='Hover_Piso_C_Int_Comedor_UVb_MT_Hover_Piso_C_Int_Comedor_UVb_0'
+		// muro=0 piso=1
+		this.typeOfAplication=0
 		this.loaderManager = loaderManager;
 		this.camera = camera;
 		this.control = control;
@@ -59,6 +62,11 @@ class Scene1 extends Scene {
 		
 		// helpers
 		// 
+		Observer.on(EVENTS.APLICATIONCHANGETYPE,(selected)=>{
+			this.typeOfAplication=selected
+		})
+
+
 		Observer.emit(EVENTS.TEST,"hola estamos dentro del 3D");
 
 		Observer.on(EVENTS.MOVETOAREASELECTMENU, (payload) => {
@@ -79,8 +87,11 @@ class Scene1 extends Scene {
 			// if(intersects[0].object.callback){
 			// 	intersects[0].object.callback();
 			// }
-			if(this.pisoIncludesForTraking(intersects)){
-				Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,0)
+			if(this.pisoIncludesForTraking(intersects) && (this.typeOfAplication===0 || this.ismobileDevice)){
+				if(this.ismobileDevice){
+					Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,0)
+					Observer.emit(EVENTS.CLEARHOVER,"");
+				}
 				// this.muroSelected=""
 				// Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);
 				this.onMoveToAreaSelected(intersects)
@@ -140,9 +151,9 @@ class Scene1 extends Scene {
 				})
 				
 			}
-			if(intersects[0].object.name.includes('Muro')){
+			if(this.validateMuroIfIsThemSameArea(intersects[0].object.name) && this.typeOfAplication===1){
 				this.muroSelectedTemporal=intersects[0].object.name
-				Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,1)
+				// Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,1)
 				this.muroSelected = intersects[0].object.name
 				Observer.emit(EVENTS.SELECTMURO,intersects[0].object.name);	
 				Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);	
@@ -160,10 +171,10 @@ class Scene1 extends Scene {
 			if(this.pisoIncludesForTraking(intersects)){
 			this.traker.position.set(intersects[0].point.x ,intersects[0].point.y+0.2,intersects[0].point.z)
 			}
-			if(intersects[0].object.name.includes('Muro')){
+			if(this.validateMuroIfIsThemSameArea(intersects[0].object.name) && (this.typeOfAplication===1 || this.ismobileDevice) ){
 				if(this.ismobileDevice){
-					intersects[0].object.material.opacity=1
-					Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,1)
+				intersects[0].object.material.opacity=1
+				Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,1)
 				this.muroSelected = intersects[0].object.name
 				Observer.emit(EVENTS.SELECTMURO,intersects[0].object.name);	
 				Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);
@@ -178,6 +189,71 @@ class Scene1 extends Scene {
 			}
 		}
 	}
+
+	validateMuroIfIsThemSameArea(name){
+		const nameMuro = name
+		let isMuroTraking=false
+		switch (this.nameFromWhereIAm) {
+			// Comedor
+			case "Hover_Piso_C_Int_Comedor_UVb_MT_Hover_Piso_C_Int_Comedor_UVb_0":
+				if(nameMuro === "Hover_Muro_C_Int_Comedor_Atras_UVa_MT_Hover_Muro_C_Int_Comedor_Atras_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Int_Comedor_Front_UVa_MT_Hover_Muro_C_Int_Comedor_Front_UVa_0"){
+					isMuroTraking =true;
+				}
+				break;
+				// Sala
+			case "Hover_Piso_C_Int_Sala_UVb_MT_Hover_Piso_C_Int_Sala_UVb_0":
+				if(nameMuro === "Hover_Muro_C_Int_Sala_Der_UVa_MT_Hover_Muro_C_Int_Sala_Der_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Int_Sala_Front2_UVa_MT_Hover_Muro_C_Int_Sala_Front2_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Int_Sala_Front_UVa_MT_Hover_Muro_C_Int_Sala_Front_UVa_0"){
+					isMuroTraking =true;
+				}
+				break;
+				// fachada
+			case "Hover_Piso_C_Ext_Pasillo_UVb_MT_Hover_Piso_C_Ext_Pasillo_UVb_0":
+				if(nameMuro === "Hover_Muro_C_Ext_Patio_Der_UVa_MT_Hover_Muro_C_Ext_Patio_Der_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Ext_Patio_Front_UVa_MT_Hover_Muro_C_Ext_Patio_Front_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Ext_Patio_Atras_UVa_MT_Hover_Muro_C_Ext_Patio_Atras_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Ext_Patio_Izq_UVa_MT_Hover_Muro_C_Ext_Patio_Izq_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Ext_Patio_Arriba_MT_Hover_Muro_C_Ext_Patio_Arriba_0" ||
+				nameMuro === "Hover_Muro_C_Int_Pasillo_Izq_UVa_MT_Hover_Muro_C_Int_Pasillo_Izq_UVa_0"){
+					isMuroTraking =true;
+				}
+				break;
+			case "Hover_Piso_C_Ext_Cochera_UVb_MT_Hover_Piso_C_Ext_Cochera_UVb_0":
+				if(nameMuro === "Hover_Muro_C_Ext_Patio_Der_UVa_MT_Hover_Muro_C_Ext_Patio_Der_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Ext_Patio_Front_UVa_MT_Hover_Muro_C_Ext_Patio_Front_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Ext_Patio_Atras_UVa_MT_Hover_Muro_C_Ext_Patio_Atras_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Ext_Patio_Izq_UVa_MT_Hover_Muro_C_Ext_Patio_Izq_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Ext_Patio_Arriba_MT_Hover_Muro_C_Ext_Patio_Arriba_0" ||
+				nameMuro === "Hover_Muro_C_Int_Pasillo_Izq_UVa_MT_Hover_Muro_C_Int_Pasillo_Izq_UVa_0"){
+					isMuroTraking =true;
+				}
+				break;
+			case "Hover_Piso_C_Int_Cocina_UVb_MT_Hover_Piso_C_Int_Cocina_UVb_0":
+				if(nameMuro === "Hover_Muro_C_Int_Cocina_Front_UVa_MT_Hover_Muro_C_Int_Cocina_Front_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Int_Cocina_Der_UVa_MT_Hover_Muro_C_Int_Cocina_Der_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Int_Cocina_Izq_UVa_MT_Hover_Muro_C_Int_Cocina_Izq_UVa_0"){
+					isMuroTraking =true;
+				}
+				break;
+			case "Hover_Piso_C_Int_Banio_UVb_MT_Hover_Piso_C_Int_Banio_UVb_0":
+				if(nameMuro === "Hover_Muro_C_Int_Banio_Der_UVa_MT_Hover_Muro_C_Int_Banio_Der_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Int_Banio_Der2_UVa_MT_Hover_Muro_C_Int_Banio_Der2_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Int_Banio_Izq3_UVa_MT_Hover_Muro_C_Int_Banio_Izq3_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Int_Banio_Izq1_UVa_MT_Hover_Muro_C_Int_Banio_Izq1_UVa_0" ||
+				nameMuro === "Hover_Muro_C_Int_Banio_Izq2_UVa_MT_Hover_Muro_C_Int_Banio_Izq2_UVa_0"){
+					isMuroTraking =true;
+				}
+				break;
+		
+			default:
+				isMuroTraking =false;
+				break;
+		}
+		return isMuroTraking;
+	}
+
 	pisoIncludesForTraking(intersects){
 		let isFind=false
 		switch (intersects[0].object.name) {
@@ -205,6 +281,7 @@ class Scene1 extends Scene {
 			return isFind;
 	}
 	onMoveToAreaSelected(intersects){
+		this.nameFromWhereIAm = intersects[0].object.name
 		switch (intersects[0].object.name) {
 			case "Hover_Piso_C_Int_Banio2_UVb_MT_Hover_Piso_C_Int_Banio2_UVb_0":
 				Observer.emit(EVENTS.MOVETOAREA,"banio");	
@@ -269,26 +346,31 @@ class Scene1 extends Scene {
 	moveCameraToPosition(camera,control,nameArea){
 		switch (nameArea) {
 			case "fachada":
+				this.nameFromWhereIAm="Hover_Piso_C_Ext_Cochera_UVb_MT_Hover_Piso_C_Ext_Cochera_UVb_0"
 				camera.position.set(58,0,-100)
 				camera.lookAt(58,0,-100)
 				control.target.set(58/1.0001,0/1.0001,-100/1.0001)
 				break;
 			case "sala":
+				this.nameFromWhereIAm="Hover_Piso_C_Int_Sala_UVb_MT_Hover_Piso_C_Int_Sala_UVb_0"
 				camera.position.set(-37,0,4)
 				camera.lookAt(-37,0,4)
 				control.target.set(-37/1.0001,0/1.0001,4/1.0001)
 				break;
 			case "cocina":
+				this.nameFromWhereIAm="Hover_Piso_C_Int_Cocina_UVb_MT_Hover_Piso_C_Int_Cocina_UVb_0"
 				camera.position.set(63,0,3)
 				camera.lookAt(63,0,3)
 				control.target.set(63/1.0001,0/1.0001,3/1.0001)
 				break;
 			case "comedor":
+				this.nameFromWhereIAm="Hover_Piso_C_Int_Comedor_UVb_MT_Hover_Piso_C_Int_Comedor_UVb_0"
 				camera.position.set(38,0,24)
 				camera.lookAt(38,0,24)
 				control.target.set(38/1.0001,0/1.0001,24/1.0001)
 				break;
 			case "banio":
+				this.nameFromWhereIAm="Hover_Piso_C_Int_Banio_UVb_MT_Hover_Piso_C_Int_Banio_UVb_0"
 				camera.position.set(57,0,53)
 				camera.lookAt(57,0,53)
 				control.target.set(57/1.0001,0/1.0001,53/1.0001)

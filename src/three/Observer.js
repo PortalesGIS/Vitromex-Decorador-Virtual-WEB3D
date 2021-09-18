@@ -12,6 +12,7 @@ export const EVENTS = {
     LOADING:'loading',
     LOADINGFFINISH:'loadingfinish',
     CHANGEAREATOAPLICATEPRODUCT:'CHANGEAREATOAPLICATEPRODUCT',
+    APLICATIONCHANGETYPE:'APLICATIONCHANGETYPE',
 }
 
 const Observer = new EventEmitter();

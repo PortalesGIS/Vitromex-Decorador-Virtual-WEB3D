@@ -38,10 +38,12 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import Observer, { EVENTS } from '../../three/Observer'
 export default {
   methods: {
     ...mapActions(["onChangeAplicationSelected"]),
       selectAplication(selected){
+        Observer.emit(EVENTS.APLICATIONCHANGETYPE,selected)
       this.onChangeAplicationSelected(selected)      
     }
   },
