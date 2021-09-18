@@ -15,51 +15,51 @@
               </div>
           </div>
           <div class="pt-4 pb-64 overflow-y-auto h-full">
-              <div class="px-5">
-                  <p class="text-sm moserrat-bold font-bold text-subtitle" >Muro</p>
-              </div>
-              <div class="pt-4 px-4">
-                   <div v-if="getProductsAplicatesInAreas[getAreaSelected].muros.length!=0">
-                    <div class='grid grid-cols-2 '>
-                          <div v-for="muro in getProductsAplicatesInAreas[getAreaSelected].muros" :key="muro"
-                            class="pb-2">
-                            <img :src="muro.smallPicture" 
-                            class="object-cover rounded-md" style="width:81px; height:69px" alt="">
-                            <p class="text-white font-semibold text-cf" style="font-size:11px;">{{muro.name}}</p>
-                            <p class="text-white font-semibold text-cf" style="font-size:11px;">{{muro.sized}}</p>
-                            </div>
-                        </div>                      
-                  </div>
-                  <div v-else class="w-44 h-36 bg-2e flex justify-center items-center rounded-lg">
-                      <div class="w-full">
-                         <div class="flex justify-center">
-                              <img v-if="getPageState" src="../../assets/arko/Web/Piso.svg" class=" w-8 h-6 object-cover transform -rotate-90" alt="">
-                              <img v-else src="../../assets/web/Piso.svg" class=" w-8 h-6 object-cover transform -rotate-90" alt="">
-                         </div>
-                          <p class="text-center text-sm font-normal pt-4 px-6  text-cf2">
-                              Selecciona algún producto para el Muro</p>
-                      </div>
-                  </div>
-              </div>
-              <div class="px-5 pt-7">
+              <div class="px-5 ">
                   <p class="text-sm moserrat-bold font-bold text-subtitle">Piso</p>
               </div>
-              <div class="pt-4 px-4">
-                  <div v-if="getProductsAplicatesInAreas[getAreaSelected].piso.name" class='grid grid-cols-2 '>
-                        <div>
-                            <img :src="getProductsAplicatesInAreas[getAreaSelected].piso.smallPicture" class="object-cover rounded-md" style="width:81px; height:69px" alt="">
-                        <p class="text-white font-semibold text-cf" style="font-size:11px;" >{{getProductsAplicatesInAreas[getAreaSelected].piso.name}}</p>
-                        <p class="text-white font-semibold text-cf" style="font-size:11px;" >{{getProductsAplicatesInAreas[getAreaSelected].piso.sized}}</p>
+              <div class="pt-4 px-4 ">
+                  <div v-if="getProductsAplicatesInAreas[getAreaSelected].piso.name" class=''>
+                        <div class="flex">
+                            <img :src="getProductsAplicatesInAreas[getAreaSelected].piso.smallPicture"
+                             class="object-cover rounded-full " style="width:31px; height:31px" alt="">
+                        <div class="ml-2">
+                        <p class="font-semibold text-cf" style="font-size:11px;" >{{getProductsAplicatesInAreas[getAreaSelected].piso.name}}</p>
+                        <p class="font-semibold text-cf" style="font-size:11px;" >{{getProductsAplicatesInAreas[getAreaSelected].piso.sized}}</p>
+                        </div>
                  
                         </div>
                   </div>
                   <div v-else class="w-44 h-36 bg-2e flex justify-center items-center rounded-lg">
                       <div class="w-full">
                          <div class="flex justify-center">
-                              <img  v-if="getPageState" src="../../assets/arko/Web/Piso.svg" class=" w-8 h-6 object-cover" alt="">
-                              <img v-else src="../../assets/web/Piso.svg" class=" w-8 h-6 object-cover" alt="">
                          </div>
-                          <p class="text-center text-sm font-normal pt-4 px-6 text-cf2">Selecciona algún producto para el piso</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="px-5 pt-7">
+                  <p class="text-sm moserrat-bold font-bold text-subtitle" >Muro</p>
+              </div>
+              <div class="pt-4 px-4">
+                   <div v-if="getProductsAplicatesInAreas[getAreaSelected].muros.length!=0">
+                    <div class=''>
+                          <div v-for="muro in getProductsAplicatesInAreas[getAreaSelected].muros" :key="muro"
+                            class="pb-2">
+                            <div class="flex">
+                                <img :src="muro.smallPicture" 
+                            class="object-cover rounded-full " style="width:31px; height:31px" alt="">
+                            <div class="ml-2">
+                            <p class="text-white font-semibold text-cf" style="font-size:11px;">{{muro.name}}</p>
+                            <p class="text-white font-semibold text-cf" style="font-size:11px;">{{muro.sized}}</p>
+                            </div>
+                            </div>
+                            </div>
+                        </div>                      
+                  </div>
+                  <div v-else class="w-44 h-36 bg-2e flex justify-center items-center rounded-lg">
+                      <div class="w-full">
+                         <div class="flex justify-center">
+                         </div>
                       </div>
                   </div>
               </div>

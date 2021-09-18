@@ -87,7 +87,7 @@ class Scene1 extends Scene {
 			// if(intersects[0].object.callback){
 			// 	intersects[0].object.callback();
 			// }
-			if(this.pisoIncludesForTraking(intersects) && (this.typeOfAplication===0 || this.ismobileDevice)){
+			if(this.pisoIncludesForTraking(intersects) ){
 				if(this.ismobileDevice){
 					Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,0)
 					Observer.emit(EVENTS.CLEARHOVER,"");
