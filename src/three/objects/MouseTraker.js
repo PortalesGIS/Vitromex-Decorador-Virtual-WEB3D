@@ -21,7 +21,8 @@ export class TrakerMouse extends Mesh {
 					})
 					this.material = uploadMaterial    
 				})
-			})        
+			}) 
+			this.position.y=20       
 		this.name =`traker`
 		this.renderOrder = 0;
 	}

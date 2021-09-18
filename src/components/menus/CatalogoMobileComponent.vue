@@ -27,6 +27,7 @@
           <div class="flex w-full mx-2 px-4 rounded-full bg-6a border border-buscar-dorado ">
             <input type="text" class="w-full bg-6a focus:outline-none text-title" placeholder="Buscar..."
              v-model="stringSearch"
+             id="inputToSerchString"
              @input="chngeInput">
             <div v-if="stringSearch===''" class="flex items-center">
                     <img v-if="getPageState" src="../../assets/arko/Mobile/Buscar.svg" class="w-6" alt="">
@@ -170,6 +171,9 @@ export default {
     },
     toggleActiveBuscar(){
       this.isActiveBuscar = !this.isActiveBuscar;
+      if(this.isActiveBuscar){
+        document.getElementById("inputToSerchString").focus();
+      }
     },
     cerrarFiltro(){
         this.isFiltersOpen=false;

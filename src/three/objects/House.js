@@ -15,14 +15,16 @@ export class House extends Mesh{
         this.ismobileDevice= isDevice();
         let loader = new GLTFLoader(loaderManager); 
 
-        const pmremGenerator = new PMREMGenerator( this.renderer );
-		pmremGenerator.compileEquirectangularShader();
+        
+				
+        loader.load('models3D/house-v1/scene.gltf',(gltf)=>{
+            
+            const pmremGenerator = new PMREMGenerator( this.renderer );
+            pmremGenerator.compileEquirectangularShader();
 			new RGBELoader(loaderManager)
 			.setDataType( UnsignedByteType )
 			.load( 'models3D/enviroment/Enviroment_Interior.hdr',  ( texture ) => {
-				
-				this.envMap = pmremGenerator.fromEquirectangular( texture ).texture;		
-				loader.load('models3D/house-v1/scene.gltf',(gltf)=>{
+                this.envMap = pmremGenerator.fromEquirectangular( texture ).texture;
                     // this.liquid = gltf.scene.children[0].getObjectByName('Liquid_Beer_Liquid_0');
                     this.add(gltf.scene); 
                     // console.log(console.log( gltf.scene.children[0].getObjectByName('Piso_C_Int_Sala_UVb')))
@@ -115,6 +117,7 @@ export class House extends Mesh{
                     // qmuro.add(this.position, 'y', -80.0, 80.0).listen();
                     // qmuro.add(this.position, 'z', -80.0, 80.0).listen();               
                     // qmuro.open();
+                })
                 },
                 ()=>{
                     // console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );   
@@ -123,7 +126,6 @@ export class House extends Mesh{
                     console.log( error );
                 }
                 )	
-			})
             
         
     }

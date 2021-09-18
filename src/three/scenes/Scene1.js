@@ -128,14 +128,14 @@ class Scene1 extends Scene {
 				}
 				console.log(''+pointx +'---'+ pointz)
 				// this.control.dispose()
-				this.control.target.set((pointx/1.00000000001),0, (pointz/1.00000000001))
+				this.control.target.set((pointx/1.00000000001),1, (pointz/1.00000000001))
 				// this.camera.position.set(intersects[0].point.x,0,intersects[0].point.z)
 				let animations = gsap.timeline()
 				animations.to(this.camera.position,{
 					// duration:0,
 					duration:1,
 					x:intersects[0].point.x,
-					y:0,
+					y:1,
 					z:intersects[0].point.z,
 					onUpdate:()=>{
 						this.control.update()
