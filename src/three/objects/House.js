@@ -335,13 +335,13 @@ export class House extends Mesh{
             return  
             }
             if(child.name === "Amb_Base_vidrioopaco_UVc_MT_Amb_Base_vidrioopaco_UVc_0"){
-                child.material.envMap =  this.envMap
+                // child.material.envMap =  this.envMap
                 // TODO: actualizar ligthmap
-            //     child.material.lightMap=uvc
-            // child.material.lightMapIntensity=6
+                child.material.lightMap=uvc
+                child.material.lightMapIntensity=6
                 child.material.roughness=0.18
-            //     child.material.transparent =true
-            //     child.material.opacity=1
+                child.material.transparent =true
+                child.material.opacity=1
 
                 return 
             }

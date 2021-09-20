@@ -10,15 +10,15 @@
       <div class='flex h-full'>
          <!-- <div class="col-span-1 xl:col-span-1 flex items-center justify-center h-full"></div> -->
           <div  @click="clickMenuTop('https://www.vitromex.com.mx')"
-          class=" w-336 pl-4 flex items-center justify-start h-full cursor-pointer">
+          class=" w-336  pl-4 flex items-center justify-start h-full cursor-pointer">
             <img  v-if="getPageState" src="../../assets/arko/Web/ARKO_Logo.svg" style="width:170px; height:48px" alt="">
             <img v-else src="../../assets/web/Logo_Vitromex.svg" style="width:170px; height:48px" alt="">
             </div>
-          <div class="flex w-2/6 items-center justify-start h-full">
+          <div class="flex w-96 items-center justify-center h-full">
             <p class="text-title text-2xl xl:text-3xl font-bold gotham">MI PROYECTO</p>
             </div>
-            <div class=" h-full">
-              <div class="pr-28 flex items-center h-full justify-around ">
+            <div class=" w-full h-full">
+              <div class="pr-28 flex items-center h-full justify-end">
                 <button 
                 @click="clickMenuTop('https://www.vitromex.com.mx/contacto')"
                 class="focus:outline-none text-lg text-title cursor-pointer moserrat-semibold px-4 ">Contacto</button>
