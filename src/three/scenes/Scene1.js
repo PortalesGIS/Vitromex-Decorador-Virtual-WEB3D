@@ -64,6 +64,12 @@ class Scene1 extends Scene {
 		// 
 		Observer.on(EVENTS.APLICATIONCHANGETYPE,(selected)=>{
 			this.typeOfAplication=selected
+			if(this.typeOfAplication===0){
+				this.muroSelectedTemporal=""
+				this.muroSelected=""
+				Observer.emit(EVENTS.CHANGEAREATOAPLICATEPRODUCT,0)
+					Observer.emit(EVENTS.CLEARHOVER,"");
+			}
 		})
 
 
