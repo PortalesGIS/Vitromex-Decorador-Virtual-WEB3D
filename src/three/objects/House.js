@@ -1,4 +1,4 @@
-import {  Mesh, MeshStandardMaterial, PMREMGenerator,UnsignedByteType, RepeatWrapping, TextureLoader,  
+import {  Mesh, MeshStandardMaterial, PMREMGenerator,UnsignedByteType, RepeatWrapping, TextureLoader,   
     // MeshStandardMaterial,  RepeatWrapping,  TextureLoader
  } from "three";
  import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
@@ -249,12 +249,27 @@ export class House extends Mesh{
                 child.material.side=0
                 return 
             }
+            if(child.name === "Amb_Base_Sala_Pinturas_UVf_MT_Amb_Base_Sala_Pinturas_UVf_0"){
+                child.material.lightMap=uvf
+                child.material.lightMapIntensity=3
+                return 
+            }
+            if(child.name === "Amb_Base_Cocina_Estufa_UVf_MT_Amb_Base_Cocina_Estufa_UVf_0"){
+                child.material.envMap =  this.envMap
+                child.material.lightMap=uvf
+                child.material.lightMapIntensity=1
+                child.material.envMapIntensity=0.4
+                child.material.refractionRatio=0.98         
+                child.material.roughness=0.15
+                child.material.metalness=1
+                return 
+            }
             if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
                 child.material.envMap =  this.envMap
                 return 
             }
             if(child.name === "Amb_Base_Cocina_Olla_UVf_Amb_Base_Cocina_Olla_UVf_0"){
-                child.material.envMap = this.envMap
+            child.material.envMap = this.envMap
             child.material.lightMap=uvf
             child.material.lightMapIntensity=1
             child.material.envMapIntensity=0.7
@@ -321,6 +336,13 @@ export class House extends Mesh{
             }
             if(child.name === "Amb_Base_vidrioopaco_UVc_MT_Amb_Base_vidrioopaco_UVc_0"){
                 child.material.envMap =  this.envMap
+                // TODO: actualizar ligthmap
+            //     child.material.lightMap=uvc
+            // child.material.lightMapIntensity=6
+                child.material.roughness=0.18
+            //     child.material.transparent =true
+            //     child.material.opacity=1
+
                 return 
             }
             if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
@@ -716,7 +738,6 @@ export class House extends Mesh{
             if(child.name==="Mob_Base_Cocina_Alacenas_UVd_MT_Mob_Base_Cocina_Alacenas_UVd_0"){
                 child.material.lightMap=uvd
                 child.material.lightMapIntensity=2.9
-                child.material.envMapIntensity=0.01
                 return 
             }
             child.material.lightMap=uvd
