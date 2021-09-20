@@ -4,7 +4,7 @@ import { PerspectiveCamera,  WebGLRenderer, sRGBEncoding,  LoadingManager,
 import Scene1 from './scenes/Scene1';
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
-import Stats from 'three/examples/jsm/libs/stats.module'
+// import Stats from 'three/examples/jsm/libs/stats.module'
 import {isDevice} from '../../utils/isDevice'
 import Observer, { EVENTS } from './Observer';
 export class App {
@@ -105,8 +105,8 @@ export class App {
 		}
 		
 		this.scene = new Scene1(loaderManager,this.camera,this.control,this.renderer);
-		this.stats = Stats()
-		document.body.appendChild(this.stats.dom)
+		// this.stats = Stats()
+		// document.body.appendChild(this.stats.dom)
 		// 
 
 		this.control.update();
@@ -126,7 +126,7 @@ export class App {
 
 	render() {
 
-		this.stats.update()
+		// this.stats.update()
 		this.renderer.render(this.scene, this.camera);
 		this.control.update();
 		// Updates here
