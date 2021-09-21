@@ -145,108 +145,27 @@ export class House extends Mesh{
         let uve = texturesLoades[4]
         let uvf = texturesLoades[5]
 
-        // helpers
-        // if(child.name === "Amb_Base_Cocina_frascos_UVf_Amb_Base_Cocina_frascos_UVf_0"){
-        //     child.material.envMap =  this.envMap
-        //     var ww = new GUI();
-        //     var macetas = ww.addFolder('vidrio limon');
-        //     console.log(child)
-        //     macetas.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-        //     macetas.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-        //     macetas.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-        //     macetas.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-        //     macetas.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-        //     macetas.add(child.material, 'roughness', -1.0, 1.0).listen();                
-        //     macetas.add(child.material, 'metalness', -1.0, 1.0).listen();                
-        //     macetas.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-        //     macetas.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-        //     macetas.open();
-        // }
-        // if(child.name === "Amb_Base_Cocina_Olla_UVf_Amb_Base_Cocina_Olla_UVf_0"){
-        //     var ss = new GUI();
-        //     var asdadsasdasd = ss.addFolder('Olla');
-        //     asdadsasdasd.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-        //     asdadsasdasd.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-        //     asdadsasdasd.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-        //     asdadsasdasd.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-        //     asdadsasdasd.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-        //     asdadsasdasd.add(child.material, 'roughness', -1.0, 1.0).listen();                
-        //     asdadsasdasd.add(child.material, 'metalness', -1.0, 1.0).listen();                
-        //     asdadsasdasd.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-        //     asdadsasdasd.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-        //     asdadsasdasd.open();
-        // }
-        // if(child.name === "Mob_Base_Cocina_Lamparas_UVe_MT_Mob_Base_Cocina_Lamparas_UVe_0"){
-        //     var ass = new GUI();
-        //     var yuiop = ass.addFolder('lamparas');
-        //     console.log(child)
-        //     yuiop.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-        //     yuiop.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-        //     yuiop.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-        //     yuiop.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-        //     yuiop.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-        //     yuiop.add(child.material, 'roughness', -1.0, 1.0).listen();                
-        //     yuiop.add(child.material, 'metalness', -1.0, 1.0).listen();                
-        //     yuiop.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-        //     yuiop.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-        //     yuiop.open();
-        // }
-        // if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){
-        //     var fffff = new GUI();
-        //     var tyuiog = fffff.addFolder('vasos banio/cocina');
-        //     console.log(child)
-        //     tyuiog.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-        //     tyuiog.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-        //     tyuiog.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-        //     tyuiog.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-        //     tyuiog.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-        //     tyuiog.add(child.material, 'roughness', -1.0, 1.0).listen();                
-        //     tyuiog.add(child.material, 'metalness', -1.0, 1.0).listen();                
-        //     tyuiog.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-        //     tyuiog.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-        //     tyuiog.open();
-        // }
-        // if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){
-        //     var ghghgh = new GUI();
-        //     var werfgvj = ghghgh.addFolder('lvabo');
-        //     console.log(child)
-        //     werfgvj.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-        //     werfgvj.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-        //     werfgvj.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-        //     werfgvj.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-        //     werfgvj.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-        //     werfgvj.add(child.material, 'roughness', -1.0, 1.0).listen();                
-        //     werfgvj.add(child.material, 'metalness', -1.0, 1.0).listen();                
-        //     werfgvj.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-        //     werfgvj.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-        //     werfgvj.open();
-        // }
-        // if(child.name === "Muro_C_Int_Banio_Izq2_UVa_MT_Muro_C_Int_Banio_Izq2_UVa_0"){
-        //     var dfsdfsdfsfd = new GUI();
-        //     var popijk = dfsdfsdfsfd.addFolder('luz bano');
-        //     console.log(child)
-        //     popijk.add(child.material, 'lightMapIntensity', -2.0, 5.0).listen();
-        //     popijk.add(child.material, 'envMapIntensity', -2.0, 5.0).listen();
-        //     popijk.add(child.material, 'aoMapIntensity', -2.0, 5.0).listen();
-        //     popijk.add(child.material, 'depthFunc', -2.0, 5.0).listen();
-        //     popijk.add(child.material, 'refractionRatio', -1.0, 1.0).listen();
-        //     popijk.add(child.material, 'roughness', -1.0, 1.0).listen();                
-        //     popijk.add(child.material, 'metalness', -1.0, 1.0).listen();                
-        //     popijk.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-        //     popijk.add(child.material, 'emissiveIntensity', -1.0, 5.0).listen();                
-        //     popijk.open();
-        // }
-
-        // 
-        // solo movil
+        
         // if(this.ismobileDevice){
             if(child.name === "Amb_Base_vidriotransparente_UVc_MT_Amb_Base_vidriotransparente_UVc_0"){
                 // child.material.envMap =  this.envMap
                 child.material.opacity = 0.2
-                child.material.rougness = 1
+                child.material.rougness = 0
                 child.material.metalness=1
-                child.material.envMapIntensity=1
-                child.material.side=0
+                child.material.envMapIntensity=0.1
+                
+                child.material.refractionRatio= 0.1
+                child.material.reflectivity= 0.1
+                // child.material.side=0
+                return 
+            }
+            if(child.name === "Amb_Base_Carpinterias_UVc_MT_Amb_Base_Carpinterias_UVc_0"){
+                child.material.envMap =  this.envMap
+                child.material.lightMap = uvc
+                child.material.lightMapIntensity = 6
+                child.material.rougness = 0
+                child.material.metalness=0.3
+                child.material.envMapIntensity=0.3
                 return 
             }
             if(child.name === "Amb_Base_Sala_Pinturas_UVf_MT_Amb_Base_Sala_Pinturas_UVf_0"){
@@ -335,10 +254,10 @@ export class House extends Mesh{
             return  
             }
             if(child.name === "Amb_Base_vidrioopaco_UVc_MT_Amb_Base_vidrioopaco_UVc_0"){
-                // child.material.envMap =  this.envMap
-                // TODO: actualizar ligthmap
+                child.material.envMap =  this.envMap
+                child.material.envMapIntensity=1
                 child.material.lightMap=uvc
-                child.material.lightMapIntensity=6
+                child.material.lightMapIntensity=1
                 child.material.roughness=0.18
                 child.material.transparent =true
                 child.material.opacity=1
@@ -355,118 +274,7 @@ export class House extends Mesh{
                 child.material.envMap =  this.envMap
                 return 
             }
-        //     if(child.name === "Amb_Base_General_Jarrones_UVf_MT_Amb_Base_General_Jarrones_UVf_0"){
-        //         const materialWhitLigthmap = new MeshStandardMaterial({
-        //             color: 0x777777,
-        //             lightMap:uvf,       
-        //             map:child.material.map,
-        //         })
-        //         child.material = materialWhitLigthmap
-        //         return 
-        //     }
-        //     if(child.name === "Amb_Base_Canceleria_UVc_MT_Amb_Base_Cocina_Campana_UVd_0"){
-        //         const materialWhitLigthmap = new MeshStandardMaterial({
-        //             color: 0x777777,
-        //             lightMap:uvc,      
-        //             map:child.material.map,
-        //         })
-        //         child.material = materialWhitLigthmap
-        //         return 
-        //     }
-        //     if(child.name === "Amb_Base_Cocina_Cubiertos_UVf_MT_Amb_Base_Cocina_Cubiertos_UVf_0"){
-        //         child.position.z+=2
-        //         const materialWhitLigthmap = new MeshStandardMaterial({
-        //             color: 0x777777,
-        //             lightMap:uvf,      
-        //             map:child.material.map,
-        //         })
-        //         child.material = materialWhitLigthmap
-        //         return 
-        //     }
-        //     if(child.name === "Mob_Base_Cocina_Refrigerador_UVd_MT_Mob_Base_Cocina_Refrigerador_UVd_0"){                
-        //         const materialWhitLigthmap = new MeshStandardMaterial({
-        //             color: 0xffffff,
-        //             lightMap:uvd,
-        //             lightMapIntensity:20,      
-        //             map:child.material.map,
-        //         })
-        //         child.material = materialWhitLigthmap
-        //         return 
-        //     }
-        //     if(child.name === "Mob_Base_Cocina_Fregaderoyestufa_UVd_Mob_Base_Cocina_Fregaderoyestufa_UVd_0"){                
-        //         const materialWhitLigthmap = new MeshStandardMaterial({
-        //             color: 0xffffff,
-        //             lightMap:uvd,
-        //             lightMapIntensity:1,      
-        //             map:child.material.map,
-        //         })
-        //         child.material = materialWhitLigthmap
-        //         return 
-        //     }
-        //     if(child.name === "Mob_Base_Cocina_Microondas_UVe_MT_Mob_Base_Cocina_Microondas_UVe_0"){                
-        //         const materialWhitLigthmap = new MeshStandardMaterial({
-        //             color: 0xffffff,
-        //             lightMap:uve,
-        //             lightMapIntensity:1,      
-        //             map:child.material.map,
-        //         })
-        //         child.material = materialWhitLigthmap
-        //         return 
-        //     }
-        //     if(child.name === "Amb_Base_Banio_Toallas_UVf_MT_Amb_Base_Banio_Toallas_UVf_0"){                
-        //         const materialWhitLigthmap = new MeshStandardMaterial({
-        //             color: 0xffffff,
-        //             lightMap:uvf,
-        //             lightMapIntensity:2,      
-        //             map:child.material.map,
-        //         })
-        //         child.material = materialWhitLigthmap
-        //         return 
-        //     }
-        //     if(child.name === "Amb_Base_Banio_Lavabo_UVf_MT_Amb_Base_Banio_Lavabo_UVf_0"){                
-        //         const materialWhitLigthmap = new MeshStandardMaterial({
-        //             color: 0xffffff,
-        //             lightMap:uvf,
-        //             lightMapIntensity:2,      
-        //             map:child.material.map,
-        //         })
-        //         child.material = materialWhitLigthmap
-        //         return 
-        //     }
-        //     if(child.name ==="Amb_Base_vidrioopaco_UVc_MT_Amb_Base_vidrioopaco_UVc_0"){                
-        //         const materialWhitLigthmap = new MeshStandardMaterial({
-        //             color: 0xffffff,
-        //             lightMap:uvc,
-        //             lightMapIntensity:2,      
-        //             map:child.material.map,
-        //         })
-        //         child.material = materialWhitLigthmap
-        //         return 
-        //     }
-        //     if(child.name === "Amb_Base_General_Vasos_UVf_Material_#3204_Slot_#1_0"){                
-        //         const materialWhitLigthmap = new MeshStandardMaterial({
-        //             color: 0xffffff,
-        //             lightMap:uvf,
-        //             lightMapIntensity:1,      
-        //             map:child.material.map,
-        //         })
-        //         child.material = materialWhitLigthmap
-        //         return 
-        //     }
-        //     if(child.name === "Amb_Base_Banio_Jabon_UVf_Amb_Base_Banio_Jabon_UVf_0"){                
-        //         const materialWhitLigthmap = new MeshStandardMaterial({
-        //             color: 0xffffff,
-        //             lightMap:uvf,
-        //             lightMapIntensity:1,      
-        //             map:child.material.map,
-        //         })
-        //         child.material = materialWhitLigthmap
-        //         return 
-        //     }
-
-            
-        // }
-        // 
+        
         // especiales
         if(child.name === "Muro_C_Int_Comedor_Front_UVa_MT_Muro_C_Int_Comedor_Front_UVa_0"){
             const materialWhitLigthmap = new MeshStandardMaterial({

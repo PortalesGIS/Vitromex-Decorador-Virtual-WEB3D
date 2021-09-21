@@ -14,6 +14,7 @@ import Observer, { EVENTS } from '../Observer';
 import gsap from 'gsap/gsap-core';
 import { FalseLights } from '../objects/FalseLigth';
 import { isDevice } from '../../../utils/isDevice';
+import { WindowFachada } from '../objects/windowFachada';
 var raycaster = new Raycaster();
 var mouse = new Vector2();
 class Scene1 extends Scene {
@@ -46,6 +47,7 @@ class Scene1 extends Scene {
 		// 
 		this.traker = new TrakerMouse()
 		this.add(this.traker)
+		
 
 		this.house = new House(this.loaderManager,this.renderer)
 		this.add(this.house)
@@ -53,10 +55,15 @@ class Scene1 extends Scene {
 		this.hovers = new Hovers()
 		this.add(this.hovers)
 
+		this.window = new WindowFachada(this.loaderManager)
+		this.add(this.window)
+
 		this.falseLights = new FalseLights()
 		this.add(this.falseLights)
 		// 
 		
+
+
 		// 
 		// 
 		
