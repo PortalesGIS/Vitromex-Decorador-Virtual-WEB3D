@@ -28,7 +28,7 @@
                 :class="(getAreaSelected==='fachada')?'bg-base-black-opacity':''" 
                 @click="onSelectArea('fachada')"
                 class="flex h-full items-center cursor-pointer  hover:bg-base-black-opacity hover:bg-opacity-50">
-                <div class="pl-2 lg:pl-0 w-18 xl:w-32 2xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl ">
+                <div class="pl-2 lg:pl-0 w-18 lg:w-20 xl:w-32 2xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl ">
                     <div>
                         <p v-if="getPageState" class="gotham-light text-center">FACHADA</p>
                         <p v-else class=" gotham text-center">FACHADA</p>
@@ -67,7 +67,7 @@
              :class="(getAreaSelected==='comedor')?'bg-base-black-opacity':''"
              @click="onSelectArea('comedor')"
             class="flex h-full items-center cursor-pointer  hover:bg-base-black-opacity hover:bg-opacity-50">
-                <div class=" w-18 xl:w-32 2xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl">
+                <div class=" w-18 lg:w-24  xl:w-32 2xl:w-44 text-subtitle flex justify-center text-xs lg:text-sm xl:text-xl">
                     <div>
                         <p v-if="getPageState" class="gotham-light text-center">COMEDOR</p>
                         <p v-else class=" gotham text-center">COMEDOR</p>
