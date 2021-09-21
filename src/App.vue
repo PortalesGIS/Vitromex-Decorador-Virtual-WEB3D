@@ -11,7 +11,7 @@
 </div>
 <!-- /Active Breakpoint Indicator -->
   <p class="bg-red-400 text-sm">
-    V 1.1.5
+    V 1.1.8
   </p>
   </div>
   <router-view/>
