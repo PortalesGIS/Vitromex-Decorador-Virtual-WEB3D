@@ -153,7 +153,6 @@ export class House extends Mesh{
                 child.material.rougness = 0
                 child.material.metalness=1
                 child.material.envMapIntensity=0.1
-                
                 child.material.refractionRatio= 0.1
                 child.material.reflectivity= 0.1
                 // child.material.side=0

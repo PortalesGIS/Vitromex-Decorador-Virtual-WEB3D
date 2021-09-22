@@ -4,7 +4,7 @@
   <div class="noselect">
   <LoadingScreenComponentVue/>  
   <div class="h-screen w-screen">
-    <div class="fixed z-50">
+    <div class="fixed z-50 w-full">
     <HeaderGlobalComponentVue/>
     </div>
     <div v-if="getAllProductsComplete!=''" class="w-screen hidden lg:block absolute z-30">
