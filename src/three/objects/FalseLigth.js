@@ -17,8 +17,8 @@ export class FalseLights extends Mesh{
 			this.position.z=-74;
             this.rotation.y=3.14
         },
-        (xhr)=>{
-            console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );   
+        ()=>{
+            // console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );   
         },
         function ( error ) {
             console.log( error );
