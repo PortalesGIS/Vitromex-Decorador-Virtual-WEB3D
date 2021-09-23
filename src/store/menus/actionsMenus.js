@@ -34,6 +34,7 @@ export const onChangeAplicationSelected=({commit},payload)=>{
 //     product:{},
 // }
 export const changeProductsAplicatesInAreas=({commit,getters},payload)=>{
+    console.log(payload)
     const updateObject = getters.getProductsAplicatesInAreas
     const isFind = updateObject[payload.area].muros.find(product=>product.nameMuro === payload.nameMuro)
     if(payload.aplication===1){

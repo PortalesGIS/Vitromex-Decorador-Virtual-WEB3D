@@ -54,20 +54,26 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["changeMenuCatalogo","changeProductsAplicatesInAreas","changeisLoadingProductToAplicate","addPointToClickProduct"]),
-    selectProductForMap(product) {
+    ...mapActions(["changeMenuCatalogo","changeProductsAplicatesInAreas","changeisLoadingProductToAplicate","addPointToClickProduct",'onChnageMuroAplication']),
+    selectProductForMap(product) {      
       this.changeMenuCatalogo();
       this.addPointToClickProduct(product._id)
       Observer.emit(EVENTS.SENDPRODUCT, product,this.getAreaSelected,this.getAplicationSeletec,this.getMuroAplication);
       this.changeisLoadingProductToAplicate(true)
       // funcion de abajo para mandar al producto para mostrar en el menu izquierdo :solo desk
       if(this.getAplicationSeletec===1){
-        this.changeProductsAplicatesInAreas({
-          nameMuro: this.getMuroAplication,
+        if(this.getMuroAplication !== ''){
+          this.changeProductsAplicatesInAreas({
+            nameMuro: this.getMuroAplication,
           area:this.getAreaToAplicateProduct(this.getMuroAplication),
           aplication:this.getAplicationSeletec,
           product:product
         })
+        this.onChnageMuroAplication('')
+          }
+          else{
+            this.setAllMurosToAreaAplicate(product)
+          }
       }
       else{
         this.changeProductsAplicatesInAreas({
@@ -84,6 +90,9 @@ export default {
       else if(muroAplication.includes("Comedor")){
         return "comedor"
       }
+      else if(muroAplication.includes("Pasillo")){
+        return "comedor"
+      }
       else if(muroAplication.includes("Cocina")){
         return "cocina"
       }
@@ -93,6 +102,123 @@ export default {
       else if (muroAplication.includes("Ext_Patio")){
         return "fachada"
       }
+    },
+    setAllMurosToAreaAplicate(product){
+      switch (this.getAreaSelected) {
+            case "sala":
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Sala_Der_UVa_MT_Hover_Muro_C_Int_Sala_Der_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Sala_Der_UVa_MT_Hover_Muro_C_Int_Sala_Der_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Sala_Front_UVa_MT_Hover_Muro_C_Int_Sala_Front_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Sala_Front_UVa_MT_Hover_Muro_C_Int_Sala_Front_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Sala_Front2_UVa_MT_Hover_Muro_C_Int_Sala_Front2_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Sala_Front2_UVa_MT_Hover_Muro_C_Int_Sala_Front2_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                break;
+            case "fachada":
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Ext_Patio_Der_UVa_MT_Hover_Muro_C_Ext_Patio_Der_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Ext_Patio_Der_UVa_MT_Hover_Muro_C_Ext_Patio_Der_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Ext_Patio_Atras_UVa_MT_Hover_Muro_C_Ext_Patio_Atras_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Ext_Patio_Atras_UVa_MT_Hover_Muro_C_Ext_Patio_Atras_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Ext_Patio_Izq_UVa_MT_Hover_Muro_C_Ext_Patio_Izq_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Ext_Patio_Izq_UVa_MT_Hover_Muro_C_Ext_Patio_Izq_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Ext_Patio_Front_UVa_MT_Hover_Muro_C_Ext_Patio_Front_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Ext_Patio_Front_UVa_MT_Hover_Muro_C_Ext_Patio_Front_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Ext_Patio_Arriba_MT_Hover_Muro_C_Ext_Patio_Arriba_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Ext_Patio_Arriba_MT_Hover_Muro_C_Ext_Patio_Arriba_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                break;
+            case "comedor":
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Pasillo_Izq_UVa_MT_Hover_Muro_C_Int_Pasillo_Izq_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Pasillo_Izq_UVa_MT_Hover_Muro_C_Int_Pasillo_Izq_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Comedor_Atras_UVa_MT_Hover_Muro_C_Int_Comedor_Atras_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Comedor_Atras_UVa_MT_Hover_Muro_C_Int_Comedor_Atras_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Comedor_Front_UVa_MT_Hover_Muro_C_Int_Comedor_Front_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Comedor_Front_UVa_MT_Hover_Muro_C_Int_Comedor_Front_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                break;
+            case "cocina":
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Cocina_Der_UVa_MT_Hover_Muro_C_Int_Cocina_Der_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Cocina_Der_UVa_MT_Hover_Muro_C_Int_Cocina_Der_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Cocina_Front_UVa_MT_Hover_Muro_C_Int_Cocina_Front_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Cocina_Front_UVa_MT_Hover_Muro_C_Int_Cocina_Front_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Cocina_Izq_UVa_MT_Hover_Muro_C_Int_Cocina_Izq_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Cocina_Izq_UVa_MT_Hover_Muro_C_Int_Cocina_Izq_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                break;
+            case "banio":
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Banio_Der_UVa_MT_Hover_Muro_C_Int_Banio_Der_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Banio_Der_UVa_MT_Hover_Muro_C_Int_Banio_Der_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Banio_Der2_UVa_MT_Hover_Muro_C_Int_Banio_Der2_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Banio_Der2_UVa_MT_Hover_Muro_C_Int_Banio_Der2_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Banio_Izq3_UVa_MT_Hover_Muro_C_Int_Banio_Izq3_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Banio_Izq3_UVa_MT_Hover_Muro_C_Int_Banio_Izq3_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Banio_Izq1_UVa_MT_Hover_Muro_C_Int_Banio_Izq1_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Banio_Izq1_UVa_MT_Hover_Muro_C_Int_Banio_Izq1_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                this.changeProductsAplicatesInAreas({nameMuro:"Hover_Muro_C_Int_Banio_Izq2_UVa_MT_Hover_Muro_C_Int_Banio_Izq2_UVa_0",
+                                                    area:this.getAreaToAplicateProduct("Hover_Muro_C_Int_Banio_Izq2_UVa_MT_Hover_Muro_C_Int_Banio_Izq2_UVa_0"),
+                                                    aplication:this.getAplicationSeletec,
+                                                    product:product
+                                                    })
+                break;
+            default:
+                break;
+        }
+      // this.changeProductsAplicatesInAreas({
+      //     nameMuro: this.getMuroAplication,
+      //     area:this.getAreaToAplicateProduct(this.getMuroAplication),
+      //     aplication:this.getAplicationSeletec,
+      //     product:product
+      //   })
     }
   },
   computed: {

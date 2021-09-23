@@ -77,7 +77,6 @@ export class House extends Mesh{
                         })
                         Observer.on(EVENTS.SENDPRODUCT,(productSelected,areaSelected,typeOfAplication,nameMuroAplication)=>{
                             
-                            // TODO: eliminar el norma? optimizr descarga? version 1 optimizado
                             const textures=[]
                             loader.load(productSelected.albedo,(texture)=>{
                                 textures.push(texture)
@@ -92,12 +91,19 @@ export class House extends Mesh{
                                textures[0].repeat.set(tailinW,tailinH);
                                Observer.emit(EVENTS.ENDCHARGINPRODUCT);
                                if(typeOfAplication===0){
-                                    console.log("aplicado a piso")
+                                    // console.log("aplicado a piso")
                                     this.updatePisoMaterial(textures,areaSelected,productSelected.roughness)
                                 }
                                 else{
-                                    console.log("aplicado a muro")
-                                    this.updateMuroMaterial(textures,nameMuroAplication,productSelected.roughness)
+                                    if(nameMuroAplication === ''){
+                                        this.updateMaterialAllMurosInArea(textures,nameMuroAplication,areaSelected)
+                                        // console.log("aplicado a muross completo")
+                                        return
+                                    }
+                                    else{
+                                        // console.log("aplicado a muro")
+                                        this.updateMuroMaterial(textures,nameMuroAplication,productSelected.roughness)
+                                    }
                                 }
                             })
                         })
@@ -321,8 +327,6 @@ export class House extends Mesh{
             return 
         }
         if(child.name === "Amb_Base_Banio_WC_UVf_MT_Amb_Base_Banio_WC_UVf_0"){
-            console.log("Banio")
-            console.log(child.material)
             child.material.lightMap=uvf
             child.material.lightMapIntensity=2.1
             child.material.envMapIntensity=0.3
@@ -407,7 +411,6 @@ export class House extends Mesh{
         if(child.name === "Amb_Base_Comedor_Centromesa_UVf_MT_Amb_Base_Comedor_Centromesa_UVf_0"){
             child.material.lightMapIntensity=0
             child.material.envMapIntensity=1
-            console.log(child)
             // child.layers.set(5)
             // this.add(child)
                 return    
@@ -582,8 +585,43 @@ export class House extends Mesh{
         }        
     }
 
-    updatePisoMaterial(materialUpdated,pisoSelected,rougness){
-        console.log(rougness)
+    updateMaterialAllMurosInArea(materialUpdated,nameMuro,pisoSelected){
+        switch (pisoSelected) {
+            case "sala":
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Sala_Der_UVa_MT_Hover_Muro_C_Int_Sala_Der_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Sala_Front_UVa_MT_Hover_Muro_C_Int_Sala_Front_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Sala_Front2_UVa_MT_Hover_Muro_C_Int_Sala_Front2_UVa_0")
+                break;
+            case "fachada":
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Ext_Patio_Der_UVa_MT_Hover_Muro_C_Ext_Patio_Der_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Ext_Patio_Atras_UVa_MT_Hover_Muro_C_Ext_Patio_Atras_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Ext_Patio_Izq_UVa_MT_Hover_Muro_C_Ext_Patio_Izq_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Ext_Patio_Front_UVa_MT_Hover_Muro_C_Ext_Patio_Front_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Ext_Patio_Arriba_MT_Hover_Muro_C_Ext_Patio_Arriba_0")
+                break;
+            case "comedor":
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Pasillo_Izq_UVa_MT_Hover_Muro_C_Int_Pasillo_Izq_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Comedor_Atras_UVa_MT_Hover_Muro_C_Int_Comedor_Atras_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Comedor_Front_UVa_MT_Hover_Muro_C_Int_Comedor_Front_UVa_0")
+                break;
+            case "cocina":
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Cocina_Der_UVa_MT_Hover_Muro_C_Int_Cocina_Der_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Cocina_Front_UVa_MT_Hover_Muro_C_Int_Cocina_Front_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Cocina_Izq_UVa_MT_Hover_Muro_C_Int_Cocina_Izq_UVa_0")
+                break;
+            case "banio":
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Banio_Der_UVa_MT_Hover_Muro_C_Int_Banio_Der_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Banio_Der2_UVa_MT_Hover_Muro_C_Int_Banio_Der2_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Banio_Izq3_UVa_MT_Hover_Muro_C_Int_Banio_Izq3_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Banio_Izq1_UVa_MT_Hover_Muro_C_Int_Banio_Izq1_UVa_0")
+                this.updateMuroMaterial(materialUpdated,"Hover_Muro_C_Int_Banio_Izq2_UVa_MT_Hover_Muro_C_Int_Banio_Izq2_UVa_0")
+                break;
+            default:
+                break;
+        }
+    }
+
+    updatePisoMaterial(materialUpdated,pisoSelected,){
         switch (pisoSelected) {
             case "sala":
                 this.pisoSala.material.map = materialUpdated[0]

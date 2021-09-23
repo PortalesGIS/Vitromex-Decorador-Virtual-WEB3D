@@ -162,7 +162,6 @@ class Scene1 extends Scene {
 					duration:0.5,
 					opacity:1,
 				})
-				
 			}
 			if(this.validateMuroIfIsThemSameArea(intersects[0].object.name) && this.typeOfAplication===1){
 				this.muroSelectedTemporal=intersects[0].object.name
@@ -172,7 +171,6 @@ class Scene1 extends Scene {
 				Observer.emit(EVENTS.CLEARHOVER,this.muroSelected);	
 			}
 		}
-		
 	}
 	onDocumentMouseMove=(clientX, clientY, renderer, camera)=>{
 		mouse.x = ( clientX / renderer.domElement.clientWidth ) * 2 - 1;
