@@ -1,0 +1,11 @@
+Model Information:
+* title:	Fbx_CasaVitro_Final
+* source:	https://sketchfab.com/3d-models/fbx-casavitro-final-d590072adb62485e82fd85ed1f411425
+* author:	Inmersys (https://sketchfab.com/inmersys)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Fbx_CasaVitro_Final" (https://sketchfab.com/3d-models/fbx-casavitro-final-d590072adb62485e82fd85ed1f411425) by Inmersys (https://sketchfab.com/inmersys) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
